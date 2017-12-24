@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campo: one
+  nombre: MyString
+  color: MyString
+  coordenadas: MyText
+  cultivo: MyString
+  variedades: MyText
+  descripcion: MyText
+
+two:
+  campo: two
+  nombre: MyString
+  color: MyString
+  coordenadas: MyText
+  cultivo: MyString
+  variedades: MyText
+  descripcion: MyText

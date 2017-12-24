@@ -1,0 +1,77 @@
+.contenedorCampos{
+	background-color: lightgrey;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 3vh;
+	padding-bottom: 5vh;
+}
+#botonCrearCampo{
+	margin-left:2%;
+	margin-bottom: 2%;
+}
+.campoYNotas{
+	position: relative;
+	margin-left: 8.8%;
+	margin-bottom: 5vh;
+	min-height: 50vh;
+}
+
+
+/* aca va todo lo asociado a la tarjeta del campo*/
+.campo{
+	display: inline-block;
+}
+.card.campo{
+	width: 50vw;
+	min-height: 50vh;
+	position: absolute;
+	top: 0px;
+	border-color: black;
+}
+.card-header.campo{
+	background-color: #4CB200;
+	display: inline-block;
+}
+.tituloCampoIzquierda{
+	display: inline-block;
+}
+.opcionesCampoDerecha{
+	display: inline-block;
+	float: right;
+}
+.fotoOpcion{
+	width: 20px;
+	margin-left: 5px;
+}
+.botonesCampo{
+	float: right;
+	margin-top: 10vh;
+}
+
+/* aca va todo lo asociado a la tarjeta de la nota de un campo*/
+.nota{
+	display: inline-block;
+}
+.card.notaCampo{
+    width: 29vw;
+    min-height: 50vh;
+    position: absolute;
+    top: 0px;
+    left: 53vw;
+    border-color: black;   
+}
+.tituloRecordatorio{
+	position: absolute;
+	top: 0.5vh;
+	left: 1vw;
+}
+.form-control.textField.dondeSeEscribeLaNota{
+	margin-top: 2vh;
+	min-height: 38vh;
+}
+.btn.btn-success.guardarNota{
+	position: absolute;
+	right: 1vw;
+	bottom: 1vh;
+
+}

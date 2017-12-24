@@ -1,0 +1,39 @@
+<!-- Este es el modal que se llama al confirmar la figura del huerto -->
+<div class="modal fade bd-example-modal-lg" id="agregarHuertoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+     <!-- Este es el formulario con el ue se completan los datos del campo y se mandan para su creacion -->
+     <div class="card editarCampo">
+                 <div class="card-header">
+                           <strong><h4>Completar datos del Huerto para continuar</h4></strong>
+                 </div>
+                 <div class="card-body">
+                          <%=form_for @huerto, url: user_campo_huertos_path(current_user,@campo), method: :post, remote: true, :html => { :id => "formAgregarHuerto" }  do |form| %>
+                                  <%=form.label :nombre%>
+                                  <%=form.text_field :nombre, class: "form-control textField"%>
+
+                                  <%=form.label :cultivo%>
+                                  <%=form.text_field :cultivo, class: "form-control textField"%>
+
+                                  <%=form.label :variedades%>
+                                  <%=form.text_field :variedades, class: "form-control textField"%>
+
+                                  <%=form.label :descripcion%>
+                                  <%=form.text_area :descripcion, class: "form-control textField"%>
+                                  
+                                  <!-- Aca ponemos las coordenadas del huerto, estas no seran visibles para el usuario ya que este las selecciono antes -->
+                                  <%=form.text_area :coordenadas, id: "coordenadasFormularioCreacionHuerto"%>
+                          <%end%> 
+                                  <%=button_tag("Confirmar", class: "btn btn-success ", id: "botonConfirmarCrearHuertoFinalFormulario")%>
+                                  <%=button_tag("Cancelar", class: "btn btn-danger ")%>            
+                  </div>
+             </div>
+
+
+     
+    </div>
+  </div>
+</div>
+
+

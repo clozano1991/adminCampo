@@ -1,0 +1,43 @@
+
+<div class="contenedorPrincipalInicio">
+    <div class="auspicios contenedorSecundarioInicio">
+         auspiciado por:
+    	
+    </div>
+	<div class="fotosIzquierda contenedorSecundarioInicio">
+		
+	</div>
+	<div class="espacioCartaIngresoRegistro contenedorSecundarioInicio">
+	      <div class="card cartaPresentacion">
+             <div class="card-header">
+                  <h3><strong>Bienvenido</strong></h2>
+             </div>
+             <div class="card-body">
+                  <h5 class="card-title"><strong>Gratis:</strong></h4>
+                  <p class="card-text">Nunca te cobraremos por usar esta herramienta.</p>
+                  <h5 class="card-title"><strong>Mejora tu rendimiento:</strong></h4>
+                  <p class="card-text">Especialmente diseñado para ayudar en la gestion de campos agricolas.</p>
+                  <h5 class="card-title"><strong>Mayor acceso:</strong></h4>
+                  <p class="card-text">Accede desde la oficina, tu casa o el mismo campo.</p>
+                  <ul class="botonesInicio">
+                       <li class="botonRegistrarse">
+                             <%=button_to "Registrarme",new_user_registration_path, :method => "get", class: "btn btn-primary"%>
+                       </li>
+                       <li class="botonIngresar">
+                             <%if user_signed_in?%>
+                       	            <%=button_to "Ingresar",user_campos_path(current_user), :method => "get", class: "btn btn-primary"%>
+                             <%else%>
+                                    <%=button_to "Ingresar",new_user_session_path, :method => "get", class: "btn btn-primary"%>
+
+                             <%end%>
+                       </li>
+                  </ul>
+            </div>
+          </div>
+		
+	</div>
+</div>
+
+
+
+

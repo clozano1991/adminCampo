@@ -1,0 +1,22 @@
+$(document).ready(function(){
+    // escondemos el modal y receteamos sus valores
+	$("#agregarHuertoModal").modal("hide");
+	// se muestran los botones normales y se esconden los de agregar huerto
+    $('.normal').show();
+    $('.agregandoHuerto').hide();
+    //cambiamos la clase del huerto que se estaba creando por una clase y los escondemos.
+    $(".huertoEnCreacion").attr("class","huertoDesechar");
+    $(".circulitos").attr("class","huertoDesechar");
+    $(".huertoDesechar").hide();
+    //cambiamos el id para que si se crea otro no se repita
+    $("#HuertoNuevo").attr("id","");
+	//cambiamos el permiso del svg
+	$(".card-body.cardBody.huertos").attr("data-permiso","noPermitido");
+	
+
+
+
+
+	//aca tenemos que mostrar el huerto creado
+	
+});

@@ -1,0 +1,12 @@
+$(document).ready(function(){
+
+	$("#editarCampoModal_<%=@campo.id%>").modal("hide");
+
+	// mostramos los nuevos valores que se guardaron al editar el campo 
+    $("#nombre_<%=@campo.id%>").text("<%=@campo.nombre%>");
+    $("#propietario_<%=@campo.id%>").text("Propietario: "+"<%=@campo.propietario%>");
+    $("#direccion_<%=@campo.id%>").text("Direccion: "+"<%=@campo.direccion%>");
+    $("#comentarios_<%=@campo.id%>").text("Comentarios: "+"<%=@campo.comentarios%>");
+
+
+});

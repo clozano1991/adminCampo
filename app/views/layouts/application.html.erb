@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdminCampos</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto barraSuperior">
+         <li class="nav-item active elementoBarraSuperior">
+           <a class="navbar-brand" href="#">Marca</a>
+         </li>
+      <%if user_signed_in?%>
+         <li class="nav-item dropdown elementoBarraSuperior ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <%=link_to "Campos",user_campos_path(current_user), :method => "get", class: "dropdown-item"%>
+                     <a class="dropdown-item" href="#">Mis Contactos</a>
+                     <div class="dropdown-divider"></div>
+                         <a class="dropdown-item" href="#">Tutorias</a>
+                    </div>
+           </li>
+
+      <div class="cosasBarraSuperiorDerecha">
+           <li class="nav-item dropdown elementoBarraSuperior ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Opciones
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="#">Ayuda</a>
+                     <a class="dropdown-item" href="#">Contactanos</a>
+                     <div class="dropdown-divider"></div>
+                         <%= link_to('Logout', destroy_user_session_path, class: "dropdown-item" , method: :delete) %>
+                    </div>
+           </li>
+           <li class="nav-item nav-link  elementoBarraSuperior">
+                <strong>Cuenta: <%=current_user.email%> </strong>
+           </li>
+      <%end%> 
+      </div>
+    </ul>
+</nav>
+
+
+    <%= yield %>
+  </body>
+</html>

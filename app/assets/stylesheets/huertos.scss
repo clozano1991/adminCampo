@@ -1,0 +1,68 @@
+.contenedorHuertos{
+	background-color: lightgrey;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 2vh;
+	padding-left: 2%;
+	padding-right: 1.3%;
+	padding-bottom: 1%;
+}
+
+.gridIzquierda{
+	position: absolute;
+	left:2%;
+	top:16%;
+	width: 11%;
+}
+
+.gridDerechaMapaHuertos{
+	display: inline-block;
+	width: 85%;
+	height: 150vh;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: white;
+	margin-left: 15%;
+}
+
+.mensajesAyudaHuertos{
+	margin-top: 7vh;
+}
+
+/* aca estan las cosas que se muestran normalmente*/
+.btn.btn-success.normal{
+	min-width: 90%;
+	margin-bottom: 2vh;
+	
+}
+.btn.btn-primary.normal{
+	min-width: 90%;
+	margin-bottom: 2vh;
+
+}
+.btn.btn-danger.normal{
+	min-width: 90%;
+	margin-bottom: 2vh;
+
+}
+
+/* aca estan las cosas en la vista cuando se esta agregando un huerto*/
+.btn.btn-success.agregandoHuerto{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.btn.btn-danger.agregandoHuerto{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.agregandoHuerto{
+	display: none;
+}
+
+/*estas son las coordenadas de cuando se crea un huerto, para que no aparesca en la form que hay que llenar pero que si exista*/
+#coordenadasFormularioCreacionHuerto{
+	display: none;
+}
