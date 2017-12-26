@@ -20,7 +20,7 @@
 
     <!--ESte es el svg donde se muestran todas las imagenes de los huertos-->
     <div class="gridDerechaMapaHuertos" data-permiso="noPermitido">
-           <svg style="width:100%;height:100%;">
+           <svg style="width:100%;height:100%;" id="svgMapaCampo">
            <text x="3%" y="3%" fill="black">Mapa del campo: <%=@campo.nombre%></text> 
            <!--aca para cada huerto se ejecuta el codigo -->  
            <%=render @huertos%>

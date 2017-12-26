@@ -4,19 +4,64 @@ $(document).ready(function(){
 	// se muestran los botones normales y se esconden los de agregar huerto
     $('.normal').show();
     $('.agregandoHuerto').hide();
-    //cambiamos la clase del huerto que se estaba creando por una clase y los escondemos.
+    //cambiamos la clase del huerto que se estaba creando  y lo escondemos.
     $(".huertoEnCreacion").attr("class","huertoDesechar");
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
     //cambiamos el id para que si se crea otro no se repita
     $("#HuertoNuevo").attr("id","");
 	//cambiamos el permiso del svg
-	$(".card-body.cardBody.huertos").attr("data-permiso","noPermitido");
+	$(".gridDerechaMapaHuertos").attr("data-permiso","noPermitido");
 	
-
-
-
 
 	//aca tenemos que mostrar el huerto creado
+    //agregamos un polyline al svg y asignamos su id
+    var polyline= document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    //agregamos el huerto al svg
+    polyline.setAttribute("id","huerto_<%=@huerto.id%>");
+    $("#svgMapaCampo").append(polyline);
+    // le asignamos las coordenaas en % que le corresponde 
+    $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
+    // obtenemos el grid donde esta el svg
+    var espacioSVG = $(".gridDerechaMapaHuertos");
+    // los usamos para obtener las coordenadas de posicion
+    var figura=$("#huerto_<%=@huerto.id%>");
+    var coordenadasPosicion= transformarPorcentajesACoordenadasPosicionEnSVG(figura,espacioSVG);
+    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
+
+    
+ 
+
+
+
+
+function transformarPorcentajesACoordenadasPosicionEnSVG(figura,contenedorSVG){
+    var coordenadasPorcentaje= figura.attr("data-porcentajes");
+    //notemos que al hacer split el utimo elemento del arreglo sera " "
+    var arregloCoordenadasEnPorcentaje= coordenadasPorcentaje.split("-");
+    // quitamos el ultimo elemento que es " "
+    arregloCoordenadasEnPorcentaje.pop();
+    //ahora transformamos cada parte del array a coordenadas de posicion en el svg
+    var anchoSvg = contenedorSVG.width();
+    var altoSvg = contenedorSVG.height();
+    var arregloCoordenadasPosicion = [];
+    for (i in arregloCoordenadasEnPorcentaje){
+        var duplaCoordenadasPorcentage= arregloCoordenadasEnPorcentaje[i].split(",");
+        var x=parseFloat(duplaCoordenadasPorcentage[0])*anchoSvg;
+        var y=parseFloat(duplaCoordenadasPorcentage[1])*altoSvg;
+        var duplaCoordenadasPosicion = [];
+        duplaCoordenadasPosicion.push(String(x)+","+String(y));
+        arregloCoordenadasPosicion.push(duplaCoordenadasPosicion[0]);
+    }
+    // ahora que tenemos un arreglo de coordenadas en posicion, las metemos todas en un string
+    var stringCoordenadas="";
+        for (i in arregloCoordenadasPosicion){
+           var stringCoordenadas=stringCoordenadas+String(arregloCoordenadasPosicion[i])+" ";
+        }
+    // retornamos las coordenadas que tienen que aplicarse al elemento polyline
+    return stringCoordenadas
+}
+
 	
+
 });

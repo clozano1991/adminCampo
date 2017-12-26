@@ -1,6 +1,15 @@
 $(document).ready(function(){
-// transformamos para cada huerto que ya existe los "points" a coordenadas de posicion desde las de % para que se puedan mostrar
+//para cada huerto hacemos que se muestren las coordenadas 
+     for (i in gon.huertos){
+        var idHuerto=gon.huertos[i].id;
 
+        var polyline = $("#huerto_"+String(idHuerto));
+        var espacioSVG = $(".gridDerechaMapaHuertos");
+
+        var coordenadasPosicion = transformarPorcentajesACoordenadasPosicionEnSVG(polyline,espacioSVG);
+        //asignamos a los points del polyline las coordenadas posicion
+        $("#huerto_"+ String(idHuerto)).attr("points",coordenadasPosicion);
+     };
 	 
 //esto es lo que pasa al apretar agregar un huerto, se activan las opciones
      $('#botonAgregarHuerto').click(function () { 
@@ -15,7 +24,7 @@ $(document).ready(function(){
         figura.setAttribute("data-porcentajes","");
         figura.setAttribute("stroke","red");
         figura.setAttribute("fill","lightGreen");
-        $("svg").append(figura);
+        $("#svgMapaCampo").append(figura);
 
 // cuando se hace click en el svg, agregamos las coordenadas en porcentaje a el data de la figura
         $('svg').click(function (e){ 
@@ -33,7 +42,7 @@ $(document).ready(function(){
             }
         });
 
-//Lo que pasa cuando apretamos el boton cancelar
+//Lo que pasa cuando apretamos el boton cancelar de la izquierda al estar aregando un huerto
         $("#cancelarAgregarHuerto").click(function(){
         // se muestran los botones normales y se esconden los de agregar huerto
         $('.normal').show();
@@ -74,11 +83,11 @@ $(document).ready(function(){
 
 // aca estan las funciones que usamos en el main del doc------------------------------------------     
 
-function obtenerPosicionClickPorcentajes(e,svg){
-    var anchoSvg = svg.width();
-    var altoSvg = svg.height();
-    var posX = svg.position().left;
-    var posY = svg.position().top;
+function obtenerPosicionClickPorcentajes(e,contenedorSVG){
+    var anchoSvg = contenedorSVG.width();
+    var altoSvg = contenedorSVG.height();
+    var posX = contenedorSVG.position().left;
+    var posY = contenedorSVG.position().top;
     var posXenSvg = e.pageX - posX;
     var posYenSvg = e.pageY - posY;
     var porcentageX = posXenSvg/anchoSvg;
@@ -86,15 +95,15 @@ function obtenerPosicionClickPorcentajes(e,svg){
     return (String(porcentageX)+ ',' +String(porcentageY)+"-");    
 }
 
-function transformarPorcentajesACoordenadasPosicionEnSVG(figura,svg){
+function transformarPorcentajesACoordenadasPosicionEnSVG(figura,contenedorSVG){
     var coordenadasPorcentaje= figura.attr("data-porcentajes");
     //notemos que al hacer split el utimo elemento del arreglo sera " "
     var arregloCoordenadasEnPorcentaje= coordenadasPorcentaje.split("-");
     // quitamos el ultimo elemento que es " "
     arregloCoordenadasEnPorcentaje.pop();
     //ahora transformamos cada parte del array a coordenadas de posicion en el svg
-    var anchoSvg = svg.width();
-    var altoSvg = svg.height();
+    var anchoSvg = contenedorSVG.width();
+    var altoSvg = contenedorSVG.height();
     var arregloCoordenadasPosicion = [];
     for (i in arregloCoordenadasEnPorcentaje){
         var duplaCoordenadasPorcentage= arregloCoordenadasEnPorcentaje[i].split(",");
@@ -114,9 +123,9 @@ function transformarPorcentajesACoordenadasPosicionEnSVG(figura,svg){
 }
 
 
-function agregarCirculoEnClick(e,svg){
-    var posX = svg.position().left;
-    var posY = svg.position().top;
+function agregarCirculoEnClick(e,contenedorSVG){
+    var posX = contenedorSVG.position().left;
+    var posY = contenedorSVG.position().top;
     var posXenSvg = e.pageX - posX;
     var posYenSvg = e.pageY - posY;
     var circulo=document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -125,7 +134,7 @@ function agregarCirculoEnClick(e,svg){
     circulo.setAttribute("r","3");
     circulo.setAttribute("fill","red");
     circulo.setAttribute("class","circulitos");
-    $("svg").append(circulo);
+    $("#svgMapaCampo").append(circulo);
 }
 
 

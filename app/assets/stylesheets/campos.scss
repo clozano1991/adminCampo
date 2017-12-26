@@ -13,7 +13,7 @@
 	position: relative;
 	margin-left: 8.8%;
 	margin-bottom: 5vh;
-	min-height: 50vh;
+	height: 350px;
 }
 
 
@@ -23,7 +23,7 @@
 }
 .card.campo{
 	width: 50vw;
-	min-height: 50vh;
+	height: 350px;
 	position: absolute;
 	top: 0px;
 	border-color: black;
@@ -44,8 +44,9 @@
 	margin-left: 5px;
 }
 .botonesCampo{
-	float: right;
-	margin-top: 10vh;
+	position: absolute;
+	bottom: 10px;
+	right: 2%;
 }
 
 /* aca va todo lo asociado a la tarjeta de la nota de un campo*/
@@ -54,7 +55,7 @@
 }
 .card.notaCampo{
     width: 29vw;
-    min-height: 50vh;
+    height: 350px;
     position: absolute;
     top: 0px;
     left: 53vw;
@@ -67,7 +68,8 @@
 }
 .form-control.textField.dondeSeEscribeLaNota{
 	margin-top: 2vh;
-	min-height: 38vh;
+	min-height: 300px;
+	margin-bottom: 4px;
 }
 .btn.btn-success.guardarNota{
 	position: absolute;

@@ -6,6 +6,11 @@ class HuertosController < ApplicationController
 		@huerto=current_user.campos.find(params[:campo_id]).huertos.build
 		@huertos=current_user.campos.find(params[:campo_id]).huertos.all
 
+		gon.push({
+			huertos: @huertos
+		})
+		
+
 	end
 
 	def create
