@@ -2,15 +2,9 @@ class HuertosController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@huertos=current_user.campos.find(params[:campo_id]).huertos.all
 		@campo=current_user.campos.find(params[:campo_id])
 		@huerto=current_user.campos.find(params[:campo_id]).huertos.build
-		@huertos=current_user.campos.find(params[:campo_id]).huertos.all
-
-		gon.push({
-			huertos: @huertos
-		})
-		
-
 	end
 
 	def create
@@ -27,7 +21,7 @@ class HuertosController < ApplicationController
 	private
 	
 	def huerto_params
-		params.require(:huerto).permit(:nombre, :color, :coordenadas, :cultivo, :variedades, :descripcion)
+		params.require(:huerto).permit(:nombre, :clase, :coordenadas, :cultivo, :variedades, :descripcion)
 	end
 
 

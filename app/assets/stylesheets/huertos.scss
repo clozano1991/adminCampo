@@ -15,38 +15,42 @@
 	width: 11%;
 }
 
-.gridDerechaMapaHuertos{
+#gridDerechaMapaHuertos{
+	position: absolute;
 	display: inline-block;
-	width: 85%;
-	height: 100vh;
+	width: 84.5%;
+	height: 95vh;
 	border-style: solid;
 	border-color: black;
 	border-width: 1px;
 	background-color: white;
-	margin-left: 15%;
+	left: 15%;
 }
 
 .mensajesAyudaHuertos{
 	margin-top: 7vh;
 }
+/*los botones que se usan para agregar o quitar la imagen del mapa*/
+#botonesAgregarImagenMapa{
+	position: absolute;
+	right: 5px;
+	top: 3px;
+
+}
 
 /* aca estan las cosas que se muestran normalmente*/
 .btn.btn-success.normal{
 	min-width: 90%;
-	margin-bottom: 2vh;
-	
+	margin-bottom: 2vh;	
 }
 .btn.btn-primary.normal{
 	min-width: 90%;
 	margin-bottom: 2vh;
-
 }
 .btn.btn-danger.normal{
 	min-width: 90%;
 	margin-bottom: 2vh;
-
 }
-
 /* aca estan las cosas en la vista cuando se esta agregando un huerto*/
 .btn.btn-success.agregandoHuerto{
 	display: none;
@@ -58,11 +62,22 @@
 	min-width: 100%;
 	margin-bottom: 2vh;
 }
-.agregandoHuerto{
+.textoAgregandoHuerto{
+	display: none;
+
+}
+#coordenadasFormularioCreacionHuerto{/*para que no aparesca en la form que hay que llenar pero que si exista*/
 	display: none;
 }
-
-/*estas son las coordenadas de cuando se crea un huerto, para que no aparesca en la form que hay que llenar pero que si exista*/
-#coordenadasFormularioCreacionHuerto{
+/*aca estan las cosas en la vista cuando se esta editando un huerto*/
+.btn.btn-danger.editandoHuerto{
 	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+/**/
+.btn.btn-danger.eliminandoHuerto{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
 }

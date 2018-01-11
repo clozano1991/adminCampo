@@ -8,7 +8,11 @@ end
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'gon', '~> 6.1'
+
+
+
+
+
 
 group :development do
   # Use sqlite3 as the database for Active Record

@@ -1,49 +1,45 @@
 $(document).ready(function(){
+	// actualizamos los permisos
+    actualizarPermisos();
+	//aca mostramos el huerto creado
+    mostrandoHuerto();
+    // agregamos el modal correspondiente a sus opciones
+    agregandoModal();
+    //vemos que pasa al apretar el huerto creado
+    $("#huerto_<%=@huerto.id%>").click(function(){
+        haciendoClickEnHuerto();
+    }); 
+
+
+
+
+});
+
+function actualizarPermisos(){
     // escondemos el modal y receteamos sus valores
-	$("#agregarHuertoModal").modal("hide");
-	// se muestran los botones normales y se esconden los de agregar huerto
+    $("#agregarHuertoModal").modal("hide");
+    // se muestran los botones normales y se esconden los de agregar huerto
     $('.normal').show();
     $('.agregandoHuerto').hide();
+    $(".textoAgregandoHuerto").hide();
     //cambiamos la clase del huerto que se estaba creando  y lo escondemos.
     $(".huertoEnCreacion").attr("class","huertoDesechar");
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
     //cambiamos el id para que si se crea otro no se repita
     $("#HuertoNuevo").attr("id","");
-	//cambiamos el permiso del svg
-	$(".gridDerechaMapaHuertos").attr("data-permiso","noPermitido");
-	
+    //cambiamos el permiso del svg
+    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
+}
 
-	//aca tenemos que mostrar el huerto creado
-    //agregamos un polyline al svg y asignamos su id
-    var polyline= document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-    //agregamos el huerto al svg
-    polyline.setAttribute("id","huerto_<%=@huerto.id%>");
-    $("#svgMapaCampo").append(polyline);
-    // le asignamos las coordenaas en % que le corresponde 
-    $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
-    // obtenemos el grid donde esta el svg
-    var espacioSVG = $(".gridDerechaMapaHuertos");
-    // los usamos para obtener las coordenadas de posicion
-    var figura=$("#huerto_<%=@huerto.id%>");
-    var coordenadasPosicion= transformarPorcentajesACoordenadasPosicionEnSVG(figura,espacioSVG);
-    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
-
-    
- 
-
-
-
-
-function transformarPorcentajesACoordenadasPosicionEnSVG(figura,contenedorSVG){
-    var coordenadasPorcentaje= figura.attr("data-porcentajes");
-    //notemos que al hacer split el utimo elemento del arreglo sera " "
-    var arregloCoordenadasEnPorcentaje= coordenadasPorcentaje.split("-");
-    // quitamos el ultimo elemento que es " "
+function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
+    //hacemos notamos que el utimo elemento del arreglo sera " "
+    var arregloCoordenadasEnPorcentaje= String(porcentajes).split("-");
+    // notamos que el utimo elemento del arreglo sera " ", lo quitamos 
     arregloCoordenadasEnPorcentaje.pop();
     //ahora transformamos cada parte del array a coordenadas de posicion en el svg
-    var anchoSvg = contenedorSVG.width();
-    var altoSvg = contenedorSVG.height();
+    var anchoSvg = $("#gridDerechaMapaHuertos").width();
+    var altoSvg = $("#gridDerechaMapaHuertos").height();
     var arregloCoordenadasPosicion = [];
     for (i in arregloCoordenadasEnPorcentaje){
         var duplaCoordenadasPorcentage= arregloCoordenadasEnPorcentaje[i].split(",");
@@ -53,15 +49,71 @@ function transformarPorcentajesACoordenadasPosicionEnSVG(figura,contenedorSVG){
         duplaCoordenadasPosicion.push(String(x)+","+String(y));
         arregloCoordenadasPosicion.push(duplaCoordenadasPosicion[0]);
     }
-    // ahora que tenemos un arreglo de coordenadas en posicion, las metemos todas en un string
+    //aca hacemos que el ultimo elemento de string coordenadas sea el primero, cosa que se cierre 
+    var coordenadaPrimeraPosicionPorcentaje=arregloCoordenadasPosicion[0];
+    arregloCoordenadasPosicion.push(coordenadaPrimeraPosicionPorcentaje);
+
+    // ahora que tenemos un arreglo con las coordenadas en posicion, las metemos todas en un string
     var stringCoordenadas="";
-        for (i in arregloCoordenadasPosicion){
-           var stringCoordenadas=stringCoordenadas+String(arregloCoordenadasPosicion[i])+" ";
-        }
+    for (i in arregloCoordenadasPosicion){
+        var stringCoordenadas=stringCoordenadas+String(arregloCoordenadasPosicion[i])+" ";
+    }
+
     // retornamos las coordenadas que tienen que aplicarse al elemento polyline
     return stringCoordenadas
 }
 
-	
+function haciendoClickEnHuerto(){
+        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="normal"){
+            $("#modal_huerto_<%=@huerto.id%>").modal("show");    
+        }         
+        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="eliminando"){
+            $("#modal_huerto_<%=@huerto.id%>").modal("show") 
+        }
+        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="editando"){
+            $("#modal_huerto_<%=@huerto.id%>").modal("show")  
+        }
+}
 
-});
+function agregandoModal(){
+    $("#modalsHuertosOpciones").append("<%= j render  @huerto %>");
+
+}
+function mostrandoHuerto(){
+    //aca tenemos que mostrar el huerto creado
+    //agregamos un polyline al svg y asignamos su id
+    var polyline= document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    //agregamos el huerto al svg
+    polyline.setAttribute("id","huerto_<%=@huerto.id%>");
+    $("#svgMapaCampo").append(polyline);
+    // le asignamos las coordenaas en % que le corresponde 
+    $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
+    //asignamos el valor del id al data-id
+    $("#huerto_<%=@huerto.id%>").attr("data-id","<%=@huerto.id%>");
+    // los usamos para obtener las coordenadas de posicion
+    var coordenadasPosicion= transformarPorcentajesACoordenadasPosicionEnSVG($("#huerto_<%=@huerto.id%>").attr("data-porcentajes"));
+    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
+
+    //vemos los colores dependiendo de la clase
+    if("<%=@huerto.clase%>"=="green"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","lightGreen");
+        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
+    }
+    if("<%=@huerto.clase%>"=="red"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#FF221E");
+        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
+    }
+    if("<%=@huerto.clase%>"=="orange"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#FFBB1E");
+        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
+    }
+    if("<%=@huerto.clase%>"=="yellow"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#FFFC4F");
+        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
+    }
+    if("<%=@huerto.clase%>"=="blue"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#6691FF");
+        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
+    }
+
+}

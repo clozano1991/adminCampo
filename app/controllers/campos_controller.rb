@@ -4,10 +4,6 @@ class CamposController < ApplicationController
 	def index
 		@campos=current_user.campos.all
 		@campo=current_user.campos.build
-
-		gon.push({
-			auxiliar: "variableParaevitar el error de gon"
-		})
 	end 
 
 	

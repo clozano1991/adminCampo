@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213203619) do
+ActiveRecord::Schema.define(version: 20171227145917) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171213203619) do
   create_table "huertos", force: :cascade do |t|
     t.integer "campo_id"
     t.string "nombre"
-    t.string "color"
+    t.string "clase"
     t.text "coordenadas"
     t.string "cultivo"
     t.text "variedades"
