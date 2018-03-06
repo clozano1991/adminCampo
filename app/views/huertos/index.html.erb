@@ -6,35 +6,66 @@
             <!-- clase vista normal-->
             <button type="button" class="btn btn-success normal" id="botonAgregarHuerto">Agregar un Huerto</button> 
             <button type="button" class="btn btn-primary normal" id="botonEditarHuerto">Editar un Huerto</button>
-            <button type="button" class="btn btn-danger normal ">Eliminar un Huerto</button>
+            <button type="button" class="btn btn-danger normal" id= "botonEliminarHuerto">Eliminar un Huerto</button>
 
             <!-- clase agregandoHuerto-->
             <button type="button" class="btn btn-success agregandoHuerto" id="botonConfirmarAgregarHuerto">Confirmar</button>
             <button type="button" class="btn btn-danger agregandoHuerto " id="cancelarAgregarHuerto">Cancelar</button>   
 
-            <!-- clase editandoHuerto-->
-            <button type="button" class="btn btn-danger editandoHuerto " id="cancelarEditarHuerto">Terminar edicion</button>
-            <button type="button" class="btn btn-danger editandoHuerto " id="editarFiguraHuerto">Editar figura</button>
-            <button type="button" class="btn btn-danger editandoHuerto " id="editarInformacionHuerto">Editar Informacion</button>
+            <!-- clase editandoHuertoGeneral-->
+            <button type="button" class="btn btn-danger editandoHuertoGeneral " id="cancelarEditarHuertoGeneral">cancelar</button>
+            <button type="button" class="btn btn-primary editandoHuertoGeneral " id="editarHuertoFigura">Editar figura</button>
+            <button type="button" class="btn btn-primary editandoHuertoGeneral " id="editarInformacionHuerto">Editar Informacion</button>
+            <!-- clase eligiendoHuertoFiguraParaEditar-->
+            <button type="button" class="btn btn-danger eligiendoHuertoFiguraParaEditar " id="cancelarEligiendoHuertoFiguraParaEditar">cancelar</button>
+            <!-- clase editandoHuertoFiguraElegida-->
+            <button type="button" class="btn btn-success editandoHuertoFiguraElegida" id="confirmarEditandoHuertoFiguraElegida">Confirmar</button>
+            <button type="button" class="btn btn-danger editandoHuertoFiguraElegida " id="cancelarEditandoHuertoFiguraElegida">cancelar</button>
+
 
             <!-- clase eliminandoHuerto--> 
-            <button type="button" class="btn btn-danger eliminandoHuerto " id="cancelarEliminarHuerto">Terminar Eliminar</button>   
+            <button type="button" class="btn btn-danger eliminandoHuerto " id="cancelarEliminarHuerto">Cancelar</button>   
        </div>	
        
        <div class="mensajesAyudaHuertos">
-           <p class="normal">Para acceder a un huerto precione sobre el en el mapa</p>
-           <p class="textoAgregandoHuerto">Una vez que la figura del nuevo huerto este estalecida precione el boton "confirmar" para continuar</p> 
+           <strong>
+           <!-- clase normal--> 
+           <p class="textoNormal">Para acceder a las opciones de un huerto precione sobre el en el mapa.</p>
+
+           <!-- clase agregando huerto--> 
+           <p class="textoAgregandoHuerto">1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
+           <p class="textoAgregandoHuerto">2) Una vez que la figura del nuevo huerto este estalecida precione el boton "confirmar" para continuar.</p> 
+
+           <!-- clase seleccion editando huerto-->
+           <p class="textoEditandoHuertoGeneral">Seleccione si quiere editar la figura del huerto o su informacion. </p>
+           <!-- seleccionando figura del huerto para editar -->
+           <p class="textoEligiendoHuertoFiguraParaEditar"> precione sobre el huerto al cual quiere cambiar su figura o posicion</p>
+           <!-- editando figura del huerto -->
+           <p class="textoEditandoHuertoFiguraElegida"> 1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
+           <p class="textoEditandoHuertoFiguraElegida"> 2) Una vez que la figura del nuevo huerto este estalecida precione el boton "confirmar" para continuar.</p> 
+
+
+           <!-- editando informacion del huerto -->
+           <p class="textoEditandoInformacionHuerto"></p> 
+
+
+           <!-- clase eliminando huerto--> 
+           <p class="textoEliminandoHuerto"> Presione el huerto que quiera eliminar.</p>
+
+          </strong>
        </div>
    </div>
 
 
     <!--ESte es el svg donde se muestran todas las imagenes de los huertos-->
     <div id="gridDerechaMapaHuertos" data-permiso="normal">
-        <div id="botonesAgregarImagenMapa">
-           <button type="button" class="btn btn-secondary">Imagen de Fondo</button>
-           <button type="button" class="btn btn-secondary"><strong>+</strong></button>
-           <button type="button" class="btn btn-secondary"><strong>-</strong></button>  
-       </div>
+      <div id="botonesAgregarImagenMapa">
+          <%=link_to(button_tag("Agregar Mapa", class: "btn btn-secondary" ),user_campo_user_campo_huerto_mapa_path(current_user,@campo), method: :get  )%>
+      </div>
+      <!--es lo que se usa para crear un huerto-->
+      <div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
+        <strong>Huerto seleccionado para su edicion.</strong>
+      </div>
       
       <svg style="width:100%;height:100%;" id="svgMapaCampo">
            <text x="3%" y="3%" fill="black">Mapa del campo: <%=@campo.nombre%></text> 
@@ -46,7 +77,7 @@
     <!--Aca ponemos el modal que aparece al apretar un huerto, no puede ir dentro del svg, pr eso lo ponemos afuera, se triguea desde el poliline que esta en el svg-->
     <% @adentroSVG = false%>
     <div id="modalsHuertosOpciones">
-    <%=render @huertos%>
+    <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
     </div>
     
 
@@ -54,3 +85,10 @@
     <%=render partial: "crearHuerto"%>
 </div>
 
+
+
+
+<!--es lo que se usa para alertar cosas-->
+<div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
+  El huerto a sido seleccionado para su edicion.
+</div>

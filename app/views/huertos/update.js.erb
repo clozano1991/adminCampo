@@ -1,0 +1,57 @@
+$(document).ready(function(){
+    // actualizamos los points
+    $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
+    var porcentajes=$("#huerto_<%=@huerto.id%>").attr("data-porcentajes");
+    var coordenadasPosicion = transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes);
+    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
+
+    // quitamos el huerto que se uso para editar
+    $("#huertoEditando_<%=@huerto.id%>").attr("class","huertoDesechar")
+    $(".circulitos").attr("class","huertoDesechar");
+    $("#huertoEditando_<%=@huerto.id%>").hide();
+    $("#huertoEditando_<%=@huerto.id%>").attr("id","")
+
+
+	// actualizamos los permisos
+	$(".normal").show();
+    $('.textoNormal').show();
+    $(".editandoHuertoFiguraElegida").hide();
+    $(".textoEditandoHuertoFiguraElegida").hide();
+    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
+
+
+
+
+
+});
+
+function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
+    //hacemos notamos que el utimo elemento del arreglo sera " "
+    var arregloCoordenadasEnPorcentaje= String(porcentajes).split("-");
+    // notamos que el utimo elemento del arreglo sera " ", lo quitamos 
+    arregloCoordenadasEnPorcentaje.pop();
+    //ahora transformamos cada parte del array a coordenadas de posicion en el svg
+    var anchoSvg = $("#gridDerechaMapaHuertos").width();
+    var altoSvg = $("#gridDerechaMapaHuertos").height();
+    var arregloCoordenadasPosicion = [];
+    for (i in arregloCoordenadasEnPorcentaje){
+        var duplaCoordenadasPorcentage= arregloCoordenadasEnPorcentaje[i].split(",");
+        var x=parseFloat(duplaCoordenadasPorcentage[0])*anchoSvg;
+        var y=parseFloat(duplaCoordenadasPorcentage[1])*altoSvg;
+        var duplaCoordenadasPosicion = [];
+        duplaCoordenadasPosicion.push(String(x)+","+String(y));
+        arregloCoordenadasPosicion.push(duplaCoordenadasPosicion[0]);
+    }
+    //aca hacemos que el ultimo elemento de string coordenadas sea el primero, cosa que se cierre 
+    var coordenadaPrimeraPosicionPorcentaje=arregloCoordenadasPosicion[0];
+    arregloCoordenadasPosicion.push(coordenadaPrimeraPosicionPorcentaje);
+
+    // ahora que tenemos un arreglo con las coordenadas en posicion, las metemos todas en un string
+    var stringCoordenadas="";
+    for (i in arregloCoordenadasPosicion){
+        var stringCoordenadas=stringCoordenadas+String(arregloCoordenadasPosicion[i])+" ";
+    }
+
+    // retornamos las coordenadas que tienen que aplicarse al elemento polyline
+    return stringCoordenadas
+}

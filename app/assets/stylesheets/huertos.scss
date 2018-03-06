@@ -28,7 +28,7 @@
 }
 
 .mensajesAyudaHuertos{
-	margin-top: 7vh;
+	margin-top: 30px;
 }
 /*los botones que se usan para agregar o quitar la imagen del mapa*/
 #botonesAgregarImagenMapa{
@@ -69,15 +69,77 @@
 #coordenadasFormularioCreacionHuerto{/*para que no aparesca en la form que hay que llenar pero que si exista*/
 	display: none;
 }
+
+
 /*aca estan las cosas en la vista cuando se esta editando un huerto*/
-.btn.btn-danger.editandoHuerto{
+/*se elige si se edita la figura o la informacion del huerto*/
+.btn.btn-danger.editandoHuertoGeneral{
 	display: none;
 	min-width: 100%;
 	margin-bottom: 2vh;
 }
+.btn.btn-primary.editandoHuertoGeneral{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.btn.btn-success.eligiendoHuertoFiguraParaEditar{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.btn.btn-danger.eligiendoHuertoFiguraParaEditar{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.btn.btn-success.editandoHuertoFiguraElegida{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+.btn.btn-danger.editandoHuertoFiguraElegida{
+	display: none;
+	min-width: 100%;
+	margin-bottom: 2vh;
+}
+/*se elige si se edita la figura o la informacion del huerto*/
+.textoEditandoHuertoGeneral{
+	display: none;
+}
+.textoEligiendoHuertoFiguraParaEditar{
+	display: none;
+}
+.textoEditandoHuertoFiguraElegida{
+	display: none;
+}
+.textoEditandoInformacionHuerto{
+	display: none;
+}
 /**/
+#avisoHuertoSeleccionado{
+	display: none;
+	position: absolute;
+	top:2.5%;
+	left: calc(50% - 225px);
+	width: 450px;
+	text-align: center;
+}
+.formOcultaEditarHuertoFigura{
+	display: none;
+
+}
+
+
+
+
+
+/* las cosas cuando se esta eliminando un huerto*/
 .btn.btn-danger.eliminandoHuerto{
 	display: none;
 	min-width: 100%;
 	margin-bottom: 2vh;
+}
+.textoEliminandoHuerto{
+	display: none;
 }

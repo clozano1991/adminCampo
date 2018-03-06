@@ -20,6 +20,7 @@ function actualizarPermisos(){
     $("#agregarHuertoModal").modal("hide");
     // se muestran los botones normales y se esconden los de agregar huerto
     $('.normal').show();
+    $('.textoNormal').show();
     $('.agregandoHuerto').hide();
     $(".textoAgregandoHuerto").hide();
     //cambiamos la clase del huerto que se estaba creando  y lo escondemos.
@@ -27,7 +28,7 @@ function actualizarPermisos(){
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
     //cambiamos el id para que si se crea otro no se repita
-    $("#HuertoNuevo").attr("id","");
+    $("#huertoNuevo").attr("id","");
     //cambiamos el permiso del svg
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
 }
@@ -67,8 +68,8 @@ function haciendoClickEnHuerto(){
         if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="normal"){
             $("#modal_huerto_<%=@huerto.id%>").modal("show");    
         }         
-        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="eliminando"){
-            $("#modal_huerto_<%=@huerto.id%>").modal("show") 
+        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="eliminandoHuerto"){
+            $("#modal_borrar_huerto_<%=@huerto.id%>").modal("show") 
         }
         if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="editando"){
             $("#modal_huerto_<%=@huerto.id%>").modal("show")  
@@ -76,7 +77,7 @@ function haciendoClickEnHuerto(){
 }
 
 function agregandoModal(){
-    $("#modalsHuertosOpciones").append("<%= j render  @huerto %>");
+    $("#modalsHuertosOpciones").append("<%= j render partial: 'huerto', locals: {campo: @campo,huerto: @huerto } %>");
 
 }
 function mostrandoHuerto(){
