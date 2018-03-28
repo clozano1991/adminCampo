@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	resources :users do
 		resources :campos do
 			resources :huertos
-			get "/mapa" => "huertos#elegir_mapa", as: :user_campo_huerto_mapa
+			get "/mapa" => "campos#elegir_mapa", as: :elegir_mapa
 		end
 	end
 

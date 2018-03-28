@@ -35,10 +35,9 @@ class HuertosController < ApplicationController
 		end
 	end
 
-	def elegir_mapa
-		@campo=current_user.campos.find(params[:campo_id])
+	
 
-	end
+	
 
 
 

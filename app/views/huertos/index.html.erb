@@ -58,9 +58,9 @@
 
 
     <!--ESte es el svg donde se muestran todas las imagenes de los huertos-->
-    <div id="gridDerechaMapaHuertos" data-permiso="normal">
+    <div id="gridDerechaMapaHuertos" data-permiso="normal" data-urlimagen="<%=@campo.urlimagen%>">
       <div id="botonesAgregarImagenMapa">
-          <%=link_to(button_tag("Agregar Mapa", class: "btn btn-secondary" ),user_campo_user_campo_huerto_mapa_path(current_user,@campo), method: :get  )%>
+          <%=link_to(button_tag("Agregar Mapa", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
       </div>
       <!--es lo que se usa para crear un huerto-->
       <div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
@@ -92,3 +92,5 @@
 <div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
   El huerto a sido seleccionado para su edicion.
 </div>
+
+

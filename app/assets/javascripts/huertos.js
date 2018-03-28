@@ -1,5 +1,9 @@
 $(document).ready(function(){       
-//main
+//main de la parte principal de los huertos
+
+    //mostramos la imagen de fondo del huerto 
+    mostrarMapaFondo();
+
     //mostramos los huertos existentes al cargar el doc
     $(".huertos").each(function(){
         mostrarHuerto($(this));
@@ -48,7 +52,6 @@ $(document).ready(function(){
         confirmarEditandoHuertoFiguraElegida();
 
     });
-
     //cancelar editando huerto figura elegida
     $("#cancelarEditandoHuertoFiguraElegida").click(function(){
         cancelarEditandoHuertoFiguraElegida();
@@ -66,11 +69,16 @@ $(document).ready(function(){
 
 
     
-
-    
 });
 
-//---------------------------------funciones-------------------------------------------------
+//---------------------------------funciones parte huertos general-------------------------------------------------
+function mostrarMapaFondo(){
+    var imagenEnTexto = $("#gridDerechaMapaHuertos").attr("data-urlimagen");    
+    $("#svgMapaCampo").css("background-image","url("+imagenEnTexto+")");
+}
+
+
+
 
 function mostrarHuerto(figura){
         var porcentajes=figura.attr("data-porcentajes");
@@ -384,13 +392,11 @@ function cancelarEditandoHuertoFiguraElegida(){
 }
 
 function botonEditarHuertoInformacion(){
-
 }
 
 
 
-
-
+//---------------------------------funciones parte seleccionar mapa-----------------------
 
 
 

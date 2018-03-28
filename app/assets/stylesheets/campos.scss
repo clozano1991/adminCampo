@@ -77,3 +77,22 @@
 	bottom: 1vh;
 
 }
+
+/* aca va todo lo asociado a la parte de agregar mapa de un campo*/
+.gridDerechaMapaHuertosSeleccionarMapa{
+	position: absolute;
+	display: inline-block;
+	width: 84.5%;
+	height: calc(94vh - 42px);
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: white;
+	left: 15%;
+}
+
+
+
+.card.seleccionarMapaCampo{
+	display: none;
+}

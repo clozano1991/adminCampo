@@ -4,6 +4,7 @@
     <title>Geolocation</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -25,15 +26,31 @@
        
        <div class="mensajesAyudaHuertos">
        	<strong>
-       	    <p class="textoNormal">1) Posicionar el mapa de la derecha segun su preferencia.</p>
+       	    <p class="textoNormal">1) Posicionar el mapa de la derecha segun la superficie del campo que quiere agregar.</p>
        	    <p class="textoNormal">2) Una vez posicionado apretar seleccionar para proceder.</p>
        	</strong>
        </div>
    </div>
 
-   <div id="gridDerechaMapaHuertos" >
+   <div id="gridDerechaMapaHuertosSeleccionarMapa" >
    	  <div id="map"></div>
    </div>
+
+</div>
+
+
+<!--form para subir la imagen-->
+   <div class="card seleccionarMapaCampo"  >
+                     <div class="card-body">
+                             <%=form_for @campo, url: user_campo_path(current_user, @campo), method: :put, :html => {:id => "guardandoUrlBaseDiesParaCampo"} do |form| %>
+                                  <%=form.text_area :urlimagen, id: "urlImagenMapaAUsar"%>
+                                    
+                             <%end%>      
+                     </div>
+                     
+</div>  
+
+
 
 
    <script>
@@ -46,7 +63,7 @@
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
           mapTypeId: 'satellite',
-          zoom: 6,
+          zoom: 8,
           disableDefaultUI: true,
           zoomControl:true
         });
@@ -61,7 +78,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('Localizacion encontrada');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
@@ -76,7 +93,7 @@
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
-                              'No pudimos detectar su ubicacion actual, use el mapa para buscar manualmente.' :
+                              'Use el mapa para buscar la superficie del campo' :
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
