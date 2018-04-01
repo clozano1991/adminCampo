@@ -79,7 +79,25 @@
 }
 
 /* aca va todo lo asociado a la parte de agregar mapa de un campo*/
-.gridDerechaMapaHuertosSeleccionarMapa{
+.contenedorMapaElegir{
+	background-color: lightgrey;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 2vh;
+	padding-left: 2%;
+	padding-right: 1.3%;
+	padding-bottom: 2vh;
+}
+.gridIzquierdaElegirMapa{
+	position: absolute;
+	left:2%;
+	top:16%;
+	width: 11%;
+}
+.mensajesAyudaElegirMapa{
+	margin-top: 30px;
+}
+#gridDerechaMapaHuertosSeleccionarMapa{
 	position: absolute;
 	display: inline-block;
 	width: 84.5%;
@@ -95,4 +113,14 @@
 
 .card.seleccionarMapaCampo{
 	display: none;
+}
+
+#avisoGuardandoMapa{
+	display: none;
+	position: absolute;
+	top:10vw;
+	left: calc(60vw - 225px);
+	width: 450px;
+	text-align: center;
+
 }

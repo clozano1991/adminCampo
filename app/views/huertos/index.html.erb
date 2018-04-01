@@ -2,7 +2,10 @@
 <div class="contenedorHuertos">
    <!--este es el bloque donde estan todas las cosas de la izquierda, botones y textos-->
    <div class="gridIzquierda">
-       <div class="">
+       <div class="nombreCampoParaHuertos">
+         <h5><strong> Campo: <%=@campo.nombre%></strong></h5>
+       </div>
+       <div class="botonesHuertos">
             <!-- clase vista normal-->
             <button type="button" class="btn btn-success normal" id="botonAgregarHuerto">Agregar un Huerto</button> 
             <button type="button" class="btn btn-primary normal" id="botonEditarHuerto">Editar un Huerto</button>
@@ -59,16 +62,21 @@
 
     <!--ESte es el svg donde se muestran todas las imagenes de los huertos-->
     <div id="gridDerechaMapaHuertos" data-permiso="normal" data-urlimagen="<%=@campo.urlimagen%>">
+      <!--Boton para agregar mapa de fondo-->
       <div id="botonesAgregarImagenMapa">
           <%=link_to(button_tag("Agregar Mapa", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
       </div>
-      <!--es lo que se usa para crear un huerto-->
+
+      <!--Son las alertas que aparecen dentro del mapa-->
       <div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
         <strong>Huerto seleccionado para su edicion.</strong>
       </div>
+      <div id="avisoCargandoMapaHuerto" class="alert alert-primary" role="alert">
+        <strong>Cargando el mapa</strong>
+      </div>
+
       
       <svg style="width:100%;height:100%;" id="svgMapaCampo">
-           <text x="3%" y="3%" fill="black">Mapa del campo: <%=@campo.nombre%></text> 
            <!--aca para cada huerto se ejecuta el codigo -->
            <% @adentroSVG= true%>  
            <%=render @huertos%>
@@ -86,11 +94,5 @@
 </div>
 
 
-
-
-<!--es lo que se usa para alertar cosas-->
-<div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
-  El huerto a sido seleccionado para su edicion.
-</div>
 
 

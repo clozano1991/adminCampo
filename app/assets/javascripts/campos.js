@@ -16,8 +16,12 @@ $(document).ready(function(){
 });
 
 
+
+
 // lo que pasa al seleccionar el mapa, aca se completa todo
 function seleccionarMapa(){
+    //mostramos aviso, modificamos imagen del mouse y 
+    $("#avisoGuardandoMapa").fadeIn(2000);
     // le quitamos los botones al mapa ara que no salgan en la foto
     map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
     // pasamos el html a canvas

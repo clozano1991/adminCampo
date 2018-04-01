@@ -16,15 +16,15 @@
     </style>
   </head>
 <body>
-<div class="contenedorHuertos">
+<div class="contenedorMapaElegir">
    <!--este es el bloque donde estan todas las cosas de la izquierda, botones y textos-->
-   <div class="gridIzquierda">
+   <div class="gridIzquierdaElegirMapa">
        <div class="">
        	    <button type="button" class="btn btn-success normal" id="botonSeleccionarMapa">Seleccionar</button> 
             <button type="button" class="btn btn-danger normal" id= "botonCancelarSeleccionarMapa">Cancelar</button>
        </div>	
        
-       <div class="mensajesAyudaHuertos">
+       <div class="mensajesAyudaElegirMapa">
        	<strong>
        	    <p class="textoNormal">1) Posicionar el mapa de la derecha segun la superficie del campo que quiere agregar.</p>
        	    <p class="textoNormal">2) Una vez posicionado apretar seleccionar para proceder.</p>
@@ -32,23 +32,31 @@
        </div>
    </div>
 
+   <!--este es el bloque donde estan todas las cosas de la derecha, mapa-->
    <div id="gridDerechaMapaHuertosSeleccionarMapa" >
+
+      <!--div del mapa que toma todo el contenido del grid-->
    	  <div id="map"></div>
    </div>
 
 </div>
 
 
+
 <!--form para subir la imagen-->
-   <div class="card seleccionarMapaCampo"  >
+    <div class="card seleccionarMapaCampo"  >
                      <div class="card-body">
                              <%=form_for @campo, url: user_campo_path(current_user, @campo), method: :put, :html => {:id => "guardandoUrlBaseDiesParaCampo"} do |form| %>
                                   <%=form.text_area :urlimagen, id: "urlImagenMapaAUsar"%>
                                     
                              <%end%>      
-                     </div>
-                     
-</div>  
+                     </div>                
+    </div>  
+
+<!--alerta oculta que se muestra cuando ya e seleciona el contenido del mapa-->
+    <div id="avisoGuardandoMapa" class="alert alert-success" role="alert">
+        <strong>Guardando Mapa</strong>
+    </div>
 
 
 

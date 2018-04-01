@@ -73,8 +73,10 @@ $(document).ready(function(){
 
 //---------------------------------funciones parte huertos general-------------------------------------------------
 function mostrarMapaFondo(){
+    $("#avisoCargandoMapaHuerto").show();
     var imagenEnTexto = $("#gridDerechaMapaHuertos").attr("data-urlimagen");    
     $("#svgMapaCampo").css("background-image","url("+imagenEnTexto+")");
+    $("#avisoCargandoMapaHuerto").fadeOut(3000);
 }
 
 

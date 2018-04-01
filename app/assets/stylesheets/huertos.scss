@@ -8,45 +8,21 @@
 	padding-bottom: 2vh;
 }
 
+/*todo lo de la izquierda-----------------------------------------------------------*/
 .gridIzquierda{
 	position: absolute;
 	left:2%;
-	top:16%;
+	top:14%;
 	width: 11%;
 }
+.nombreCampoParaHuertos{
 
-#gridDerechaMapaHuertos{
-	position: absolute;
-	display: inline-block;
-	width: 84.5%;
-	height: calc(94vh - 42px);
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	background-color: white;
-	left: 15%;
-}
-#gridDerechaMapaHuertosSeleccionarMapa{
-	position: absolute;
-	display: inline-block;
-	width: 84.5%;
-	height: calc(94vh - 42px);
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	background-color: white;
-	left: 15%;
 }
 
 .mensajesAyudaHuertos{
 	margin-top: 30px;
 }
-/*los botones que se usan para agregar o quitar la imagen del mapa*/
-#botonesAgregarImagenMapa{
-	position: absolute;
-	right: 5px;
-	top: 3px;
-}
+
 
 /* aca estan las cosas que se muestran normalmente*/
 .btn.btn-success.normal{
@@ -126,24 +102,13 @@
 .textoEditandoInformacionHuerto{
 	display: none;
 }
-/**/
-#avisoHuertoSeleccionado{
-	display: none;
-	position: absolute;
-	top:2.5%;
-	left: calc(50% - 225px);
-	width: 450px;
-	text-align: center;
-}
-.formOcultaEditarHuertoFigura{
+
+.formOcultaEditarHuertoFigura{ /*es la clase a la que se mandan las cosas para ocultarse*/
 	display: none;
 }
 
 
-
-
-
-/* las cosas cuando se esta eliminando un huerto*/
+/* eliminando un huerto*/
 .btn.btn-danger.eliminandoHuerto{
 	display: none;
 	min-width: 100%;
@@ -154,6 +119,64 @@
 }
 
 
-#probando{
-	margin-top: 100vh;
+
+
+
+
+
+/*todo lo de la derecha-----------------------------------------------------------*/
+#gridDerechaMapaHuertos{
+	position: absolute;
+	display: inline-block;
+	width: 84.5%;
+	height: calc(94vh - 42px);
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: white;
+	left: 15%;
+}
+
+/*los botones que se usan para agregar o quitar la imagen del mapa*/
+#botonesAgregarImagenMapa{
+	position: absolute;
+	right: 5px;
+	top: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+/*aca estan los avisos que se usan--------------------------------------------------*/
+
+#avisoCargandoMapaHuerto{
+	display: none;
+	position: absolute;
+	top:2.5%;
+	left: calc(50% - 225px);
+	width: 450px;
+	text-align: center;
+}
+
+#avisoHuertoSeleccionado{
+	display: none;
+	position: absolute;
+	top:2.5%;
+	left: calc(50% - 225px);
+	width: 450px;
+	text-align: center;
+}
+#avisoHuertoSeleccionado{
+	display: none;
+	position: absolute;
+	top:2.5%;
+	left: calc(50% - 225px);
+	width: 450px;
+	text-align: center;
 }
