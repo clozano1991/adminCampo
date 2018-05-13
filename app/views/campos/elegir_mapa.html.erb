@@ -55,7 +55,7 @@
 
 <!--alerta oculta que se muestra cuando ya e seleciona el contenido del mapa-->
     <div id="avisoGuardandoMapa" class="alert alert-success" role="alert">
-        <strong>Guardando Mapa</strong>
+        <strong>Guardando Mapa Seleccionado</strong>
     </div>
 
 
@@ -69,11 +69,13 @@
       var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
+          disableDefaultUI: true,
           center: {lat: -34.397, lng: 150.644},
           mapTypeId: 'satellite',
-          zoom: 8,
+          zoom: 4,
           disableDefaultUI: true,
-          zoomControl:true
+          zoomControl:true,
+          
         });
         infoWindow = new google.maps.InfoWindow;
 

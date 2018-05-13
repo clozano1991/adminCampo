@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellidoPaterno: MyString
+  apellidoMaterno: MyString
+  direccion: MyString
+  telefonoContacto: MyString
+  telefonoEmergencia: MyString
+  estado: MyString
+  tipoTrabajador: MyString
+  sueldoBase: 1
+  afpAcogida: MyString
+  campo: 
+
+two:
+  nombre: MyString
+  apellidoPaterno: MyString
+  apellidoMaterno: MyString
+  direccion: MyString
+  telefonoContacto: MyString
+  telefonoEmergencia: MyString
+  estado: MyString
+  tipoTrabajador: MyString
+  sueldoBase: 1
+  afpAcogida: MyString
+  campo: 

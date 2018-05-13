@@ -1,13 +1,17 @@
 .contenedorCampos{
-	background-color: lightgrey;
+	position: relative;
+	background-color: #f0e6c8;
 	width: 100%;
 	min-height: 100vh;
 	padding-top: 3vh;
 	padding-bottom: 5vh;
 }
 #botonCrearCampo{
-	margin-left:2%;
-	margin-bottom: 2%;
+	position: absolute;
+	right: 2%;
+}
+#listaCampos{
+	margin-top: 65px;
 }
 .campoYNotas{
 	position: relative;
@@ -26,10 +30,10 @@
 	height: 350px;
 	position: absolute;
 	top: 0px;
-	border-color: black;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 .card-header.campo{
-	background-color: #4CB200;
+	background-color: #7c81b8;
 	display: inline-block;
 }
 .tituloCampoIzquierda{
@@ -39,10 +43,7 @@
 	display: inline-block;
 	float: right;
 }
-.fotoOpcion{
-	width: 20px;
-	margin-left: 5px;
-}
+
 .botonesCampo{
 	position: absolute;
 	bottom: 3%;
@@ -59,7 +60,7 @@
     position: absolute;
     top: 0px;
     left: 53vw;
-    border-color: black;   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
 }
 .tituloRecordatorio{
 	position: absolute;

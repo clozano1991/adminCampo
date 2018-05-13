@@ -5,6 +5,7 @@ class HuertosController < ApplicationController
 		@huertos=current_user.campos.find(params[:campo_id]).huertos.all
 		@campo=current_user.campos.find(params[:campo_id])
 		@huerto=current_user.campos.find(params[:campo_id]).huertos.build
+
 	end
 
 	def create
@@ -37,14 +38,13 @@ class HuertosController < ApplicationController
 
 	
 
-	
 
 
 
 	private
 	
 	def huerto_params
-		params.require(:huerto).permit(:nombre, :clase, :coordenadas, :cultivo, :variedades, :descripcion)
+		params.require(:huerto).permit(:nombre, :clase, :coordenadas, :cultivo, :variedades, :descripcion, :bloqueMapa)
 	end
 
 

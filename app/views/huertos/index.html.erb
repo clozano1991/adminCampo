@@ -1,92 +1,130 @@
 
 <div class="contenedorHuertos">
-   <!--este es el bloque donde estan todas las cosas de la izquierda, botones y textos-->
-   <div class="gridIzquierda">
-       <div class="nombreCampoParaHuertos">
-         <h5><strong> Campo: <%=@campo.nombre%></strong></h5>
-       </div>
-       <div class="botonesHuertos">
-            <!-- clase vista normal-->
-            <button type="button" class="btn btn-success normal" id="botonAgregarHuerto">Agregar un Huerto</button> 
-            <button type="button" class="btn btn-primary normal" id="botonEditarHuerto">Editar un Huerto</button>
-            <button type="button" class="btn btn-danger normal" id= "botonEliminarHuerto">Eliminar un Huerto</button>
-
-            <!-- clase agregandoHuerto-->
-            <button type="button" class="btn btn-success agregandoHuerto" id="botonConfirmarAgregarHuerto">Confirmar</button>
-            <button type="button" class="btn btn-danger agregandoHuerto " id="cancelarAgregarHuerto">Cancelar</button>   
-
-            <!-- clase editandoHuertoGeneral-->
-            <button type="button" class="btn btn-danger editandoHuertoGeneral " id="cancelarEditarHuertoGeneral">cancelar</button>
-            <button type="button" class="btn btn-primary editandoHuertoGeneral " id="editarHuertoFigura">Editar figura</button>
-            <button type="button" class="btn btn-primary editandoHuertoGeneral " id="editarInformacionHuerto">Editar Informacion</button>
-            <!-- clase eligiendoHuertoFiguraParaEditar-->
-            <button type="button" class="btn btn-danger eligiendoHuertoFiguraParaEditar " id="cancelarEligiendoHuertoFiguraParaEditar">cancelar</button>
-            <!-- clase editandoHuertoFiguraElegida-->
-            <button type="button" class="btn btn-success editandoHuertoFiguraElegida" id="confirmarEditandoHuertoFiguraElegida">Confirmar</button>
-            <button type="button" class="btn btn-danger editandoHuertoFiguraElegida " id="cancelarEditandoHuertoFiguraElegida">cancelar</button>
-
-
-            <!-- clase eliminandoHuerto--> 
-            <button type="button" class="btn btn-danger eliminandoHuerto " id="cancelarEliminarHuerto">Cancelar</button>   
-       </div>	
-       
-       <div class="mensajesAyudaHuertos">
-           <strong>
-           <!-- clase normal--> 
-           <p class="textoNormal">Para acceder a las opciones de un huerto precione sobre el en el mapa.</p>
-
-           <!-- clase agregando huerto--> 
-           <p class="textoAgregandoHuerto">1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
-           <p class="textoAgregandoHuerto">2) Una vez que la figura del nuevo huerto este estalecida precione el boton "confirmar" para continuar.</p> 
-
-           <!-- clase seleccion editando huerto-->
-           <p class="textoEditandoHuertoGeneral">Seleccione si quiere editar la figura del huerto o su informacion. </p>
-           <!-- seleccionando figura del huerto para editar -->
-           <p class="textoEligiendoHuertoFiguraParaEditar"> precione sobre el huerto al cual quiere cambiar su figura o posicion</p>
-           <!-- editando figura del huerto -->
-           <p class="textoEditandoHuertoFiguraElegida"> 1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
-           <p class="textoEditandoHuertoFiguraElegida"> 2) Una vez que la figura del nuevo huerto este estalecida precione el boton "confirmar" para continuar.</p> 
-
-
-           <!-- editando informacion del huerto -->
-           <p class="textoEditandoInformacionHuerto"></p> 
-
-
-           <!-- clase eliminando huerto--> 
-           <p class="textoEliminandoHuerto"> Presione el huerto que quiera eliminar.</p>
-
-          </strong>
-       </div>
-   </div>
-
-
-    <!--ESte es el svg donde se muestran todas las imagenes de los huertos-->
-    <div id="gridDerechaMapaHuertos" data-permiso="normal" data-urlimagen="<%=@campo.urlimagen%>">
-      <!--Boton para agregar mapa de fondo-->
-      <div id="botonesAgregarImagenMapa">
-          <%=link_to(button_tag("Agregar Mapa", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
-      </div>
-
-      <!--Son las alertas que aparecen dentro del mapa-->
-      <div id="avisoHuertoSeleccionado" class="alert alert-success" role="alert">
-        <strong>Huerto seleccionado para su edicion.</strong>
-      </div>
-      <div id="avisoCargandoMapaHuerto" class="alert alert-primary" role="alert">
-        <strong>Cargando el mapa</strong>
-      </div>
-
+  <!--este es el bloque donde estan todas las cosas de la izquierda, botones y textos-->
+  <div class="gridIzquierda">
+    <div class="nombreCampoParaIndexHuertos">
+      <h5><strong> Campo: <%=@campo.nombre%></strong></h5>
+    </div>
+    <div class="contenedorGeneralVistasGridIzquierdaIndexHuertos">
       
-      <svg style="width:100%;height:100%;" id="svgMapaCampo">
-           <!--aca para cada huerto se ejecuta el codigo -->
-           <% @adentroSVG= true%>  
-           <%=render @huertos%>
-      </svg>
-    </div>
-    <!--Aca ponemos el modal que aparece al apretar un huerto, no puede ir dentro del svg, pr eso lo ponemos afuera, se triguea desde el poliline que esta en el svg-->
-    <% @adentroSVG = false%>
-    <div id="modalsHuertosOpciones">
-    <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
-    </div>
+      <div class="vistaNormalIndexHuertos  vistasIndexHuertos">
+          <div class="contenedorBotonGridIzquierdaIndexHuertos">
+            <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertos botonConfirmacionVerde" id="botonAgregarHuerto">Agregar Huerto</button> 
+          </div>
+          <p class="textoAyudaGridIzquierdaIndexHuertos">Para acceder a las opciones de un huerto precione sobre el en el mapa.</p>
+      </div>
+
+      <div class="vistaAgregandoHuertoIndexHuertos  vistasIndexHuertos">
+          <p class="textoAyudaGridIzquierdaIndexHuertos">1) Cree la figura del huerto haciendo diferentes clicks en el espacio de la derecha.</p> 
+          <p class="textoAyudaGridIzquierdaIndexHuertos">2) Una vez que la figura del nuevo huerto este estalecida precione el boton "crear" para continuar.</p> 
+          <div class="contenedorBotonGridIzquierdaIndexHuertos">
+            <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertos" id="botonConfirmarAgregarHuerto">Crear</button>
+            <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertos " id="cancelarAgregarHuerto">Cancelar</button>  
+          </div>
+      </div>
+
+      <div class="vistaEditandoHuertoFiguraIndexHuertos  vistasIndexHuertos" >
+          <p class="textoAyudaGridIzquierdaIndexHuertos"> 1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
+          <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la figura del nuevo huerto este estalecida precione el boton "editar" para continuar.</p>
+          <div class="contenedorBotonGridIzquierdaIndexHuertos">
+            <button type="button" class="btn botonGridIzquierdaIndexHuertos" id="confirmarEditandoHuertoFiguraElegida">Editar</button>
+            <button type="button" class="btn botonGridIzquierdaIndexHuertos " id="cancelarEditandoHuertoFiguraElegida">Cancelar</button>  
+          </div>  
+      </div>
+    </div><!--fin contenedor general de bistas gridIzquierda-->
+
+
+  </div><!--fin gridIzquierda-->
+
+
+    <!--todo lo que esta en la derecha, donde estan los mapas-->
+    <div id="gridDerechaMapaHuertos" data-permiso="normal" data-bloque="bloqueHuertosUno" >
+
+      <!--aca estan los botones 1, 2 y 3 para cambiar bloques-->
+      <div id="todosLosBotonesParaCambiarBloque">
+        <!--el boton tiene que estar dentro de este div para que sea clickeable-->
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button  id="botonParaCambiarABloqueUno" class="btn btn-dark active botonParaCambiarBloque" ><strong>1</strong></button>
+        </div>
+        <!--el boton tiene que estar dentro de este div para que sea clickeable-->
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button  id="botonParaCambiarABloqueDos" class="btn btn-secondary botonParaCambiarBloque" ><strong>2</strong></button>
+        </div>
+        <!--el boton tiene que estar dentro de este div para que sea clickeable-->
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button  id="botonParaCambiarABloqueTres" class="btn btn-secondary botonParaCambiarBloque" ><strong>3</strong></button>
+        </div>
+      </div>
+
+<!-- aca etan todos los bloques con los huertos en su interior -->
+        <div id="bloqueHuertosUno" class="bloqueHuertos bloqueHuertosInicialmenteVisibles">
+               <!--Boton para agregar mapa de fondo-->
+               <div id="botongregarMapaBloqueUno" class="botonesAgregarImagenMapa bloqueHuertosUno">
+                  <%=link_to(button_tag("Mapa de Fondo", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
+               </div>
+               <svg style="width:100%;height:100%;" id="svgMapaBloqueUno" class="svgMapasBloques">
+                   <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
+                   <% @adentroSVGBloqueUno= true%>  
+                   <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
+                   <% @adentroSVGBloqueUno= false%> 
+               </svg>
+        </div>
+
+        <div id="bloqueHuertosDos" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos">
+               <!--Boton para agregar mapa de fondo-->
+               <div id="botongregarMapaBloqueDos" class="botonesAgregarImagenMapa">
+                  <%=link_to(button_tag("Mapa de Fondo", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
+               </div>
+               <svg style="width:100%;height:100%;" id="svgMapaBloqueDos" class="svgMapasBloques">
+                   <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
+                   <% @adentroSVGBloqueDos= true%>  
+                   <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
+                   <% @adentroSVGBloqueDos= false%>
+               </svg>
+        </div>
+
+        <div id="bloqueHuertosTres" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos">
+               <!--Boton para agregar mapa de fondo-->
+               <div id="botongregarMapaBloqueTres" class="botonesAgregarImagenMapa bloqueHuertosTres">
+                  <%=link_to(button_tag("Mapa de Fondo", class: "btn btn-secondary" ),user_campo_elegir_mapa_path(current_user,@campo), method: :get  )%>
+               </div>
+               <svg style="width:100%;height:100%;" id="svgMapaBloqueTres" class="svgMapasBloques">
+                   <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
+                   <% @adentroSVGBloqueTres= true%>  
+                   <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
+                   <% @adentroSVGBloqueTres= false%> 
+               </svg>
+        </div>
+
+
+            <!--Son las alertas que aparecen dentro del mapa-->
+            <div id="avisoNoSePuedeCambiarBloque" class="alert alert-success" role="alert">
+                <strong>No se puede cambiar de bloque mientras se esta creando o editando un huerto.</strong>
+            </div>
+            <div id="avisoSuperficieHuertoNoValida" class="alert alert-primary" role="alert">
+                  <strong> Primero se tiene que asignar una superficie valida en el mapa</strong>
+            </div>
+            <div id="avisoCargandoMapaHuerto" class="alert alert-primary" role="alert">
+                  <strong>Cargando el mapa</strong>
+            </div>
+
+
+            <div id="modalsHuertosOpciones">
+               <!--esta parte se ejecuta en el else del partial huerto-->
+               <%=render partial: "huerto", collection: @huertos, locals: {campo: @campo}%>
+            </div>
+
+
+    </div><!--fin gridDerecha-->
+
+
+
+
+
+
+
+    <!--Aca ponemos el modal que aparece al apretar un huerto, no puede ir dentro del svg, pr eso lo ponemos afuera , es la segunda parte de cada huerto-->
+    
     
 
     <!--es lo que se usa para crear un huerto-->

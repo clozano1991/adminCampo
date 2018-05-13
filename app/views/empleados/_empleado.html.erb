@@ -1,0 +1,57 @@
+<tr>
+      <td  class="columnaInformacionEmpleado">
+      	  <div class="personalTablaPocaInformacion">
+            <div>
+              <%=empleado.nombre%> <%=empleado.apellidos%> 
+            </div>
+      	  </div>
+      	  <div class="personalTablaMuchaInformacion">
+            <div>
+              <%=empleado.nombre%> <%=empleado.apellidos%> 
+            </div>
+            <div>
+              <%=empleado.rut%> 
+            </div>
+      
+      	  </div>
+      </td>
+      <td class="columnaInformacionEmpleado">
+      	  <div class="personalTablaPocaInformacion">
+            <div>
+              <%=empleado.telefonoContacto%>
+            </div>
+      	  </div>
+      	  <div class="personalTablaMuchaInformacion">
+      	  </div>
+      </td>
+      <td class="columnaInformacionEmpleado">
+      	   <div class="personalTablaPocaInformacion">
+      	   	sdsdfdf
+      	   </div>
+      	   <div class="personalTablaMuchaInformacion">
+      	   	dfdsfdf
+      	   </div>
+      </td>
+      <td class="columnaInformacionEmpleado">
+      	   <div class="personalTablaPocaInformacion">
+      	   	dffdsfd
+      	   </div>
+      	   <div class="personalTablaMuchaInformacion">
+      	   	
+      	   </div>
+      </td>
+      <td class="columnaInformacionEmpleadoImagenesDerecha">
+      	   <div class="personalTablaPocaInformacion">
+      	   	   <div class="listadoEmpleadosOpcionesImagenesDerecha">
+                    <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion")%>
+               </div>
+      	   </div>
+      	   <div class="personalTablaMuchaInformacion">
+      	   	   <div class="listadoEmpleadosOpcionesImagenesDerecha">
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion"),edit_user_campo_empleado_path(current_user,@campo,empleado.id), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion")%>
+                    <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion")%>
+                </div>
+      	   </div>
+      </td>
+</tr>

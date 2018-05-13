@@ -19,3 +19,11 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+
+// esto es para los popups que se muestran
+$(function(){
+	$("[data-toggle=tooltip]").tooltip()
+})
+
+

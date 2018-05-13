@@ -1,0 +1,23 @@
+
+<div id="contenedorIndexEmpleados">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Persona</th>
+        <th scope="col">Contacto</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Sueldo base</th>
+        <th scope="col">
+          <div id="indexPersonalOpcionesSuperiores">
+            <%=link_to(button_tag("Agregar Personal", class: "btn botonNaranjo" ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+          </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+        <%=render partial: "empleado", collection: @empleados, locals: {campo: @campo}%>
+  </tbody>
+</table>
+
+
+</div>

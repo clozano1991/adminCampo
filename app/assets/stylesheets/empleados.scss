@@ -1,0 +1,93 @@
+#indexPersonalOpcionesSuperiores{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 0.7%;
+	margin-bottom: 0.7%;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+}
+.bloqueListaPersonal{
+	display: flex;
+	flex-direction: column;
+}
+.columnaInformacionEmpleado{
+    width: 22%;
+}
+.columnaInformacionEmpleadoImagenesDerecha{
+	width: 12%;
+}
+.listadoEmpleadosOpcionesImagenesDerecha{
+	float: right;
+}
+.personalTablaMuchaInformacion{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------view new empleado--------------------------------------*/
+#contenedorFormAgregarEmpleado{
+	position: relative;
+	padding-top: 2.5%;
+	padding-bottom: 5%;
+	padding-left: 8%;
+	padding-right: 8%;
+	background-color: #f0e6c8;
+}
+#botonesAgregandoEmpleadoDerecha{
+	position: absolute;
+	right: 1%;
+}
+.tituloContenedorAgregarEmpleado{
+	position: relative;
+	margin-bottom: 15px;
+}
+.contenedorInformacionAgregarEmpleado{
+	margin-bottom: 50Px;
+	padding: 25px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.form-row{
+	position: relative;
+}
+.form-group.col-md-6{
+	position: relative;
+}
+.form-control.agregarEmpleado{
+	margin-bottom: 19px;
+	border-color: grey;
+	background-color: #e4e4e4;
+}
+.form-control.agregarEmpleado.areaTextoFila{
+   min-height: 120px;	
+}
+.form-control.agregarEmpleado.areaTextoColumna{
+	height: 82%;
+}
+/*---------------------------------- fin view new empleado--------------------------------------*/
+

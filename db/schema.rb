@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326210618) do
+ActiveRecord::Schema.define(version: 20180511031401) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -21,8 +21,42 @@ ActiveRecord::Schema.define(version: 20180326210618) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "recordatorio"
-    t.text "urlimagen"
+    t.text "urlImagenBloqueUno"
+    t.text "urlImagenBloqueDos"
+    t.text "urlImagenBloqueTres"
     t.index ["user_id"], name: "index_campos_on_user_id"
+  end
+
+  create_table "empleados", force: :cascade do |t|
+    t.string "nombre"
+    t.string "direccion"
+    t.string "telefonoContacto"
+    t.string "telefonoEmergencia"
+    t.integer "sueldoBase"
+    t.string "afpAcogida"
+    t.integer "campo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "apellidos"
+    t.string "rut"
+    t.text "resumenPersona"
+    t.text "resumenCargo"
+    t.string "cargo"
+    t.string "tipoContrato"
+    t.string "nivelEducacion"
+    t.string "manejoTecnologia"
+    t.text "antecedentesLaborales"
+    t.string "otrasHabilidades"
+    t.string "porcentajeCotizacionAFP"
+    t.string "isapreAcogida"
+    t.string "porcentajeCotizacionIsapre"
+    t.string "banco"
+    t.string "tipoCuentaBanco"
+    t.string "numeroCuentaBanco"
+    t.string "emailEmpleado"
+    t.date "fechaContratacion"
+    t.date "fechaDesvinculacion"
+    t.index ["campo_id"], name: "index_empleados_on_campo_id"
   end
 
   create_table "huertos", force: :cascade do |t|
@@ -35,6 +69,7 @@ ActiveRecord::Schema.define(version: 20180326210618) do
     t.text "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bloqueMapa"
     t.index ["campo_id"], name: "index_huertos_on_campo_id"
   end
 

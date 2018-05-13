@@ -15,7 +15,13 @@
  */
 @import "bootstrap";
 /* -------------------------------------------------------------------------------------------*/
+.navbar.navbar-expand-lg.navbarUsada{
+	background-color: #000064;
+	color: white;
+	z-index: 100000;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
 
+}
 
 /* aca estan los estilos de las cosas generales*/
 ul{
@@ -47,4 +53,41 @@ ul{
 }
 .modal-open[style] {
    padding-right: 0px !important;
+}
+
+
+/* para las opciones de editar o borrar con icono, o la que sea necesario*/
+.fotoOpcion{
+	width: 20px;
+	margin-left: 10px;
+}
+
+
+
+
+
+/*para los botones que se ocupan a cada rato*/
+.btn.botonVerde{
+	font-weight: bold;
+	color: #f5f8fa;
+	background-color: #007c41;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
+}
+.btn.botonRojo{
+	font-weight: bold;
+	color: #f5f8fa;
+	background-color: #cc0033;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
+}
+.btn.botonNaranjo{
+	font-weight: bold;
+	color: #f5f8fa;
+	background-color: #f57814;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
+}
+.btn.botonAzul{
+	font-weight: bold;
+	color: #f5f8fa;
+	background-color: #10167f;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
 }

@@ -40,7 +40,6 @@ class CamposController < ApplicationController
 	end
 
 	private
-	
 	def campo_params
 		params.require(:campo).permit(:nombre, :propietario, :direccion, :comentarios, :recordatorio, :urlimagen)
 	end

@@ -1,122 +1,80 @@
+/*para que no aparesca en la form que hay que llenar pero que si exista*/
+#bloqueMapaormularioCreacionHuerto{
+	display: none;
+}
+#coordenadasFormularioCreacionHuerto{
+	display: none;
+}
+.formEditarHuertoFigura{
+	display: none;
+}
+
+/*contenedor general-----------------------------------------------------------*/
 .contenedorHuertos{
-	background-color: lightgrey;
+	background-color: #f0e6c8;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 120vh;
 	padding-top: 2vh;
-	padding-left: 2%;
-	padding-right: 1.3%;
 	padding-bottom: 2vh;
 }
 
 /*todo lo de la izquierda-----------------------------------------------------------*/
 .gridIzquierda{
 	position: absolute;
-	left:2%;
-	top:14%;
-	width: 11%;
+	display: inline-block;
+	height: calc(94vh - 42px);
+	width: 14%;
+	left: 0.6%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	padding-left: 0.5%;
+	padding-right:0.5%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	background-color: white;
+	border-radius: 20px;
 }
-.nombreCampoParaHuertos{
-
+.contenedorGeneralVistasGridIzquierdaIndexHuertos{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 40px;
 }
-
-.mensajesAyudaHuertos{
-	margin-top: 30px;
-}
-
-
-/* aca estan las cosas que se muestran normalmente*/
-.btn.btn-success.normal{
-	min-width: 90%;
-	margin-bottom: 2vh;	
-}
-.btn.btn-primary.normal{
-	min-width: 90%;
-	margin-bottom: 2vh;
-}
-.btn.btn-danger.normal{
-	min-width: 90%;
-	margin-bottom: 2vh;
-}
-/* aca estan las cosas en la vista cuando se esta agregando un huerto*/
-.btn.btn-success.agregandoHuerto{
+.vistaAgregandoHuertoIndexHuertos{
 	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
 }
-.btn.btn-danger.agregandoHuerto{
+.vistaEditandoHuertoFiguraIndexHuertos{
 	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
 }
-.textoAgregandoHuerto{
-	display: none;
+.contenedorBotonGridIzquierdaIndexHuertos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 40px; 
+}
+.btn.botonGridIzquierdaIndexHuertos{
+	min-width: 45%;
+	max-width: 220px;
+	
 
 }
-#coordenadasFormularioCreacionHuerto{/*para que no aparesca en la form que hay que llenar pero que si exista*/
-	display: none;
+.textoAyudaGridIzquierdaIndexHuertos{
+	text-align: left;
+	font-weight: bold;
+	color: black;
 }
 
 
-/*aca estan las cosas en la vista cuando se esta editando un huerto*/
-/*se elige si se edita la figura o la informacion del huerto*/
-.btn.btn-danger.editandoHuertoGeneral{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.btn.btn-primary.editandoHuertoGeneral{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.btn.btn-success.eligiendoHuertoFiguraParaEditar{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.btn.btn-danger.eligiendoHuertoFiguraParaEditar{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.btn.btn-success.editandoHuertoFiguraElegida{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.btn.btn-danger.editandoHuertoFiguraElegida{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-/*se elige si se edita la figura o la informacion del huerto*/
-.textoEditandoHuertoGeneral{
-	display: none;
-}
-.textoEligiendoHuertoFiguraParaEditar{
-	display: none;
-}
-.textoEditandoHuertoFiguraElegida{
-	display: none;
-}
-.textoEditandoInformacionHuerto{
-	display: none;
+
+/* contenedores de las vistas grid izquierda index Huertos*/
+.vistasIndexHuertos{
+
+	margin-top: 3%;
+
 }
 
-.formOcultaEditarHuertoFigura{ /*es la clase a la que se mandan las cosas para ocultarse*/
-	display: none;
-}
+/* vista index Huertos Normal*/
 
 
-/* eliminando un huerto*/
-.btn.btn-danger.eliminandoHuerto{
-	display: none;
-	min-width: 100%;
-	margin-bottom: 2vh;
-}
-.textoEliminandoHuerto{
-	display: none;
-}
 
 
 
@@ -128,22 +86,102 @@
 #gridDerechaMapaHuertos{
 	position: absolute;
 	display: inline-block;
-	width: 84.5%;
+	right: 0.6%;
+	width: 84.3%;
 	height: calc(94vh - 42px);
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 	background-color: white;
-	left: 15%;
+	border-radius: 20px;
+	
 }
+/*los botones que se usan para cambiar el bloque del mapa donde estan los huertos*/
+#todosLosBotonesParaCambiarBloque{
+	position: absolute;
+	left: 15px;
+	top: 12px;
+}
+.botonParaCambiarBloque{
+	z-index: 100;
+}
+.bloqueHuertos{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.bloqueHuertosInicialmenteVisibles{/*bloques que estan visibles*/
+
+}
+
+.bloqueHuertosInicialmenteEscondidos{/*bloques que estan escondidos*/
+	display: none;
+}
+
+
 
 /*los botones que se usan para agregar o quitar la imagen del mapa*/
-#botonesAgregarImagenMapa{
+.botonesAgregarImagenMapa{
 	position: absolute;
-	right: 5px;
-	top: 3px;
+	right: 15px;
+	top: 12px;
 }
 
+.modal.fade.modalParaHuerto{
+	padding-top: 5%;
+}
+.modal-content.modalParaHuerto{/*le damos el borde al modal*/
+	border-width: 1px;
+	border-color: black;
+}
+.imagenesDerechaModalIndexHuerto{
+	display: flex;
+	flex-direction: row;
+}
+
+/*aca las diferentes vistas que hay dentro del modal de un hueto*/
+.normalHuertoModal{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	max-height: 1100px;
+	height: 30vh; 
+}
+.contenedorVerticalBotonesOpcionRapidaHuertoModal{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 40%;
+	
+}
+.btn.botonHuertoOpcionRapida{
+	position: relative;
+	display: block;
+	width: 100%;
+	font-size: 15px;
+	font-weight: bold;
+	color: black; /*es el color del texto*/	
+}
+/*vemos los colores para cada boton de las opciones rapidas*/
+.btn.botonHuertoOpcionRapida.colorGris{
+	background-color: #6d6e71;
+}
+.btn.botonHuertoOpcionRapida.colorRojo{
+    background-color: #bf5b20;
+}
+.btn.botonHuertoOpcionRapida.colorAzul{
+    background-color: #006e96;
+}
+.btn.botonHuertoOpcionRapida.colorVerde{
+    background-color: #8c8700;
+}
+.btn.botonHuertoOpcionRapida.colorRozado{
+	background-color: #ad5f7d;
+}
+.btn.botonHuertoOpcionRapida.colorCafe{
+    background-color: #d79100;
+}
 
 
 
@@ -164,7 +202,7 @@
 	text-align: center;
 }
 
-#avisoHuertoSeleccionado{
+#avisoSuperficieHuertoNoValida{
 	display: none;
 	position: absolute;
 	top:2.5%;
@@ -172,7 +210,8 @@
 	width: 450px;
 	text-align: center;
 }
-#avisoHuertoSeleccionado{
+
+#avisoNoSePuedeCambiarBloque{
 	display: none;
 	position: absolute;
 	top:2.5%;
@@ -180,3 +219,5 @@
 	width: 450px;
 	text-align: center;
 }
+
+

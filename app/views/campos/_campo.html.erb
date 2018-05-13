@@ -9,9 +9,9 @@
                             </div>
                             <!-- estas son las opciones de norrar y editar -->
                             <div class="opcionesCampoDerecha"> 
-                                <%= link_to(image_tag("editarAmarillo.png",class: "fotoOpcion"),"#editarCampoModal_#{campo.id}","data-toggle"=>"modal")%>
+                                <%= link_to(image_tag("editarAmarillo.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "editar campo"}),"#editarCampoModal_#{campo.id}","data-toggle"=>"modal")%>
 
-                                <%=link_to(image_tag("deleteRed.png",class: "fotoOpcion"),  user_campo_path(current_user,campo), method: :delete, data: {confirm: "¿Esta seguro/a que quiere borrar este campo?. \nPrecione ok para borrar o cancel para volver atras."}, remote: true)%>
+                                <%=link_to(image_tag("deleteRed.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "borrar campo"}),  user_campo_path(current_user,campo), method: :delete, data: {confirm: "¿Esta seguro/a que quiere borrar este campo?. \nPrecione ok para borrar o cancel para volver atras."}, remote: true)%>
                             </div>
                       </div>
                      <!-- aca parte el body del campo -->
@@ -21,13 +21,13 @@
                             <h5 id="comentarios_<%=campo.id%>">Comentarios: <%=campo.comentarios%></h5>
 
                             <div class="botonesCampo">
-                                 <%=link_to(button_tag("Huertos", class: "btn btn-primary" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+                                 <%=link_to(button_tag("Huertos", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
 
-                                 <%=link_to(button_tag("Contabilidad", class: "btn btn-primary" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+                                 <%=link_to(button_tag("Contabilidad", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
 
-                                 <%=link_to(button_tag("Maquinaria", class: "btn btn-primary" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+                                 <%=link_to(button_tag("Maquinaria", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
 
-                                 <%=link_to(button_tag("Personal", class: "btn btn-primary" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+                                 <%=link_to(button_tag("Personal", class: "btn botonAzul" ),user_campo_empleados_path(current_user,campo), method: :get  )%>
                             </div>
                       </div>
             </div>

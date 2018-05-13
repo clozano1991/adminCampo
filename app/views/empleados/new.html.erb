@@ -1,0 +1,124 @@
+
+<div id="contenedorFormAgregarEmpleado">
+    
+    <div class="contenedorInformacionAgregarEmpleado shadow p-3 bg-white rounded">
+            <div class="form-row">
+                 <h5><strong>Complete los datos a continuacion y precione "Agregar" al terminar </strong></h5>
+                  <div id="botonesAgregandoEmpleadoDerecha">
+                    <button class="btn botonRojo">Cancelar</button>
+                    <%=button_tag("Agregar", class: "btn botonVerde", id: "botonConfirmarAgregarEmpleado")%>
+                  </div>
+            </div>
+    </div>
+
+    <%=form_for @empleado, url: user_campo_empleados_path(current_user,@campo), method: :post,:html => { :id => "formAgregarEmpleado" } do |form| %>
+
+        <div class="contenedorInformacionAgregarEmpleado shadow p-3 bg-white rounded">
+            <div class="tituloContenedorAgregarEmpleado">
+                 <h2>Datos de la persona</h2>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+            	    <label><strong>Nombre</strong></label>
+                    <%=form.text_field :nombre, class: "form-control agregarEmpleado"%>
+                    <label><strong>Apellidos</strong></label>
+                    <%=form.text_field :apellidos, class: "form-control agregarEmpleado"%>
+                    <label><strong>Rut</strong></label>
+                    <%=form.text_field :rut, class: "form-control agregarEmpleado"%>
+                    <label><strong>E-mail</strong></label>
+                    <%=form.text_field :emailEmpleado, class: "form-control agregarEmpleado"%>
+                </div>
+                <div class="form-group col-md-6">
+            	    <label><strong>Dirección</strong></label>
+                    <%=form.text_field :direccion, class: "form-control agregarEmpleado"%>
+                    <label><strong>Telefono contacto</strong></label>
+                    <%=form.text_field :telefonoContacto, class: "form-control agregarEmpleado"%>
+                    <label><strong>Telefono emergencia</strong></label>
+                    <%=form.text_field :telefonoEmergencia, class: "form-control agregarEmpleado"%>
+                </div>
+            </div>
+            <div class="form-row ">
+        	    <label><strong>Resumen de la persona</strong></label>
+        	    <%=form.text_area :resumenPersona, class: "form-control agregarEmpleado areaTextoFila"%>
+            </div>
+            <div class="form-row">
+            	<div class="form-group col-md-6">
+            	    <label><strong>Nivel educacion</strong></label>
+                    <%=form.text_field :nivelEducacion, class: "form-control agregarEmpleado"%>
+                    <label><strong>Manejo de tecnologia</strong></label>
+                    <%=form.text_field :manejoTecnologia, class: "form-control agregarEmpleado"%>
+                    <label><strong>Otras habilidades</strong></label>
+                    <%=form.text_field :otrasHabilidades, class: "form-control agregarEmpleado"%>
+                </div>
+                <div class="form-group col-md-6">
+            	    <label><strong>Antecedentes laborales</strong></label>
+        	        <%=form.text_area :resumenPersona, class: "form-control agregarEmpleado areaTextoColumna"%>
+                </div>
+            </div>
+        </div> <!-- fin contenedor iformacion persona -->
+
+        <div class="contenedorInformacionAgregarEmpleado shadow p-3 bg-white rounded">
+            <div class="tituloContenedorAgregarEmpleado">
+                <h2>Datos del cargo</h2>
+            </div>
+            <div class="form-row">
+        	    <div class="form-group col-md-6">
+            	    <label><strong>Cargo</strong></label>
+                    <%=form.text_field :cargo, class: "form-control agregarEmpleado"%>
+                </div>
+                <div class="form-group col-md-6">
+            	    <label><strong>Sueldo base mensual</strong></label>
+                    <%=form.text_field :sueldoBase, class: "form-control agregarEmpleado"%>
+                </div>	    
+            </div>
+            <div class="form-row">
+        	    <div class="form-group col-md-6">
+            	    <label><strong>Fecha contratacion</strong></label>
+                    <%=form.date_field :fechaContratacion, class: "form-control agregarEmpleado"%>
+                    <label><strong>Fecha desvinculacion(Opcional)</strong></label>
+                    <%=form.date_field :fechaDesvinculacion, class: "form-control agregarEmpleado"%>
+                </div>
+                <div class="form-group col-md-6">
+                    <label><strong>Estado de contratación</strong></label>
+                    <%=form.select(:tipoContrato, ["Contratado","Temporero","Desvinculado"],{}, {:class => "form-control agregarEmpleado"} )%>  
+                </div>	    
+            </div>
+            <div class="form-row">
+        	    <label><strong>Resumen del cargo</strong></label>
+        	    <%=form.text_area :resumenCargo, class: "form-control agregarEmpleado areaTextoFila" %>
+            </div>
+            <div class="form-row">
+        	    
+            </div>
+        </div> <!-- fin contenedor iformacion cargo -->
+
+        <div class="contenedorInformacionAgregarEmpleado shadow p-3 bg-white rounded">
+            <div class="tituloContenedorAgregarEmpleado">
+                 <h2>Datos de pago</h2>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+            	    <label><strong>AFP acogida</strong></label>
+                    <%=form.text_field :afpAcogida, class: "form-control agregarEmpleado"%>
+                    <label><strong>% cotizacion AFP</strong></label>
+                    <%=form.text_field :porcentajeCotizacionAFP, class: "form-control agregarEmpleado", value: "10%"%>
+                    <label><strong>Isapre acogida</strong></label>
+                    <%=form.text_field :isapreAcogida, class: "form-control agregarEmpleado", value: "Fonasa"%>
+                    <label><strong>% cotizacion Isapre</strong></label>
+                    <%=form.text_field :porcentajeCotizacionIsapre, class: "form-control agregarEmpleado", value: "7%"%>
+                </div>
+                <div class="form-group col-md-6">
+            	    <label><strong>Institucion bancaria</strong></label>
+                    <%=form.text_field :banco, class: "form-control agregarEmpleado"%>
+                    <label><strong>Tipo cuenta bancaria</strong></label>
+                    <%=form.text_field :tipoCuentaBanco, class: "form-control agregarEmpleado"%>
+                    <label><strong>Numero cuenta bancaria</strong></label>
+                    <%=form.text_field :numeroCuentaBanco, class: "form-control agregarEmpleado"%>
+                </div>
+            </div>
+        </div>
+
+    <%end%>
+
+
+</div>

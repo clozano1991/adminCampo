@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 		
 	resources :users do
 		resources :campos do
+			resources :empleados
 			resources :huertos
 			get "/mapa" => "campos#elegir_mapa", as: :elegir_mapa
 		end

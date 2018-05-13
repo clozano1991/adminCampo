@@ -8,11 +8,6 @@ $(document).ready(function(){
     $("#botonSeleccionarMapa").click(function(){
         seleccionarMapa();
     });
-
-
-     
-
-
 });
 
 

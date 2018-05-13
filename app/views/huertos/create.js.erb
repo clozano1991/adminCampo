@@ -1,8 +1,19 @@
 $(document).ready(function(){
+    console.log("funca");
+    //cerramos el modal donde esta el form para crear
+    cerrarModalCreacionHuerto();
+    //receteamos los datos del fomr para agregar huerto
+    recetearDatosFormAgregarHuerto();
 	// actualizamos los permisos
-    actualizarPermisos();
+    actualizarPermisosGrisDerecha();
+    //botamos el huerto que se uso para crear
+    botarHuertoQueSeUsoParaCrear();
+    console.log("funca botar huerto para crear");
+    //agregamos el polyline 
+    agregarPolyline();
 	//aca mostramos el huerto creado
     mostrandoHuerto();
+    console.log("pasa el mostrar huerto");
     // agregamos el modal correspondiente a sus opciones
     agregandoModal();
     //vemos que pasa al apretar el huerto creado
@@ -10,27 +21,71 @@ $(document).ready(function(){
         haciendoClickEnHuerto();
     }); 
 
-
-
-
 });
 
-function actualizarPermisos(){
-    // escondemos el modal y receteamos sus valores
+//-------------------------------------------------------------------------------------------
+function cerrarModalCreacionHuerto(){
+     // escondemos el modal 
     $("#agregarHuertoModal").modal("hide");
+}
+function recetearDatosFormAgregarHuerto(){
+    $(".valorFormAgregarHuerto").val("");
+}
+function actualizarPermisosGrisDerecha(){
     // se muestran los botones normales y se esconden los de agregar huerto
-    $('.normal').show();
-    $('.textoNormal').show();
-    $('.agregandoHuerto').hide();
-    $(".textoAgregandoHuerto").hide();
+    $('.vistaAgregandoHuertoIndexHuertos').hide();
+    $('.vistaNormalIndexHuertos').show();
+    //cambiamos el permiso 
+    $("#gridDerechaMapaHuertos").attr("data-permiso","normal"); 
+}
+function botarHuertoQueSeUsoParaCrear(){
     //cambiamos la clase del huerto que se estaba creando  y lo escondemos.
     $(".huertoEnCreacion").attr("class","huertoDesechar");
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
     //cambiamos el id para que si se crea otro no se repita
     $("#huertoNuevo").attr("id","");
-    //cambiamos el permiso del svg
-    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
+}
+
+
+
+
+function agregarPolyline(){
+    if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosUno"){
+        console.log("entra a agregar polyline");
+        $("#svgMapaBloqueUno").append("<%= j render partial: 'polylineHuertoDesdeCreateJs', locals: {huerto: @huerto } %>");
+    }
+    if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosDos"){
+        $("#svgMapaBloqueDos").append("<%= j render partial: 'polylineHuertoDesdeCreateJs', locals: {huerto: @huerto } %>");
+    }
+    if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosTres"){
+        $("#svgMapaBloqueTres").append("<%= j render partial: 'polylineHuertoDesdeCreateJs', locals: {huerto: @huerto } %>");
+    }
+}
+function agregandoModal(){
+    $("#modalsHuertosOpciones").append("<%= j render partial: 'huerto', locals: {campo: @campo,huerto: @huerto } %>");
+}
+
+
+function mostrandoHuerto(){
+    //aca tenemos que mostrar el huerto creado
+    //obtenemos las coordenadas de posicion
+    var coordenadasPosicion= transformarPorcentajesACoordenadasPosicionEnSVG($("#huerto_<%=@huerto.id%>").attr("data-porcentajes"));
+    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
+
+    //vemos los colores dependiendo de la clase
+    if("<%=@huerto.clase%>"=="green"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#34a853");
+    }
+    if("<%=@huerto.clase%>"=="red"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#ea4335");
+    }
+    if("<%=@huerto.clase%>"=="yellow"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","#fbbc05");
+    }
+    if("<%=@huerto.clase%>"=="blue"){
+        $("#huerto_<%=@huerto.id%>").attr("fill","##4285f4");
+    }
 }
 
 function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
@@ -59,62 +114,15 @@ function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
     for (i in arregloCoordenadasPosicion){
         var stringCoordenadas=stringCoordenadas+String(arregloCoordenadasPosicion[i])+" ";
     }
-
     // retornamos las coordenadas que tienen que aplicarse al elemento polyline
     return stringCoordenadas
 }
+
+
+
 
 function haciendoClickEnHuerto(){
         if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="normal"){
             $("#modal_huerto_<%=@huerto.id%>").modal("show");    
         }         
-        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="eliminandoHuerto"){
-            $("#modal_borrar_huerto_<%=@huerto.id%>").modal("show") 
-        }
-        if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="editando"){
-            $("#modal_huerto_<%=@huerto.id%>").modal("show")  
-        }
-}
-
-function agregandoModal(){
-    $("#modalsHuertosOpciones").append("<%= j render partial: 'huerto', locals: {campo: @campo,huerto: @huerto } %>");
-
-}
-function mostrandoHuerto(){
-    //aca tenemos que mostrar el huerto creado
-    //agregamos un polyline al svg y asignamos su id
-    var polyline= document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-    //agregamos el huerto al svg
-    polyline.setAttribute("id","huerto_<%=@huerto.id%>");
-    $("#svgMapaCampo").append(polyline);
-    // le asignamos las coordenaas en % que le corresponde 
-    $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
-    //asignamos el valor del id al data-id
-    $("#huerto_<%=@huerto.id%>").attr("data-id","<%=@huerto.id%>");
-    // los usamos para obtener las coordenadas de posicion
-    var coordenadasPosicion= transformarPorcentajesACoordenadasPosicionEnSVG($("#huerto_<%=@huerto.id%>").attr("data-porcentajes"));
-    $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
-
-    //vemos los colores dependiendo de la clase
-    if("<%=@huerto.clase%>"=="green"){
-        $("#huerto_<%=@huerto.id%>").attr("fill","lightGreen");
-        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
-    }
-    if("<%=@huerto.clase%>"=="red"){
-        $("#huerto_<%=@huerto.id%>").attr("fill","#FF221E");
-        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
-    }
-    if("<%=@huerto.clase%>"=="orange"){
-        $("#huerto_<%=@huerto.id%>").attr("fill","#FFBB1E");
-        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
-    }
-    if("<%=@huerto.clase%>"=="yellow"){
-        $("#huerto_<%=@huerto.id%>").attr("fill","#FFFC4F");
-        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
-    }
-    if("<%=@huerto.clase%>"=="blue"){
-        $("#huerto_<%=@huerto.id%>").attr("fill","#6691FF");
-        $("#huerto_<%=@huerto.id%>").attr("stroke","black");
-    }
-
 }
