@@ -1,55 +1,58 @@
-<div class="campoYNotas campo_<%=campo.id%>">
-    <!-- aca parte la ficha del campo, sin la nota -->
-    <div class="campo">
-            <div  class="card campo campo_<%=campo.id%>">
-                      <!-- aca parte el header del campo -->
-                      <div class="card-header campo">
-                            <div class="tituloCampoIzquierda">
-                                <h5 id="nombre_<%=campo.id%>"><%=campo.nombre%></h5>
-                            </div>
-                            <!-- estas son las opciones de norrar y editar -->
-                            <div class="opcionesCampoDerecha"> 
-                                <%= link_to(image_tag("editarAmarillo.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "editar campo"}),"#editarCampoModal_#{campo.id}","data-toggle"=>"modal")%>
 
-                                <%=link_to(image_tag("deleteRed.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "borrar campo"}),  user_campo_path(current_user,campo), method: :delete, data: {confirm: "¿Esta seguro/a que quiere borrar este campo?. \nPrecione ok para borrar o cancel para volver atras."}, remote: true)%>
-                            </div>
-                      </div>
-                     <!-- aca parte el body del campo -->
-                      <div class="card-body">
-                            <h5 id="propietario_<%=campo.id%>">Propietario: <%=campo.propietario%></h5>
-                            <h5 id="direccion_<%=campo.id%>">Direccion: <%=campo.direccion%></h5>
-                            <h5 id="comentarios_<%=campo.id%>">Comentarios: <%=campo.comentarios%></h5>
+<div class="filaFichaGenerica usadoEnIndexCampos campo_<%=campo.id%>">
+  <!--  ficha izquierda-->
+  <div class="fichaCampo">
+    <!--  header ficha izquierda-->
+    <div class="headerFichaCampo">
+      <div class="tituloHeaderFichaCampo">
+        <h5><strong><%=campo.nombre%></strong></h5>
+      </div>
+      <div class="opcionesCampoDerecha"> 
+        <%= link_to(image_tag("editarAmarillo.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "editar campo"}),"#editarCampoModal_#{campo.id}","data-toggle"=>"modal")%>
+        <%=link_to(image_tag("deleteRed.png",class: "fotoOpcion",:data=>{:toggle => "tooltip", :placement => "top", :title => "borrar campo"}),  user_campo_path(current_user,campo), method: :delete, data: {confirm: "¿Esta seguro/a que quiere borrar este campo?. \nPrecione ok para borrar o cancel para volver atras."}, remote: true)%>
+      </div>
+    </div><!--  fin header ficha izquierda-->
+    <!--  body ficha izquierda-->
+    <div class="bodyFichaCampo">
+      <div class="contenidoSuperiorBodyFichaCampo">
+        <div class="contenidoBodyFichaCampoSinBotones">
+          <h5 id="propietario_<%=campo.id%>"><strong>Propietario:</strong> <%=campo.propietario%></h5>
+        </div>
+        <div class="contenidoBodyFichaCampoSinBotones">
+          <h5 id="direccion_<%=campo.id%>"><strong>Direccion:</strong> <%=campo.direccion%></h5>
+        </div>
+        <div class="contenidoBodyFichaCampoSinBotones">
+          <h5 id="comentarios_<%=campo.id%>"><strong>Descripción: </strong> <%=campo.comentarios%></h5>
+        </div>
+      </div>
+      <div class="botonesBodyFichaCampo">
+        <%=link_to(button_tag("Huertos", class: "btn botonAzul botonFichaCampo" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+        <%=link_to(button_tag("Contabilidad", class: "btn botonAzul botonFichaCampo" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+        <%=link_to(button_tag("Maquinaria", class: "btn botonAzul botonFichaCampo" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
+        <%=link_to(button_tag("Personal", class: "btn botonAzul botonFichaCampo" ),user_campo_empleados_path(current_user,campo), method: :get  )%>
+      </div>    
+    </div><!--  fin body ficha izquierda-->
+  </div><!-- fin ficha izquierda-->
 
-                            <div class="botonesCampo">
-                                 <%=link_to(button_tag("Huertos", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
-
-                                 <%=link_to(button_tag("Contabilidad", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
-
-                                 <%=link_to(button_tag("Maquinaria", class: "btn botonAzul" ),user_campo_huertos_path(current_user,campo), method: :get  )%>
-
-                                 <%=link_to(button_tag("Personal", class: "btn botonAzul" ),user_campo_empleados_path(current_user,campo), method: :get  )%>
-                            </div>
-                      </div>
-            </div>
-    </div>
-
-    <!-- aca parte la nota que esta a la derecha de la ficha del campo -->
-    <div class="nota">
-                 <div class="card notaCampo campo_<%=@campo.id%>"  >
-                     <div class="card-body">
-                             <%=form_for @campo, url: user_campo_path(current_user, campo), method: :put, remote: true do |form| %>
-                                 <div class="form-group">
-                                     <%=form.label :recordatorio, class: "tituloRecordatorio"%>
-                                     <%=form.text_area :recordatorio, value: campo.recordatorio, class: "form-control textField dondeSeEscribeLaNota"%>
-                                 </div>
-                                 <%=form.submit("Guardar", class: "btn btn-success guardarNota ")%>
-                             <%end%> 
-                               
-                            
-                     </div>
-                </div>  
-    </div>
+  <!--  ficha derecha-->
+  <div class="fichaCampoRecordatorio">
+    <!--  header ficha derecha-->
+    <div class="headerFichaCampoRecordatorio">
+      <h6><strong>Notas:</strong></h6>  
+      <%=image_tag("ticketVerde.png",class: "fotoOpcion ticketGuardarCambiosRecordatorioCampo",:data=>{:toggle => "tooltip", :placement => "top", :title => "guardar cambios"})%>
+    </div><!-- fin header ficha derecha-->
+    <!--  body ficha derecha-->
+    <div class="bodyFichaCampoRecordatorio">
+      <%=form_for @campo, url: user_campo_path(current_user, campo), method: :put, remote: true do |form| %>
+          <div class="form-group">
+              <%=form.text_area :recordatorio, value: campo.recordatorio, class: "form-control  dondeSeEscribeLaNota"%>
+          </div>
+      <%end%>   
+    </div><!-- fin body ficha derecha-->
+  </div><!--  fin ficha recordatorio-->
 </div>
+
+
 
 
 
@@ -89,3 +92,4 @@
     </div>
   </div>
 </div>
+

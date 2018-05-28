@@ -6,6 +6,11 @@ class EmpleadosController < ApplicationController
 		@campo=current_user.campos.find(params[:campo_id])	
 	end 
 
+	def show
+		@empleado=current_user.campos.find(params[:campo_id]).empleados.find(params[:id])
+		@campo=current_user.campos.find(params[:campo_id])
+	end
+
 	def new
 		@campo=current_user.campos.find(params[:campo_id])
 		@empleado=current_user.campos.find(params[:campo_id]).empleados.build
@@ -38,6 +43,8 @@ class EmpleadosController < ApplicationController
 	end 
 
 	def destroy
+		@empleado=current_user.campos.find(params[:campo_id]).empleados.find(params[:id])
+	    @empleado.destroy
 	    respond_to do|format|
 			format.html {redirect_to index_path}
 			format.js 
@@ -47,7 +54,7 @@ class EmpleadosController < ApplicationController
     private
     def empleado_params
 		params.require(:empleado).permit(:nombre, :apellidos, :rut, :direccion, :telefonoContacto, 
-			:telefonoEmergencia, :sueldoBase, :afpAcogida, :resumenPersona, :cargo, :resumenCargo, 
+			:telefonoEmergencia, :sueldoBaseMensual, :afpAcogida, :resumenPersona, :cargo, :resumenCargo, 
 			:tipoContrato, :nivelEducacion,:manejoTecnologia, :antecedentesLaborales, 
 			:otrasHabilidades, :porcentajeCotizacionAFP ,:isapreAcogida, :porcentajeCotizacionIsapre, 
 			:banco, :tipoCuentaBanco, :numeroCuentaBanco, :emailEmpleado, :fechaContratacion, 

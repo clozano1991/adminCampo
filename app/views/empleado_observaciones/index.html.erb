@@ -1,0 +1,47 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+      <h5><strong> Ficha de: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
+      <%=link_to(button_tag("+ Personal", class: "btn botonNaranjo " ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+
+    <!--LinksSuperioresEmpleado-->
+    <div class="linksSuperioresFichaGenerica">
+        <ul class=" listaLinksFichaGenerica">
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Principal",user_campo_empleado_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica ")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to("Horarios",user_campo_empleado_empleado_horarios_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica ")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Pagos",user_campo_empleado_empleado_pagos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Inasistencias",user_campo_empleado_empleado_abandonos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Observaciones",user_campo_empleado_empleado_observaciones_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica"%>
+          </li>
+        </ul>
+    </div><!--fin LinksSuperioresEmpleado-->
+
+
+    <div class="FichaGenerica">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            One of three columns
+          </div>
+          <div class="col-sm">
+            One of three columns
+         </div>
+         <div class="col-sm">
+            One of three columns
+         </div>
+        </div>
+      </div>
+    </div><!--fin FichaEmpleado-->
+    
+  </div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaEmpleado-->

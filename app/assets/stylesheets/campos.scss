@@ -1,84 +1,110 @@
-.contenedorCampos{
+.contenedorFondoFichaGenerica.usadoEnIndexCampos{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.opcionesArribaFichaGenerica.usadoEnIndexCampos{
+	max-width: 1500px;
+}
+.contenedorLinkSuperioresMasContenidoFichaGenerica.usadoEnIndexCampos{
+    max-width: 1500px;
+}
+.filaFichaGenerica.usadoEnIndexCampos{
 	position: relative;
-	background-color: #f0e6c8;
+	min-height: 250px;
 	width: 100%;
-	min-height: 100vh;
-	padding-top: 3vh;
-	padding-bottom: 5vh;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 25px;
 }
-#botonCrearCampo{
-	position: absolute;
-	right: 2%;
-}
-#listaCampos{
-	margin-top: 65px;
-}
-.campoYNotas{
+.fichaCampo{
 	position: relative;
-	margin-left: 8.8%;
-	margin-bottom: 5vh;
-	height: 350px;
-}
-
-
-/* aca va todo lo asociado a la tarjeta del campo*/
-.campo{
-	display: inline-block;
-}
-.card.campo{
-	width: 50vw;
-	height: 350px;
-	position: absolute;
-	top: 0px;
+	min-height: 100%;
+	width: 55%;
+	background-color: white;
+	border-radius: 4px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
-.card-header.campo{
+.headerFichaCampo{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding-left: 8px;
+	padding-right: 8px;
+	
+}
+.tituloHeaderFichaCampo{
+	display: flex;
+	align-items: center;
+	max-height: 34px;
+	margin-top: 4px;
+	padding-top: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	color: white;
 	background-color: #7c81b8;
-	display: inline-block;
+	border-radius: 30px;
 }
-.tituloCampoIzquierda{
-	display: inline-block;
+.bodyFichaCampo{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: calc(100%-55px);
+	padding-top: 18px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
-.opcionesCampoDerecha{
-	display: inline-block;
-	float: right;
+.contenidoSuperiorBodyFichaCampo{
+	position: relative;
 }
-
-.botonesCampo{
-	position: absolute;
-	bottom: 3%;
-	right: 2%;
+.contenidoBodyFichaCampoSinBotones{
+	position: relative;
+    
 }
-
-/* aca va todo lo asociado a la tarjeta de la nota de un campo*/
-.nota{
-	display: inline-block;
+.botonesBodyFichaCampo{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;	
 }
-.card.notaCampo{
-    width: 29vw;
-    height: 350px;
-    position: absolute;
-    top: 0px;
-    left: 53vw;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
-}
-.tituloRecordatorio{
-	position: absolute;
-	top: 0.5vh;
-	left: 1vw;
-}
-.form-control.textField.dondeSeEscribeLaNota{
-	margin-top: 2vh;
-	min-height: 300px;
-	margin-bottom: 4px;
-}
-.btn.btn-success.guardarNota{
-	position: absolute;
-	right: 1vw;
-	bottom: 1vh;
-
+.btn.botonAzul.botonFichaCampo{
+	margin-left: 5px;
 }
 
+
+.fichaCampoRecordatorio{
+	min-height: 100%;
+	width: 43%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.headerFichaCampoRecordatorio{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 40px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.fotoOpcion.ticketGuardarCambiosRecordatorioCampo{
+}
+.form-control.dondeSeEscribeLaNota{
+    height: 310px;
+  
+
+}
+/*---------------------------------------------------------------------------------*/
 /* aca va todo lo asociado a la parte de agregar mapa de un campo*/
 .contenedorMapaElegir{
 	background-color: lightgrey;

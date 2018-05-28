@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+
+
+#------------------aca las cosas ignoradas que no son por default---------------------
+.env

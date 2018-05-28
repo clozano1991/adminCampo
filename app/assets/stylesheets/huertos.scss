@@ -31,7 +31,7 @@
 	padding-right:0.5%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 4px;
 }
 .contenedorGeneralVistasGridIzquierdaIndexHuertos{
 	display: flex;
@@ -91,7 +91,7 @@
 	height: calc(94vh - 42px);
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 	background-color: white;
-	border-radius: 20px;
+	border-radius: 4px;
 	
 }
 /*los botones que se usan para cambiar el bloque del mapa donde estan los huertos*/
@@ -116,6 +116,9 @@
 .bloqueHuertosInicialmenteEscondidos{/*bloques que estan escondidos*/
 	display: none;
 }
+.huertos{
+	cursor: pointer; 
+}
 
 
 
@@ -139,7 +142,7 @@
 }
 
 /*aca las diferentes vistas que hay dentro del modal de un hueto*/
-.normalHuertoModal{
+.vistaNormalHuertoModal{
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -152,36 +155,29 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 40%;
-	
+	width: 142px;	
 }
-.btn.botonHuertoOpcionRapida{
+.btn.botonAzul.botonHuertoOpcionRapida{
 	position: relative;
-	display: block;
-	width: 100%;
-	font-size: 15px;
-	font-weight: bold;
-	color: black; /*es el color del texto*/	
+	width: 140px;
 }
-/*vemos los colores para cada boton de las opciones rapidas*/
-.btn.botonHuertoOpcionRapida.colorGris{
-	background-color: #6d6e71;
+
+.vistaBorrandoHuertoModal{
+	display: none;
 }
-.btn.botonHuertoOpcionRapida.colorRojo{
-    background-color: #bf5b20;
+
+.vistaEditandoHuertoModal{
+	display: none;
 }
-.btn.botonHuertoOpcionRapida.colorAzul{
-    background-color: #006e96;
+.contenedorBotonesSeleccionarQueSeEditaHuertoModal{
+	float: right;
+	margin-top: 30px;
 }
-.btn.botonHuertoOpcionRapida.colorVerde{
-    background-color: #8c8700;
+
+.imagenRegresarANormalHuertoModal{
+	display: none;
 }
-.btn.botonHuertoOpcionRapida.colorRozado{
-	background-color: #ad5f7d;
-}
-.btn.botonHuertoOpcionRapida.colorCafe{
-    background-color: #d79100;
-}
+
 
 
 
@@ -201,7 +197,6 @@
 	width: 450px;
 	text-align: center;
 }
-
 #avisoSuperficieHuertoNoValida{
 	display: none;
 	position: absolute;

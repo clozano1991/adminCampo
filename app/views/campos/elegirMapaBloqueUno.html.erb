@@ -46,8 +46,8 @@
 <!--form para subir la imagen-->
     <div class="card seleccionarMapaCampo"  >
                      <div class="card-body">
-                             <%=form_for @campo, url: user_campo_path(current_user, @campo), method: :put, :html => {:id => "guardandoUrlBaseDiesParaCampo"} do |form| %>
-                                  <%=form.text_area :urlimagen, id: "urlImagenMapaAUsar"%>
+                             <%=form_for @campo, url: user_campo_path(current_user, @campo), method: :patch, :html => {:id => "guardandoUrlBaseDiesParaCampo"} do |form| %>
+                                  <%=form.file_field :imagenUno, id: "imagenMapaAUsar"%>
                                     
                              <%end%>      
                      </div>                

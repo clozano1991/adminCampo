@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511031401) do
+ActiveRecord::Schema.define(version: 20180524195620) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -21,10 +21,39 @@ ActiveRecord::Schema.define(version: 20180511031401) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "recordatorio"
-    t.text "urlImagenBloqueUno"
-    t.text "urlImagenBloqueDos"
-    t.text "urlImagenBloqueTres"
+    t.string "imagenUno"
+    t.string "imagenDos"
+    t.string "imagenTres"
     t.index ["user_id"], name: "index_campos_on_user_id"
+  end
+
+  create_table "empleado_abandonos", force: :cascade do |t|
+    t.integer "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_empleado_abandonos_on_empleado_id"
+  end
+
+  create_table "empleado_horarios", force: :cascade do |t|
+    t.integer "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_empleado_horarios_on_empleado_id"
+  end
+
+  create_table "empleado_observaciones", force: :cascade do |t|
+    t.integer "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_empleado_observaciones_on_empleado_id"
+  end
+
+  create_table "empleado_pagos", force: :cascade do |t|
+    t.date "fecha"
+    t.integer "empleado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["empleado_id"], name: "index_empleado_pagos_on_empleado_id"
   end
 
   create_table "empleados", force: :cascade do |t|
@@ -32,7 +61,6 @@ ActiveRecord::Schema.define(version: 20180511031401) do
     t.string "direccion"
     t.string "telefonoContacto"
     t.string "telefonoEmergencia"
-    t.integer "sueldoBase"
     t.string "afpAcogida"
     t.integer "campo_id"
     t.datetime "created_at", null: false
@@ -43,10 +71,10 @@ ActiveRecord::Schema.define(version: 20180511031401) do
     t.text "resumenCargo"
     t.string "cargo"
     t.string "tipoContrato"
-    t.string "nivelEducacion"
-    t.string "manejoTecnologia"
+    t.text "nivelEducacion"
+    t.text "manejoTecnologia"
     t.text "antecedentesLaborales"
-    t.string "otrasHabilidades"
+    t.text "otrasHabilidades"
     t.string "porcentajeCotizacionAFP"
     t.string "isapreAcogida"
     t.string "porcentajeCotizacionIsapre"
@@ -56,6 +84,7 @@ ActiveRecord::Schema.define(version: 20180511031401) do
     t.string "emailEmpleado"
     t.date "fechaContratacion"
     t.date "fechaDesvinculacion"
+    t.string "sueldoBaseMensual"
     t.index ["campo_id"], name: "index_empleados_on_campo_id"
   end
 

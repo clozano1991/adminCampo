@@ -1,7 +1,5 @@
 $(document).ready(function(){       
 //main de la parte principal de los huertos
-
-
     //mostramos los huertos existentes al cargar el doc
     $(".huertos").each(function(){
         mostrarHuerto($(this));
@@ -65,7 +63,10 @@ $(document).ready(function(){
     $('#cancelarEliminarHuerto').click(function(){
         cancelarEliminar();
     });
-
+    // seleccionar lapiz para editar un huerto en el modal
+    $(".editarHuertoModal").each(function(){
+        mostrarVistaEditarHuertoModal($(this));
+    });
 
 
     //mostramos la imagen de fondo del huerto 
@@ -476,6 +477,8 @@ function cancelarEditandoHuertoFiguraElegida(){
 }
 function botonEditarHuertoInformacion(){
 }
+
+//------------------funciones para mostrar mapas fondos huertos ----------------------
 function mostrarMapaFondoBloques(){
     var imagenEnTextoBloqueUno = $("#bloqueHuertosUno").attr("data-urlImagen");    
     $("#svgMapaBloqueUno").css("background-image","url("+imagenEnTextoBloqueUno+")");
@@ -484,9 +487,23 @@ function mostrarMapaFondoBloques(){
     var imagenEnTextoBloqueTres = $("#bloqueHuertosTres").attr("data-urlImagen");    
     $("#svgMapaBloqueTres").css("background-image","url("+imagenEnTextoBloqueTres+")");
 }
+//-------------------------funciones para modals de huertos ----------------------
 
+function mostrarVistaEditarHuertoModal(imagenLapizClickeada){
+    $(imagenLapizClickeada).click(function(){
+        console.log($(this).attr("class"));
+        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
+}
+function mostrarVistaBorrarHuertoModal(imagenBasureroClickeada){
 
+}
+function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
 
+}
 
 
 

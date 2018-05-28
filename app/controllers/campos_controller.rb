@@ -6,8 +6,6 @@ class CamposController < ApplicationController
 		@campo=current_user.campos.build
 	end 
 
-	
-
 	def create
 		@campo=current_user.campos.build(campo_params)
 		@campo.save
@@ -35,13 +33,19 @@ class CamposController < ApplicationController
 		end
 	end
 
-	def elegir_mapa
+	def elegirMapaBloqueUno
+		@campo=current_user.campos.find(params[:campo_id])
+	end
+	def elegirMapaBloqueDos
+		@campo=current_user.campos.find(params[:campo_id])
+	end
+	def elegirMapaBloqueTres
 		@campo=current_user.campos.find(params[:campo_id])
 	end
 
 	private
 	def campo_params
-		params.require(:campo).permit(:nombre, :propietario, :direccion, :comentarios, :recordatorio, :urlimagen)
+		params.require(:campo).permit(:nombre, :propietario, :direccion, :comentarios, :recordatorio, :imagenUno, :imagenDos, :imagenTres)
 	end
 
 end

@@ -5,5 +5,7 @@ class Campo < ApplicationRecord
   has_many :huertos, :dependent => :destroy
   has_many :empleados, :dependent => :destroy
 
+
+
  
 end

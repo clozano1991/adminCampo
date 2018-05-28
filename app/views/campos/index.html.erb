@@ -1,18 +1,27 @@
-
-
-
-<div class="contenedorCampos">
-    <button id="botonCrearCampo" type="button" class="btn botonNaranjo" data-toggle="modal" data-target="#crearCampoModal">
-      Agregar Campo
-    </button>
-    <%=render partial: "crearCampo"%>
-
-    <div id="listaCampos">
-    <%=render @campos%>
-              
+<div class="contenedorFondoFichaGenerica usadoEnIndexCampos">
+	<div class="opcionesArribaFichaGenerica usadoEnIndexCampos">
+      <h5><strong> Campos asociados a la cuenta</strong></h5>
+      <button id="botonCrearCampo" type="button" class="btn botonNaranjo" data-toggle="modal" data-target="#crearCampoModal">
+      + Campo
+      </button>
     </div>
-              
-    
 
-</div>
+
+    
+    <div class="contenedorLinkSuperioresMasContenidoFichaGenerica usadoEnIndexCampos">
+        <div id="listaCampos">
+           <%=render @campos%>         
+        </div>
+    </div>
+
+
+    <%=render partial: "crearCampo"%>
+</div><!--finContenedorFondoFichaGenerica-->
+
+
+
+
+
+
+
 

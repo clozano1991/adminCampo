@@ -1,0 +1,2 @@
+module EmpleadoAbandonosHelper
+end

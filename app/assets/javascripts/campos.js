@@ -23,13 +23,15 @@ function seleccionarMapa(){
     html2canvas(document.querySelector("#gridDerechaMapaHuertosSeleccionarMapa"),{
         useCORS: true,
         onrendered: function(canvas){
+            console.log("hola");
             //pasamos el canvas a base64
-            var image = canvas.toDataURL("image/png");
-            // incluimos la imagenURL en el form_for
-            $("#urlImagenMapaAUsar").val(image); 
+            var imagenBaseSesentaYCuatro= canvas.toDataURL("image/png");
+            // incluimos la imagen en el form_for
+            $("#imagenMapaAUsar").append(imagenBaseSesentaYCuatro); 
+            console.log(imagenBaseSesentaYCuatro);
             // hacemos submit para el form
-            $("#guardandoUrlBaseDiesParaCampo").submit();
-
+            //$("#guardandoUrlBaseDiesParaCampo").submit();
+            $("body").append(url(imagenBaseSesentaYCuatro));
         } 
     });
     

@@ -1,57 +1,135 @@
-<tr>
+
+<!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+<% if @adentroTablaEmpleado == true %>
+  <tr class="filaEmpleadoEnTablaEmpleados" id="filaEmpleado_<%=empleado.id%>">
       <td  class="columnaInformacionEmpleado">
-      	  <div class="personalTablaPocaInformacion">
-            <div>
+      	  <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados">
               <%=empleado.nombre%> <%=empleado.apellidos%> 
             </div>
       	  </div>
-      	  <div class="personalTablaMuchaInformacion">
-            <div>
-              <%=empleado.nombre%> <%=empleado.apellidos%> 
+      	  <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Nombre: <%=empleado.nombre%> <%=empleado.apellidos%> 
             </div>
-            <div>
-              <%=empleado.rut%> 
+            <div  class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Rut: <%=empleado.rut%> 
+            </div>
+            <div  class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Edad: 
             </div>
       
       	  </div>
       </td>
       <td class="columnaInformacionEmpleado">
-      	  <div class="personalTablaPocaInformacion">
-            <div>
-              <%=empleado.telefonoContacto%>
+      	  <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados">
+                <%=empleado.telefonoContacto%>
             </div>
       	  </div>
-      	  <div class="personalTablaMuchaInformacion">
+      	  <div class="empleadoTablaMuchaInformacion  empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+                Contacto: <%=empleado.telefonoContacto%>
+            </div>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+                Emergencia: <%=empleado.telefonoEmergencia%>
+            </div>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+                E-mail: <%=empleado.emailEmpleado%>
+            </div>
       	  </div>
       </td>
       <td class="columnaInformacionEmpleado">
-      	   <div class="personalTablaPocaInformacion">
-      	   	sdsdfdf
+      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados">
+              <%=empleado.cargo%>
+            </div>
       	   </div>
-      	   <div class="personalTablaMuchaInformacion">
-      	   	dfdsfdf
+      	   <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Cargo: <%=empleado.cargo%>
+            </div>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Horario:
+            </div>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Estado contrato: <%=empleado.tipoContrato%>
+            </div>
       	   </div>
       </td>
-      <td class="columnaInformacionEmpleado">
-      	   <div class="personalTablaPocaInformacion">
-      	   	dffdsfd
+      <td class="columnaInformacionEmpleado" >
+      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados">
+              <%=empleado.sueldoBaseMensual%>
+            </div>
       	   </div>
-      	   <div class="personalTablaMuchaInformacion">
+      	   <div class="empleadoTablaMuchaInformacion  columnaSinBotonesSinBordeALaDerecha empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Sueldo base: <%=empleado.sueldoBaseMensual%>
+            </div>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Contratación: <%=empleado.fechaContratacion%>
+            </div>
+            <% if empleado.tipoContrato=="Desvinculado" %><!--solo se ejecuta si el etado del contrato es desvinculado-->
+                <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+                  Desvinculación: <%=empleado.fechaDesvinculacion%>
+                </div>
+            <%end%>
+            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+              Años trabajados:
+            </div>
       	   	
       	   </div>
       </td>
       <td class="columnaInformacionEmpleadoImagenesDerecha">
-      	   <div class="personalTablaPocaInformacion">
-      	   	   <div class="listadoEmpleadosOpcionesImagenesDerecha">
-                    <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion")%>
+      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>" >
+      	   	   <div class="opcionesImagenesDerechaTablaEmpleados">
+                    <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
                </div>
       	   </div>
-      	   <div class="personalTablaMuchaInformacion">
-      	   	   <div class="listadoEmpleadosOpcionesImagenesDerecha">
-                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion"),edit_user_campo_empleado_path(current_user,@campo,empleado.id), method: :get)%>
-                    <%=image_tag("deleteRed.png",class: "fotoOpcion")%>
-                    <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion")%>
+      	   <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
+              <div class="contenedorImagenesYBotonesDerechaEmpleadoIndex">
+      	   	   <div class="opcionesImagenesDerechaTablaEmpleados imagenesMuchaInformacion">
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_empleado_path(current_user,@campo,empleado.id), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEmpleado" , :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
+                    <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
                 </div>
+
+                <div class="contenedorBotonesOpcionesTablaEmpleados">
+                      <%=link_to(button_tag("Ficha", class: "btn botonAzul botonesOpcionesTablaEmpleados" ),user_campo_empleado_path(current_user,@campo, empleado), method: :get  )%>
+                      <%=link_to(button_tag("+ Pago", class: "btn botonAzul botonesOpcionesTablaEmpleados" ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+                </div>
+              <div>
       	   </div>
       </td>
-</tr>
+  </tr>
+<%end%>
+<!-- fin del contenido de la tabla -->
+
+
+
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado -->
+<%if @adentroContenedorModalsBorrarEmpleado == true%>
+  <div class="modal fade modalParaBorrarEmpleado" id="modal_borrar_empleado_<%=empleado.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modalParaHuerto">
+        <div class="modal-header">
+             <h5>
+                <strong>Personal:<%=empleado.nombre%> <%=empleado.apellidos%></strong>
+             </h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+                   <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+                  <h5>
+                    ¿Seguro que desea borrar todos los datos asociados a esta persona?
+                  </h5>
+                    <%=link_to(button_tag("Borrar Personal", class: "btn botonRojo botonConfirmarBorrarEmpleado"), user_campo_empleado_path(current_user,campo,empleado), method: :delete, remote: true )%>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%><!-- fin modal para borrar empleado -->

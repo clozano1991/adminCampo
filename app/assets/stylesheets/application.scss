@@ -15,21 +15,21 @@
  */
 @import "bootstrap";
 /* -------------------------------------------------------------------------------------------*/
-.navbar.navbar-expand-lg.navbarUsada{
-	background-color: #000064;
-	color: white;
-	z-index: 100000;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
-
-}
+/*ponemos las propiedades del texto de la app*/
 
 /* aca estan los estilos de las cosas generales*/
 ul{
 	list-style-type: none;
 	padding-left: 0%;	
 }
+/* -------------------------------------------------------------------------------------------*/
 /* Estilos de la barra de navegacion superior*/
-
+.navbar.navbar-expand-lg.navbarUsada{
+	background-color: #000064;
+	color: white;
+	z-index: 100000;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
+}
 .navbar-nav.mr-auto.barraSuperior{
 	display: inline-block;
 	width: 100%;
@@ -38,14 +38,14 @@ ul{
 	display: inline-block;
 	float: right;
 }
-
 .elementoBarraSuperior{
 	display: inline-block;
 }
 
-
+/* -------------------------------------------------------------------------------------------*/
 /* para hacer que los modal no muevan el background*/
 .modal {
+	padding-top: 70px;
     overflow-y: auto;
 }
 .modal-open {
@@ -54,19 +54,24 @@ ul{
 .modal-open[style] {
    padding-right: 0px !important;
 }
+.close{
+	cursor: pointer;
 
+}
 
+/* -------------------------------------------------------------------------------------------*/
 /* para las opciones de editar o borrar con icono, o la que sea necesario*/
 .fotoOpcion{
 	width: 20px;
 	margin-left: 10px;
+	cursor: pointer;
 }
 
-
-
-
-
+/* -------------------------------------------------------------------------------------------*/
 /*para los botones que se ocupan a cada rato*/
+.btn{
+	cursor: pointer;
+}
 .btn.botonVerde{
 	font-weight: bold;
 	color: #f5f8fa;

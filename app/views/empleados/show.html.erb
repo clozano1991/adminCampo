@@ -1,0 +1,152 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+      <h5><strong> Ficha de: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
+      <%=link_to(button_tag("+ Personal", class: "btn botonNaranjo " ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+
+    <!--LinksSuperioresEmpleado-->
+    <div class="linksSuperioresFichaGenerica">
+        <ul class=" listaLinksFichaGenerica">
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Principal",user_campo_empleado_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to("Horarios",user_campo_empleado_empleado_horarios_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Pagos",user_campo_empleado_empleado_pagos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Inasistencias",user_campo_empleado_empleado_abandonos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to "Observaciones",user_campo_empleado_empleado_observaciones_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
+          </li>
+        </ul>
+    </div><!--fin LinksSuperioresEmpleado-->
+
+
+    <div class="FichaGenerica">
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Datos Básicos</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            Nombre: <%=@empleado.nombre%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Apellidos: <%=@empleado.apellidos%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Rut: <%=@empleado.rut%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Edad: ------
+          </div>
+        </div>
+
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            Direccion: <%=@empleado.direccion%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Telefono contacto: <%=@empleado.telefonoContacto%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Telefono emergencia: <%=@empleado.telefonoEmergencia%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            E-mail: <%=@empleado.emailEmpleado%>
+          </div>
+        </div>
+
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            Estado de contrato: <%=@empleado.tipoContrato%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Fecha contratacion: <%=@empleado.fechaContratacion%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Fecha desvinculacion: <%=@empleado.fechaDesvinculacion%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Años trabajados: ------
+          </div>
+        </div>
+      </div>
+
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Descripción de la persona</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@empleado.resumenPersona%>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Antecedentes laborales</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@empleado.resumenPersona%>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Nivel educacional</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@empleado.resumenPersona%>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Manejo de tecnologia</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@empleado.resumenPersona%>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementoColumnaFilaFichaGenerica">
+        <h5><strong>Otras habilidades</strong></h5>
+      </div>
+      <div class="filaFichaGenerica">
+        <div class="columnaFilaFichaGenerica">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@empleado.resumenPersona%>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!--fin FichaGenerica-->
+    
+  </div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaEmpleado-->

@@ -1,0 +1,2 @@
+module EmpleadoPagosHelper
+end
