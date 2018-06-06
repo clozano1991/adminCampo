@@ -18,22 +18,13 @@
     <%end%>
 
 
-
-
-
-
-
-
 <!-- aca van los modals que estan dentro de los bloques pero fuera del svg -->
 
 <!-- se ejecuta solo con el ermiso de la variable, desde el index -->
 <%else %>
-
-
-
 <!-- Modal que muestras las opciones del huerto -->
-<div class="modal fade modalParaHuerto" id="modal_huerto_<%=huerto.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg modalParaHuerto" id="modal_huerto_<%=huerto.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content modalParaHuerto">
 
       <div class="modal-header">
@@ -43,7 +34,7 @@
           <div class="imagenesDerechaModalIndexHuerto">
               <div class="opcionesEditarBorrarHuertoModal opcionesEditarBorrarHuertoModal_<%=huerto.id%> ">
                 <%=image_tag("editarAmarillo.png",class: "fotoOpcion editarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "editar huerto"})%>
-                <%=image_tag("deleteRed.png",class: "fotoOpcion",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar huerto"})%> 
+                <%=image_tag("deleteRed.png",class: "fotoOpcion borrarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar huerto"})%> 
               </div>
               <div class="imagenRegresarANormalHuertoModal imagenRegresarANormalHuertoModal_<%=huerto.id%>"> 
                 <%=image_tag("regresar.png",class: "fotoOpcion regresarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "regresar"})%> 
@@ -54,42 +45,40 @@
               </button>
           </div>
       </div><!-- fin vista Modal header -->
-      
       <div class="modal-body">
         <div class="contenedorVistasHuertoModal">
 
-            <div class="vistaNormalHuertoModal vistaNormalHuertoModal_<%=huerto.id%>">
-                <div class="contenedorVerticalBotonesOpcionRapidaHuertoModal">
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida" >
-                          Ver Ficha
-                    </button>
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida" >
-                          + Riego
-                    </button>
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida" >
-                          + Observación
-                    </button>
-                </div>
-                <div class="contenedorVerticalBotonesOpcionRapidaHuertoModal">
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida">
-                           + Trabajo 
-                    </button>
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida">
-                           + Produccion
-                    </button>
-                    <button  id="" class="btn botonAzul botonHuertoOpcionRapida">
-                           Estadísticas 
-                    </button>
-                 </div>
-            </div><!-- fin vista normalHuertoModal -->
-        </div>
+          <div class="vistaNormalHuertoModal vistaNormalHuertoModal_<%=huerto.id%>">
+            <div class="contenedorInformacionHuertoModal">
+              <div class="elementoInformacionHuertoModal">
+                <h5><strong> Tipo cultivo:</strong><%=" "+ huerto.cultivo%></h5>
+              </div>
+              <div class="elementoInformacionHuertoModal">
+                <h5><strong> Variedades:</strong><%= " "+ huerto.variedades%></h5>
+              </div>
+              <div class="elementoInformacionHuertoModal">
+                <h5><strong> Fecha plantacion:</strong><%=" ----------------- "%></h5>
+              </div>
+              <div class="elementoInformacionHuertoModal">
+                <h5><strong> Descripción:</strong><%=" "+ huerto.descripcion%></h5>
+              </div>
+            </div>
+            <div class="botonesModalVistaNormal">
+              <button  id="" class="btn botonAzul botonHuertoOpcionRapidaModal" >
+                         Ficha
+              </button>
+              <button  id="" class="btn botonAzul botonHuertoOpcionRapidaModal" >
+                          + Trabajo
+              </button>
+            </div><!-- fin botones opcion rapida -->
+          </div><!-- fin vista normalHuertoModal -->
 
-        <div class="vistaBorrandoHuertoModal vistaBorrandoHuertoModal_<%=huerto.id%>">
+          <div class="vistaBorrarHuertoModal vistaBorrarHuertoModal_<%=huerto.id%>">
                 <h5>¿Seguro que desea borrar este huerto?, se borraran todos los datos asociados a este </h5>
-                <%=link_to(button_tag("Borrar Huerto", class: "btn btn-danger"), user_campo_huerto_path(current_user,campo,huerto), method: :delete, remote: true )%>
-        </div><!-- fin vista borrandoHuertoModal -->
+                <%=link_to(button_tag("Borrar Huerto", class: "btn botonRojo botonConfirmarBorrarHuerto"), user_campo_huerto_path(current_user,campo,huerto), method: :delete, remote: true )%>
+          </div><!-- fin vista borrandoHuertoModal -->
 
-        <div class="vistaEditandoHuertoModal vistaEditandoHuertoModal_<%=huerto.id%>">
+          <div class="vistaEditandoHuertoModal vistaEditandoHuertoModal_<%=huerto.id%>">
               <h5>
                 Seleccione si quiere modificar la superficie del huerto en el mapa o la información. 
               </h5>
@@ -97,7 +86,7 @@
                 <button  id="" class="btn botonAzul">Superficie</button>
                 <button  id="" class="btn botonAzul">Información </button> 
               </div>
-        </div><!-- fin vista editandoHuertoModal -->
+          </div><!-- fin vista editandoHuertoModal -->
 
 
         </div><!-- fin contenedorVistasHuertoModal -->
@@ -105,7 +94,6 @@
     </div>
   </div>
 </div><!-- fin modal principal huerto -->
-
 
 
 <!--para editar un huerto-->

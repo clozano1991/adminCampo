@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524195620) do
+ActiveRecord::Schema.define(version: 20180528192445) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
     t.string "propietario"
     t.string "direccion"
-    t.text "comentarios"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180524195620) do
     t.string "imagenUno"
     t.string "imagenDos"
     t.string "imagenTres"
+    t.text "descripcion"
     t.index ["user_id"], name: "index_campos_on_user_id"
   end
 

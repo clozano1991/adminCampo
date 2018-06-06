@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-             <%=form_for @huerto, url: user_campo_huertos_path(current_user,@campo), method: :post, remote: true, :html => { :id => "formAgregarHuerto" }  do |form| %>
+             <%=form_for @huerto, url: user_campo_huertos_path(current_user,@campo), method: :post, :html => { :id => "formAgregarHuerto" }  do |form| %>
                                   <%=form.label :nombre%>
                                   <%=form.text_field :nombre, class: "form-control textField valorFormAgregarHuerto"%>
 

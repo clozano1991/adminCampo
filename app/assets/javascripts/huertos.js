@@ -59,15 +59,18 @@ $(document).ready(function(){
     $('#botonEliminarHuerto').click(function(){
         eliminarHuerto();
     });
-    // cancelando la eliminacion de un huerto
-    $('#cancelarEliminarHuerto').click(function(){
-        cancelarEliminar();
-    });
     // seleccionar lapiz para editar un huerto en el modal
     $(".editarHuertoModal").each(function(){
         mostrarVistaEditarHuertoModal($(this));
     });
-
+    // seleccionar basurero para borar un huerto en el modal
+    $(".borrarHuertoModal").each(function(){
+        mostrarVistaBorrarHuertoModal($(this));
+    });
+    // Regrezamos a la vista normal de un modal
+    $(".regresarHuertoModal").each(function(){
+        mostrarVistaNormalHuertoModal($(this));
+    });
 
     //mostramos la imagen de fondo del huerto 
     //mostrarMapaFondoBloques();
@@ -192,6 +195,8 @@ function mostrarHuerto(figura){
         if(String(figura.data("clase"))=="blue"){
             figura.attr("fill","#4285f4");     
         }
+        //agregamos la sombra correspondiente al polyline
+        figura.attr("stroke","#BDBDBE");
 }
 function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
     //hacemos notamos que el utimo elemento del arreglo sera " "
@@ -377,20 +382,6 @@ function cancelarAgregarHuerto(){
     //volvemos al permiso normal en el card body
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
 }
-function eliminarHuerto(){
-    $(".normal").hide();
-    $('.textoNormal').hide();
-    $(".eliminandoHuerto").show();
-    $(".textoEliminandoHuerto").show();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","eliminandoHuerto");
-}
-function cancelarEliminar(){
-    $(".normal").show();
-    $('.textoNormal').show();
-    $(".eliminandoHuerto").hide();
-    $(".textoEliminandoHuerto").hide();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
-}
 function botonEditarHuerto(){
     $(".normal").hide();
     $('.textoNormal').hide();
@@ -494,14 +485,29 @@ function mostrarVistaEditarHuertoModal(imagenLapizClickeada){
         console.log($(this).attr("class"));
         $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
         $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
         $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).show();
     });
 }
 function mostrarVistaBorrarHuertoModal(imagenBasureroClickeada){
-
+    $(imagenBasureroClickeada).click(function(){
+        console.log($(this).attr("class"));
+        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+        $(".vistaBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
 }
 function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
+    $(imagenRegresarClickeada).click(function(){
+        console.log("hola");
+        console.log($(this).attr("class"));
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
 
 }
 

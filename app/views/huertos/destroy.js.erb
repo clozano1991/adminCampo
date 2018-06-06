@@ -1,12 +1,5 @@
 $(document).ready(function(){ 
 	$("#huerto_<%=@huerto.id%>").hide();
-	$("#modal_borrar_huerto_"+"<%=@huerto.id%>").modal("hide"); 
-    $(".normal").show();
-    $('.textoNormal').show();
-    $(".eliminandoHuerto").hide();
-    $(".textoEliminandoHuerto").hide();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
-
-
+	$("#modal_huerto_"+"<%=@huerto.id%>").modal("hide"); 
 
 });

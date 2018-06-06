@@ -1,4 +1,5 @@
 
+
 <div class="contenedorHuertos">
   <!--este es el bloque donde estan todas las cosas de la izquierda, botones y textos-->
   <div class="gridIzquierda">
@@ -6,40 +7,44 @@
       <h5><strong> Campo: <%=@campo.nombre%></strong></h5>
     </div>
     <div class="contenedorGeneralVistasGridIzquierdaIndexHuertos">
-      
-      <div class="vistaNormalIndexHuertos  vistasIndexHuertos">
-          <div class="contenedorBotonGridIzquierdaIndexHuertos">
-            <button type="button" class="btn botonNaranjo botonGridIzquierdaIndexHuertos botonConfirmacionVerde" id="botonAgregarHuerto">Agregar Huerto</button> 
-          </div>
-          <p class="textoAyudaGridIzquierdaIndexHuertos">Para acceder a las opciones de un huerto precione sobre el en el mapa.</p>
+      <!--vista normal-->
+      <div class="vistasIndexHuertos vistaNormalIndexHuertos">
+        <div class="contenedorElementoVistaIndexHuerto conBordeAbajo">
+          <p class="textoAyudaGridIzquierdaIndexHuertos">Para acceder a las opciones de un huerto precione sobre el, en el bloque a la derecha.</p>
+        </div>
+        <div class="contenedorElementoVistaIndexHuerto conBordeAbajo">
+          <p class="textoAyudaGridIzquierdaIndexHuertos">Agregar un Huerto al bloque.</p>
+          <%=button_tag("+ Huerto", class: "btn botonNaranjo",id: "botonAgregarHuerto")%>
+        </div>
+        <div class="contenedorElementoVistaIndexHuerto">
+          <p class="textoAyudaGridIzquierdaIndexHuertos">Clima estimado.</p>
+          <%=button_tag("Establecer patron", class: "btn",id: "")%>
+        </div>
       </div>
-
-      <div class="vistaAgregandoHuertoIndexHuertos  vistasIndexHuertos">
+      <!--vista agregando huerto-->
+      <div class=" vistasIndexHuertos vistaAgregandoHuertoIndexHuertos">
           <p class="textoAyudaGridIzquierdaIndexHuertos">1) Cree la figura del huerto haciendo diferentes clicks en el espacio de la derecha.</p> 
           <p class="textoAyudaGridIzquierdaIndexHuertos">2) Una vez que la figura del nuevo huerto este estalecida precione el boton "crear" para continuar.</p> 
-          <div class="contenedorBotonGridIzquierdaIndexHuertos">
+          <div class="contenedorBotonAgregandoHuertoGridIzquierdaIndexHuertos">
             <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertos" id="botonConfirmarAgregarHuerto">Crear</button>
             <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertos " id="cancelarAgregarHuerto">Cancelar</button>  
           </div>
       </div>
-
-      <div class="vistaEditandoHuertoFiguraIndexHuertos  vistasIndexHuertos" >
+      <!--vista editando huerto-->
+      <div class=" vistasIndexHuertos vistaEditandoHuertoFiguraIndexHuertos" >
           <p class="textoAyudaGridIzquierdaIndexHuertos"> 1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
           <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la figura del nuevo huerto este estalecida precione el boton "editar" para continuar.</p>
-          <div class="contenedorBotonGridIzquierdaIndexHuertos">
+          <div class="contenedorBotonEditandoHuertoGridIzquierdaIndexHuertos">
             <button type="button" class="btn botonGridIzquierdaIndexHuertos" id="confirmarEditandoHuertoFiguraElegida">Editar</button>
             <button type="button" class="btn botonGridIzquierdaIndexHuertos " id="cancelarEditandoHuertoFiguraElegida">Cancelar</button>  
           </div>  
       </div>
-    </div><!--fin contenedor general de bistas gridIzquierda-->
-
-
+    </div><!--fin contenedor general de vistas gridIzquierda-->
   </div><!--fin gridIzquierda-->
 
 
     <!--todo lo que esta en la derecha, donde estan los mapas-->
     <div id="gridDerechaMapaHuertos" data-permiso="normal" data-bloque="bloqueHuertosUno" >
-
       <!--aca estan los botones 1, 2 y 3 para cambiar bloques-->
       <div id="todosLosBotonesParaCambiarBloque">
         <!--el boton tiene que estar dentro de este div para que sea clickeable-->

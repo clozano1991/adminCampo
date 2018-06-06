@@ -1,10 +1,22 @@
 $(document).ready(function(){
-     $("cancelarCreacion").click(function(){
-          $("crearCampoModal").modal("hide");
-     });
+    //----------------view index campos-----------------
+    // Cuando se hace click en el lapiz para editar un campo
+    $(".imagenEditarCampo").each(function(){ 
+       mostrarModalEditarCampo($(this));
+    });
+    // Cuando se hace click en el basurero para borrar un campo
+    $(".imagenBorrarCampo").each(function(){ 
+       mostrarModalBorrarCampo($(this));
+    });
+    // cuando se hace click en el ticket para editar las notas
+    $(".ticketGuardarCambiosNotasCampo").each(function(){ 
+       editarNotasCampo($(this));
+    });
+    
 
 
-     //main de la parte cuando se elige un mapa -------------------------------
+
+    //view seleccionando un mapa -------------------------------
     $("#botonSeleccionarMapa").click(function(){
         seleccionarMapa();
     });
@@ -13,6 +25,34 @@ $(document).ready(function(){
 
 
 
+//----------------funciones index campo -----------------
+
+// cuando se hace click en el lapiz para editar un campo
+function mostrarModalEditarCampo(imagenEditarCampo){
+    $(imagenEditarCampo).click(function(){
+       $("#modal_editar_campo_"+imagenEditarCampo.attr("data-idCampo")).modal("show");
+    });
+}
+// cuando se hace click en el basurero para borrar un campo
+function mostrarModalBorrarCampo(imagenBorrarCampo){
+    $(imagenBorrarCampo).click(function(){
+       $("#modal_borrar_campo_"+imagenBorrarCampo.attr("data-idCampo")).modal("show");
+    });
+}
+// cuando se hace click en el ticket para editar las notas
+function editarNotasCampo(imagenEditarNotasCampo){
+    $(imagenEditarNotasCampo).click(function(){
+       $("#alertaCambiosNotasGuardadas_"+imagenEditarNotasCampo.attr("data-idCampo")).fadeIn(1000);
+       $("#alertaCambiosNotasGuardadas_"+imagenEditarNotasCampo.attr("data-idCampo")).fadeOut(1000);
+       $("#formEditarNotasCampo_"+imagenEditarNotasCampo.attr("data-idCampo")).submit();
+    });
+}
+
+
+
+
+
+//----------------------------------------------------------------------------------------------
 // lo que pasa al seleccionar el mapa, aca se completa todo
 function seleccionarMapa(){
     //mostramos aviso, modificamos imagen del mouse y 
@@ -33,6 +73,5 @@ function seleccionarMapa(){
             //$("#guardandoUrlBaseDiesParaCampo").submit();
             $("body").append(url(imagenBaseSesentaYCuatro));
         } 
-    });
-    
+    });   
 }

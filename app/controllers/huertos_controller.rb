@@ -13,7 +13,7 @@ class HuertosController < ApplicationController
 		@huerto=current_user.campos.find(params[:campo_id]).huertos.build(huerto_params)
 		@huerto.save
 		respond_to do|format|
-			format.html {redirect_to index_path}
+			format.html {redirect_to user_campo_huertos_path(current_user, @campo)}
 			format.js 
 		end
 	end

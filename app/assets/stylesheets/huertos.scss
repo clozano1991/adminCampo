@@ -11,9 +11,12 @@
 
 /*contenedor general-----------------------------------------------------------*/
 .contenedorHuertos{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	background-color: #f0e6c8;
 	width: 100%;
-	min-height: 120vh;
+	min-height: 100vh;
 	padding-top: 2vh;
 	padding-bottom: 2vh;
 }
@@ -22,8 +25,10 @@
 .gridIzquierda{
 	position: absolute;
 	display: inline-block;
-	height: calc(94vh - 42px);
+	
+	max-height: 1050px;
 	width: 14%;
+	max-width: 322px;
 	left: 0.6%;
 	padding-bottom: 1%;
 	padding-top: 1%;
@@ -33,49 +38,64 @@
 	background-color: white;
 	border-radius: 4px;
 }
+.nombreCampoParaIndexHuertos{
+	min-height: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 10%;
+	border-bottom: solid;
+	border-color: #505050;
+}
 .contenedorGeneralVistasGridIzquierdaIndexHuertos{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	margin-top: 40px;
+	height: 100%;
 }
+/* contenedores de las vistas grid izquierda index Huertos*/
+.vistasIndexHuertos{
+	height: 100%;
+}
+.contenedorElementoVistaIndexHuerto{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10%;
+	margin-bottom: 10%; 
+}
+.contenedorElementoVistaIndexHuerto.conBordeAbajo{
+    border-bottom: solid;
+	border-color: #505050;
+}
+
+.textoAyudaGridIzquierdaIndexHuertos{
+	text-align: center;
+	font-weight: bold;
+	color: black;
+}
+
+/* vista index Huertos Normal*/
+
+/* vista index Huertos AgregandoHuerto*/
 .vistaAgregandoHuertoIndexHuertos{
 	display: none;
 }
-.vistaEditandoHuertoFiguraIndexHuertos{
-	display: none;
-}
-.contenedorBotonGridIzquierdaIndexHuertos{
+.contenedorBotonAgregandoHuertoGridIzquierdaIndexHuertos{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	margin-bottom: 40px; 
 }
-.btn.botonGridIzquierdaIndexHuertos{
-	min-width: 45%;
-	max-width: 220px;
-	
 
+
+/* vista index Huertos EditandoHuerto*/
+.vistaEditandoHuertoFiguraIndexHuertos{
+	display: none;
 }
-.textoAyudaGridIzquierdaIndexHuertos{
-	text-align: left;
-	font-weight: bold;
-	color: black;
+.contenedorBotonEditandoHuertoGridIzquierdaIndexHuertos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 40px; 
 }
-
-
-
-/* contenedores de las vistas grid izquierda index Huertos*/
-.vistasIndexHuertos{
-
-	margin-top: 3%;
-
-}
-
-/* vista index Huertos Normal*/
-
-
-
 
 
 
@@ -88,7 +108,9 @@
 	display: inline-block;
 	right: 0.6%;
 	width: 84.3%;
+	max-width: 1978px;
 	height: calc(94vh - 42px);
+	max-height: 1050px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 	background-color: white;
 	border-radius: 4px;
@@ -128,7 +150,7 @@
 	right: 15px;
 	top: 12px;
 }
-
+/*----------------------------------- aca lo del modal-------------------------------------*/
 .modal.fade.modalParaHuerto{
 	padding-top: 5%;
 }
@@ -136,36 +158,49 @@
 	border-width: 1px;
 	border-color: black;
 }
+
+/*-------------------------------------vistas modal huerto------------------------------*/
 .imagenesDerechaModalIndexHuerto{
 	display: flex;
 	flex-direction: row;
 }
-
-/*aca las diferentes vistas que hay dentro del modal de un hueto*/
+/*-------------------------------------vista modal normal huerto------------------------------*/
 .vistaNormalHuertoModal{
 	position: relative;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	max-height: 1100px;
-	height: 30vh; 
+	justify-content: space-between;
+	flex-direction: column;
 }
-.contenedorVerticalBotonesOpcionRapidaHuertoModal{
+.contenedorInformacionHuertoModal{
+
+}
+.elementoInformacionHuertoModal{
+	margin-bottom: 17px;
+}
+.botonesModalVistaNormal{
 	position: relative;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	width: 142px;	
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-bottom: 10px;
 }
-.btn.botonAzul.botonHuertoOpcionRapida{
+.btn.botonAzul.botonHuertoOpcionRapidaModal{
 	position: relative;
-	width: 140px;
+	min-width: 100px;
+	margin-left: 8px;
 }
+/*-------------------------------------vista modal borrar huerto------------------------------*/
 
-.vistaBorrandoHuertoModal{
+.vistaBorrarHuertoModal{
 	display: none;
 }
+.btn.botonRojo.botonConfirmarBorrarHuerto{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    float: right;
+}
 
+/*-------------------------------------vista modal editar huerto------------------------------*/
 .vistaEditandoHuertoModal{
 	display: none;
 }
