@@ -27,6 +27,7 @@
 	border-radius: 4px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
+/*----------------------------------------------------------------------------*/
 .contenedorLinkSuperioresMasContenidoFichaGenerica{
 	position: relative;
 	width: 100%;
@@ -35,6 +36,7 @@
 	margin-left: 0px;
 	
 }
+/*-----------------------------------------------------------------------------*/
 .listaLinksFichaGenerica{
 	display: flex;
 	flex-direction: row;
@@ -64,11 +66,10 @@
 	color: white;
 	background-color: #505050;
 }
-
-
-
 /*------------------------------ Ficha generica contenedor principal-------------------------------*/
 .FichaGenerica{
+	position: relative;
+	width: 100%;
 	min-height: 40vh;
 	padding-top: 18px;
 	padding-bottom: 15px;
@@ -77,6 +78,10 @@
 	margin-bottom: 25px;
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.tituloFilaFichaGenerica{
+	font-size: 22px;
+	margin-bottom: 5px;
 }
 .filaFichaGenerica{
 	position: relative;
@@ -92,6 +97,7 @@
 	padding-left: 3px;
 	padding-right: 3px;
 }
+/*------------------elegimos que columna usar dependiendo de cuantas tiene una fila-------------*/
 .columnaFilaFichaGenerica.UnaColumnaPorFila{
     width: 100%;
 }
@@ -100,6 +106,11 @@
 }
 .columnaFilaFichaGenerica.TresColumnasPorFila{
 	width: 32.8%;
+}
+/*--------------- los elementos que van en las columnas de una fila---------------*/
+.elementoColumnaFilaFichaGenerica{
+	font-size: 18px;
+	margin-bottom: 5px;
 }
 .elementoFichaGenericaConBordeEnDerecha{
 	border-right: solid;
@@ -120,8 +131,4 @@
 	border-top: solid;
 	border-width: 0.3px;
 	border-color:#505050;
-}
-.elementoColumnaFilaFichaGenerica{
-	font-size: 18px;
-	margin-bottom: 5px;
 }

@@ -64,9 +64,7 @@
               </div>
             </div>
             <div class="botonesModalVistaNormal">
-              <button  id="" class="btn botonAzul botonHuertoOpcionRapidaModal" >
-                         Ficha
-              </button>
+              <%=link_to(button_tag("Ficha", class: "btn botonAzul botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
               <button  id="" class="btn botonAzul botonHuertoOpcionRapidaModal" >
                           + Trabajo
               </button>
@@ -74,7 +72,7 @@
           </div><!-- fin vista normalHuertoModal -->
 
           <div class="vistaBorrarHuertoModal vistaBorrarHuertoModal_<%=huerto.id%>">
-                <h5>¿Seguro que desea borrar este huerto?, se borraran todos los datos asociados a este </h5>
+                <h5>¿Seguro que desea borrar este huerto?, se borraran todos los datos asociados a este. </h5>
                 <%=link_to(button_tag("Borrar Huerto", class: "btn botonRojo botonConfirmarBorrarHuerto"), user_campo_huerto_path(current_user,campo,huerto), method: :delete, remote: true )%>
           </div><!-- fin vista borrandoHuertoModal -->
 

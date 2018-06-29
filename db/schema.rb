@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528192445) do
+ActiveRecord::Schema.define(version: 20180608215811) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -86,6 +86,18 @@ ActiveRecord::Schema.define(version: 20180528192445) do
     t.date "fechaDesvinculacion"
     t.string "sueldoBaseMensual"
     t.index ["campo_id"], name: "index_empleados_on_campo_id"
+  end
+
+  create_table "equipos", force: :cascade do |t|
+    t.integer "campo_id"
+    t.string "nombre"
+    t.string "marca"
+    t.string "modelo"
+    t.date "año_fabricacion"
+    t.date "fecha_adquisicion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campo_id"], name: "index_equipos_on_campo_id"
   end
 
   create_table "huertos", force: :cascade do |t|

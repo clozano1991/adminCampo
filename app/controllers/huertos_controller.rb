@@ -7,6 +7,10 @@ class HuertosController < ApplicationController
 		@huerto=current_user.campos.find(params[:campo_id]).huertos.build
 
 	end
+    def show
+    	@campo=current_user.campos.find(params[:campo_id])
+    	@huerto=current_user.campos.find(params[:campo_id]).huertos.find(params[:id])
+    end
 
 	def create
 		@campo=current_user.campos.find(params[:campo_id])

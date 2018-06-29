@@ -1,0 +1,61 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+      <h5><strong> Ficha del huerto: <%=@huerto.nombre%></strong></h5>
+  </div>
+
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+    <!--LinksSuperioresEmpleado-->
+    <div class="linksSuperioresFichaGenerica">
+        <ul class=" listaLinksFichaGenerica">
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Principal",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Planificación",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Trabajos",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica ")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Aplicaciones",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica ")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Producción",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica")%>
+          </li>
+          
+        </ul>
+    </div><!--fin LinksSuperioresHuerto-->
+    <div class="FichaGenerica">
+
+      <div class="tituloFilaFichaGenerica">
+        <h4><strong>Datos Básicos</strong></h4>
+      </div>
+      <div class="filaFichaGenerica">
+        <div class="columnaFilaFichaGenerica DosColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <strong>Campo:</strong> <%=" "+ @campo.nombre%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            <strong>Cultivo:</strong> <%=" "+ @huerto.cultivo%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            <strong>Variedades:</strong> <%=" "+ @huerto.variedades%>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            <strong>Fecha Plantación:</strong> <%=" --------- "%>
+          </div>
+        </div>
+        <div class="columnaFilaFichaGenerica DosColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            <strong>Descripcion:</strong>
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            <%=@huerto.descripcion%>
+          </div>
+        </div>
+      </div><!--fin fila -->
+
+    </div><!--fin FichaGenerica-->
+    
+  </div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaHuerto-->
