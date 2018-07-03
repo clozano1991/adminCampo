@@ -1,4 +1,4 @@
-/*---------------------------------- Ficha generica links--------------------------------------*/
+/*---------------------------------- Ficha generica--------------------------------------*/
 .contenedorFondoFichaGenerica{
 	position: relative;
 	display: flex;
@@ -25,7 +25,6 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	background-color: white;
-	border-radius: 4px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 /*----------------------------------------------------------------------------*/
@@ -35,8 +34,7 @@
 	max-width: 2300px;
 	margin-top: 25px;
 	margin-left: 0px;
-	
-}
+}  
 /*-----------------------------------------------------------------------------*/
 .listaLinksFichaGenerica{
 	display: flex;
@@ -80,7 +78,7 @@
 	background-color: white;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
-.tituloFilaFichaGenerica{
+.tituloFilaFichaGenerica{  
 	font-size: 22px;
 	margin-bottom: 5px;
 }

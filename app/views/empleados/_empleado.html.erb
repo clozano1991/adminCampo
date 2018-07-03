@@ -1,103 +1,104 @@
 
 <!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
 <% if @adentroTablaEmpleado == true %>
-  <tr class="filaEmpleadoEnTablaEmpleados" id="filaEmpleado_<%=empleado.id%>">
-      <td  class="columnaInformacionEmpleado">
-      	  <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados">
+  <tr class="filaListaGrande" id="filaEmpleado_<%=empleado.id%>">
+      <td class="columnaInformacionListaGrandeCuatroPorFila">
+      	  <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
               <%=empleado.nombre%> <%=empleado.apellidos%> 
             </div>
       	  </div>
-      	  <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+      	  <div class="muchaInformacionListaGrande empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Nombre: <%=empleado.nombre%> <%=empleado.apellidos%> 
             </div>
-            <div  class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div  class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Rut: <%=empleado.rut%> 
             </div>
-            <div  class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div  class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Edad: 
             </div>
-      
       	  </div>
       </td>
-      <td class="columnaInformacionEmpleado">
-      	  <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados">
+      <td class="columnaInformacionListaGrandeCuatroPorFila">
+      	  <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
                 <%=empleado.telefonoContacto%>
             </div>
       	  </div>
-      	  <div class="empleadoTablaMuchaInformacion  empleadoTablaMuchaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+      	  <div class="muchaInformacionListaGrande  empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
                 Contacto: <%=empleado.telefonoContacto%>
             </div>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
                 Emergencia: <%=empleado.telefonoEmergencia%>
             </div>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
                 E-mail: <%=empleado.emailEmpleado%>
             </div>
       	  </div>
       </td>
-      <td class="columnaInformacionEmpleado">
-      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados">
+      <td class="columnaInformacionListaGrandeCuatroPorFila">
+      	   <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
               <%=empleado.cargo%>
             </div>
       	   </div>
-      	   <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+      	   <div class="muchaInformacionListaGrande empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Cargo: <%=empleado.cargo%>
             </div>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Horario:
             </div>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Estado contrato: <%=empleado.tipoContrato%>
             </div>
       	   </div>
       </td>
-      <td class="columnaInformacionEmpleado" >
-      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados">
+      <td class="columnaInformacionListaGrandeCuatroPorFila" >
+      	   <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
               <%=empleado.sueldoBaseMensual%>
             </div>
       	   </div>
-      	   <div class="empleadoTablaMuchaInformacion  columnaSinBotonesSinBordeALaDerecha empleadoTablaMuchaInformacion_<%=empleado.id%>">
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+      	   <div class="muchaInformacionListaGrande  empleadoTablaMuchaInformacion_<%=empleado.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Sueldo base: <%=empleado.sueldoBaseMensual%>
             </div>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Contratación: <%=empleado.fechaContratacion%>
             </div>
             <% if empleado.tipoContrato=="Desvinculado" %><!--solo se ejecuta si el etado del contrato es desvinculado-->
-                <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+                <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
                   Desvinculación: <%=empleado.fechaDesvinculacion%>
                 </div>
             <%end%>
-            <div class="contenedorUnaInformacionTablaEmpleados muchaInformacion">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               Años trabajados:
             </div>
       	   	
       	   </div>
       </td>
-      <td class="columnaInformacionEmpleadoImagenesDerecha">
-      	   <div class="empleadoTablaPocaInformacion empleadoTablaPocaInformacion_<%=empleado.id%>" >
-      	   	   <div class="opcionesImagenesDerechaTablaEmpleados">
+      <td class="columnaImagenesDerechaListaGrande">
+      	   <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaListaGrande">
+      	   	   <div class="imagenesDerechaListaGrande">
                     <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
                </div>
+              </div>
       	   </div>
-      	   <div class="empleadoTablaMuchaInformacion empleadoTablaMuchaInformacion_<%=empleado.id%>">
-              <div class="contenedorImagenesYBotonesDerechaEmpleadoIndex">
-      	   	   <div class="opcionesImagenesDerechaTablaEmpleados imagenesMuchaInformacion">
+      	   <div class="muchaInformacionListaGrande empleadoTablaMuchaInformacion_<%=empleado.id%>">
+              <div class="contenedorImagenesYBotonesDerechaListaGrande">
+      	   	   <div class="imagenesDerechaListaGrande">
                     <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_empleado_path(current_user,@campo,empleado.id), method: :get)%>
                     <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEmpleado" , :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
                     <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
                 </div>
 
-                <div class="contenedorBotonesOpcionesTablaEmpleados">
-                      <%=link_to(button_tag("Ficha", class: "btn botonAzul botonesOpcionesTablaEmpleados" ),user_campo_empleado_path(current_user,@campo, empleado), method: :get  )%>
-                      <%=link_to(button_tag("+ Pago", class: "btn botonAzul botonesOpcionesTablaEmpleados" ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+                <div class="botonesListaGrande">
+                      <%=link_to(button_tag("Ficha", class: "btn botonAzul botonListaGrande" ),user_campo_empleado_path(current_user,@campo, empleado), method: :get  )%>
+                      <%=link_to(button_tag("+ Pago", class: "btn botonAzul botonListaGrande" ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
                 </div>
               <div>
       	   </div>

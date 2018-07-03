@@ -1,0 +1,131 @@
+/*---------------------------------- fondo--------------------------------------*/
+.contenedorFondoListaGrande{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: calc(94vh - 5px);
+	padding-top: 0.8%;
+	padding-bottom: 0.8%;
+	padding-left:0.8%;
+	padding-right: 0.8%;
+	background-color: #f0e6c8;  
+}
+/*---------------------------------- barra superior --------------------------------------*/
+.barraArribaListaGrande{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 2300px;
+	margin-top: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.botonesBarraArribaListaGrande{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center; 
+}
+.btn.botonNaranjo.botonBarraArribaListaGrande{
+	margin-left: 8px;
+}
+/*---------------------------------- lista --------------------------------------*/
+.listaGrande{
+	position: relative;
+	width: 100%;
+	margin-top: 25px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.tablaListaGrande{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.filaSuperiorListaGrande{
+	border-bottom: solid;
+	border-color: #505050;
+	border-width: 2.5px;
+}
+.tituloColumnaListaGrande{
+	font-size: 20px;
+}
+/*----------------------------- filas de la lista -------------------------------------*/
+.filaListaGrande{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+/*------------------------------columnas de la lista ----------------------------------*/
+/*es adentro de esto que se pone lo de ,ucha informacion o poca informacion*/
+.columnaInformacionListaGrandeTresPorFila{
+	position: relative;
+	height: 100%;
+    width: 30.6%;
+}
+.columnaInformacionListaGrandeCuatroPorFila{
+	position: relative;
+	height: 100%;
+    width: 23%;
+}
+.columnaInformacionListaGrandeCincoPorFila{
+	position: relative;
+	height: 100%;
+    width: 18.4%;
+}
+/*esta es la columna de la derecha donde se ponen los iconos*/
+.columnaImagenesDerechaListaGrande{
+	width: 8%;
+	min-width: 140px;
+
+}
+.contenedorImagenesYBotonesDerechaListaGrande{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	float: right;
+	margin-right: 10px;
+}
+.imagenesDerechaListaGrande{
+	position: relative;
+	display: block;
+	float: right;
+}
+.botonesListaGrande{
+
+}
+.btn.botonAzul.botonListaGrande{
+	float: right;
+	margin-top: 10px;
+	width: 90px;
+}
+/*-----------------------------manejo informacion en celdad -------------------------*/
+/*lo de poca y mucha informacion es mejor verlo en 
+el css directo de cada clase, ya que interactua con js, exceptuando lo principal:*/
+.pocaInformacionListaGrande{	
+}
+.muchaInformacionListaGrande{
+	display: none;	
+}
+
+
+/*aca se pone cada parte de la informacion que va en una celda*/
+.contenedorUnaInformacionPocaInformacionListaGrande{
+	font-size: 17px;
+}
+.contenedorUnaInformacionMuchaInformacionListaGrande{
+	font-size: 17px;
+	margin-top: 12px;
+}
+/*para las imagenes y botones que van en la columna de la derecha*/
+.imagenesDerechaMuchaInformacionListaGrande{
+	margin-bottom: 10px;
+}

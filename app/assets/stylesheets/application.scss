@@ -15,7 +15,10 @@
  */
 @import "bootstrap";
 /* -------------------------------------------------------------------------------------------*/
-/*ponemos las propiedades del texto de la app*/
+/*propiedad de las tablas de bootstrap*/
+.table {
+	margin-bottom: 0px;
+}
 
 /* aca estan los estilos de las cosas generales*/
 ul{
@@ -25,7 +28,7 @@ ul{
 /* -------------------------------------------------------------------------------------------*/
 /* Estilos de la barra de navegacion superior*/
 .navbar.navbar-expand-lg.navbarUsada{
-	background-color: #505050; /*#000064*/
+	background-color: #333333; /*#000064*/
 	color: white;
 	z-index: 100000;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);  
@@ -73,25 +76,25 @@ ul{
 	cursor: pointer;
 }
 .btn.botonVerde{
-	font-weight: bold;
+	font-weight: 600;
 	color: #f5f8fa;
 	background-color: #007c41;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
 }
 .btn.botonRojo{
-	font-weight: bold;
+	font-weight: 600;
 	color: #f5f8fa;
 	background-color: #cc0033;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
 }
 .btn.botonNaranjo{
-	font-weight: bold;
+	font-weight: 600;
 	color: #f5f8fa;
 	background-color: #f57814;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
 }
 .btn.botonAzul{
-	font-weight: bold;
+	font-weight: 600;
 	color: #f5f8fa;
 	background-color: #10167f;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
