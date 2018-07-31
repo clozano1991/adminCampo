@@ -1,0 +1,114 @@
+<!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+<% if @adentroTablaEquipo == true %>
+  <tr class="filaListaGrande" id="filaEquipo_<%=equipo.id%>">
+      <td class="columnaInformacionListaGrandeCincoPorFila">
+      	  <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
+              <%=equipo.tipoEquipo%> 
+            </div>
+      	  </div>
+      	  <div class="muchaInformacionListaGrande equipoTablaMuchaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=equipo.tipoEquipo%>
+            </div> 
+      	  </div>
+      </td>
+      <td class="columnaInformacionListaGrandeCincoPorFila">
+      	  <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
+              <%=equipo.marca%> 
+            </div>
+      	  </div>
+      	  <div class="muchaInformacionListaGrande  equipoTablaMuchaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=equipo.marca%>
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionListaGrandeCincoPorFila">
+          <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
+              <%=equipo.modelo%> 
+            </div>
+          </div>
+          <div class="muchaInformacionListaGrande  equipoTablaMuchaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=equipo.modelo%> 
+            </div>
+          </div>
+      </td>
+      <td class="columnaInformacionListaGrandeCincoPorFila">
+      	   <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
+              <%=equipo.fechaFabricacion%>
+            </div>
+      	   </div>
+      	   <div class="muchaInformacionListaGrande equipoTablaMuchaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=equipo.fechaFabricacion%>
+            </div>
+      	   </div>
+      </td>
+      <td class="columnaInformacionListaGrandeCincoPorFila" >
+      	   <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande">
+              <%=equipo.estado%>
+            </div>
+      	   </div>
+      	   <div class="muchaInformacionListaGrande  equipoTablaMuchaInformacion_<%=equipo.id%>">
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=equipo.estado%>
+            </div>
+      	   </div>
+      </td>
+      <td class="columnaImagenesDerechaListaGrande">
+      	   <div class="pocaInformacionListaGrande equipoTablaPocaInformacion_<%=equipo.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaListaGrande">
+      	   	   <div class="imagenesDerechaListaGrande">
+                    <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => (equipo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+               </div>
+              </div>
+      	   </div>
+      	   <div class="muchaInformacionListaGrande equipoTablaMuchaInformacion_<%=equipo.id%>">
+              <div class="contenedorImagenesYBotonesDerechaListaGrande">
+      	   	   <div class="imagenesDerechaListaGrande">
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{:idEquipo => (equipo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_equipo_path(current_user,@campo,equipo.id), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEquipo" , :data=>{:idEquipo => (equipo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
+                    <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => (equipo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+                </div>
+
+                <div class="botonesListaGrande">
+                      <%=link_to(button_tag("Ficha", class: "btn botonAzul botonListaGrande" ),user_campo_equipo_path(current_user,@campo, equipo), method: :get  )%>
+                </div>
+              <div>
+      	   </div>
+      </td>
+  </tr>
+<%end%>
+<!-- fin del contenido de la tabla -->
+
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado -->
+<%if @adentroContenedorModalsBorrarEquipo == true%>
+  <div class="modal fade modalParaBorrarEquipo" id="modal_borrar_equipo_<%=equipo.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5>
+                <strong>Personal:<%=" "+equipo.tipoEquipo+" "%> <%=equipo.marca+" "%> <%=equipo.modelo%> </strong>
+             </h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+                   <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+                  <h5>
+                    ¿Seguro que desea borrar todos los datos asociados a este equipo?
+                  </h5>
+                    <%=link_to(button_tag("Borrar equipo", class: "btn botonRojo botonConfirmarBorrarEquipo"), user_campo_equipo_path(current_user,campo,equipo), method: :delete, remote: true )%>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%><!-- fin modal para borrar empleado -->

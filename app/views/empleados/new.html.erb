@@ -1,12 +1,13 @@
 
 <div class="contenedorFondoFichaGenerica">
-  <div class="opcionesArribaFichaGenerica">
-      <h5><strong> Agregando miembro al personal, al terminar precione el boton para confirmar</strong></h5>
-      <%=button_tag("Agregar", class: "btn botonVerde", id: "botonConfirmarAgregarEmpleado")%>
-  </div>
-  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
     <%=form_for @empleado, url: user_campo_empleados_path(current_user,@campo), method: :post,:html => { :id => "formAgregarEmpleado" } do |form| %>
 
+  <div class="opcionesArribaFichaGenerica">  
+      <h5><strong> Agregando miembro al personal, al terminar precione el boton para confirmar</strong></h5>
+      <%=form.submit("Agregar", class: "btn botonVerde ")%>
+      
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
     <!--LinksSuperioresEmpleado-->
     <div class="linksSuperioresFichaGenerica">
     </div><!--fin LinksSuperioresEmpleado-->
@@ -37,8 +38,8 @@
                 <div class="elementoColumnaFilaFichaGenerica">
                     <label><strong>Telefono contacto</strong></label>
                     <%=form.text_field :telefonoContacto, class: "form-control agregarEmpleado"%>
-               </div>
-               <div class="elementoColumnaFilaFichaGenerica">
+                </div>
+                <div class="elementoColumnaFilaFichaGenerica">
                     <label><strong>Telefono emergencia</strong></label>
                     <%=form.text_field :telefonoEmergencia, class: "form-control agregarEmpleado"%>
                 </div>  
@@ -123,7 +124,7 @@
             <div class="columnaFilaFichaGenerica TresColumnasPorFila">
                 <div class="elementoColumnaFilaFichaGenerica">
                 <label><strong>Estado de contrato</strong></label>
-                    <%=form.select(:tipoContrato, ["Contratado","Temporero","Desvinculado"],{}, {:class => "form-control agregarEmpleado"} )%> 
+                    <%=form.select(:tipoContrato, ["Vigente","Temporero","Desvinculado"],{}, {:class => "form-control agregarEmpleado"} )%> 
                 </div>   
             </div>
         </div><!--fin una fila de la ficha-->

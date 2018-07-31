@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703163154) do
+ActiveRecord::Schema.define(version: 20180726203242) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20180703163154) do
     t.string "imagenTres"
     t.text "descripcion"
     t.index ["user_id"], name: "index_campos_on_user_id"
+  end
+
+  create_table "elemento_contables", force: :cascade do |t|
+    t.integer "campo_id"
+    t.string "tipo"
+    t.string "nombre"
+    t.string "tipoIngresoEgreso"
+    t.integer "monto"
+    t.date "fecha"
+    t.text "observacion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campo_id"], name: "index_elemento_contables_on_campo_id"
   end
 
   create_table "empleado_abandonos", force: :cascade do |t|
@@ -86,6 +99,22 @@ ActiveRecord::Schema.define(version: 20180703163154) do
     t.date "fechaDesvinculacion"
     t.string "sueldoBaseMensual"
     t.index ["campo_id"], name: "index_empleados_on_campo_id"
+  end
+
+  create_table "equipos", force: :cascade do |t|
+    t.integer "campo_id"
+    t.string "tipoEquipo"
+    t.string "marca"
+    t.string "modelo"
+    t.date "fechaFabricacion"
+    t.date "fechaAdquisicion"
+    t.string "estado"
+    t.string "patente"
+    t.string "compradoAVendedor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "descripcion"
+    t.index ["campo_id"], name: "index_equipos_on_campo_id"
   end
 
   create_table "huertos", force: :cascade do |t|

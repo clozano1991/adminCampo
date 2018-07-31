@@ -2,16 +2,22 @@
 
 one:
   campo: one
-  nombre: MyString
+  tipoEquipo: MyString
   marca: MyString
   modelo: MyString
-  año_fabricacion: 2018-06-08
-  fecha_adquisicion: 2018-06-08
+  fechaFabricacion: 2018-07-03
+  fechaAdquisicion: 2018-07-03
+  estado: MyString
+  patente: MyString
+  compradoAVendedor: MyString
 
 two:
   campo: two
-  nombre: MyString
+  tipoEquipo: MyString
   marca: MyString
   modelo: MyString
-  año_fabricacion: 2018-06-08
-  fecha_adquisicion: 2018-06-08
+  fechaFabricacion: 2018-07-03
+  fechaAdquisicion: 2018-07-03
+  estado: MyString
+  patente: MyString
+  compradoAVendedor: MyString

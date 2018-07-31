@@ -1,0 +1,99 @@
+/*---------------------------------- fondo--------------------------------------*/
+.contenedorFondoPlanillaContabilidad{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: calc(94vh - 5px);
+	padding-top: 0.8%;
+	padding-bottom: 0.8%;
+	padding-left:0.8%;
+	padding-right: 0.8%;
+	background-color: #f0e6c8;  
+}
+/*---------------------------------- barra superior --------------------------------------*/
+.barraArribaPlanillaContabilidad{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 2300px;
+	margin-top: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.botonesBarraArribaPlanillaContabilidadMasSeleccionFecha{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center; 
+}
+.btn.botonNaranjo.botonBarraArribaPlanillaContabilidad{
+	margin-left: 8px;
+}
+
+/*-------------------------------planilla contabilidad----------------------------------*/
+.contenedorCuerpoPlanillaContabilidad{
+	position: relative;
+	width: 100%;
+	max-width: 2300px;
+	margin-top: 25px;
+	overflow: auto;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+/*------------------------------filas planilla contavilidad ------------------*/
+.filaSuperiorPlanillaContabilidad{
+	border-bottom: solid;
+	border-color: #505050;
+	border-width: 3px;
+}
+.filaCuentaPrincipalPlanillaContabilidad{
+    position: relative;
+	height: 100%;
+	width: 100%;
+}
+.filaConBordeArribaCuentaPrincipalPlanillaContabilidad{
+	border-top: solid;
+	border-color: #505050;
+	border-width: 3px;
+}
+.filaCuentaSecundarialPlanillaContabilidad{
+    position: relative;
+	height: 100%;
+	width: 100%;
+	text-align: right;
+}
+.filaNegrita{
+	font-weight: bold;
+}
+/*------------------------------------columnas----------------------------------*/
+
+/*------------------------------------casillas---------------------------------*/
+.casillaConFlechaCuentaPrincipal{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+
+
+
+
+
+/*-------------------------informacion de la planilla de contabilidad----------------*/
+.tituloCuentaPrincipal{/* es donde van los titulos de las  cuentas principales, ej: ingresos por ventas*/
+	font-weight: bold;
+}
+.tituloCuentaSecundaria{/* es donde van los titulos de las sub cuentas, ej: petroleo*/
+	font-weight: bold;
+	text-align: right;
+}

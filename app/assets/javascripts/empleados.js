@@ -1,8 +1,6 @@
 $(document).ready(function(){
 //----------------view agregando un nuevo empleado-----------------
-    $("#botonConfirmarAgregarEmpleado").click(function(){ 
-       $("#formAgregarEmpleado").submit();
-    });
+    
 //----------------view index empleado empleado-----------------
     // Cuando se hace click en el basurero para borrar un empleado
     $(".imagenBorrarEmpleado").each(function(){ 

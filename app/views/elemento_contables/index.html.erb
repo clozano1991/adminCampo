@@ -1,0 +1,1228 @@
+<div class="contenedorFondoPlanillaContabilidad">
+	<div class="barraArribaPlanillaContabilidad">
+      <div id="">
+        <h5><strong> Contabilidad campo: <%=@campo.nombre%></strong></h5>
+      
+      </div>
+
+      <div class="botonesBarraArribaPlanillaContabilidadMasSeleccionFecha">
+            <div><%= "Año:"%></div>
+            <div>
+                  <select class="custom-select">
+                        <% @anos.each do |ano|%>
+                        <option> <%=ano%> </option>
+                        <%end%>
+                  </select>
+                  
+            </div>
+            <div>
+                  <%=link_to(button_tag("+ Partida Contable", class: "btn botonNaranjo botonBarraArribaPlanillaContabilidad" ),new_user_campo_elemento_contable_path(current_user,@campo), method: :get)%>
+            </div>
+      </div>
+    </div>
+
+    <div class="contenedorCuerpoPlanillaContabilidad">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="filaSuperiorPlanillaContabilidad">
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Cuentas estado de resultado</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Enero</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Febrero</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Marzo</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Abril</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Mayo</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Junio</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Julio</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Agosto</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Septiembre</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Octubre</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Noviembre</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Diciembre</th>
+          <th class="columnaNumerosPlanillaContabilidad" scope="col">Total</th>
+        </tr>
+      </thead>  
+      <tbody>
+
+
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+      		<td class="casillaConFlechaCuentaPrincipal">
+      			<div class="tituloCuentaPrincipal">Ingresos de operación</div>
+      			<div class="contenedorImagenesFlechas">
+      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => "hola".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+      			<%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => "s".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+      			</div>
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Venta de frutas
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+      		<td class="casillaConFlechaCuentaPrincipal">
+      			<div class="tituloCuentaPrincipal">Costos de operación</div>
+      			<div class="contenedorImagenesFlechas">
+      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => "hola".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+      			<%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => "s".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+      			</div>
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaSecundariaPlanillaContabilidad ">
+      		<td class=" casillaCuentaSecundaria">
+      			Personal
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Luz
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Agua
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Maquinas y equipos
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Combustibles
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Fertilizantes
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Otros agroquimicos
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Arriendos
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Plantaciones
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Transportes
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Depreciación
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Otros costos operacionales
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+                  <td class="casillaConFlechaCuentaPrincipal">
+                        <div class="tituloCuentaPrincipal">Costos de administración</div>
+                        <div class="contenedorImagenesFlechas">
+                        <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => "hola".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+                        <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => "s".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+                        </div>
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Otros costos operacionales
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
+      		<td class="tituloCuentaPrincipal">
+      			Resultado operacional
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad" >
+      		<td class="casillaConFlechaCuentaPrincipal">
+      			<div class="tituloCuentaPrincipal">Ingresos no operacionales</div>
+      			<div class="contenedorImagenesFlechas">
+      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => "hola".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+      			<%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => "s".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+      			</div>
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaSecundariaPlanillaContabilidad ">
+      		<td class=" casillaCuentaSecundaria">
+      			Venta de fruta
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad ">
+                  <td class=" casillaCuentaSecundaria">
+                        Arriendos
+                  </td>
+                  <td>
+                        1
+                  </td>
+                  <td>
+                        2
+                  </td>
+                  <td>
+                        3
+                  </td>
+                  <td>
+                        4
+                  </td>
+                  <td>
+                        5
+                  </td>
+                  <td>
+                        6
+                  </td>
+                  <td>
+                        7
+                  </td>
+                  <td>
+                        8
+                  </td>
+                  <td>
+                        9
+                  </td>
+                  <td>
+                        10
+                  </td>
+                  <td>
+                        11
+                  </td>
+                  <td>
+                        12
+                  </td>
+                  <td>
+                        13
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+      		<td class="casillaConFlechaCuentaPrincipal">
+      			<div class="tituloCuentaPrincipal">Costos no operacionales</div>
+      			<div class="contenedorImagenesFlechas">
+      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEquipo", :data=>{:idEquipo => "hola".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+      			<%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEquipo", :data=>{:idEquipo => "s".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+      			</div>
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
+      		<td class="tituloCuentaPrincipal">
+      			Resultado no operacional
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad">
+      		<td class="tituloCuentaPrincipal">
+      			Utilidad antes de impuestos
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+      		<td class="tituloCuentaPrincipal">
+      			Impuestos
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad filaNegrita">
+      		<td class="tituloCuentaPrincipal">
+      			Utilidad neta
+      		</td>
+      		<td>
+      			1
+      		</td>
+      		<td>
+      			2
+      		</td>
+      		<td>
+      			3
+      		</td>
+      		<td>
+      			4
+      		</td>
+      		<td>
+      			5
+      		</td>
+      		<td>
+      			6
+      		</td>
+      		<td>
+      			7
+      		</td>
+      		<td>
+      			8
+      		</td>
+      		<td>
+      			9
+      		</td>
+      		<td>
+      			10
+      		</td>
+      		<td>
+      			11
+      		</td>
+      		<td>
+      			12
+      		</td>
+      		<td>
+      			13
+      		</td>
+      	</tr>
+      	
+
+
+
+
+
+
+
+
+          
+      </tbody>
+    </table>
+    	
+    </div>
+
+
+</div>

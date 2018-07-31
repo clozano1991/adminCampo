@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  campo: one
+  nombre: MyString
+  cuentaAsociada: MyString
+  tipoIngresoEgreso: MyString
+  fecha: 2018-07-26
+  observacion: MyText
+
+two:
+  campo: two
+  nombre: MyString
+  cuentaAsociada: MyString
+  tipoIngresoEgreso: MyString
+  fecha: 2018-07-26
+  observacion: MyText
