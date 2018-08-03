@@ -8,7 +8,7 @@
 	padding-top: 0.8%;
 	padding-bottom: 0.8%;
 	padding-left:0.8%;
-	padding-right: 0.8%;
+	padding-right: 0.8%; 
 	background-color: #f0e6c8;  
 }
 /*---------------------------------- barra superior --------------------------------------*/
@@ -75,6 +75,12 @@
 	font-weight: bold;
 }
 /*------------------------------------columnas----------------------------------*/
+.columnaCuentasPlanillaContabilidad{
+    min-width: 265px;
+}
+.columnaDatosPlanillaContabilidad{
+	min-width: 100px;
+}
 
 /*------------------------------------casillas---------------------------------*/
 .casillaConFlechaCuentaPrincipal{
@@ -82,10 +88,37 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-
+}
+.casillaCuentaSecundaria{
+	text-align: right;
+}
+.casillaDatos{
+	text-align: right;
+	
+}
+.td.casillaDatos{
+    min-height: 120px;
 }
 
-
+/*-----------------------------informacion oculta-------------------------------------*/
+.subInformacionIngresosDeOperacion{
+	display: none;
+}
+.subInformacionCostosDeOperacion{
+	display: none;
+}
+.subInformacionCostosDeAdministracion{
+	display: none;
+}
+.subInformacionIngresosNoOperacionales{
+	display: none;
+}
+.subInformacionCostosNoOperacionales{
+	display: none;
+}
+.flechaArribaMostrarMenosInformacionCuentaSeleccionada{
+	display: none;
+}
 
 
 

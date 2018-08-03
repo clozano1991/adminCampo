@@ -12,11 +12,10 @@ $(document).ready(function(){
     })
     // Cuando se hace click en la flecha arriba para ver menos opciones de un equipo
     $(".flechaArribaMostrarMenosInformacionEquipo").each(function(){
-      mostrandoMenosInformacion($(this));
-      
+      mostrandoMenosInformacion($(this)); 
     })
 
-
+ 
 
 });
 
