@@ -1,0 +1,90 @@
+.contenedorMiniListaContenida{
+	position: relative;
+	
+}
+.table.table-striped.table-bordered.tablaPagos{
+	border-style: solid !important;
+	border-color: #505050 !important;
+	border-width: 3px !important;
+}
+.filaSuperiorMiniListaContenida{
+	border-bottom: solid;
+	border-color: #505050;
+	border-width: 3px;
+}
+
+
+.tituloColumnaBotonMiniListaContenida{ 
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+.btn.botonNaranjo.botonAgregarPago{
+	float: right;
+}
+
+/*es adentro de esto que se pone lo de ,mucha informacion o poca informacion*/
+.columnaInformacionMiniListaContenidaTresPorFila{
+	position: relative;
+	height: 100%;
+    width: 30.6%;
+}
+.columnaInformacionMiniListaContenidaCuatroPorFila{
+	position: relative;
+	height: 100%;
+    width: 23%;
+}
+.columnaInformacionMiniListaContenidaCincoPorFila{
+	position: relative;
+	height: 100%;
+    width: 18.4%;
+}
+/*esta es la columna de la derecha donde se ponen los iconos*/
+.columnaImagenesDerechaMiniListaContenida{
+	width: 8%;
+	min-width: 140px;
+}
+.contenedorImagenesYBotonesDerechaMiniListaContenida{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	float: right;
+	margin-right: 10px;
+}
+.imagenesDerechaMiniListaContenida{
+	position: relative;
+	display: block;
+	float: right;
+}
+.botonesMiniListaContenida{
+
+}
+.btn.botonAzul.botonMiniListaContenida{
+	float: right;
+	margin-top: 10px;
+	width: 90px;
+}
+
+/*-----------------------------manejo informacion en celdad -------------------------*/
+/*lo de poca y mucha informacion es mejor verlo en 
+el css directo de cada clase, ya que interactua con js, exceptuando lo principal:*/
+.pocaInformacionMiniListaContenida{	
+}
+.muchaInformacionMiniListaContenida{
+	display: none;	
+}
+
+
+/*aca se pone cada parte de la informacion que va en una celda*/
+.contenedorUnaInformacionPocaInformacionMiniListaContenida{
+	font-size: 17px;
+}
+.contenedorUnaInformacionMuchaInformacionMiniListaContenida{
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+/*para las imagenes y botones que van en la columna de la derecha*/
+.imagenesDerechaMuchaInformacionMiniListaContenida{
+	margin-bottom: 10px;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180726203242) do
+ActiveRecord::Schema.define(version: 20180817142434) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20180726203242) do
     t.integer "empleado_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "motivo"
+    t.string "formaDePago"
     t.index ["empleado_id"], name: "index_empleado_pagos_on_empleado_id"
   end
 
@@ -129,6 +131,17 @@ ActiveRecord::Schema.define(version: 20180726203242) do
     t.datetime "updated_at", null: false
     t.string "bloqueMapa"
     t.index ["campo_id"], name: "index_huertos_on_campo_id"
+  end
+
+  create_table "pago_items", force: :cascade do |t|
+    t.integer "empleado_pago_id"
+    t.string "item"
+    t.integer "cantidad"
+    t.integer "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "haberDescuentoExtra"
+    t.index ["empleado_pago_id"], name: "index_pago_items_on_empleado_pago_id"
   end
 
   create_table "users", force: :cascade do |t|

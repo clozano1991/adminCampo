@@ -1,0 +1,76 @@
+
+<!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+<% if @adentroTablaEmpleado_pagos == true %>
+  <tr class="filaMiniListaContenida" id="filaEmpleado_pago_<%=empleado_pago.id%>">
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	  <div class="pocaInformacionMiniListaContenida empleado_pagoTablaPocaInformacion_<%=empleado_pago.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=empleado_pago.motivo%>
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	  <div class="pocaInformacionMiniListaContenida empleado_pagoTablaPocaInformacion_<%=empleado_pago.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=empleado_pago.fecha%>
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	   <div class="pocaInformacionMiniListaContenida empleado_pagoTablaPocaInformacion_<%=empleado_pago.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=empleado_pago.formaDePago%>
+            </div>
+      	   </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCincoPorFila" >
+      	  <div class="pocaInformacionMiniListaContenida empleado_pagoTablaPocaInformacion_<%=empleado_pago.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              monto
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaImagenesDerechaMiniListaContenida">
+      	   <div class="pocaInformacionMiniListaContenida empleado_pagoTablaPocaInformacion_<%=empleado_pago.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+      	   	   <div class="imagenesDerechaMiniListaContenida">
+                <%=link_to(image_tag("verDetalleLupa.png",class: "fotoOpcion", :data=>{ :toggle => "tooltip", :placement => "top", :title => "Ver detalle"}),edit_user_campo_empleado_empleado_pago_path(current_user,@campo,@empleado,empleado_pago.id), method: :get)%>
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{ :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_empleado_empleado_pago_path(current_user,@campo,@empleado,empleado_pago.id), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEmpleado_pago" , :data=>{:id => (empleado_pago.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
+               </div>
+              </div>
+      	   </div>
+      </td>
+  </tr>
+<%end%>
+<!-- fin del contenido de la tabla -->
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado -->
+<%if @adentroContenedorModalsBorrarEmpleado_pago == true%>
+  <div class="modal fade modalParaBorrarEmpleado_pago" id="modal_borrar_empleado_pago_<%=empleado_pago.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modalParaHuerto">
+        <div class="modal-header">
+          <div>
+             <h5>
+                <strong>Motivo:<%=empleado_pago.motivo%></strong>
+             </h5>
+             <h5>
+                <strong>fecha:<%=empleado_pago.fecha%></strong>
+             </h5>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                  <h5>
+                    ¿Seguro que desea borrar este pago?
+                  </h5>
+                    <%=link_to(button_tag("Borrar Pago", class: "btn botonRojo botonConfirmarBorrarEmpleado"), user_campo_empleado_empleado_pago_path(current_user,campo,empleado,empleado_pago), method: :delete, remote: true )%>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%><!-- fin modal para borrar empleado -->

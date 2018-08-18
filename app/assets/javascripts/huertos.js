@@ -233,7 +233,7 @@ function apretarHuerto(figura){
         if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="normal"){
             $("#modal_huerto_"+figura.attr("data-id")).modal("show");    
         }         
-    }); 
+    });   
 }
 // cuando se hace click en el svg, agregamos las coordenadas en porcentaje a el data de la figura
 function haciendoClickEnSVG(e,svgBloque){ 
@@ -255,6 +255,7 @@ function haciendoClickEnSVG(e,svgBloque){
     var porcentageY = posYenSvg/altoSvg;
     // juntamos las pociciones en un solo string al estilo "x,y-"
     var posicionPorcentaje= (String(porcentageX)+ ',' +String(porcentageY)+"-");
+    console.log(posicionPorcentaje);
     //agregando la posicion en % al polyline-
     $("#huertoNuevo").attr("data-porcentajes",$("#huertoNuevo").attr("data-porcentajes")+posicionPorcentaje);
     // usando una funcion se transforman los puntos acumulados en % a puntos reales

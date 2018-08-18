@@ -1,7 +1,7 @@
 <div class="contenedorFondoFichaGenerica">
   <div class="opcionesArribaFichaGenerica">
       <h5><strong> Ficha de: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
-      <%=link_to(button_tag("+ Personal", class: "btn botonNaranjo " ),new_user_campo_empleado_path(current_user,@campo), method: :get  )%>
+      
   </div>
   <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
 
@@ -28,20 +28,33 @@
 
 
     <div class="FichaGenerica">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            One of three columns
-          </div>
-          <div class="col-sm">
-            One of three columns
-         </div>
-         <div class="col-sm">
-            One of three columns
-         </div>
-        </div>
-      </div>
+      <div class="contenedorMiniListaContenida"></div>
+        <table class="table table-striped table-bordered tablaPagos ">
+          <thead>
+            <tr class="filaSuperiorMiniListaContenida">
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Motivo</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Fecha</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Forma de pago</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
+              <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" > <%=link_to(button_tag("+ Pago", class: "btn botonNaranjo botonAgregarPago " ),new_user_campo_empleado_empleado_pago_path(current_user,@campo), method: :get  )%></th>
+            </tr>
+          </thead>  
+          <tbody>
+            <% @adentroTablaEmpleado_pagos = true %>
+            <%=render partial: "empleado_pago", collection: @empleado_pagos, locals: {campo: @campo, empleado: @empleado }%>
+            <% @adentroTablaEmpleado_pagos = false %>
+          </tbody>
+        </table>
+      </div><!--fin contenedorMiniListaContenida-->
     </div><!--fin FichaEmpleado-->
-    
   </div><!--fin LinksSuperioresEmpleadoMasContenido-->
 </div><!--fin contenedorFondoShowFichaEmpleado-->
+
+
+<!--+++++++++++++++++modals para confirmar borrar un pago+++++++++++++++++++++++++++++++++-->
+<div class="contenedorModalsBorrarPago"> 
+<% @adentroContenedorModalsBorrarEmpleado_pago = true %>
+<%=render partial: "empleado_pago", collection: @empleado_pagos, locals: {campo: @campo, empleado: @empleado }%>
+<% @adentroContenedorModalsBorrarEmpleado_pago  = false %>
+</div>
+<!--+++++++++++++++++fin modals para confirmar borrar un empleado++++++++++++++++++++++++++++-->

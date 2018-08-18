@@ -12,6 +12,9 @@
             <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               <%=empleado.nombre%> <%=empleado.apellidos%> 
             </div>
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=empleado.rut%>  
+            </div>
       	  </div>
       </td>
       <td class="columnaInformacionListaGrandeCincoPorFila">
@@ -24,6 +27,9 @@
             <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
                 <%=empleado.telefonoContacto%>
             </div>
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+                <%=empleado.emailEmpleado%>
+            </div>
       	  </div>
       </td>
       <td class="columnaInformacionListaGrandeCincoPorFila">
@@ -35,6 +41,9 @@
       	   <div class="muchaInformacionListaGrande empleadoTablaMuchaInformacion_<%=empleado.id%>">
             <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
               <%=empleado.cargo%>
+            </div>
+            <div class="contenedorUnaInformacionMuchaInformacionListaGrande">
+              <%=empleado.fechaContratacion.to_s%>
             </div>
       	   </div>
       </td>
