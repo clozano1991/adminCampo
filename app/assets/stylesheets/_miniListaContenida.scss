@@ -5,15 +5,14 @@
 .table.table-striped.table-bordered.tablaPagos{
 	border-style: solid !important;
 	border-color: #505050 !important;
-	border-width: 3px !important;
+	border-width: 2.5px !important;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0, 0.19) !important;
 }
 .filaSuperiorMiniListaContenida{
 	border-bottom: solid;
 	border-color: #505050;
 	border-width: 3px;
 }
-
-
 .tituloColumnaBotonMiniListaContenida{ 
 	margin-top: 0px;
 	margin-bottom: 0px;

@@ -1,12 +1,12 @@
 <div class="contenedorFondoFichaGenerica">
   <div class="opcionesArribaFichaGenerica">
-      <h5><strong> Ficha de: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
+      <h5><strong> Ficha de: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5> 
       
   </div>
   <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
 
     <!--LinksSuperioresEmpleado-->
-    <div class="linksSuperioresFichaGenerica">
+    <div class="linksSuperioresFichaGenerica"> 
         <ul class=" listaLinksFichaGenerica">
           <li class="elementoListaLinksFichaGenerica">
               <%=link_to("Principal",user_campo_empleado_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica ")%>

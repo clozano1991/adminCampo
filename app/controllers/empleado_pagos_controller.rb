@@ -4,7 +4,8 @@ class EmpleadoPagosController < ApplicationController
 	def index
 		@campo=current_user.campos.find(params[:campo_id])
 		@empleado=current_user.campos.find(params[:campo_id]).empleados.find(params[:empleado_id])
-		@empleado_pagos=current_user.campos.find(params[:campo_id]).empleados.find(params[:empleado_id]).empleado_pagos.all
+		#parte donde se toman los elementos de pago_items
+		@empleado_pagos=current_user.campos.find(params[:campo_id]).empleados.find(params[:empleado_id]).empleado_pagos.includes(:pago_items).all
 	end
 
 	def show
@@ -16,8 +17,7 @@ class EmpleadoPagosController < ApplicationController
 		@empleado=current_user.campos.find(params[:campo_id]).empleados.find(params[:empleado_id])
 		@empleado_pago=current_user.campos.find(params[:campo_id]).empleados.find(params[:empleado_id]).empleado_pagos.build
 
-		#parte donde se crean los items del pago que estan pre definidos
-		@sueldoBase=@empleado_pago.pago_items.build
+		
 	end 
 
 	def create
@@ -55,12 +55,12 @@ class EmpleadoPagosController < ApplicationController
 			format.html {redirect_to index_path}# este no se usa ya que solo optamos al js
 			format.js 
 		end
-	end
+	end 
 
 
 	private
     def empleado_pago_params
-		params.require(:empleado_pago).permit(:fecha, :motivo, :formaDePago, pago_items_attributes: [:id, :item, :cantidad, :valor, :haberDescuentoExtra, :_destroy])
+		params.require(:empleado_pago).permit(:fecha, :motivo, :formaDePago, pago_items_attributes: [:id, :item, :cantidad, :valor, :haberDescuentoExtra, :empleado_pago_id, :_destroy])
 	end
 		
 end

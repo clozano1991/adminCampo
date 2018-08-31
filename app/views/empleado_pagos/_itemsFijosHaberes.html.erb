@@ -1,0 +1,47 @@
+ <%= form.fields_for :pago_items, @empleado_pago.pago_items.build do |ff| %>
+ <tr class="filaMiniListaContenida" id="filaEmpleado_pago_<%=@empleado_pago.id%>">
+    <%=ff.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "descuento"%>
+    <td class="columnaInformacionMiniListaContenidaCincoPorFila">
+        <div class="pocaInformacionMiniListaContenida">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+                Sueldo base
+                <%=ff.text_field :item, class: "form-control formEscondido", value: "Sueldo base"%>
+            </div>
+        </div>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCincoPorFila">
+        <div class="pocaInformacionMiniListaContenida">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+                1
+                <%=ff.number_field :cantidad, class: "form-control formEscondido", value: 1%>
+            </div>
+        </div>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCincoPorFila">
+        <div class="pocaInformacionMiniListaContenida e">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+                <%=@empleado.sueldoBaseMensual%>
+                <%=ff.number_field :valor, class: "form-control formEscondido", value: @empleado.sueldoBaseMensual%>
+            </div>
+        </div>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCincoPorFila">
+        <div class="pocaInformacionMiniListaContenida ">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+                Monto
+            </div>
+        </div>
+    </td>
+    <td class="columnaImagenesDerechaMiniListaContenida">
+        <div class="pocaInformacionMiniListaContenida " >
+            <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+                <div class="imagenesDerechaMiniListaContenida">
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago" , :data=>{ :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+<%end%>
+
+

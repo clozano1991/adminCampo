@@ -1,18 +1,20 @@
 $(document).ready(function(){
-//----------------view agregando un nuevo empleado-----------------
-    
-//----------------view index empleado empleado-----------------
-    // Cuando se hace click en el basurero para borrar un empleado
+    //----------------view index empleado_pago-----------------
+    // Cuando se hace click en el basurero para borrar un pago
     $(".imagenBorrarEmpleado_pago").each(function(){ 
        mostrarModalBorrarEmpleado_pago($(this));
     });
-
+    //----------------view new empleado_pago-----------------para que funcioe cocoon
+    
 });
 
-//----------------funciones index empleado -----------------
+//----------------funciones index empleado_pagos -----------------
 
 function mostrarModalBorrarEmpleado_pago(imagenBorrarEmpleado_pago){
   $(imagenBorrarEmpleado_pago).click(function(){
     $("#modal_borrar_empleado_pago_"+imagenBorrarEmpleado_pago.attr("data-id")).modal("show"); 
   });
 }
+
+//----------------funciones new empleado_pagos -----------------
+

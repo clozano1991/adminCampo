@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.string "apellidos"
     t.string "rut"
     t.text "resumenPersona"
-    t.text "resumenCargo"
+    t.text "resumenCargo" 
     t.string "cargo"
     t.string "tipoContrato"
     t.text "nivelEducacion"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.text "coordenadas"
     t.string "cultivo"
     t.text "variedades"
-    t.text "descripcion"
+    t.text "descripcion" 
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "bloqueMapa"

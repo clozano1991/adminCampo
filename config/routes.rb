@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 		resources :campos do
 			resources :empleados do
 				resources :empleado_horarios
-				resources :empleado_pagos
+				resources :empleado_pagos do
+					resources :pago_items
+				end
+
 				resources :empleado_abandonos
 				resources :empleado_observaciones
 			end

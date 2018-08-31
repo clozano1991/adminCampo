@@ -1,15 +1,20 @@
 <div class="contenedorFondoFichaGenerica usadoEnIndexCampos">
 	<div class="opcionesArribaFichaGenerica usadoEnIndexCampos">
       <h5><strong> Campos asociados a la cuenta</strong></h5>
+      <div>
       <button id="botonCrearCampo" type="button" class="btn botonNaranjo" data-toggle="modal" data-target="#crearCampoModal">
       + Campo
       </button>
-    </div>
-    <div class="contenedorLinkSuperioresMasContenidoFichaGenerica usadoEnIndexCampos">
+      <button id="botonCompararCampos" type="button" class="btn botonAzul" >
+      Comparar
+      </button>
+      </div>
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica usadoEnIndexCampos">
         <div id="listaCampos">
            <%=render @campos%>         
         </div>
-    </div>
+  </div>
 
 <!-- ___________________________________ crear un campo_______________________________-->
 

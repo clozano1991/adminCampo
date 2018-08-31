@@ -12,7 +12,8 @@ gem 'devise'
 
 #para las fotos en aws(amason web server)
 
-
+# para las form y los nested childs
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
 
 
 

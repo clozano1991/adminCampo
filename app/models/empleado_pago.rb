@@ -3,3 +3,4 @@ class EmpleadoPago < ApplicationRecord
   has_many :pago_items, :dependent => :destroy
   accepts_nested_attributes_for :pago_items, allow_destroy: true
 end
+ 

@@ -1,23 +1,136 @@
-.contenedorHaberesYDescuentos{
+.contenedorTituloHaberes{
+	display: inline-block;
+	color: white;
+	background-color: #0079c1;
+	border-radius: 30px; 
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.contenedorHaberes{
 	margin-top: 20px;
 	margin-bottom: 40px;
+}
+.table.table-bordered.tablaHaberes{
+	border-style: solid !important; 
+	border-color: #0079c1 !important;
+	border-width: 3px !important;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
+	border-bottom: solid;
+	border-color: #0079c1;
+	border-width: 3px;
+}*/
+.contenedorTituloDescuentos{
+	display: inline-block;
+	color: white;
+	background-color: #eb5a46;
+	border-radius: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.contenedorDescuentos{
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+.table.table-bordered.tablaDescuentos{
+	border-style: solid !important;
+	border-color: #eb5a46 !important;
+	border-width: 3px !important;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsDescuentos{
+	border-bottom: solid;
+	border-color: #eb5a46;
+	border-width: 3px;
+}*/
+.contenedorTituloObligaciones{
+	display: inline-block;
+	color: white;
+	background-color: #ff9f1a ;
+	border-radius: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 .contenedorObligaciones{
 	margin-top: 20px;
 	margin-bottom: 40px;
 }
+.table.table-bordered.tablaObligaciones{
+	border-style: solid !important;
+	border-color: #ff9f1a !important;
+	border-width: 3px !important;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsObligaciones{
+	border-bottom: solid;
+	border-color: #ff9f1a;
+	border-width: 3px;
+}*/
+
+
+
+
+/*--------------------------------------------------------------------------*/
 .contenedorMontosFinales{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-.botonAgregarItemAEmpleado_pagoDerecha{
+
+/*-----------------------------------------------------------------------*/
+.divBotonConImagenAgregar{
+	cursor: pointer;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 	float: right;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 20px;
+	border-color: grey;
 	background-color: lightgrey;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2), 0 2px 8px 0 rgba(0,0,0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	padding-right: 15px;
+	padding-left: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
-.fotoAgregarItemAEmpleado_pagoDerecha{
+
+.fotoOpcion.imagenDerechaAgregarItemPago{
+    width: 18px;
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.fotoOpcion.imagenDerechaBorrarItemPago{
 	width: 18px;
 	cursor: pointer;
+	float: right;
 }
  
+/*-----------------------------------------------------------------------*/
+.form-control.formEscondido{
+	display: none;
+}
+
+/*---------para que funcione cocoon--------------*/

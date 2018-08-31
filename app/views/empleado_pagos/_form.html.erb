@@ -1,0 +1,167 @@
+<%=form_for @empleado_pago, url: user_campo_empleado_empleado_pagos_path(current_user,@campo,@empleado), method: :post,:html => { :multipart => true,:class => "formPlanillaNewYEdit" } do |form| %>
+<div class="barraArribaPlanillaNewYEdit">
+ <h5><strong> Pago a: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
+ <%=form.submit("Agregar", class: "btn botonVerde ")%> 
+</div>
+
+<div class="bloqueContenedorInformacionPlanillaNewYEdit">
+ <div class="contenedorDatosDelPago">
+   <div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
+    Datos del Pago 
+  </div> 
+  <div class="filaInformacionPlanillaNewYEdit">
+    <div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+     <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+      <label><strong>Motivo</strong></label>
+      <%=form.text_field :motivo, class: "form-control agregarInformacionPlanillaNewYEdit", placeholder: "Ej: Pago mensual, bono, etc."%> 
+    </div>
+  </div>
+  <div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+   <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+    <label><strong>Fecha</strong></label>
+    <%=form.date_field( :fecha, class: "form-control agregarInformacionPlanillaNewYEdit")%>
+  </div>
+</div>
+<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+ <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+  <label><strong>Forma de pago</strong></label>
+  <%=form.text_field :formaDePago, class: "form-control agregarInformacionPlanillaNewYEdit", placeholder: "Ej: Efectivo, cheque, transferencia, etc."%>
+</div>
+</div>
+</div>
+</div>
+
+<!-- inicia contenedor de haberes  --> 
+<div class="contenedorHaberes">
+ <div class="contenedorTituloHaberes">
+  Haberes
+</div>
+<div class="contenedorTablaItemsPagos">
+  <table class="table table-bordered tablaHaberes ">
+   <thead>
+    <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberes">
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Item</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Cantidad</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Valor</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila">Monto</th>
+      <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" >
+        <%= link_to_add_association "dsds", form, :pago_items, id: "probando", data: {association_insertion_node: "#contenedor_pago_items_haberes", association_insertion_method: :append }%>
+
+      </th>
+    </tr>
+  </thead>
+  <tbody id="contenedor_pago_items_haberes">
+    <!-- aca van los items pre definidos de haberes -->   
+    <%=render partial: "itemsFijosHaberes", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+    <!-- fin de los items pre definidos de haberes  --> 
+
+    <!-- aca van los items pre definidos de haberes -->   
+      <%= form.fields_for :pago_items do |builder| %>
+      <%= render "pago_item_fields", f: builder %>
+      <%end%>
+    <!-- fin de los items pre definidos de haberes  --> 
+    <!-- items agregados dinamicamente --> 
+    <!-- fin items agregados dinamicamente -->                   	
+  </tbody>
+</table>
+</div>
+</div> 
+<!-- termina contenedor de haberes  --> 
+
+<!-- inicia contenedor de descuentos  -->
+<div class="contenedorDescuentos">
+  <div class="contenedorTituloDescuentos">
+    Descuentos 
+  </div>
+  <div class="contenedorTablaItemsPagos">
+    <table class="table table-bordered tablaDescuentos ">
+      <thead>
+        <tr class="filaSuperiorMiniListaContenidaPagoItemsDescuentos">
+          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Item</th>
+          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Cantidad</th>
+          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Valor</th>
+          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila">Monto</th>
+          <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" >
+            <div class="divBotonConImagenAgregar botonAgregarItemATabla" data-tabla="Descuentos">
+              <%=image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")%>
+              <%= "Item" %>
+            </div> 
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- aca van los items pre definidos de descuentos -->   
+        <%=render partial: "itemsFijosDescuentos", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+        <!-- fin de los items pre definidos de descuentos  --> 
+
+        <!-- aca van los items dinamicos de descuentos -->   
+        <div id="contenedorItemsAgregadosATablaDescuentos">
+
+        </div>
+        <!-- fin de los items dinamicos de descuentos  -->
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- termina contenedor de descuentos  -->
+
+
+<div class="contenedorObligaciones">
+ <div class="contenedorTituloObligaciones">
+  Obligaciones:
+</div>
+<div class="contenedorTablaItemsPagos">
+  <table class="table table-bordered tablaObligaciones ">
+   <thead>
+    <tr class="filaSuperiorMiniListaContenidaPagoItemsObligaciones">
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Item</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Cantidad</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila" >Valor</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCincoPorFila">Monto</th>
+      <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" >
+        <div class="divBotonConImagenAgregar botonAgregarItemATabla" data-tabla="Obligaciones">
+          <%=image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")%>
+          <%= "Item" %>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- aca van los items pre definidos de obligaciones -->   
+    <%=render partial: "itemsFijosObligaciones", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+    <!-- fin de los items pre definidos de obligaciones  --> 
+
+    <!-- aca van los items pre definidos de obligaciones -->   
+    <div id="contenedorItemsAgregadosATablaObligaciones"></div>
+    <!-- fin de los items pre definidos de obligaciones  -->
+
+
+  </tbody>
+</table>
+
+</div>
+</div> 
+
+
+
+<div class="contenedorMontosFinales">
+  <div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
+    Monto Total:
+  </div>  
+  <div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
+    Liquido a pagar:
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<%end%><!-- fin form --> 
