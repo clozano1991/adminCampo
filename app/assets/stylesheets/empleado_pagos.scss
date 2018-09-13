@@ -1,4 +1,17 @@
-.contenedorTituloHaberes{
+/*--------------------------------para esconder algunas cosas de los forms---------------------------------------*/
+.form-control.formEscondido{
+	display: none;
+}
+
+
+/*---------------------------Parte donde se llenan los datos------------------------*/
+
+
+
+
+/*-----------------------------tabla haberes imponibles-----------------------------------------------*/
+
+.contenedorTituloHaberesImponibles{
 	display: inline-block;
 	color: white;
 	background-color: #0079c1;
@@ -12,11 +25,11 @@
 	padding-right: 8px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
-.contenedorHaberes{
+.contenedorHaberesImponibles{
 	margin-top: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
-.table.table-bordered.tablaHaberes{
+.table.table-bordered.tablaHaberesImponibles{
 	border-style: solid !important; 
 	border-color: #0079c1 !important;
 	border-width: 3px !important;
@@ -27,6 +40,42 @@
 	border-color: #0079c1;
 	border-width: 3px;
 }*/
+
+
+
+/*-----------------------------tabla haberes no imponibles-----------------------------------------------*/
+
+.contenedorTituloHaberesNoImponibles{
+	display: inline-block;
+	color: white;
+	background-color: #8343e7;
+	border-radius: 30px; 
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.contenedorHaberesNoImponibles{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.table.table-bordered.tablaHaberesNoImponibles{
+	border-style: solid !important; 
+	border-color: #8343e7 !important;
+	border-width: 3px !important;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
+	border-bottom: solid;
+	border-color: #0079c1;
+	border-width: 3px;
+}*/
+
+/*-----------------------------tabla descuentos-----------------------------------------------*/
 .contenedorTituloDescuentos{
 	display: inline-block;
 	color: white;
@@ -43,7 +92,7 @@
 }
 .contenedorDescuentos{
 	margin-top: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 .table.table-bordered.tablaDescuentos{
 	border-style: solid !important;
@@ -56,64 +105,26 @@
 	border-color: #eb5a46;
 	border-width: 3px;
 }*/
-.contenedorTituloObligaciones{
-	display: inline-block;
-	color: white;
-	background-color: #ff9f1a ;
-	border-radius: 30px;
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
-}
-.contenedorObligaciones{
-	margin-top: 20px;
-	margin-bottom: 40px;
-}
-.table.table-bordered.tablaObligaciones{
-	border-style: solid !important;
-	border-color: #ff9f1a !important;
-	border-width: 3px !important;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
-}
-/*.filaSuperiorMiniListaContenidaPagoItemsObligaciones{
-	border-bottom: solid;
-	border-color: #ff9f1a;
-	border-width: 3px;
-}*/
 
-
-
-
-/*--------------------------------------------------------------------------*/
-.contenedorMontosFinales{
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-
-/*-----------------------------------------------------------------------*/
-.divBotonConImagenAgregar{
-	cursor: pointer;
-	display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+/*--------------------------para la parte de agregar un item al pago----------------------------*/
+.tituloColumnaBotonMiniListaContenida.columnaImagenesDerechaMiniListaContenida.espaciodeBotonAgregarItemDePago{
+    display: flex;
     align-items: center;
-	float: right;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 20px;
-	border-color: grey;
-	background-color: lightgrey;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+    justify-content: space-around;
+    width: 100%;
+}
+
+.botonAgregarItemAPago{
+	cursor: pointer;
 	padding-right: 15px;
 	padding-left: 0px;
 	padding-top: 4px;
 	padding-bottom: 4px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	background-color: lightgrey;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 
 .fotoOpcion.imagenDerechaAgregarItemPago{
@@ -128,9 +139,9 @@
 	float: right;
 }
  
-/*-----------------------------------------------------------------------*/
-.form-control.formEscondido{
-	display: none;
-}
 
-/*---------para que funcione cocoon--------------*/
+/*--------------------------------------donde se muestran los montos finales------------------------------------*/
+.contenedorMontosFinales{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

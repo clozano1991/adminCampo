@@ -183,9 +183,6 @@
 	background-color: white;
 	left: 15%;
 }
-
-
-
 .card.seleccionarMapaCampo{
 	display: none;
 }
@@ -197,5 +194,25 @@
 	left: calc(60vw - 225px);
 	width: 450px;
 	text-align: center;
-
 }
+
+/*--------------aca va lo asociado a la parte de los parametros de un campo---------*/
+
+.contenedorOpcionesParametrosDePagosAEmpleados{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 4px;
+	border-bottom-style: solid;
+	border-width: 2px;
+	border-color: lightgrey;
+}
+#formInputSeleccionarParametroDePagoAEmpleadosAEditar{
+	max-width: 200px;
+	margin-left: 15px;
+	border-color: #505050;
+}
+

@@ -1,5 +1,5 @@
- <tr class="filaMiniListaContenida nested-fields " id="filaEmpleado_pago_<%=@empleado_pago.id%>">
-    <%=f.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "descuento"%>
+ <tr class="filaMiniListaContenida filaPagoItemHaberNoImponible nested-fields ">
+    <%=f.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "haberNoImponible"%>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
@@ -33,7 +33,7 @@
             <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
                 <div class="imagenesDerechaMiniListaContenida">
                     <div class="imagenesDerechaMiniListaContenida">
-                    <%=link_to_remove_association(image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago"), f)%> 
+                    <%=link_to_remove_association(image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago"), f)%>  
                 </div>
             </div>
         </div>

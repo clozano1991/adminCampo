@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoContrato: MyString
+  porcentajeAportadoEmpresa: 1.5
+  porcentageAportadoEmpleado: 1.5
+  campo: one
+
+two:
+  tipoContrato: MyString
+  porcentajeAportadoEmpresa: 1.5
+  porcentageAportadoEmpleado: 1.5
+  campo: two

@@ -10,18 +10,22 @@
           <li class="elementoListaLinksFichaGenerica">
               <%=link_to("Principal",user_campo_empleado_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica")%>
           </li>
+          <!--
           <li class="elementoListaLinksFichaGenerica">
             <%=link_to("Horarios",user_campo_empleado_empleado_horarios_path(current_user,@campo, @empleado), :method => "get", class: "linkFichaGenerica")%>
           </li>
+          -->
           <li class="elementoListaLinksFichaGenerica">
             <%=link_to "Pagos",user_campo_empleado_empleado_pagos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
           </li>
+          <!--
           <li class="elementoListaLinksFichaGenerica">
             <%=link_to "Inasistencias",user_campo_empleado_empleado_abandonos_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
           </li>
           <li class="elementoListaLinksFichaGenerica">
             <%=link_to "Observaciones",user_campo_empleado_empleado_observaciones_path(current_user,@campo,@empleado), :method => "get", class: "linkFichaGenerica"%>
           </li>
+          -->
         </ul>
     </div><!--fin LinksSuperioresEmpleado-->
 

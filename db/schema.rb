@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180817142434) do
+ActiveRecord::Schema.define(version: 20180912160446) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.string "tipo"
     t.string "nombre"
     t.string "tipoIngresoEgreso"
-    t.integer "monto"
+    t.bigint "monto"
     t.date "fecha"
     t.text "observacion"
     t.datetime "created_at", null: false
@@ -83,23 +83,23 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.string "apellidos"
     t.string "rut"
     t.text "resumenPersona"
-    t.text "resumenCargo" 
+    t.text "resumenCargo"
     t.string "cargo"
     t.string "tipoContrato"
     t.text "nivelEducacion"
     t.text "manejoTecnologia"
     t.text "antecedentesLaborales"
     t.text "otrasHabilidades"
-    t.string "porcentajeCotizacionAFP"
+    t.float "porcentajeCotizacionAFP"
     t.string "isapreAcogida"
-    t.string "porcentajeCotizacionIsapre"
+    t.float "porcentajeCotizacionIsapre"
     t.string "banco"
     t.string "tipoCuentaBanco"
     t.string "numeroCuentaBanco"
     t.string "emailEmpleado"
     t.date "fechaContratacion"
     t.date "fechaDesvinculacion"
-    t.string "sueldoBaseMensual"
+    t.float "sueldoBaseMensual"
     t.index ["campo_id"], name: "index_empleados_on_campo_id"
   end
 
@@ -119,6 +119,16 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.index ["campo_id"], name: "index_equipos_on_campo_id"
   end
 
+  create_table "gestion_cesantia_seguros", force: :cascade do |t|
+    t.string "tipoContrato"
+    t.float "porcentajeAportadoEmpresa"
+    t.float "porcentageAportadoEmpleado"
+    t.integer "campo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campo_id"], name: "index_gestion_cesantia_seguros_on_campo_id"
+  end
+
   create_table "huertos", force: :cascade do |t|
     t.integer "campo_id"
     t.string "nombre"
@@ -126,7 +136,7 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.text "coordenadas"
     t.string "cultivo"
     t.text "variedades"
-    t.text "descripcion" 
+    t.text "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "bloqueMapa"
@@ -137,7 +147,7 @@ ActiveRecord::Schema.define(version: 20180817142434) do
     t.integer "empleado_pago_id"
     t.string "item"
     t.integer "cantidad"
-    t.integer "valor"
+    t.float "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "haberDescuentoExtra"

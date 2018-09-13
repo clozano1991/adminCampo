@@ -1,0 +1,2 @@
+module GestionCesantiaSegurosHelper
+end

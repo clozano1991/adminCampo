@@ -33,13 +33,17 @@ class CamposController < ApplicationController
 		end
 	end
 
-	def elegirMapaBloqueUno
+	def elegirMapaBloqueUno 
 		@campo=current_user.campos.find(params[:campo_id])
 	end
 	def elegirMapaBloqueDos
 		@campo=current_user.campos.find(params[:campo_id])
 	end
 	def elegirMapaBloqueTres
+		@campo=current_user.campos.find(params[:campo_id])
+	end
+	
+	def configuracionParametros
 		@campo=current_user.campos.find(params[:campo_id])
 	end
 

@@ -37,7 +37,7 @@
 	    				</div>
 	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
 	    					<label><strong>Monto</strong></label>
-                            <%=form.number_field :monto, class: "form-control agregarInformacionPlanillaNewYEdit"%>
+                            <%=form.number_field :monto, class: "form-control agregarInformacionPlanillaNewYEdit", in: 0.0..999999999999.0%>
 	    				</div>
 	    			</div>
 	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">

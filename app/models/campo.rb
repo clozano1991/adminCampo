@@ -6,6 +6,8 @@ class Campo < ApplicationRecord
   has_many :empleados, :dependent => :destroy
   has_many :equipos, :dependent => :destroy
   has_many :elemento_contables, :dependent => :destroy
+  
+  has_many :gestion_cesantia_seguros, :dependent => :destroy
 
 
 
