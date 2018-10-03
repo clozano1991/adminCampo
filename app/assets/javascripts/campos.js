@@ -14,11 +14,14 @@ $(document).ready(function(){
     });
     
 
-
-
     //view seleccionando un mapa -------------------------------
     $("#botonSeleccionarMapa").click(function(){
         seleccionarMapa();
+    });
+ 
+    //view configuracion parametros de pago a empleados
+    $(".imagenEditarGestionCesantiaSeguro").each(function(){ 
+       mostrarModalEditarGestionCesantiaSeguro($(this));
     });
 });
 
@@ -50,9 +53,8 @@ function editarNotasCampo(imagenEditarNotasCampo){
 
 
 
+//------------------------funciones seleccionar mapa huertos index------------------------------
 
-
-//----------------------------------------------------------------------------------------------
 // lo que pasa al seleccionar el mapa, aca se completa todo
 function seleccionarMapa(){
     //mostramos aviso, modificamos imagen del mouse y 
@@ -74,4 +76,13 @@ function seleccionarMapa(){
             $("body").append(url(imagenBaseSesentaYCuatro));
         } 
     });   
+}
+
+//------------------------funciones configuracion parametros------------------------------
+// parametros de pagos a empleados
+// cuando se hace click en el lapiz para editar un parametro de seguro cesantia
+function mostrarModalEditarGestionCesantiaSeguro(imagenEditarGestionCesantiaSeguro){
+    $(imagenEditarGestionCesantiaSeguro).click(function(){
+       $("#modal_editar_gestion_cesantia_seguro_"+imagenEditarGestionCesantiaSeguro.attr("data-idGestionCesantiaSeguro")).modal("show");
+    });
 }

@@ -19,7 +19,7 @@
       <div class="contenedorMiniListaContenida">
       <div class="contenedorOpcionesParametrosDePagosAEmpleados">
       	<div class="tituloQueSePoneArribaDeLosParametros">
-      		<h5>Parametros a editar:</h5>
+      		<h5><strong>Parametro:</strong></h5>
       	</div>
       	<select class="form-control" id="formInputSeleccionarParametroDePagoAEmpleadosAEditar">
       		<option>Seguro cesantia</option>
@@ -27,21 +27,24 @@
             <option>Cargas familiares</option>
         </select>
       </div>
-
+ 
 
         <table class="table table-striped table-bordered tablaPagos ">
           <thead>
             <tr class="filaSuperiorMiniListaContenida">
-              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Motivo</th>
-              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Fecha</th>
-              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Forma de pago</th>
-              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaTresPorFila">Tipo contrato</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaTresPorFila">% aportado por empresa</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">% aportado por empleado</th>
               <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" > 
               </th>
             
             </tr>
           </thead>  
           <tbody>
+            
+            <%=render partial: "gestion_cesantia_seguro", collection: @gestion_cesantia_seguros, locals: {campo: @campo}%>
+
+            
             
           </tbody>
         </table>

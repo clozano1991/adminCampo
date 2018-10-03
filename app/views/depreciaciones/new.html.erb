@@ -1,0 +1,44 @@
+ <div class="contenedorFondoPlanillaNewYEdit">
+    <%=form_for @depreciacione, url: user_campo_equipo_depreciaciones_path(current_user,@campo,@equipo), method: :post,:html => { :class => "formPlanillaNewYEdit" } do |form| %>
+	    <div class="barraArribaPlanillaNewYEdit">
+		   <h5><strong> Agregando una depreciacion al equipo: <%= " "+@equipo.tipoEquipo %>  <%= " "+ @equipo.marca%></strong></h5>
+           <%=form.submit("Agregar", class: "btn botonVerde ")%>
+	    </div>
+
+	    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
+	    		<div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
+	    			Datos Basicos
+	    		</div>
+	    		<div class="filaInformacionPlanillaNewYEdit">
+
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Fecha depreciacion efectuada</strong></label>
+                            <%=form.date_field :fecha, class: "form-control agregarInformacionPlanillaNewYEdit"%>
+	    				</div>
+	    			</div>
+
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Monto depreciado</strong></label>
+                            <%=form.number_field :valorDepreciacion, class: "form-control agregarInformacionPlanillaNewYEdit", value: 0, step: :any, in: 0.0..9999999999.0%>
+	    				</div>
+	    				
+	    			</div>
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    				</div>
+	    			</div>
+
+	    		</div>
+
+	    </div>
+	    	
+	
+
+
+
+
+
+     <%end%><!-- fin form --> 
+</div><!-- fin contenedor fondo -->  

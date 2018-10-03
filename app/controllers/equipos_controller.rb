@@ -8,7 +8,6 @@ class EquiposController < ApplicationController
     def show
     	@campo=current_user.campos.find(params[:campo_id])
     	@equipo=current_user.campos.find(params[:campo_id]).equipos.find(params[:id])
-    	
     end
 
     def new

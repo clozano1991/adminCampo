@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180912160446) do
+ActiveRecord::Schema.define(version: 20180918122148) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20180912160446) do
     t.string "imagenTres"
     t.text "descripcion"
     t.index ["user_id"], name: "index_campos_on_user_id"
+  end
+
+  create_table "depreciaciones", force: :cascade do |t|
+    t.date "fecha"
+    t.float "valorDepreciacion"
+    t.integer "equipo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipo_id"], name: "index_depreciaciones_on_equipo_id"
   end
 
   create_table "elemento_contables", force: :cascade do |t|
@@ -116,6 +125,7 @@ ActiveRecord::Schema.define(version: 20180912160446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "descripcion"
+    t.date "fechaLimiteGarantia"
     t.index ["campo_id"], name: "index_equipos_on_campo_id"
   end
 

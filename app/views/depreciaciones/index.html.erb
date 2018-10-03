@@ -1,0 +1,53 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+      <h5><strong> Ficha equipo: <%= " "+@equipo.tipoEquipo %>  <%= " "+ @equipo.marca%> </strong></h5> 
+      
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+
+    <!--LinksSuperioresEmpleado--> 
+    <div class="linksSuperioresFichaGenerica"> 
+        <ul class=" listaLinksFichaGenerica">
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Principal",user_campo_equipo_path(current_user,@campo,@equipo), :method => "get", class: "linkFichaGenerica ")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to("Depreciación",user_campo_equipo_depreciaciones_path(current_user,@campo, @equipo), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica")%>
+          </li>
+        </ul>
+    </div><!--fin LinksSuperioresEmpleado-->
+
+
+    <div class="FichaGenerica">
+      <div class="contenedorMiniListaContenida"></div>
+        <table class="table table-striped table-bordered tablaPagos ">
+          <thead>
+            <tr class="filaSuperiorMiniListaContenida">
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Fecha</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor depreciado</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Depreciacion acumulada</th>
+              <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Valor libro</th>
+              <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" > <%=link_to(button_tag("+ Depreciar", class: "btn botonNaranjo botonAgregarPago " ),new_user_campo_equipo_depreciacione_path(current_user,@campo, @equipo), method: :get )%></th>
+            </tr>
+          </thead>  
+          <tbody>
+            
+            <% @adentroTablaDepreciaciones = true %>
+            <%=render partial: "depreciacione", collection: @depreciaciones, locals: {campo: @campo, equipo: @equipo }%>
+            <% @adentroTablaDepreciaciones = false %>
+            
+          </tbody>
+        </table>
+      </div><!--fin contenedorMiniListaContenida-->
+    </div><!--fin FichaEmpleado-->
+  </div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaEmpleado-->
+
+
+<!--+++++++++++++++++modals para confirmar borrar +++++++++++++++++++++++++++++++++-->
+<div class="contenedorModalsBorrarDepreciacion"> 
+<% @adentroContenedorModalsBorrarDepreciacion = true %>
+<%=render partial: "depreciacione", collection: @depreciaciones, locals: {campo: @campo, equipo: @equipo }%>
+<% @adentroContenedorModalsBorrarDepreciacion  = false %>
+</div>
+<!--+++++++++++++++++fin modals para confirmar borrar ++++++++++++++++++++++++++++-->

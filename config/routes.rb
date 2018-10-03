@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 			get "/mapa" => "campos#elegirMapaBloqueDos", as: :elegirMapaBloqueDos
 			get "/mapa" => "campos#elegirMapaBloqueTres", as: :elegirMapaBloqueTres
 			resources :huertos
-			resources :equipos 
+			resources :equipos do
+				resources :depreciaciones
+			end
 			resources :elemento_contables
 
 

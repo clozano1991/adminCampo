@@ -13,7 +13,7 @@ class CamposController < ApplicationController
 			format.html {redirect_to index_path}
 			format.js 
 		end
-	end
+	end 
 	
 	def update
 		@campo=current_user.campos.find(params[:id])
@@ -41,15 +41,16 @@ class CamposController < ApplicationController
 	end
 	def elegirMapaBloqueTres
 		@campo=current_user.campos.find(params[:campo_id])
-	end
+	end 
 	
 	def configuracionParametros
 		@campo=current_user.campos.find(params[:campo_id])
+		@gestion_cesantia_seguros= current_user.campos.find(params[:campo_id]).gestion_cesantia_seguros.all
 	end
 
 	private
 	def campo_params
-		params.require(:campo).permit(:nombre, :propietario, :direccion, :descripcion, :recordatorio, :imagenUno, :imagenDos, :imagenTres)
+		params.require(:campo).permit(:nombre, :propietario, :direccion, :descripcion, :recordatorio, :imagenUno, :imagenDos, :imagenTres, gestion_cesantia_seguros_attributes: [:id, :tipoContrato, :porcentajeAportadoEmpresa, :porcentageAportadoEmpleado])
 	end
 
 end

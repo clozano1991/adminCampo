@@ -1,0 +1,74 @@
+<!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+
+
+
+  <tr class="filaMiniListaContenida" id="filagestion_cesantia_seguro_<%=gestion_cesantia_seguro.id%>">
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+      	  <div class="pocaInformacionMiniListaContenida gestion_cesantia_seguroTablaPocaInformacion_<%=gestion_cesantia_seguro.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=gestion_cesantia_seguro.tipoContrato%>
+            </div> 
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+      	  <div class="pocaInformacionMiniListaContenida gestion_cesantia_seguroTablaPocaInformacion_<%=gestion_cesantia_seguro.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=gestion_cesantia_seguro.porcentajeAportadoEmpresa%>
+            </div> 
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+      	   <div class="pocaInformacionMiniListaContenida gestion_cesantia_seguroTablaPocaInformacion_<%=gestion_cesantia_seguro.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=gestion_cesantia_seguro.porcentageAportadoEmpleado%>
+            </div>
+      	   </div>
+      </td>
+      
+      <td class="columnaImagenesDerechaMiniListaContenida">
+      	   <div class="pocaInformacionMiniListaContenida gestion_cesantia_seguroTablaPocaInformacion_<%=gestion_cesantia_seguro.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+      	   	   <div class="imagenesDerechaMiniListaContenida">
+                    <%=image_tag("editarAmarillo.png",class: "fotoOpcion imagenEditarGestionCesantiaSeguro", :data=>{ :idGestionCesantiaSeguro => (gestion_cesantia_seguro.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"})%>
+               </div>
+              </div>
+      	   </div>
+      </td>
+  </tr>
+
+<!-- fin del contenido de la tabla -->
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado -->
+
+  <div class="modal fade modalParaEditarGestion_cesantia_seguro" id="modal_editar_gestion_cesantia_seguro_<%=gestion_cesantia_seguro.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modalParaHuerto">
+        <div class="modal-header">
+          <div>
+             <h5>
+                <strong>Editando parametro seguro cesantía</strong>
+             </h5>
+             <h5>
+                Tipo contrato:<%=gestion_cesantia_seguro.tipoContrato%>
+             </h5>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <%=form_for gestion_cesantia_seguro, url: user_campo_gestion_cesantia_seguro_path(current_user,campo, gestion_cesantia_seguro ), method: :patch, remote: true do |form| %>
+            
+            <!-- se establece el % aportado por el empresa --> 
+            <%=form.number_field :porcentajeAportadoEmpresa, class: "form-control", value: gestion_cesantia_seguro.porcentajeAportadoEmpresa%>
+	        <!-- se establece el % aportado por el trabajador --> 
+	        <%=form.number_field :porcentageAportadoEmpleado, class: "form-control", value: gestion_cesantia_seguro.porcentageAportadoEmpleado%>
+                                  
+            <%=form.submit("Confirmar", class: "btn botonVerde ", id: "botonConfirmarEditarParametro")%>
+        <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+

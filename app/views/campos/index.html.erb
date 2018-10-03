@@ -1,59 +1,23 @@
 <div class="contenedorFondoFichaGenerica usadoEnIndexCampos">
 	<div class="opcionesArribaFichaGenerica usadoEnIndexCampos">
-      <h5><strong> Campos asociados a la cuenta</strong></h5>
-      <div>
+    <h5><strong> Campos asociados a la cuenta</strong></h5>
+    <div>
       <button id="botonCrearCampo" type="button" class="btn botonNaranjo" data-toggle="modal" data-target="#crearCampoModal">
-      + Campo
+        + Campo
       </button>
       <button id="botonCompararCampos" type="button" class="btn botonAzul" >
-      Comparar
+        Comparar
       </button>
-      </div>
-  </div>
-  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica usadoEnIndexCampos">
-        <div id="listaCampos">
-           <%=render @campos%>         
-        </div>
-  </div>
-
-<!-- ___________________________________ crear un campo_______________________________-->
-
-<div class="modal fade bd-example-modal-lg " id="crearCampoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Complete los datos del campo a crear </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" >
-        <%=form_for @campo, url: user_campos_path(current_user), method: :post, remote: true do |form| %>
-          <%=form.label :nombre%>
-          <%=form.text_field :nombre, :maxlength => 55, class: "form-control textField"%>
-
-          <%=form.label :propietario%>
-          <%=form.text_field :propietario, class: "form-control textField"%>
-
-          <%=form.label :direccion%>
-          <%=form.text_field :direccion, class: "form-control textField"%>
-
-          <%=form.label :descripcion%>
-          <%=form.text_area :descripcion, class: "form-control textField"%>
-                                  
-          <%=form.submit("Agregar", class: "btn botonVerde ", id: "botonConfirmarCrearCampo")%>
-                          <%end%>
-                    
-                  </div>
-             </div>
-      </div>
     </div>
   </div>
-</div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica usadoEnIndexCampos">
+    <div id="listaCampos">
+     <%=render @campos%>         
+   </div>
+ </div>
 
-
-
-
+ <!-- -----------------------------crear un campo -------------------------   -->
+<%=render "form"%>
 
 
 </div><!--finContenedorFondoFichaGenerica-->

@@ -1,3 +1,3 @@
 class GestionCesantiaSeguro < ApplicationRecord
-  belongs_to :campo
+  belongs_to :campo, optional: true
 end

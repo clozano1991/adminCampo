@@ -48,26 +48,65 @@
 	    		<div class="filaInformacionPlanillaNewYEdit">
 	    			<div class="columnaInformacionUnaPorFilaPlanillaNewYEdit">
 	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
-	    					<label><strong>Descripcion</strong></label>
+	    					<label><strong>Descripcion del equipo</strong></label>
                             <%=form.text_area :descripcion, class: "form-control agregarInformacionPlanillaNewYEdit textArea"%>
 	    				</div>
-	    			</div>
+	    			</div> 
 	    		</div>
 	    </div>
 	    	
 	    
 	    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
 	    	<div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
-	    			Datos Compra
+	    		Datos Adquisición
+	    	</div>
+	    	<div class="filaInformacionPlanillaNewYEdit">
+
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Fecha adquisición</strong></label>
+                            <%=form.date_field :fechaFabricacion, class: "form-control agregarInformacionPlanillaNewYEdit"%>
+	    				</div>
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Fecha limite garantia</strong></label>
+                            <%=form.date_field :fechaFabricacion, class: "form-control agregarInformacionPlanillaNewYEdit"%>
+	    				</div>
+	    				
+	    			</div>
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Monto pagado</strong></label>
+                            <%=form.number_field :fechaFabricacion, class: "form-control agregarInformacionPlanillaNewYEdit", value: 0, step: :any, in: 0.0..9999999999.0%>
+	    				</div>
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Metodo de pago</strong></label>
+                            <%=form.text_field :tipoEquipo, class: "form-control agregarInformacionPlanillaNewYEdit"%> 
+	    				</div>
+	    			</div>
+	    			<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Organizacion vendedora</strong></label>
+                            <%=form.text_field :tipoEquipo, class: "form-control agregarInformacionPlanillaNewYEdit"%> 
+	    				</div>
+	    				<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    					<label><strong>Persona a cargo de venta</strong></label>
+                            <%=form.text_field :tipoEquipo, class: "form-control agregarInformacionPlanillaNewYEdit"%> 
+	    				</div>
+	    			</div>
 	    	</div>
 	    	
 	    </div>
 
 	    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
 	    	<div class="tituloBloqueContenedorInformacionPlanillaNewYEdit">
-	    			Datos Venta
+	    		Datos Depreciación
 	    	</div>
-	    	
+	    	<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
+	    		<div class="contenedorInformacionColumnaPlanillaNewYEdit">
+	    			<label><strong>Valor libro inicial</strong></label>
+                        <%=form.number_field :fechaFabricacion, class: "form-control agregarInformacionPlanillaNewYEdit", value: 0, step: :any, in: 0.0..9999999999.0%>
+                    <p>Es el maximo valor depreciable para el equpo. </p>
+	    		</div>
 	    </div>
 	
 

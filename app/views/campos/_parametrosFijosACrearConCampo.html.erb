@@ -1,0 +1,29 @@
+ 
+<div class="contenedorParametrosFijosSeguroDeCesantiaAAgregar">
+	<%= form.fields_for :gestion_cesantia_seguros, @campo.gestion_cesantia_seguros.build do |ff| %>
+	<!-- se establece el tipo de contrato --> 
+	<%=ff.text_field :tipoContrato, class: "form-control ", value: "Plazo Fijo"%> 
+	<!-- se establece el % aportado por el empresa -->      
+	<%=ff.number_field :porcentajeAportadoEmpresa, class: "form-control", value: 3%>
+	<!-- se establece el % aportado por el trabajador --> 
+	<%=ff.number_field :porcentageAportadoEmpleado, class: "form-control", value: 0%>
+	<%end%> 
+
+	<%= form.fields_for :gestion_cesantia_seguros, @campo.gestion_cesantia_seguros.build do |ff| %>
+	<!-- se establece el tipo de contrato --> 
+	<%=ff.text_field :tipoContrato, class: "form-control ", value: "Por Faena"%> 
+	<!-- se establece el % aportado por el empresa -->      
+	<%=ff.number_field :porcentajeAportadoEmpresa, class: "form-control", value: 3%>
+	<!-- se establece el % aportado por el trabajador --> 
+	<%=ff.number_field :porcentageAportadoEmpleado, class: "form-control", value: 0%>
+	<%end%> 
+
+	<%= form.fields_for :gestion_cesantia_seguros, @campo.gestion_cesantia_seguros.build do |ff| %>
+	<!-- se establece el tipo de contrato --> 
+	<%=ff.text_field :tipoContrato, class: "form-control ", value: "Plazo Indefinido"%> 
+	<!-- se establece el % aportado por el empresa -->      
+	<%=ff.number_field :porcentajeAportadoEmpresa, class: "form-control", value: 2.4%>
+	<!-- se establece el % aportado por el trabajador --> 
+	<%=ff.number_field :porcentageAportadoEmpleado, class: "form-control", value: 0.6%>
+	<%end%> 
+</div>

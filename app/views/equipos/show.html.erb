@@ -1,0 +1,81 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+      <h5><strong> Ficha equipo: <%= " "+@equipo.tipoEquipo %> , <%= " "+ @equipo.marca%>  </strong></h5>
+  </div>
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+
+    <!--LinksSuperioresEmpleado-->
+    <div class="linksSuperioresFichaGenerica">
+        <ul class=" listaLinksFichaGenerica">
+          <li class="elementoListaLinksFichaGenerica">
+              <%=link_to("Principal",user_campo_equipo_path(current_user,@campo,@equipo), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica")%>
+          </li>
+          <li class="elementoListaLinksFichaGenerica">
+            <%=link_to("Depreciación",user_campo_equipo_depreciaciones_path(current_user,@campo, @equipo), :method => "get", class: "linkFichaGenerica")%>
+          </li>
+        </ul>
+    </div><!--fin LinksSuperioresEmpleado-->
+
+
+    <div class="FichaGenerica">
+      <div class="tituloFilaFichaGenerica">
+        <h5><strong>Datos Básicos</strong></h5>
+      </div>
+      <div class="filaFichaGenerica elementoFichaGenericaConBordeAbajo">
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            dsfdfsds
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            ddsfdfs
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            dfsfsdf
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Edad: ------
+          </div>
+        </div>
+
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            sgfg
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            fgfgf
+          </div>
+        </div>
+
+        <div class="columnaFilaFichaGenerica TresColumnasPorFila">
+          <div class="elementoColumnaFilaFichaGenerica">
+            sdfdsf
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            dsfsdfsd
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            dfsdfsd
+          </div>
+          <div class="elementoColumnaFilaFichaGenerica">
+            Años trabajados: ------
+          </div>
+        </div>
+      </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!--fin FichaGenerica-->
+    
+  </div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaEmpleado-->
