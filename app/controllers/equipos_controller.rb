@@ -15,7 +15,7 @@ class EquiposController < ApplicationController
 		@equipo=current_user.campos.find(params[:campo_id]).equipos.build
     end
 
-	def create
+	def create 
 		@campo=current_user.campos.find(params[:campo_id])
 		@equipo=current_user.campos.find(params[:campo_id]).equipos.build(equipo_params)
 		@equipo.save
