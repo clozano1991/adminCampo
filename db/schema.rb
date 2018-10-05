@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180918122148) do
+ActiveRecord::Schema.define(version: 20181005205924) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -99,15 +99,15 @@ ActiveRecord::Schema.define(version: 20180918122148) do
     t.text "manejoTecnologia"
     t.text "antecedentesLaborales"
     t.text "otrasHabilidades"
-    t.float "porcentajeCotizacionAFP"
     t.string "isapreAcogida"
-    t.float "porcentajeCotizacionIsapre"
     t.string "banco"
     t.string "tipoCuentaBanco"
     t.string "numeroCuentaBanco"
     t.string "emailEmpleado"
     t.date "fechaContratacion"
     t.date "fechaDesvinculacion"
+    t.float "porcentajeCotizacionIsapre"
+    t.float "porcentajeCotizacionAFP"
     t.float "sueldoBaseMensual"
     t.index ["campo_id"], name: "index_empleados_on_campo_id"
   end
