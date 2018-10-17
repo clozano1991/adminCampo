@@ -22,7 +22,8 @@ Rails.application.routes.draw do
 			resources :equipos do
 				resources :depreciaciones
 			end
-			resources :elemento_contables
+			resources :elemento_contables 
+			get "/cambiarInfoContableAno" => "elemento_contables#recopiladoElementosContablesEnUnAno", as: :recopiladoElementosContablesEnUnAno
 
 
 			#para la parte de las configuraciones de parametros

@@ -2,24 +2,22 @@
 	<div class="barraArribaPlanillaContabilidad">
       <div id="">
         <h5><strong> Contabilidad campo: <%=@campo.nombre%></strong></h5>
-      
       </div>
 
       <div class="botonesBarraArribaPlanillaContabilidadMasSeleccionFecha">
-            <div><%= "Año:"%></div>
+            <div><%= "Año: "%></div>
             <div>
-                  <select class="custom-select">
-                        <% @anos.each do |ano|%>
-                        <option> <%=ano%> </option>
-                        <%end%>
-                  </select>
-                  
+                  <select class="custom-select" id="selectAnoContabilidadEERR" data-userid="<%=current_user.id%>" data-campoid="<%=@campo.id%>">
+                        
+                        <option>2018</option>
+                        
+                        
+                        <option> 2017 </option>
+                        
+                  </select>     
             </div>
-            <div>
-                  <%=link_to(button_tag("+ Partida Contable", class: "btn botonNaranjo botonBarraArribaPlanillaContabilidad" ),new_user_campo_elemento_contable_path(current_user,@campo), method: :get)%>
-            </div>
-            <div>
-                  <%=link_to(button_tag("Estadisticas", class: "btn botonAzul botonBarraArribaPlanillaContabilidad" ),new_user_campo_elemento_contable_path(current_user,@campo), method: :get)%>
+            <div class="contenedorBotonesBarraArribaContabilidad">
+                  <%=link_to(button_tag("Indicadores", class: "btn botonAzul botonBarraArribaPlanillaContabilidad" ),new_user_campo_elemento_contable_path(current_user,@campo), method: :get)%>
             </div>
       </div>
     </div>
@@ -56,87 +54,94 @@
       			</div>
       		</td>
       		<td class="casillaDatos">
-      			1
+      			
       		</td>
       		<td class="casillaDatos">
-      			2
+      			
       		</td>
       		<td class="casillaDatos">
-      			3
+      			
       		</td>
       		<td class="casillaDatos">
-      			4
+      			
       		</td>
       		<td class="casillaDatos">
-      			5
+      			
       		</td>
       		<td class="casillaDatos">
-      			6
+      			
       		</td>
       		<td class="casillaDatos">
-      			7
+      			
       		</td>
       		<td class="casillaDatos">
-      			8
+      			
       		</td>
       		<td class="casillaDatos">
-      			9
+      			
       		</td>
       		<td class="casillaDatos">
-      			10
+      			
       		</td>
       		<td class="casillaDatos">
-      			11
+      			
       		</td>
       		<td  class="casillaDatos">
-      			12
+      			
       		</td>
       		<td  class="casillaDatos">
-      			13
+      			
       		</td>
       	</tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion Ingresos-de-operación-Ventas">
                   <td class=" casillaCuentaSecundaria">
-                        Venta de frutas
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Ventas
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png", class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Ingresos-de-operación",:cuentaSecundaria => "Ventas" , :ingresoGastoProbable => "Ingreso", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
-                  </td>
-                  <td class="casillaDatos">
-                        4
-                  </td>
-                  <td class="casillaDatos">
-                        5
-                  </td>
-                  <td class="casillaDatos">
-                        6
-                  </td>
-                  <td class="casillaDatos">
-                        7
-                  </td>
-                  <td class="casillaDatos">
-                        8
-                  </td>
-                  <td class="casillaDatos">
-                        9
-                  </td>
-                  <td class="casillaDatos">
-                        10
-                  </td>
-                  <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad">
@@ -148,219 +153,240 @@
       			</div>
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
-      	<tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion ">
+      	<tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Personal">
       		<td class=" casillaCuentaSecundaria">
-      			Personal
+      			<div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Personal
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Personal" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Luz">
                   <td class=" casillaCuentaSecundaria">
-                        Luz
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Luz
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Luz" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Agua">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Agua
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Agua" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
                   <td class=" casillaCuentaSecundaria">
-                        Agua
+                        Equipos
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                  
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
-                  </td>
-            </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
-                  <td class=" casillaCuentaSecundaria">
-                        Maquinas y equipos
-                  </td>
-                  <td class="casillaDatos">
-                        1
-                  </td>
-                  <td class="casillaDatos">
-                        2
-                  </td>
-                  <td class="casillaDatos">
-                        3
-                  </td>
-                  <td class="casillaDatos">
-                        4
-                  </td>
-                  <td class="casillaDatos">
-                        5
-                  </td>
-                  <td class="casillaDatos">
-                        6
-                  </td>
-                  <td class="casillaDatos">
-                        7
-                  </td>
-                  <td class="casillaDatos">
-                        8
-                  </td>
-                  <td class="casillaDatos">
-                        9
-                  </td>
-                  <td class="casillaDatos">
-                        10
-                  </td>
-                  <td class="casillaDatos">
-                        11
-                  </td>
-                  <td  class="casillaDatos">
-                        12
-                  </td>
-                  <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -368,43 +394,43 @@
                         Combustibles
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -412,43 +438,43 @@
                         Fertilizantes
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -456,43 +482,43 @@
                         Otros agroquimicos
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -500,43 +526,43 @@
                         Arriendos
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -544,43 +570,43 @@
                         Plantaciones
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -588,43 +614,43 @@
                         Transportes
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -632,43 +658,43 @@
                         Depreciación
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
@@ -676,43 +702,43 @@
                         Otros costos operacionales
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad">
@@ -724,87 +750,87 @@
                         </div>
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion">
                   <td class=" casillaCuentaSecundaria">
-                        Otros costos operacionales
+                        Otros
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
@@ -812,46 +838,46 @@
       			Resultado operacional
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
-      	
+
       	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad" >
       		<td class="casillaConFlechaCuentaPrincipal">
       			<div class="tituloCuentaPrincipal">Ingresos no operacionales</div>
@@ -861,43 +887,43 @@
       			</div>
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
       	<tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosNoOperacionales">
@@ -905,43 +931,43 @@
       			Venta de fruta
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosNoOperacionales">
@@ -949,43 +975,43 @@
                         Arriendos
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad">
@@ -997,43 +1023,43 @@
       			</div>
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosNoOperacionales">
@@ -1041,43 +1067,43 @@
                         Costos financieros
                   </td>
                   <td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
             </tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
@@ -1085,43 +1111,43 @@
       			Resultado no operacional
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad">
@@ -1129,43 +1155,43 @@
       			Ut. antes de impuestos
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad">
@@ -1173,43 +1199,43 @@
       			Impuestos
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
       	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad filaNegrita">
@@ -1217,59 +1243,52 @@
       			Utilidad neta
       		</td>
       		<td class="casillaDatos">
-                        1
+                        
                   </td>
                   <td class="casillaDatos">
-                        2
+                        
                   </td>
                   <td class="casillaDatos">
-                        3
+                        
                   </td>
                   <td class="casillaDatos">
-                        4
+                        
                   </td>
                   <td class="casillaDatos">
-                        5
+                        
                   </td>
                   <td class="casillaDatos">
-                        6
+                        
                   </td>
                   <td class="casillaDatos">
-                        7
+                        
                   </td>
                   <td class="casillaDatos">
-                        8
+                        
                   </td>
                   <td class="casillaDatos">
-                        9
+                        
                   </td>
                   <td class="casillaDatos">
-                        10
+                        
                   </td>
                   <td class="casillaDatos">
-                        11
+                        
                   </td>
                   <td  class="casillaDatos">
-                        12
+                        
                   </td>
                   <td  class="casillaDatos">
-                        13
+                        
                   </td>
       	</tr>
-      	
-
-
-
-
-
-
-
-
-          
       </tbody>
     </table>
-    	
+    </div><!-- fin contenedor cuerpo-planilla tabla contabiliad -->
+
+    <div><!-- contenedor modals para agregar datos a la planilla contable -->
+          <%=render partial: "agregandoElementoAPlanillaContable", locals: {campo: @campo}%>
     </div>
 
 
-</div>
+</div><!-- fin contenedor fondo planilla contabiliad -->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181005205924) do
+ActiveRecord::Schema.define(version: 20181011172832) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -38,14 +38,15 @@ ActiveRecord::Schema.define(version: 20181005205924) do
 
   create_table "elemento_contables", force: :cascade do |t|
     t.integer "campo_id"
-    t.string "tipo"
     t.string "nombre"
     t.string "tipoIngresoEgreso"
-    t.bigint "monto"
+    t.integer "monto", limit: 8
     t.date "fecha"
     t.text "observacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cuentaPrincipal"
+    t.string "cuentaSecundaria"
     t.index ["campo_id"], name: "index_elemento_contables_on_campo_id"
   end
 

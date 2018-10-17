@@ -71,14 +71,17 @@
 .FichaGenerica{
 	position: relative;
 	width: 100%;
-	min-height: 200px;
+	
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+}
+.contenedorFichaGenericaConPadings{
+    min-height: 200px;
 	padding-top: 18px;
 	padding-bottom: 15px;
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-bottom: 25px;
-	background-color: white;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 .tituloFilaFichaGenerica{  
 	font-size: 22px;

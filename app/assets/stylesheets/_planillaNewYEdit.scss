@@ -111,3 +111,11 @@
 .form-control.agregarInformacionPlanillaNewYEdit.textArea{
 	min-height: 128px;
 }
+
+/*--------------------------------para esconder algunas cosas de los forms---------------------------------------*/
+.filaEscondida{
+    display: none; 
+}
+.form-control.formEscondido{
+	display: none;
+}

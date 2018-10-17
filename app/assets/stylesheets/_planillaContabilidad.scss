@@ -100,7 +100,7 @@
    
 }
 
-/*-----------------------------informacion oculta-------------------------------------*/
+/*-----------------------------informacion oculta con la flecha-------------------------------------*/
 .subInformacionIngresosDeOperacion{
 	display: none;
 }
@@ -129,4 +129,11 @@
 .tituloCuentaSecundaria{/* es donde van los titulos de las sub cuentas, ej: petroleo*/
 	font-weight: bold;
 	text-align: right;
+}
+
+
+
+/* -----------------modal agragando dato contable ------------*/
+#tituloModalAgregarElementoContable{
+	font-weight: bold;
 }
