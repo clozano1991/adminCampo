@@ -1,5 +1,5 @@
 
-<div class="contenedorFondoFichaGenerica">
+<div class="contenedorFondoPlanillaNewYEdit">
     <%=form_for @empleado, url: user_campo_empleados_path(current_user,@campo), method: :post,:html => { :id => "formAgregarEmpleado" } do |form| %>
 
     <div class="opcionesArribaFichaGenerica">  
@@ -9,10 +9,9 @@
   <div class="contenedorLinkSuperioresMasContenidoFichaGenerica"> 
 
 <!------------------------agregando datos de la persona------------------------>    
-    <div class="FichaGenerica">
-        <div class="contenedorFichaGenericaConPadings">
+    <div class=bloqueContenedorInformacionPlanillaNewYEdit>
         <div class="elementoColumnaFilaFichaGenerica">
-            <h5><strong>Datos de la persona</strong></h5>
+            <h5><strong>Datos de la persona</strong></h5> 
         </div>
         <div class="filaFichaGenerica newYEditEmpleado">
             <div class="columnaFilaFichaGenerica TresColumnasPorFila">
@@ -97,7 +96,7 @@
 
 
 <!------------------------agregando datos de cargo y contrato------------------------> 
-    <div class="FichaGenerica">
+    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
         <div class="elementoColumnaFilaFichaGenerica">
             <h5><strong>Datos del cargo y contrato</strong></h5>
         </div>
@@ -141,7 +140,7 @@
 <!------------------------fin agregando datos de cargo y contrato-----------------------> 
 
 <!------------------------agregando datos de pagos------------------------> 
-    <div class="FichaGenerica">
+    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
       <div class="elementoColumnaFilaFichaGenerica">
         <h5><strong>Datos de pagos</strong></h5>
     </div>
@@ -180,7 +179,7 @@
 
 
 <!------------------------agregando datos de cuenta bancaria------------------------> 
-    <div class="FichaGenerica">
+    <div class="bloqueContenedorInformacionPlanillaNewYEdit">
       <div class="elementoColumnaFilaFichaGenerica">
         <h5><strong>Datos de cuenta bancaria</strong></h5>
     </div>

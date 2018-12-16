@@ -104,16 +104,19 @@
 .subInformacionIngresosDeOperacion{
 	display: none;
 }
-.subInformacionCostosDeOperacion{
+.subInformacionCostosDeOperacion{ 
 	display: none;
 }
 .subInformacionCostosDeAdministracion{
 	display: none;
 }
-.subInformacionIngresosNoOperacionales{
+.subInformacionOtrosCostosEIngresos{
 	display: none;
 }
-.subInformacionCostosNoOperacionales{
+/*.subInformacionCostosNoOperacionales{
+	display: none;
+}*/
+.subInformacionImpuestos{
 	display: none;
 }
 .flechaArribaMostrarMenosInformacionCuentaSeleccionada{

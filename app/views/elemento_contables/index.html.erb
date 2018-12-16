@@ -45,7 +45,7 @@
       <tbody>
 
 
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad Ingresos-de-operación">
       		<td class="casillaConFlechaCuentaPrincipal">
       			<div class="tituloCuentaPrincipal">Ingresos de operación</div>
       			<div class="contenedorImagenesFlechas">
@@ -93,14 +93,14 @@
       			
       		</td>
       	</tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion Ingresos-de-operación-Ventas">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion Ingresos-de-operación-Venta-de-productos">
                   <td class=" casillaCuentaSecundaria">
                         <div class="contenedorImagenAgregarElementoContableMasTitulo">
                               <div>
-                                    Ventas
+                                    Venta de productos
                               </div> 
                               <div>
-                                    <%= image_tag("agregar.png", class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Ingresos-de-operación",:cuentaSecundaria => "Ventas" , :ingresoGastoProbable => "Ingreso", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                                    <%= image_tag("agregar.png", class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Ingresos-de-operación",:cuentaSecundaria => "Venta-de-productos" , :ingresoGastoProbable => "Ingreso", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
                               </div>   
                         </div>
                   </td>
@@ -144,7 +144,109 @@
                         
                   </td>
             </tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion Ingresos-de-operación-Arriendos-a-terceros">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Arriendos a terceros
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png", class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Ingresos-de-operación",:cuentaSecundaria => "Arriendos-a-terceros" , :ingresoGastoProbable => "Ingreso", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosDeOperacion Ingresos-de-operación-Otros">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png", class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Ingresos-de-operación",:cuentaSecundaria => "Otros" , :ingresoGastoProbable => "Ingreso", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos ">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad Costos-de-operación">
       		<td class="casillaConFlechaCuentaPrincipal">
       			<div class="tituloCuentaPrincipal">Costos de operación</div>
       			<div class="contenedorImagenesFlechas">
@@ -199,7 +301,7 @@
                                     Personal
                               </div> 
                               <div>
-                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Personal" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Personal" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
                               </div>   
                         </div>
       		</td>
@@ -250,7 +352,7 @@
                                     Luz
                               </div> 
                               <div>
-                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Luz" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Luz" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
                               </div>   
                         </div>
                   </td>
@@ -301,7 +403,7 @@
                                     Agua
                               </div> 
                               <div>
-                                    <%= image_tag("agregar.png",id: "agregarDatoPersonalCostosOperacion",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Agua" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Agua" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
                               </div>   
                         </div>
                   </td>
@@ -345,9 +447,17 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Equipos">
                   <td class=" casillaCuentaSecundaria">
-                        Equipos
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Equipos
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Equipos" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -389,9 +499,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Combustibles">
                   <td class=" casillaCuentaSecundaria">
-                        Combustibles
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Combustibles
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Combustibles" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -433,9 +550,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Fertilizantes">
                   <td class=" casillaCuentaSecundaria">
-                        Fertilizantes
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Fertilizantes
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Fertilizantes" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -477,9 +601,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Herbicidas">
                   <td class=" casillaCuentaSecundaria">
-                        Otros agroquimicos
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Herbicidas
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Herbicidas" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -521,9 +652,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Otros-agroquimicos">
                   <td class=" casillaCuentaSecundaria">
-                        Arriendos
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros agroquimicos
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Otros-agroquimicos" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -565,9 +703,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Arriendos-para-operación">
                   <td class=" casillaCuentaSecundaria">
-                        Plantaciones
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Arriendos para operación
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Arriendos-para-operación" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -609,9 +754,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Transportes">
                   <td class=" casillaCuentaSecundaria">
-                        Transportes
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Transportes
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Transportes" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -653,9 +805,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Servicios-externos">
                   <td class=" casillaCuentaSecundaria">
-                        Depreciación
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Servicios externos
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Servicios-externos" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -697,9 +856,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Depreciación">
                   <td class=" casillaCuentaSecundaria">
-                        Otros costos operacionales
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Depreciación
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Depreciación" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -741,7 +907,58 @@
                         
                   </td>
             </tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeOperacion Costos-de-operación-Otros-costos-operacionales">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros costos operacionales
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-operación",:cuentaSecundaria => "Otros-costos-operacionales" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad Costos-de-administración">
                   <td class="casillaConFlechaCuentaPrincipal">
                         <div class="tituloCuentaPrincipal">Costos de administración</div>
                         <div class="contenedorImagenesFlechas">
@@ -789,9 +1006,16 @@
                         
                   </td>
             </tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion Costos-de-administración-Personal-administrativo">
                   <td class=" casillaCuentaSecundaria">
-                        Otros
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Personal administrativo
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-administración",:cuentaSecundaria => "Personal-administrativo" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -833,7 +1057,160 @@
                         
                   </td>
             </tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion Costos-de-administración-Servicios-de-contabilidad">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Servicios de contabilidad
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-administración",:cuentaSecundaria => "Servicios-de-contabilidad" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+             <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion Costos-de-administración-Servicios-legales">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Servicios legales
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-administración",:cuentaSecundaria => "Servicios-legales" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosDeAdministracion Costos-de-administración-Otros-costos-de-administración">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros costos de admin.
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Costos-de-administración",:cuentaSecundaria => "Otros-costos-de-administración" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita Resultado-operacional">
       		<td class="tituloCuentaPrincipal">
       			Resultado operacional
       		</td>
@@ -878,12 +1255,12 @@
                   </td>
       	</tr>
 
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad" >
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad Otros-costos-e-ingresos" >
       		<td class="casillaConFlechaCuentaPrincipal">
-      			<div class="tituloCuentaPrincipal">Ingresos no operacionales</div>
+      			<div class="tituloCuentaPrincipal">Otros costos e ingresos</div>
       			<div class="contenedorImagenesFlechas">
-      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionCuentaSeleccionada",id: "flechaAbajoIngresosNoOperacionales", :data=>{:flechaCuentaEERR => "IngresosNoOperacionales".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
-                        <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionCuentaSeleccionada",id: "flechaArribaIngresosNoOperacionales", :data=>{:flechaCuentaEERR => "IngresosNoOperacionales".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionCuentaSeleccionada",id: "flechaAbajoOtrosCostosEIngresos", :data=>{:flechaCuentaEERR => "OtrosCostosEIngresos".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+                        <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionCuentaSeleccionada",id: "flechaArribaOtrosCostosEIngresos", :data=>{:flechaCuentaEERR => "OtrosCostosEIngresos".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
       			</div>
       		</td>
       		<td class="casillaDatos">
@@ -926,53 +1303,118 @@
                         
                   </td>
       	</tr>
-      	<tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosNoOperacionales">
-      		<td class=" casillaCuentaSecundaria">
-      			Venta de fruta
-      		</td>
-      		<td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td  class="casillaDatos">
-                        
-                  </td>
-                  <td  class="casillaDatos">
-                        
-                  </td>
-      	</tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionIngresosNoOperacionales">
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionOtrosCostosEIngresos Otros-costos-e-ingresos-Intereses-de-capital">
                   <td class=" casillaCuentaSecundaria">
-                        Arriendos
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Intereses de capital
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Otros-costos-e-ingresos",:cuentaSecundaria => "Intereses-de-capital" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionOtrosCostosEIngresos Otros-costos-e-ingresos-Utilidad-por-venta-de-activos">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Util. por venta de activos
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Otros-costos-e-ingresos",:cuentaSecundaria => "Utilidad-por-venta-de-activos" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionOtrosCostosEIngresos Otros-costos-e-ingresos-Seguros">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Seguros
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Otros-costos-e-ingresos",:cuentaSecundaria => "Seguros" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -1014,13 +1456,111 @@
                         
                   </td>
             </tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
-      		<td class="casillaConFlechaCuentaPrincipal">
-      			<div class="tituloCuentaPrincipal">Costos no operacionales</div>
-      			<div class="contenedorImagenesFlechas">
-      			<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionCuentaSeleccionada",id: "flechaAbajoCostosNoOperacionales", :data=>{:flechaCuentaEERR => "CostosNoOperacionales".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
-                        <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionCuentaSeleccionada",id: "flechaArribaCostosNoOperacionales", :data=>{:flechaCuentaEERR => "CostosNoOperacionales".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
-      			</div>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionOtrosCostosEIngresos Otros-costos-e-ingresos-Diferencia-de-cambio">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Diferencia de cambio
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Otros-costos-e-ingresos",:cuentaSecundaria => "Diferencia-de-cambio" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionOtrosCostosEIngresos Otros-costos-e-ingresos-Otros">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Otros-costos-e-ingresos",:cuentaSecundaria => "Otros" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+                  <td  class="casillaDatos">
+                        
+                  </td>
+            </tr>
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad filaNegrita Utilidad-antes-de-impuestos">
+      		<td class="tituloCuentaPrincipal">
+      			Util. antes de impuestos
       		</td>
       		<td class="casillaDatos">
                         
@@ -1062,9 +1602,13 @@
                         
                   </td>
       	</tr>
-            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionCostosNoOperacionales">
-                  <td class=" casillaCuentaSecundaria">
-                        Costos financieros
+            <tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad Impuestos" >
+                  <td class="casillaConFlechaCuentaPrincipal">
+                        <div class="tituloCuentaPrincipal">Impuestos</div>
+                        <div class="contenedorImagenesFlechas">
+                        <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionCuentaSeleccionada",id: "flechaAbajoImpuestos", :data=>{:flechaCuentaEERR => "Impuestos".to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+                        <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionCuentaSeleccionada",id: "flechaArribaImpuestos", :data=>{:flechaCuentaEERR => "Impuestos".to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
+                        </div>
                   </td>
                   <td class="casillaDatos">
                         
@@ -1106,55 +1650,18 @@
                         
                   </td>
             </tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaNegrita">
-      		<td class="tituloCuentaPrincipal">
-      			Resultado no operacional
-      		</td>
-      		<td class="casillaDatos">
-                        
-                  </td>
+      	<tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionImpuestos Impuestos-Impuesto-a-utilidad-bruta">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Impuesto a utilidad bruta
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Impuestos",:cuentaSecundaria => "Impuesto-a-utilidad-bruta" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
                   <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td class="casillaDatos">
-                        
-                  </td>
-                  <td  class="casillaDatos">
-                        
-                  </td>
-                  <td  class="casillaDatos">
-                        
-                  </td>
-      	</tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad">
-      		<td class="tituloCuentaPrincipal">
-      			Ut. antes de impuestos
-      		</td>
-      		<td class="casillaDatos">
                         
                   </td>
                   <td class="casillaDatos">
@@ -1193,12 +1700,19 @@
                   <td  class="casillaDatos">
                         
                   </td>
-      	</tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad">
-      		<td class="tituloCuentaPrincipal">
-      			Impuestos
-      		</td>
-      		<td class="casillaDatos">
+            </tr>
+            <tr class="filaCuentaSecundariaPlanillaContabilidad subInformacionImpuestos Impuestos-Otros">
+                  <td class=" casillaCuentaSecundaria">
+                        <div class="contenedorImagenAgregarElementoContableMasTitulo">
+                              <div>
+                                    Otros
+                              </div> 
+                              <div>
+                                    <%= image_tag("agregar.png",id: "",class: "fotoOpcion imagenAgregarDatoContable",:data=>{ :cuentaPrincipal => "Impuestos",:cuentaSecundaria => "Otros" , :ingresoGastoProbable => "Gasto", :toggle => "tooltip", :placement => "top", :title => "agregar dato"})%>
+                              </div>   
+                        </div>
+                  </td>      
+                  <td class="casillaDatos">
                         
                   </td>
                   <td class="casillaDatos">
@@ -1237,8 +1751,9 @@
                   <td  class="casillaDatos">
                         
                   </td>
-      	</tr>
-      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad filaNegrita">
+            </tr>
+
+      	<tr class="filaCuentaPrincipalPlanillaContabilidad filaConBordeArribaCuentaPrincipalPlanillaContabilidad filaNegrita Utilidad-neta">
       		<td class="tituloCuentaPrincipal">
       			Utilidad neta
       		</td>
