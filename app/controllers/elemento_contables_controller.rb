@@ -41,7 +41,7 @@ class ElementoContablesController < ApplicationController
 
 	def indexEspecificoElementosContables
 		@campo=current_user.campos.find(params[:campo_id])
-		@elementoContableEspecificos = current_user.campos.find(params[:campo_id]).elemento_contables.where( "cuentaPrincipal = ? AND cuentaSecundaria = ?", params[:cuentaPrincipalEspecifica]  , params[:cuentaSecundariaEspecifica]).order("fecha DESC")
+		@elementoContableEspecificos = current_user.campos.find(params[:campo_id]).elemento_contables.where( "cuentaprincipal = ? AND cuentasecundaria = ?", params[:cuentaPrincipalEspecifica]  , params[:cuentaSecundariaEspecifica]).order("fecha DESC")
         @nombreCuentaPrincipalEspecifica = params[:cuentaPrincipalEspecifica]
         @nombreCuentaSecundariaEspecifica = params[:cuentaSecundariaEspecifica]
 
@@ -96,6 +96,6 @@ class ElementoContablesController < ApplicationController
 
 
 	def elemento_contable_params
-		params.require(:elemento_contable).permit(:nombre, :tipoIngresoEgreso, :fecha, :monto , :observacion, :cuentaPrincipal, :cuentaSecundaria, :cuentaPrincipalEspecifica, :cuentaSecundariaEspecifica)
+		params.require(:elemento_contable).permit(:nombre, :tipoIngresoEgreso, :fecha, :monto , :observacion, :cuentaprincipal, :cuentasecundaria, :cuentaPrincipalEspecifica, :cuentaSecundariaEspecifica)
 	end
 end

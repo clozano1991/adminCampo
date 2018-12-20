@@ -25,7 +25,7 @@ function recopilandoInformacionPlanillaContabilidadEERRDeAnoSeleccionado(){
   $.getJSON("/users/"+userid+"/campos/"+campoid+"/cambiarInfoContableAno",{ano: ano}, function(result){
     $.each(result,function(i,field){
          // ojo que la fecha esta en ano-mes-dia  y que para js a diferencia de ruby el mes parte con enero en 0
-         arregloInfoElementosContablesRecopilados.push(String(field.cuentaPrincipal)+"-"+String(field.cuentaSecundaria)+","+String((new Date(field.fecha)).getMonth())+","+String(field.tipoIngresoEgreso)+","+String(field.monto) );
+         arregloInfoElementosContablesRecopilados.push(String(field.cuentaprincipal)+"-"+String(field.cuentasecundaria)+","+String((new Date(field.fecha)).getMonth())+","+String(field.tipoIngresoEgreso)+","+String(field.monto) );
        });
     mostrandoInformacionElementosContables(arregloInfoElementosContablesRecopilados);
   });

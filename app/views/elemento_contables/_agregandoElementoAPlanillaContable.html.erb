@@ -12,8 +12,8 @@
        <%=form_for @elemento_contable, url: user_campo_elemento_contables_path(current_user,@campo), method: :post,remote: true, :html => { :class => "formPlanillaNewYEdit" } do |form| %>
 
        <!-- fields que estan escondidos, se modifican con js-->
-       <%=form.text_field :cuentaPrincipal, class: "form-control formEscondido", id: "agregarCuentaPrincipalElementoContable"%>
-       <%=form.text_field :cuentaSecundaria, class: " form-control formEscondido", id: "agregarCuentaSecundariaElementoContable"%> 
+       <%=form.text_field :cuentaprincipal, class: "form-control formEscondido", id: "agregarCuentaPrincipalElementoContable"%>
+       <%=form.text_field :cuentasecundaria, class: " form-control formEscondido", id: "agregarCuentaSecundariaElementoContable"%> 
        
       <!-- fin fields escondidos-->
 
