@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 				end
 
 				resources :empleado_abandonos
-				resources :empleado_observaciones
+				resources :empleado_observaciones 
 			end
 			#para la parte del mapa de fondo que tienen los bloques donde estan los huertos
 			get "/mapa" => "campos#elegirMapaBloqueUno", as: :elegirMapaBloqueUno
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 			end
 			resources :elemento_contables 
 			get "/cambiarInfoContableAno" => "elemento_contables#recopiladoElementosContablesEnUnAno", as: :recopiladoElementosContablesEnUnAno
-
+            get "/listadoElementosContablesEspecificos/:cuentaPrincipalEspecifica/:cuentaSecundariaEspecifica" => "elemento_contables#indexEspecificoElementosContables", as: :indexEspecificoElementosContables
 
 			#para la parte de las configuraciones de parametros
 			get "/configuracionParametros" => "campos#configuracionParametros", as: :configuracionParametros

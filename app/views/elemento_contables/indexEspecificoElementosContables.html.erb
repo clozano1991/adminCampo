@@ -1,0 +1,40 @@
+<div class="contenedorFondoListaGrande">
+
+  <div class="barraArribaListaGrande">
+    <div id="">
+      <h5><strong> Campo: <%=@campo.nombre%> - Contabilidad - <%= @nombreCuentaPrincipalEspecifica.gsub("-"," ") %> - <%= @nombreCuentaSecundariaEspecifica.gsub("-"," ") %> </strong></h5> 
+    </div>
+    <div class="botonesBarraArribaListaGrande">
+              
+              
+    </div>
+  </div>
+ 
+  <div class="listaGrande" id="contenedorListadoElementosContablesEspecificos" data-contenedorListadoElementosContablesEspecificos="contenedorListadoElementosContablesEspecificos">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="filaSuperiorListaGrande">
+          <th class="tituloColumnaListaGrande" scope="col">Razon Movimiento</th>
+          <th class="tituloColumnaListaGrande" scope="col">Fecha</th>
+          <th class="tituloColumnaListaGrande" scope="col">Monto</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>  
+      <tbody>
+          <% @adentroTablaElementosContablesEspecificos = true %>
+          <%=render partial: "elementoContableEspecifico", collection: @elementoContableEspecificos, locals: {campo: @campo, nombreCuentaSecundariaEspecifica: @nombreCuentaSecundariaEspecifica, nombreCuentaPrincipalEspecifica: @nombreCuentaPrincipalEspecifica}%>
+          <% @adentroTablaElementosContablesEspecificos = false %>
+      </tbody>
+    </table>
+  </div>
+
+</div><!--fin contenedorFondoIndexEmpleados-->
+
+ 
+<!--+++++++++++++++++modals para confirmar borrar un empleado+++++++++++++++++++++++++++++++++-->
+<div class="contenedorModalsBorrarEmpleado"> 
+<% @adentroContenedorModalsElementosContablesEspecificos = true %>
+<%=render partial: "elementoContableEspecifico", collection: @elementoContableEspecificos, locals: {campo: @campo,nombreCuentaSecundariaEspecifica: @nombreCuentaSecundariaEspecifica, nombreCuentaPrincipalEspecifica: @nombreCuentaPrincipalEspecifica}%>
+</div>
+<% @adentroContenedorModalsElementosContablesEspecificos  = false %>
+<!--+++++++++++++++++fin modals para confirmar borrar un empleado++++++++++++++++++++++++++++-->

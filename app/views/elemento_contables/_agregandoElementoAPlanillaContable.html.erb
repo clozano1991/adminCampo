@@ -21,7 +21,7 @@
         <div class="columnaInformacionDosPorFilaPlanillaNewYEdit"> 
           <div class="contenedorInformacionColumnaPlanillaNewYEdit">
             <label><strong>Razon del movimiento</strong></label>
-            <%=form.text_field :nombre, class: "form-control agregarInformacionPlanillaNewYEdit", placeholder: "Ej: Pago luz, compra de suministros, etc.",required: true%> 
+            <%=form.text_field :nombre, class: "form-control agregarInformacionPlanillaNewYEdit", placeholder: "Ej: Pago luz, compra de suministros, etc.",required: true, :maxlength => 55%>  
           </div>
         </div>
         <div class="columnaInformacionDosPorFilaPlanillaNewYEdit">

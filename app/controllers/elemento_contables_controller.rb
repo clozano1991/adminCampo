@@ -38,6 +38,14 @@ class ElementoContablesController < ApplicationController
         # para crear un elemento contable desde un modal con js
         @elemento_contable=current_user.campos.find(params[:campo_id]).elemento_contables.build
 	end
+
+	def indexEspecificoElementosContables
+		@campo=current_user.campos.find(params[:campo_id])
+		@elementoContableEspecificos = current_user.campos.find(params[:campo_id]).elemento_contables.where( "cuentaPrincipal = ? AND cuentaSecundaria = ?", params[:cuentaPrincipalEspecifica]  , params[:cuentaSecundariaEspecifica]).order("fecha DESC")
+        @nombreCuentaPrincipalEspecifica = params[:cuentaPrincipalEspecifica]
+        @nombreCuentaSecundariaEspecifica = params[:cuentaSecundariaEspecifica]
+
+	end
     
     def recopiladoElementosContablesEnUnAno
     	#params[:ano] == "2019"
@@ -47,10 +55,7 @@ class ElementoContablesController < ApplicationController
         @elementosContablesEnUnAno = current_user.campos.find(params[:campo_id]).elemento_contables.where("fecha <= ? AND fecha >= ?" ,Time.zone.local(params[:ano],12,31), Time.zone.local(params[:ano],1,1))
         respond_to do|format| 
 			format.json{ render json: @elementosContablesEnUnAno}
-		end	
-		
-    	
-    	
+		end		
     end
 
 
@@ -67,11 +72,30 @@ class ElementoContablesController < ApplicationController
 			format.html {redirect_to user_campo_elemento_contables_path(current_user, @campo)}
 			format.js 
 		end	
+	end  
+
+	def update
+		@campo=current_user.campos.find(params[:campo_id])
+		@elemento_contable=current_user.campos.find(params[:campo_id]).elemento_contables.find(params[:id])
+		@elemento_contable.update(elemento_contable_params)
+		respond_to do|format|
+			format.html {redirect_to user_campo_elemento_contables_path(current_user,@campo)}
+			format.js 
+		end
+	end 
+
+	def destroy
+		@elemento_contable=current_user.campos.find(params[:campo_id]).elemento_contables.find(params[:id])
+	    @elemento_contable.destroy
+	    respond_to do|format|
+			format.html {redirect_to index_path}
+			format.js 
+		end
 	end
 
 
 
 	def elemento_contable_params
-		params.require(:elemento_contable).permit(:nombre, :tipoIngresoEgreso, :fecha, :monto , :observacion, :cuentaPrincipal, :cuentaSecundaria)
+		params.require(:elemento_contable).permit(:nombre, :tipoIngresoEgreso, :fecha, :monto , :observacion, :cuentaPrincipal, :cuentaSecundaria, :cuentaPrincipalEspecifica, :cuentaSecundariaEspecifica)
 	end
 end

@@ -1,0 +1,209 @@
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+<% if @adentroTablaElementosContablesEspecificos == true %>
+  <tr class="filaListaGrande" id="filaElementoContableEspecifico_<%=elementoContableEspecifico.id%>">
+      <td class="columnaInformacionListaGrandeTresPorFila">
+      	  <div class="pocaInformacionListaGrande elementoContableEspecificoTablaPocaInformacion_<%=elementoContableEspecifico.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande" id="nombreElementoContable_<%=elementoContableEspecifico.id%>">
+              <%=elementoContableEspecifico.nombre%> 
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionListaGrandeTresPorFila">
+      	  <div class="pocaInformacionListaGrande elementoContableEspecificoTablaPocaInformacion_<%=elementoContableEspecifico.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande" id="fechaElementoContable_<%=elementoContableEspecifico.id%>">
+              <%=elementoContableEspecifico.fecha%> 
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionListaGrandeTresPorFila">
+          <div class="pocaInformacionListaGrande elementoContableEspecificoTablaPocaInformacion_<%=elementoContableEspecifico.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionListaGrande" id="montoConTipoIngresoEgresoElementoContable_<%=elementoContableEspecifico.id%>">
+              <%if elementoContableEspecifico.tipoIngresoEgreso == "Ingreso"%>
+                <%=elementoContableEspecifico.monto%>
+              <%end%>
+              <%if elementoContableEspecifico.tipoIngresoEgreso == "Gasto"%>
+                <%=elementoContableEspecifico.monto*-1%>
+              <%end%>
+              
+            </div>
+          </div>
+      </td>
+      
+      <td class="columnaImagenesDerechaListaGrande">
+      	   <div class="pocaInformacionListaGrande elementoContableEspecificoTablaPocaInformacion_<%=elementoContableEspecifico.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaListaGrande">
+      	   	   <div class="imagenesDerechaListaGrande">
+      	   	   	   <%=image_tag("verDetalleLupa.png", class: "fotoOpcion imagenMostrarElementoContable", :data=>{:idElementoContable => (elementoContableEspecifico.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Detalle"})%>
+                    <%=image_tag("editarAmarillo.png",class: "fotoOpcion imagenEditarElementoContable", :data=>{:idElementoContable => (elementoContableEspecifico.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"})%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarElementoContable" , :data=>{:idElementoContable => (elementoContableEspecifico.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
+               </div>
+              </div>
+      	   </div>
+      </td>
+  </tr>
+<%end%>
+<!-- fin del contenido de la tabla -->
+
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado, editar y mostrar mas info sobre el elemento contable -->
+<%if @adentroContenedorModalsElementosContablesEspecificos == true%>
+
+
+<!-- _______________________________________________________________________________-->
+<!-- modal para mostrar un elemento contable-->
+
+<div class="modal bd-example-modal-lg fade modalParaMostrarElementoContable" id="modal_mostrar_elemento_contable_<%=elementoContableEspecifico.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5>
+                <strong>Elemento contable</strong>
+             </h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+                   <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+        	      <h5>
+                    <strong>Cuenta principal:</strong> <%=nombreCuentaPrincipalEspecifica.gsub("-"," ")%>
+                  </h5>
+                  <h5>
+                    <strong>Cuenta secundaria:</strong> <%=nombreCuentaSecundariaEspecifica.gsub("-"," ")%>
+                  </h5>
+        	      <p></p>
+                  <h5>
+                    <strong>Razon movimiento:</strong> <div class="contenedorInformacionMostrarElementoContable" id="nombreMostrarElementoContable_<%=elementoContableEspecifico.id%>"><%=elementoContableEspecifico.nombre%></div>
+                  </h5>
+                  <h5>
+                    <strong>Fecha:</strong> <div class="contenedorInformacionMostrarElementoContable" id="fechaMostrarElementoContable_<%=elementoContableEspecifico.id%>"><%=elementoContableEspecifico.fecha%></div>
+                  </h5>
+                  <h5>
+                    <strong>Tipo: </strong><div class="contenedorInformacionMostrarElementoContable" id="tipoIngresoEgresoMostrarElementoContable_<%=elementoContableEspecifico.id%>"><%=elementoContableEspecifico.tipoIngresoEgreso%></div>
+                  </h5>
+                  <h5>
+                    <strong>Monto:</strong> <div class="contenedorInformacionMostrarElementoContable" id="montoMostrarElementoContable_<%=elementoContableEspecifico.id%>"><%=elementoContableEspecifico.monto%></div>
+                  </h5>
+                  <p></p>
+
+                  <h5>
+                    <strong>Observaciones: </strong>
+                  </h5>
+                  <h5>
+                    <div class="contenedorInformacionMostrarElementoContable" id="observacionMostrarElementoContable_<%=elementoContableEspecifico.id%>">
+                    <%=elementoContableEspecifico.observacion%></div>
+                  </h5>
+                    
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+ 
+
+<!-- _______________________________________________________________________________-->
+<!-- modal para editar un elemento contable-->
+
+
+<div class="modal fade bd-example-modal-lg " id="modal_editar_elemento_contable_<%=elementoContableEspecifico.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header"> 
+        <h5 class="modal-title" id="tituloModalAgregarElementoContable">
+          Editando elemento contable
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+       <%=form_for elementoContableEspecifico, url: user_campo_elemento_contable_path(current_user,@campo,elementoContableEspecifico), method: :patch,remote: true, :html => { :class => "formPlanillaNewYEdit" } do |form| %>
+
+      
+       
+      <!-- fin fields escondidos-->
+
+       <div class="filaInformacionPlanillaNewYEdit">
+        <div class="columnaInformacionDosPorFilaPlanillaNewYEdit"> 
+          <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+            <label><strong>Razon del movimiento</strong></label>
+            <%=form.text_field :nombre, class: "form-control agregarInformacionPlanillaNewYEdit",required: true, :maxlength => 55%>  
+          </div>
+        </div>
+        <div class="columnaInformacionDosPorFilaPlanillaNewYEdit">
+          <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+             <label><strong>Fecha (mes/día/año)</strong></label>
+            <%=form.date_field :fecha, class: "form-control agregarInformacionPlanillaNewYEdit", required: true%>
+          </div>
+        </div>
+      </div>
+
+      <div class="filaInformacionPlanillaNewYEdit">
+        <div class="columnaInformacionDosPorFilaPlanillaNewYEdit">
+          <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+            <label><strong>Monto</strong></label>
+            <%=form.number_field :monto, class: "form-control agregarInformacionPlanillaNewYEdit", in: 0.0..999999999999.0, step: :any, required: true%>
+          </div>
+        </div>
+        <div class="columnaInformacionDosPorFilaPlanillaNewYEdit">
+          <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+            <label><strong>Ingreso o gasto</strong></label>
+            <%=form.select(:tipoIngresoEgreso, ["Ingreso","Gasto"],{}, {:class => "form-control agregarInformacionPlanillaNewYEdit", id: "selectIngresoGastoElementoContableNew"} )%>
+          </div>
+        </div>
+      </div>
+
+      <div class="filaInformacionPlanillaNewYEdit">
+        <div class="columnaInformacionUnaPorFilaPlanillaNewYEdit">
+          <div class="contenedorInformacionColumnaPlanillaNewYEdit">
+            <label><strong>Observacion</strong></label>
+            <%=form.text_area :observacion, class: "form-control agregarInformacionPlanillaNewYEdit textArea"%>         
+          </div>
+        </div>
+      </div>
+
+
+      <%=form.submit("Guardar", class: "btn botonVerde ", id: "botonConfirmarCrearCampo")%>
+      <%end%>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- _______________________________________________________________________________-->
+<!-- modal para borrar un elemento contable-->
+
+  <div class="modal fade modalParaBorrarElementoContable" id="modal_borrar_elemento_contable_<%=elementoContableEspecifico.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5>
+                <strong><%=elementoContableEspecifico.nombre%> </strong>
+             </h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+                   <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+        <div class="modal-body">
+                  <h5>
+                    ¿Seguro que desea borrar todos los datos asociados a este elemento contable?
+                  </h5>
+                    <%=link_to(button_tag("Borrar", class: "btn botonRojo botonConfirmarBorrarEquipo"), user_campo_elemento_contable_path(current_user,campo,elementoContableEspecifico), method: :delete, remote: true )%>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- fin modal para borrar empleado -->
+
+
+
+<%end%><!-- fin del if donde estan los modals-->

@@ -1,6 +1,9 @@
 
 // ------------------------------------ main -------------------------------
 $(document).ready(function(){ 
+  //verificamos si estamos en el domumento principal de contabilidad, 
+  //para que de otra manera no se ejecuten los json y todo eso
+  if ($("#contenedorCuerpoPlanillaContabilidad").attr("data-planillaContabilidad")=="planillaPrincipalNoLasEspecificas") {
     // mostramos la info que se tiene con el año selecionado
     recopilandoInformacionPlanillaContabilidadEERRDeAnoSeleccionado()
     // funcionamiento de las flechas 
@@ -18,9 +21,55 @@ $(document).ready(function(){
     $("#selectAnoContabilidadEERR").change(function(){
       recopilandoInformacionPlanillaContabilidadEERRDeAnoSeleccionado();
     });
+  }
+  //verificamos si estamos en el domumento de cuentas especificas, 
+  //para que de otra manera no se ejecuten los codigos de los modals y todo eso
+  if ($("#contenedorListadoElementosContablesEspecificos").attr("data-contenedorListadoElementosContablesEspecificos")=="contenedorListadoElementosContablesEspecificos") {
+    // Cuando se hace click en el basurero para borrar un elemento contable
+    $(".imagenBorrarElementoContable").each(function(){ 
+       mostrarModalBorrarElementoContable($(this));
+    });
+    // Cuando se hace click en la lupa para mostrar el detalle del elemento contable
+    $(".imagenMostrarElementoContable").each(function(){ 
+       mostrarModalMostrarElementoContable($(this));
+    });
+    // para editar un elemento contable en las cuentas especificas
+    $(".imagenEditarElementoContable").each(function(){ 
+       mostrarModalEditarElementoContable($(this));
+    });
+  }
   });
 
-//----------------funciones index elemento_contables -----------------
+
+//----------------funciones index elemento_contables --------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+function mostrarModalBorrarElementoContable(imagenBorrarElementoContable){
+  $(imagenBorrarElementoContable).click(function(){
+       $("#modal_borrar_elemento_contable_"+imagenBorrarElementoContable.attr("data-idElementoContable")).modal("show");
+  });
+}
+
+function mostrarModalMostrarElementoContable(imagenMostrarElementoContable){
+  $(imagenMostrarElementoContable).click(function(){
+       $("#modal_mostrar_elemento_contable_"+imagenMostrarElementoContable.attr("data-idElementoContable")).modal("show");
+  });
+}
+
+function mostrarModalEditarElementoContable(imagenEditarElementoContable){
+    $(imagenEditarElementoContable).click(function(){
+       $("#modal_editar_elemento_contable_"+imagenEditarElementoContable.attr("data-idElementoContable")).modal("show");
+    });
+}
+
+
+
+
+
+//----------------funciones index elemento_contables --------------------
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 //------------------------------ flechas para mostrar mas o menos
 function mostrandoMasInformacionFlechaAbajo(imagenFlechaAbajo){
 	$(imagenFlechaAbajo).click(function(){

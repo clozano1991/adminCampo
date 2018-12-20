@@ -1,0 +1,21 @@
+ $(document).ready(function(){
+
+	$("#modal_editar_elemento_contable_<%=@elemento_contable.id%>").modal("hide");
+
+	// mostramos los nuevos valores en el listado
+    $("#nombreElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.nombre%>");
+    $("#fechaElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.fecha%>");
+    if ("<%=@elemento_contable.tipoIngresoEgreso%>" == "Ingreso") {
+    	$("#montoConTipoIngresoEgresoElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.monto%>");
+    }
+    if ("<%=@elemento_contable.tipoIngresoEgreso%>" == "Gasto") {
+    	$("#montoConTipoIngresoEgresoElementoContable_<%=@elemento_contable.id%>").text("-"+"<%=@elemento_contable.monto%>");
+    }
+    // mostramos los nuevos valores en el modal que muestra la informacion
+    $("#nombreMostrarElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.nombre%>");
+    $("#fechaMostrarElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.fecha%>");
+    $("#tipoIngresoEgresoMostrarElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.tipoIngresoEgreso%>");
+    $("#montoMostrarElementoContable__<%=@elemento_contable.id%>").text("-"+"<%=@elemento_contable.monto%>");
+    $("#observacionMostrarElementoContable_<%=@elemento_contable.id%>").text("<%=@elemento_contable.observacion%>");
+    
+});
