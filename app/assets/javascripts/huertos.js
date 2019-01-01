@@ -16,6 +16,12 @@ $(document).ready(function(){
     $(".svgMapasBloques").click(function(e){ 
         haciendoClickEnSVG(e,$(this));//se le manda tambien el svg donde se hace click
     });
+    // Regrezamos a la vista normal de un modal
+    $(".regresarHuertoModal").each(function(){
+        mostrarVistaNormalHuertoModal($(this));
+    });
+
+    //-----------------------------------------agregando huerto -----------------------------------------------
 
     // boton agregando un huerto
     $('#botonAgregarHuerto').click(function(){
@@ -29,48 +35,38 @@ $(document).ready(function(){
     $("#cancelarAgregarHuerto").click(function(){
         cancelarAgregarHuerto();
     });
+    //-----------------------------------------editando huerto -----------------------------------------
     // boton editar huerto
-    $("#botonEditarHuerto").click(function(){
-        botonEditarHuerto();
+    // seleccionar lapiz para editar un huerto en el modal
+    $(".editarHuertoModal").each(function(){
+        mostrarVistaEditarHuertoModal($(this)); // esta vista es donde estan los do botones para seleccion (info-figura)
     });
-    //cancelarEditarHuerto general
-    $("#cancelarEditarHuertoGeneral").click(function(){
-        cancelarEditarHuertoGeneral();
+    //----------editando la superficie del huerto------------
+    //boton editar huerto superficie
+    $(".botonSeleccionarEditarSuperficie").each(function(){
+        iniciarEdicionSuperficieHuerto($(this));
     });
-    //boton editar huerto figura
-    $("#editarHuertoFigura").click(function(){
-        botonEditarHuertoFigura();
-    });
-    // cancelar editar huerto figura elegida
-    $("#cancelarEligiendoHuertoFiguraParaEditar").click(function(){
-        cancelarEligiendoHuertoFiguraParaEditar();
-    });
-    //confirmar edicion figura huerto una vez que se hizo la figura
+    //confirmar edicion figura huerto una vez que se hizo la nueva figura
     $("#confirmarEditandoHuertoFiguraElegida").click(function(){
         confirmarEditandoHuertoFiguraElegida();
-
     });
-    //cancelar editando huerto figura elegida
+    //seleccionamos editar figura del huerto
     $("#cancelarEditandoHuertoFiguraElegida").click(function(){
         cancelarEditandoHuertoFiguraElegida();
     });
+    //----------editando la informacion del huerto------------
+    $(".botonSeleccionarEditarInformacion").each(function(){
+        mostrarVistaEditarInformacionHuertoModal($(this));
+    });
 
-    // eliminando un huerto
-    $('#botonEliminarHuerto').click(function(){
-        eliminarHuerto();
-    });
-    // seleccionar lapiz para editar un huerto en el modal
-    $(".editarHuertoModal").each(function(){
-        mostrarVistaEditarHuertoModal($(this));
-    });
+    
+
+    //-----------------------------------------eliminar un huerto----------------------------------------
     // seleccionar basurero para borar un huerto en el modal
     $(".borrarHuertoModal").each(function(){
         mostrarVistaBorrarHuertoModal($(this));
     });
-    // Regrezamos a la vista normal de un modal
-    $(".regresarHuertoModal").each(function(){
-        mostrarVistaNormalHuertoModal($(this));
-    });
+
 
     //mostramos la imagen de fondo del huerto 
     //mostrarMapaFondoBloques();
@@ -143,7 +139,7 @@ function cambiarBloqueHuertos(boton){
                 $("#bloqueHuertosTres").hide();
                 $("#bloqueHuertosDos").show();
             }
-            
+
         }
         if (boton.attr("id")=="botonParaCambiarABloqueTres"){
             // verificamos que no este ya en el bloque tres
@@ -227,7 +223,7 @@ function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
 
     // retornamos las coordenadas que tienen que aplicarse al elemento polyline
     return stringCoordenadas
-}   
+}    
 function apretarHuerto(figura){
     $("#huerto_"+figura.attr("data-id")).click(function(){
         if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="normal"){
@@ -276,7 +272,7 @@ function haciendoClickEnSVG(e,svgBloque){
     //solo se ejecuta si tiene el permiso que esta en el cardBody para editar
     if ($("#gridDerechaMapaHuertos").attr("data-permiso")=="editandoHuertoFiguraElegido"){
         //no se activa el if si el primer click no se ha realizado
-        if($("#gridDerechaMapaHuertos").attr("data-primerClick")=="realizado"){
+        
             // hacemos un each en la clase huertoEnEdicion para obtener el id del unico elemento siendo editado
             $(".huertoEnEdicion").each(function(){
                 //------------------obteniendo posicion del click en %-----------------------------
@@ -309,13 +305,34 @@ function haciendoClickEnSVG(e,svgBloque){
                 circulo.setAttribute("r","3");
                 circulo.setAttribute("fill","red");
                 circulo.setAttribute("class","circulitos");
-                $("#svgMapaCampo").append(circulo);
+                svgBloque.append(circulo);
             });
-        }
-        // cambiamos data-primerClick para que pueda entrar al if anterior desde el segundo
-        $("#gridDerechaMapaHuertos").attr("data-primerClick","realizado");
-    }
+        }  
 }
+// en el modal hace que al apretar la flecha de retroceso se vuelva a la vista normal
+function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
+    $(imagenRegresarClickeada).click(function(){
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaEditandoInformacionHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
+}
+//funciones para mostrar mapa fondos huertos
+function mostrarMapaFondoBloques(){
+    var imagenEnTextoBloqueUno = $("#bloqueHuertosUno").attr("data-urlImagen");    
+    $("#svgMapaBloqueUno").css("background-image","url("+imagenEnTextoBloqueUno+")");
+    var imagenEnTextoBloqueDos = $("#bloqueHuertosDos").attr("data-urlImagen");    
+    $("#svgMapaBloqueDos").css("background-image","url("+imagenEnTextoBloqueDos+")");
+    var imagenEnTextoBloqueTres = $("#bloqueHuertosTres").attr("data-urlImagen");    
+    $("#svgMapaBloqueTres").css("background-image","url("+imagenEnTextoBloqueTres+")");
+}
+
+
+
+//----------------------------------funciones para agregar huerto---------------------------------
 function agregarHuerto(){
     // cambiamos los textos y botones de "normal" a "agragando huerto"
     $(".vistaNormalIndexHuertos").hide();
@@ -339,8 +356,11 @@ function agregarHuerto(){
     }
     if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosTres"){
         $("#svgMapaBloqueTres").append(figura);
-    }   
+    }  
+    //asignamos el vaor del bloque en que se encuentra a la forma de creacion
+    $("#bloqueMapaFormularioCreacionHuerto").val($("#gridDerechaMapaHuertos").attr("data-bloque")); 
 }
+// verifica que la figua sea correcta y muestra el modal para la informacion, hace el submit del form crear
 function creacionHuerto(){
     // verificamos que la superficie del huerto exista
     if ($("#huertoNuevo").attr("data-porcentajes").split(",").length<4){
@@ -383,26 +403,38 @@ function cancelarAgregarHuerto(){
     //volvemos al permiso normal en el card body
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
 }
-function botonEditarHuerto(){
-    $(".normal").hide();
-    $('.textoNormal').hide();
-    $(".editandoHuertoGeneral").show();
-    $('.textoEditandoHuertoGeneral').show();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","editarHuertoGeneral");
+
+
+
+//----------------------------------funciones para editar huerto---------------------------------
+// al apretar el lapis del modal se cambia la vista a la de seleccion editar figura o informacion
+function mostrarVistaEditarHuertoModal(imagenLapizClickeada){
+    $(imagenLapizClickeada).click(function(){
+        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
 }
-function cancelarEditarHuertoGeneral(){
-    $(".normal").show();
-    $('.textoNormal').show();
-    $(".editandoHuertoGeneral").hide();
-    $(".textoEditandoHuertoGeneral").hide();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
+// se selecciona el boton para editar la informacion del huerto en el modal
+function mostrarVistaEditarInformacionHuertoModal(boton){
+    $(boton).click(function(){
+        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
+        $(".vistaEditandoInformacionHuertoModal_"+ $(this).attr("data-idHuerto")).show();
+    });
 }
-function botonEditarHuertoFigura(){
-    $(".editandoHuertoGeneral").hide();
-    $('.textoEditandoHuertoGeneral').hide();
-    $(".eligiendoHuertoFiguraParaEditar").show();
-    $('.textoEligiendoHuertoFiguraParaEditar').show();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","eligiendoHuertoFiguraParaEditar");      
+// se selecciona el boton para editar la Superficie del huerto en el mapa
+function iniciarEdicionSuperficieHuerto(botonClickeado){
+    //aca poner lo necesario
+    $(botonClickeado).click(function(){
+        $("#modal_huerto_"+botonClickeado.attr("data-idHuerto")).modal("hide");
+        $("#huerto_"+botonClickeado.attr("data-idHuerto")).hide();
+        huertoFiguraParaEditarElegida(botonClickeado.attr("data-idHuerto"));
+
+        // mostramos la vista del grid izquierda
+        $(".vistaNormalIndexHuertos").hide();
+        $(".vistaEditandoHuertoFiguraIndexHuertos").show();
+    });
 }
 function huertoFiguraParaEditarElegida(id){
         // se crea una figura polyline y se agrega al html, con sus atriutos basicos.
@@ -413,104 +445,70 @@ function huertoFiguraParaEditarElegida(id){
         figura.setAttribute("data-porcentajes","");
         figura.setAttribute("data-id",id);
         figura.setAttribute("stroke","red");
-        figura.setAttribute("fill","lightGreen");
-        $("#svgMapaCampo").append(figura);
+        figura.setAttribute("fill","lightGreen"); 
+
 
         // modificamos el permiso del grid derecha (svg)
         $("#gridDerechaMapaHuertos").attr("data-permiso","editandoHuertoFiguraElegido");
-        // agregamos el data-primerClick para que hacer que el primero no se tome en cuenta
-        $("#gridDerechaMapaHuertos").attr("data-primerClick","pendiente");
         
 
-        $(".editandoHuertoFiguraElegida").show();
-        $(".textoEditandoHuertoFiguraElegida").show();
-        $(".eligiendoHuertoFiguraParaEditar").hide();
-        $('.textoEligiendoHuertoFiguraParaEditar').hide();
+        if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosUno"){
+           $("#svgMapaBloqueUno").append(figura);
+        }
+        if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosDos"){
+           $("#svgMapaBloqueDos").append(figura);
+        }
+        if ($("#gridDerechaMapaHuertos").attr("data-bloque")=="bloqueHuertosTres"){
+           $("#svgMapaBloqueTres").append(figura);
+        }       
 }
-function cancelarEligiendoHuertoFiguraParaEditar(){
-    // se vuelve a la vista anterior
-    $('.editandoHuertoGeneral').show();
-    $('.textoEditandoHuertoGeneral').show();
-    $('.eligiendoHuertoFiguraParaEditar').hide();
-    $(".textoEligiendoHuertoFiguraParaEditar").hide();
-    $("#gridDerechaMapaHuertos").attr("data-permiso","editarHuertoGeneral");
-}
+
+// funcion que hace el submit del form del huerto editado
 function confirmarEditandoHuertoFiguraElegida(){
     $(".huertoEnEdicion").each(function(){
         if ($(this).attr("data-porcentajes").split(",").length<4){
-            alert("para continuar primero se tiene que asignar una superficie valida en el mapa")
+            $("#avisoSuperficieHuertoNoValida").show();
+            $("#avisoSuperficieHuertoNoValida").fadeOut(3000);
         }
         // si la superficie existe se le permite continuar con la creacion del huerto
         if ($(this).attr("data-porcentajes").split(",").length>=4){
-
             // le asignamos al formulario el valor oculto de las coordenadas en porcentaje
             $("#coordenadasFormularioEditandoHuertoFigura_" + $(this).attr("data-id")).val($(this).attr("data-porcentajes"));
             // hacemos que se envie el formulario
-            $("#formEditandoHuertoFigura_" + $(this).attr("data-id")).submit();
+            $("#formEditandoHuerto_" + $(this).attr("data-id")).submit();
         } 
     });
 }
-function cancelarEditandoHuertoFiguraElegida(){
-    //cambiamos la clase del huerto que se estaba creando por una clase y los escondemos.
+// se cancela la edicion de la figura de un huerto y se vuelve a lo normal
+function cancelarEditandoHuertoFigura(){
+    //cambiamos la clase del huerto que se estaba editando por una clase y los escondemos.
     $(".huertoEnEdicion").attr("class","huertoDesechar");
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
     //cambiamos el id 
     $("#huertoEnEdcion").attr("id","");
     //quitamos el permiso que esta en el cardBody
-    $("#gridDerechaMapaHuertos").attr("data-permiso","eligiendoHuertoFiguraParaEditar");
+    $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
     //regresamos al estado pendiente para que el primer click no se tome en cuenta al editar
-    $("#gridDerechaMapaHuertos").attr("data-primerClick","pendienteFigura");
-
-    $(".eligiendoHuertoFiguraParaEditar").show();
-    $('.textoEligiendoHuertoFiguraParaEditar').show();
-    $(".editandoHuertoFiguraElegida").hide();
-    $(".textoEditandoHuertoFiguraElegida").hide();
-}
-function botonEditarHuertoInformacion(){
+    $("#gridDerechaMapaHuertos").attr("data-primerClick","pendienteFigura");    
 }
 
-//------------------funciones para mostrar mapas fondos huertos ----------------------
-function mostrarMapaFondoBloques(){
-    var imagenEnTextoBloqueUno = $("#bloqueHuertosUno").attr("data-urlImagen");    
-    $("#svgMapaBloqueUno").css("background-image","url("+imagenEnTextoBloqueUno+")");
-    var imagenEnTextoBloqueDos = $("#bloqueHuertosDos").attr("data-urlImagen");    
-    $("#svgMapaBloqueDos").css("background-image","url("+imagenEnTextoBloqueDos+")");
-    var imagenEnTextoBloqueTres = $("#bloqueHuertosTres").attr("data-urlImagen");    
-    $("#svgMapaBloqueTres").css("background-image","url("+imagenEnTextoBloqueTres+")");
-}
+
+
 //-------------------------funciones para modals de huertos ----------------------
 
-function mostrarVistaEditarHuertoModal(imagenLapizClickeada){
-    $(imagenLapizClickeada).click(function(){
-        console.log($(this).attr("class"));
-        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
-        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).show();
-    });
-}
+//----------------------------------funciones para borrar un huerto---------------------------------
+
 function mostrarVistaBorrarHuertoModal(imagenBasureroClickeada){
     $(imagenBasureroClickeada).click(function(){
-        console.log($(this).attr("class"));
+
         $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
         $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
         $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
         $(".vistaBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).show();
     });
 }
-function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
-    $(imagenRegresarClickeada).click(function(){
-        console.log("hola");
-        console.log($(this).attr("class"));
-        $(".imagenRegresarANormalHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".vistaEditandoHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".vistaBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).hide();
-        $(".vistaNormalHuertoModal_"+ $(this).attr("data-idHuerto")).show();
-        $(".opcionesEditarBorrarHuertoModal_"+ $(this).attr("data-idHuerto")).show();
-    });
 
-}
 
 
 

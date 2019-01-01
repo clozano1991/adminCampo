@@ -1,37 +1,38 @@
 
 
-<div class="modal fade" id="agregarHuertoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="agregarHuertoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Completar datos del Huerto para continuar </h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><strong>Completar datos del Huerto para continuar </strong></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
              <%=form_for @huerto, url: user_campo_huertos_path(current_user,@campo), method: :post, :html => { :id => "formAgregarHuerto" }  do |form| %>
-                                  <%=form.label :nombre%>
-                                  <%=form.text_field :nombre, class: "form-control textField valorFormAgregarHuerto"%>
 
-                                  <%=form.label :cultivo%>
-                                  <%=form.text_field :cultivo, class: "form-control textField valorFormAgregarHuerto"%>
+                                  <strong>Nombre</strong>
+                                  <%=form.text_field :nombre, class: "form-control textField inputFormCrearHuerto"%>
 
-                                  <%=form.label :variedades%>
-                                  <%=form.text_field :variedades, class: "form-control textField valorFormAgregarHuerto"%>
+                                  <strong> Tipo de cultivo </strong>
+                                  <%=form.text_field :cultivo, class: "form-control textField inputFormCrearHuerto"%> 
 
-                                  <%=form.label :descripcion%>
-                                  <%=form.text_area :descripcion, class: "form-control textField valorFormAgregarHuerto"%>
+                                  <strong>Variedades de cultivo</strong>
+                                  <%=form.text_field :variedades, class: "form-control textField inputFormCrearHuerto"%>
 
-                                  <%=form.label :color%>
+                                  <strong>Descripción</strong>
+                                  <%=form.text_area :descripcion, class: "form-control textField inputFormCrearHuerto"%>
+
+                                  <strong>Color</strong>
                                   <%=form.select(:clase, options_for_select([['Verde', 'green'], ['Rojo', "red"],['Amarillo', "yellow"],['Azul', "blue"]]))%>
 
  
                                   <!-- Aca ponemos las coordenadas del huerto y el bloque, estas no seran visibles para el usuario ya que este las selecciono antes, se oculta con css -->
-                                  <%=form.text_area :coordenadas, id: "coordenadasFormularioCreacionHuerto", class: "valorFormAgregarHuerto"%>
-                                  <%=form.text_field :bloqueMapa, id: "bloqueMapaormularioCreacionHuerto", class: "valorFormAgregarHuerto"%>
+                                  <%=form.text_area :coordenadas, id: "coordenadasFormularioCreacionHuerto", class: "inputFormCrearHuerto"%>
+                                  <%=form.text_field :bloqueMapa, id: "bloqueMapaFormularioCreacionHuerto", class: "inputFormCrearHuerto"%> 
 
-                                  <%=form.submit("Agregar", class: "btn btn-success ", id: "")%>
+                                  <%=form.submit("Agregar", class: "btn botonVerde ", id: "botonConfirmarCrearHuertoForm")%>
              <%end%> 
 
       </div>

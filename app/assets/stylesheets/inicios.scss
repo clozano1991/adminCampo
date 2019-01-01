@@ -1,42 +1,97 @@
-.contenedorPrincipalInicio{
+.contenedorFondoInicio{
+	position: relative;
+	display: flex;
+	flex-direction: column; 
+	justify-content: center;
+	min-height: calc(94vh - 5px);
+	padding-top: 0.8%;
+	padding-bottom: 0.8%;
+	padding-left:0.8%;
+	padding-right: 0.8%;	
+}
+
+.contenedorCarouselYFichaPresentacion{ 
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 	width: 100%;
-	height: 100vh;
-}
-
-.contenedorSecundarioInicio{
-	display: inline-block;
-	overflow: hidden;
-}
-
-.auspicios{
-	width: 15%;
-	height: 100%;
-	border-right: solid;
-	border-color: black;
+	height: calc(85vh - 42px);
+	max-width: 2300px;
+	max-height: calc(85vh - 42px);
+	margin-top: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: white;
 	
 }
 
-.fotosIzquierda{
-	width: 40%;
+.contenedorCarousel{
+	position: relative;
+	display: flex;
+	flex-direction: column; 
+	justify-content: center;
+	width: 65%;
+	height: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+
+}
+#carouselExampleControlsInicio{
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+}
+.carousel-inner.inicio{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.carousel-item{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.carousel-item.active{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.d-block.w-100.fotoCarouselInicio{
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+
+}
+
+
+
+.contenedorFichaPresentacion{
+	position: relative;
+	display: flex;
+	flex-direction: column; 
+
+	width: 30%;
 	height: 100%;
 	
-}
-.espacioCartaIngresoRegistro{
-   width: 43%;
-   height: 100%;
+
 }
 
-.cartaPresentacion{
-	margin-top: 8%;
-}
-.botonRegistrarse{
-   display: inline-block;
-   float: left;
-   margin-left: 20%;
-}
+.card.cartaPresentacion{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 
-.botonIngresar{
-   display: inline-block;
-   float: right;
-   margin-right: 20%;
+}
+.botonesInicioUsuario{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+.btn.botonAzul.botonIngresarRegistrarse{
+	width: 130px;
+
 }

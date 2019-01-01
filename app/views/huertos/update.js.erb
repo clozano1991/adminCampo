@@ -1,23 +1,62 @@
 $(document).ready(function(){
+
+
+    // -----parte editando figura del huerto--------------------------------------------------
     // actualizamos los points
     $("#huerto_<%=@huerto.id%>").attr("data-porcentajes","<%=@huerto.coordenadas%>");
     var porcentajes=$("#huerto_<%=@huerto.id%>").attr("data-porcentajes");
     var coordenadasPosicion = transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes);
     $("#huerto_<%=@huerto.id%>").attr("points",coordenadasPosicion);
 
-    // quitamos el huerto que se uso para editar
+    // quitamos el huerto que se uso para editar, le asignamos la clase huerto desechar y luego escondemos esa clase
     $("#huertoEditando_<%=@huerto.id%>").attr("class","huertoDesechar")
     $(".circulitos").attr("class","huertoDesechar");
-    $("#huertoEditando_<%=@huerto.id%>").hide();
-    $("#huertoEditando_<%=@huerto.id%>").attr("id","")
+    $(".huertoDesechar").hide();
+    $("#huertoEditando_<%=@huerto.id%>").attr("id","") 
 
 
-	// actualizamos los permisos
-	$(".normal").show();
-    $('.textoNormal').show();
-    $(".editandoHuertoFiguraElegida").hide();
-    $(".textoEditandoHuertoFiguraElegida").hide();
+	// actualizamos los permisos del grid y el texto de la izquierda
+	$(".vistaNormalIndexHuertos").show();
+    $(".vistaEditandoHuertoFiguraIndexHuertos").hide();
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
+
+    // volvemos a mostrar el verdadero huerto
+    $("#huerto_<%=@huerto.id%>").show();
+
+
+
+    // -----parte editando informacion del huerto--------------------------------------------------
+    //Para la parte de la info escondemos el modal y actualizamos la info
+    $("#modal_huerto_<%=@huerto.id%>").modal("hide");
+    mostrarVistaNormalHuertoModal($("#imagenRegresarVistaNormalHuertoModal_<%=@huerto.id%>"));
+    // ahora modificamos la info mostrada
+    $("#nombreHuertoModal_<%=@huerto.id%>").text("<%=@huerto.nombre%>");
+    $("#nombreHuertoModal_<%=@huerto.id%>").css("font-weight","bold");
+    $("#tipoCultivoHuertoModal_<%=@huerto.id%>").text("<%=@huerto.cultivo%>");
+    $("#variedadDeCultivoHuertoModal_<%=@huerto.id%>").text("<%=@huerto.variedades%>");
+
+
+    // vemos el caso de que el text area tenga saltos de linea, los removemos ya que js no los tolera
+    //(pendiente)
+    $("#descripcionHuertoModal_<%=@huerto.id%>").text("<%= @huerto.descripcion.to_s.gsub!(/\n/,'\n')%>");
+    
+    // asignamos el color correspondiente
+    //vemos los colores dependiendo de la clase
+        if ("<%=@huerto.clase%>"=="green"){
+            $("#huerto_<%=@huerto.id%>").attr("fill","#34a853"); 
+        }
+        if("<%=@huerto.clase%>"=="red"){
+            $("#huerto_<%=@huerto.id%>").attr("fill","#ea4335");  
+        }
+        
+        if("<%=@huerto.clase%>"=="yellow"){
+            $("#huerto_<%=@huerto.id%>").attr("fill","#fbbc05"); 
+        }
+        if("<%=@huerto.clase%>"=="blue"){
+            $("#huerto_<%=@huerto.id%>").attr("fill","#4285f4");     
+        }
+        //agregamos la sombra correspondiente al polyline
+        $("#huerto_<%=@huerto.id%>").attr("stroke","#BDBDBE");  
 });
 
 
@@ -50,4 +89,14 @@ function transformarPorcentajesACoordenadasPosicionEnSVG(porcentajes){
 
     // retornamos las coordenadas que tienen que aplicarse al elemento polyline
     return stringCoordenadas
+}
+
+// en el modal hace que se vuelva a la vista normal
+function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
+    $(".imagenRegresarANormalHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).hide();
+    $(".vistaEditandoHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).hide();
+    $(".vistaBorrarHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).hide();
+    $(".vistaEditandoInformacionHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).hide();
+    $(".vistaNormalHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).show();
+    $(".opcionesEditarBorrarHuertoModal_"+ imagenRegresarClickeada.attr("data-idHuerto")).show();
 }

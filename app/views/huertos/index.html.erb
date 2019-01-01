@@ -11,13 +11,16 @@
       <!--vista normal-->
       <div class="vistasIndexHuertos vistaNormalIndexHuertos">
         <div class="contenedorElementoVistaIndexHuerto">
-          <%=button_tag("+ Huerto", class: "btn botonNaranjo",id: "botonAgregarHuerto")%>
+          <%=button_tag("+ Huerto", class: "btn botonNaranjo botonIndexOpcionesPrincipales",id: "botonAgregarHuerto")%>
         </div>
         <div class="contenedorElementoVistaIndexHuerto">
-          <%=button_tag("Trabajos", class: "btn botonAzul",id: "botonAgregarHuerto")%>
+          <%=button_tag("Trabajos", class: "btn botonAzul botonIndexOpcionesPrincipales",id: "botonAgregarHuerto")%>
         </div>
         <div class="contenedorElementoVistaIndexHuerto">
-          <%=button_tag("Estadisticas", class: "btn botonAzul",id: "botonAgregarHuerto")%>
+          <%=button_tag("Aplicaciones", class: "btn botonAzul botonIndexOpcionesPrincipales",id: "botonAgregarHuerto")%>
+        </div>
+        <div class="contenedorElementoVistaIndexHuerto">
+          <%=button_tag("Producciones", class: "btn botonAzul botonIndexOpcionesPrincipales",id: "botonAgregarHuerto")%>
         </div>
       </div>
       <!--vista agregando huerto-->
@@ -25,20 +28,24 @@
           <p class="textoAyudaGridIzquierdaIndexHuertos">1) Cree la figura del huerto haciendo diferentes clicks en el espacio de la derecha.</p> 
           <p class="textoAyudaGridIzquierdaIndexHuertos">2) Una vez que la figura del nuevo huerto este estalecida precione el boton "crear" para continuar.</p> 
           <div class="contenedorBotonAgregandoHuertoGridIzquierdaIndexHuertos">
-            <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertos" id="botonConfirmarAgregarHuerto">Crear</button>
-            <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertos " id="cancelarAgregarHuerto">Cancelar</button>  
+            <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertosAgregar" id="botonConfirmarAgregarHuerto">Crear</button>
+            <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertosAgregar" id="cancelarAgregarHuerto">Cancelar</button>   
           </div>
       </div>
-      <!--vista editando huerto-->
+      <!------------------vista editando huerto figura grid izquierda----------------------------------------->
+
+
       <div class=" vistasIndexHuertos vistaEditandoHuertoFiguraIndexHuertos" >
-          <p class="textoAyudaGridIzquierdaIndexHuertos"> 1) Cree la figura del huerto haciendo clicks en el espacio de la derecha.</p> 
-          <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la figura del nuevo huerto este estalecida precione el boton "editar" para continuar.</p>
+          <p class="textoAyudaGridIzquierdaIndexHuertos"> 1) Cree la nueva figura del huerto haciendo clicks en el espacio de la derecha.</p> 
+          <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la nueva figura este establecida precione el boton "confirmar" para finalizar.</p>
           <div class="contenedorBotonEditandoHuertoGridIzquierdaIndexHuertos">
-            <button type="button" class="btn botonGridIzquierdaIndexHuertos" id="confirmarEditandoHuertoFiguraElegida">Editar</button>
-            <button type="button" class="btn botonGridIzquierdaIndexHuertos " id="cancelarEditandoHuertoFiguraElegida">Cancelar</button>  
+            <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertosEditar" id="confirmarEditandoHuertoFiguraElegida">Editar</button>
+            <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertosEditar " id="cancelarEditandoHuertoFiguraElegida">Cancelar</button>  
           </div>  
       </div>
     </div><!--fin contenedor general de vistas gridIzquierda-->
+
+
   </div><!--fin gridIzquierda-->
 
 

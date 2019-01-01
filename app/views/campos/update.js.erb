@@ -7,5 +7,6 @@ $(document).ready(function(){
     $("#nombreCampo_<%=@campo.id%>").css("font-weight","bold");
     $("#propietarioCampo_<%=@campo.id%>").text("<%=@campo.propietario%>");
     $("#direccionCampo_<%=@campo.id%>").text("<%=@campo.direccion%>");
-    $("#descripcionCampo_<%=@campo.id%>").text("<%=@campo.descripcion%>");
+    // vemos el caso de que el text area tenga saltos de linea, los removemos ya que js no los tolera
+    $("#descripcionCampo_<%=@campo.id%>").text("<%=@campo.descripcion.to_s.gsub!(/\n/,'\n')%>");
 });

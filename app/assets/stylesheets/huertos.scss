@@ -1,13 +1,15 @@
 /* ojooo si se pone position relative el tema del clickeo deja funcionar por extraña razon*/
 
 /*para que no aparesca en la form que hay que llenar pero que si exista*/
-	#bloqueMapaormularioCreacionHuerto{
+    /* form crear huerto */
+	#bloqueMapaFormularioCreacionHuerto{
 		display: none;
 	}
 	#coordenadasFormularioCreacionHuerto{
 		display: none;
 	}
-	.formEditarHuertoFigura{
+	 
+	.contenedorCoordenadasEditarHuertoModal{
 		display: none;
 	}
 	
@@ -25,7 +27,8 @@
 	.contenedorDivIzquierdaYDivDerecha{
 	}
 	
-	/*todo lo de la izquierda-----------------------------------------------------------*/
+	/*----------------------todo lo de la izquierda-----------------------------------------------------------*/
+	/*--------------------------------------------------------------------------------------------------------*/
 	.gridIzquierda{
 		position: absolute;
 		left: calc((100% - (100% - 270px + 235px))/2);
@@ -61,7 +64,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding-bottom: 15px;
+		padding-bottom: 10px;
 		margin-bottom: 15px; 
 	}
 	.contenedorElementoVistaIndexHuerto.conBordeAbajo{
@@ -74,9 +77,13 @@
 		font-weight: bold;
 		color: black;
 	}
-	
+	/*------------------------------------------vista normal-------------------------*/
 	/* vista index Huertos Normal*/
+	.botonIndexOpcionesPrincipales{/* son los botones para ir a la ficha, trabajos, etc etc*/
+		width: 120px;
+	}
 	
+/*------------------------------------------agregando huerto-------------------------*/
 	/* vista index Huertos AgregandoHuerto*/
 	.vistaAgregandoHuertoIndexHuertos{
 		display: none;
@@ -87,25 +94,30 @@
 		justify-content: space-around;
 		margin-bottom: 40px; 
 	}
-	
-	
-	/* vista index Huertos EditandoHuerto*/
-	.vistaEditandoHuertoFiguraIndexHuertos{
+	.botonGridIzquierdaIndexHuertosAgregar{
+		width: 90px;
+	}
+	/*------------------------------------vista editando huerto grid izquierda-------------------------*/
+	/* vista index Huertos Editando figura*/
+	.vistaEditandoHuertoFiguraIndexHuertos{/*es lo de seleccionar si editar la figura o la informacion*/
 		display: none;
 	}
+	/* contenedor botones confirmar o cancelar editar figura en grid izquierda*/
 	.contenedorBotonEditandoHuertoGridIzquierdaIndexHuertos{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		margin-bottom: 40px; 
 	}
+	/* le damos el ancho a los botones anteriores*/
+	.botonGridIzquierdaIndexHuertosEditar{
+		width: 90px;
+	}
+
 	
 	
-	
-	
-	
-	
-	/*todo lo de la derecha-----------------------------------------------------------*/
+	/*---------------------------------todo lo de grid derecha----------------------------------------*/
+	/*------------------------------------------------------------------------------------------------*/
 	#gridDerechaMapaHuertos{
 		position: absolute;
 		right: calc((100% - (100% - 270px + 235px))/2);
@@ -116,8 +128,7 @@
 		max-height: 1050px;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 		background-color: white;
-		border-radius: 4px;
-		
+		border-radius: 4px;	
 	}
 	/*los botones que se usan para cambiar el bloque del mapa donde estan los huertos*/
 	#todosLosBotonesParaCambiarBloque{
@@ -133,27 +144,23 @@
 		width: 100%;
 		height: 100%;
 	}
-	
 	.bloqueHuertosInicialmenteVisibles{/*bloques que estan visibles*/
 	
 	}
-	
 	.bloqueHuertosInicialmenteEscondidos{/*bloques que estan escondidos*/
 		display: none;
 	}
 	.huertos{
 		cursor: pointer; 
 	}
-	
-	
-	
 	/*los botones que se usan para agregar o quitar la imagen del mapa*/
 	.botonesAgregarImagenMapa{
 		position: absolute;
 		right: 15px;
 		top: 12px;
 	}
-	/*----------------------------------- aca lo del modal-------------------------------------*/
+	/*----------------------------------- aca lo del modal en grid derecha-------------------------------------*/
+	
 	.modal.fade.modalParaHuerto{
 		padding-top: 5%;
 	}
@@ -161,8 +168,11 @@
 		border-width: 1px;
 		border-color: black;
 	}
-	
-	/*-------------------------------------vistas modal huerto------------------------------*/
+    /* para el heather del modal*/
+	.contenedorInformacionTituloHuertoModal{
+		display: inline;
+	}
+	/*para las imagenes de la derecha del huerto modal*/
 	.imagenesDerechaModalIndexHuerto{
 		display: flex;
 		flex-direction: row;
@@ -174,11 +184,19 @@
 		justify-content: space-between;
 		flex-direction: column;
 	}
+	.contenedorInformacionTituloHuertoModal{
+		display: inline;
+	}
 	.contenedorInformacionHuertoModal{
-	
 	}
 	.elementoInformacionHuertoModal{
-		margin-bottom: 17px;
+		margin-bottom: 15px;
+		max-width: 100%;
+		position: relative;
+	}
+	.contenedorSubInformacionSubTitulo{
+		margin-right: 5px;
+		display: inline;
 	}
 	.botonesModalVistaNormal{
 		position: relative;
@@ -189,14 +207,18 @@
 	}
 	.btn.botonAzul.botonHuertoOpcionRapidaModal{
 		position: relative;
-		min-width: 100px;
+		width: 120px;
 		margin-left: 8px;
 	}
 	.btn.botonNaranjo.botonHuertoOpcionRapidaModal{
 		position: relative;
-		min-width: 100px;
+		width: 120px;
 		margin-left: 8px;
 	}
+	.imagenRegresarANormalHuertoModal{
+		display: none;
+	}
+
 	/*-------------------------------------vista modal borrar huerto------------------------------*/
 	
 	.vistaBorrarHuertoModal{
@@ -206,9 +228,10 @@
 	 margin-top: 20px;
 	 margin-bottom: 10px;
 	 float: right;
-	}
+	} 
 	
 	/*-------------------------------------vista modal editar huerto------------------------------*/
+	/* vistas modal seleccioanr editar superficie o informacion*/
 	.vistaEditandoHuertoModal{
 		display: none;
 	}
@@ -216,13 +239,27 @@
 		float: right;
 		margin-top: 30px;
 	}
-	
 	.imagenRegresarANormalHuertoModal{
 		display: none;
 	}
+	/*vista editando informacion huerto*/
+	.vistaEditandoInformacionHuertoModal{/* es el form que aparece, en un comienzo esta oculto*/
+		display: none;
+	}
+	.inputFormEditarHuerto{
+		margin-bottom: 15px;
+	}
+	#botonConfirmarEditarHuertoInformacionForm{
+		float: right;
+	}
 	
-	
-	
+	/*-------------------------------------vista modal crear huerto------------------------------*/
+	#botonConfirmarCrearHuertoForm{
+		float: right;
+	}
+	.inputFormCrearHuerto{
+		margin-bottom: 15px;
+	}
 	
 	
 	

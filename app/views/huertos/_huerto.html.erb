@@ -1,21 +1,21 @@
 <!-- al llamarce desde adentro del svg solo se crean los polyline asociados a los huertos -->
 <%if @adentroSVGBloqueUno == true%>
-    <%if huerto.bloqueMapa == "bloqueHuertosUno"%>
-        <polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
-        </polyline>
-    <%end%>
+<%if huerto.bloqueMapa == "bloqueHuertosUno"%>
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+</polyline>
+<%end%>
 
 <%elsif @adentroSVGBloqueDos == true%>
-    <%if huerto.bloqueMapa == "bloqueHuertosDos" %>
-        <polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
-        </polyline>
-    <%end%>
+<%if huerto.bloqueMapa == "bloqueHuertosDos" %>
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+</polyline>
+<%end%>
 
 <%elsif @adentroSVGBloqueTres == true%>
-    <%if huerto.bloqueMapa == "bloqueHuertosTres" %>
-        <polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
-        </polyline>
-    <%end%>
+<%if huerto.bloqueMapa == "bloqueHuertosTres" %>
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+</polyline>
+<%end%>
 
 
 <!-- aca van los modals que estan dentro de los bloques pero fuera del svg -->
@@ -28,95 +28,116 @@
     <div class="modal-content modalParaHuerto">
 
       <div class="modal-header">
-          <div class="nombreHuertoModal"> 
-            <h5><strong>Huerto: <%=huerto.nombre%></strong></h5>
+        <div class="nombreHuertoModal"> 
+          <h5 class="contenedorInformacionTituloHuertoModal"><strong>Huerto:</strong></h5>
+          <h5 class="contenedorInformacionTituloHuertoModal" id="nombreHuertoModal_<%=huerto.id%>"><strong><%=huerto.nombre%></strong></h5>
+        </div>
+        <div class="imagenesDerechaModalIndexHuerto">
+          <div class="opcionesEditarBorrarHuertoModal opcionesEditarBorrarHuertoModal_<%=huerto.id%> ">
+            <%=image_tag("editarAmarillo.png",class: "fotoOpcion editarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "editar huerto"})%>
+            <%=image_tag("deleteRed.png",class: "fotoOpcion borrarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar huerto"})%> 
           </div>
-          <div class="imagenesDerechaModalIndexHuerto">
-              <div class="opcionesEditarBorrarHuertoModal opcionesEditarBorrarHuertoModal_<%=huerto.id%> ">
-                <%=image_tag("editarAmarillo.png",class: "fotoOpcion editarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "editar huerto"})%>
-                <%=image_tag("deleteRed.png",class: "fotoOpcion borrarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar huerto"})%> 
-              </div>
-              <div class="imagenRegresarANormalHuertoModal imagenRegresarANormalHuertoModal_<%=huerto.id%>"> 
-                <%=image_tag("regresar.png",class: "fotoOpcion regresarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "regresar"})%> 
-              </div>
-              <!-- aun cuando no sea una imagen le ponemos el boton para cerrar el modal -->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
-                   <span aria-hidden="true">&times;</span>
-              </button>
+          <div class="imagenRegresarANormalHuertoModal imagenRegresarANormalHuertoModal_<%=huerto.id%>"> 
+            <%=image_tag("regresar.png",id: "imagenRegresarVistaNormalHuertoModal_"+(huerto.id).to_s,class: "fotoOpcion regresarHuertoModal",:data=>{:idHuerto => (huerto.id).to_s, :toggle => "tooltip", :placement => "top", :title => "regresar"})%> 
           </div>
-      </div><!-- fin vista Modal header -->
-      <div class="modal-body">
-        <div class="contenedorVistasHuertoModal">
+          <!-- aun cuando no sea una imagen le ponemos el boton para cerrar el modal -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+     </div><!-- fin vista Modal header --> 
+     <div class="modal-body">
+      <div class="contenedorVistasHuertoModal">
 
-          <div class="vistaNormalHuertoModal vistaNormalHuertoModal_<%=huerto.id%>">
-            <div class="contenedorInformacionHuertoModal">
-              <div class="elementoInformacionHuertoModal">
-                <h5><strong> Tipo cultivo:</strong><%=" "+ huerto.cultivo%></h5>
-              </div>
-              <div class="elementoInformacionHuertoModal">
-                <h5><strong> Variedades:</strong><%= " "+ huerto.variedades%></h5>
-              </div>
-              <div class="elementoInformacionHuertoModal">
-                <h5><strong> Fecha plantacion:</strong><%=" ----------------- "%></h5>
-              </div>
-              <div class="elementoInformacionHuertoModal">
-                <h5><strong> Descripción:</strong><%=" "+ huerto.descripcion%></h5>
-              </div>
+        <div class="vistaNormalHuertoModal vistaNormalHuertoModal_<%=huerto.id%>">
+          <div class="contenedorInformacionHuertoModal">
+            <div class="elementoInformacionHuertoModal"> 
+              <h5 class="contenedorSubInformacionSubTitulo"><strong> Tipo de cultivo:</strong></h5>
+              <h5 class="contenedorSubInformacionSubTitulo" id="tipoCultivoHuertoModal_<%=huerto.id%>"><%="  "+ huerto.cultivo%></h5>
             </div>
-            <div class="botonesModalVistaNormal">
-              <%=link_to(button_tag("Ficha", class: "btn botonAzul botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
-              <button  id="" class="btn botonNaranjo botonHuertoOpcionRapidaModal" >
-                          + Trabajo
-              </button>
-            </div><!-- fin botones opcion rapida -->
-          </div><!-- fin vista normalHuertoModal -->
+            <div class="elementoInformacionHuertoModal">
+              <h5 class="contenedorSubInformacionSubTitulo"><strong> Variedades de cultivo:</strong></h5>
+              <h5 class="contenedorSubInformacionSubTitulo" id="variedadDeCultivoHuertoModal_<%=huerto.id%>"><%= "  "+ huerto.variedades%></h5>
+            </div>
+            <!--
+            <div class="elementoInformacionHuertoModal">
+              <h5><strong> Fecha plantacion:</strong><%=%></h5>
+            </div>-->
+            <div class="elementoInformacionHuertoModal">
+              <h5 class="contenedorSubInformacionSubTitulo"><strong> Descripción:</strong></h5>
+              <h5 id="descripcionHuertoModal_<%=huerto.id%>"><%=" " + huerto.descripcion%></h5>
+            </div>
+          </div>
+          <div class="botonesModalVistaNormal">
+            <%=link_to(button_tag("Ficha", class: "btn botonAzul botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
 
-          <div class="vistaBorrarHuertoModal vistaBorrarHuertoModal_<%=huerto.id%>">
-                <h5>¿Seguro que desea borrar este huerto?, se borraran todos los datos asociados a este. </h5>
-                <%=link_to(button_tag("Borrar Huerto", class: "btn botonRojo botonConfirmarBorrarHuerto"), user_campo_huerto_path(current_user,campo,huerto), method: :delete, remote: true )%>
-          </div><!-- fin vista borrandoHuertoModal -->
+            <%=link_to(button_tag("+ Trabajo", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
 
-          <div class="vistaEditandoHuertoModal vistaEditandoHuertoModal_<%=huerto.id%>">
-              <h5>
-                Seleccione si quiere modificar la superficie del huerto en el mapa o la información. 
-              </h5>
-              <div class="contenedorBotonesSeleccionarQueSeEditaHuertoModal">
-                <button  id="" class="btn botonAzul">Superficie</button>
-                <button  id="" class="btn botonAzul">Información </button> 
-              </div>
-          </div><!-- fin vista editandoHuertoModal -->
+            <%=link_to(button_tag("+ Aplicación", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
+
+            <%=link_to(button_tag("+ Producción", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
+
+          </div><!-- fin botones opcion rapida -->
+        </div><!-- fin vista normalHuertoModal -->
 
 
-        </div><!-- fin contenedorVistasHuertoModal -->
-      </div><!-- fin body modal huerto -->
-    </div>
+        <!--inicio vista borrarHuertoModal-->
+        <div class="vistaBorrarHuertoModal vistaBorrarHuertoModal_<%=huerto.id%>">
+          <h5>¿Seguro que desea borrar este huerto?, se borraran todos los datos asociados a este. </h5>
+          <%=link_to(button_tag("Borrar Huerto", class: "btn botonRojo botonConfirmarBorrarHuerto"), user_campo_huerto_path(current_user,campo,huerto), method: :delete, remote: true )%>
+        </div><!-- fin vista borrandoHuertoModal -->
+
+
+        <!--vista editandoHuertoModal-->
+        <div class="vistaEditandoHuertoModal vistaEditandoHuertoModal_<%=huerto.id%>">
+          <h5>
+            Seleccione si quiere modificar la superficie del huerto en el mapa o la información. 
+          </h5>
+          <div class="contenedorBotonesSeleccionarQueSeEditaHuertoModal">
+            <%=button_tag("Superficie", class: "btn botonAzul botonSeleccionarEditarSuperficie", :data=>{:idHuerto => (huerto.id).to_s, :bloqueHuertos => (huerto.bloqueMapa).to_s})%>
+            <%=button_tag("Información", class: "btn botonAzul botonSeleccionarEditarInformacion", :data=>{:idHuerto => (huerto.id).to_s, :bloqueHuertos => (huerto.bloqueMapa).to_s})%>
+            
+          </div>
+        </div><!-- fin vista editandoHuertoModal -->
+        <!--para editar un huerto ya sea su superficie o sus coordenadas-->
+        <div class="vistaEditandoInformacionHuertoModal vistaEditandoInformacionHuertoModal_<%=huerto.id%>">
+          <%=form_for huerto, url: user_campo_huerto_path(current_user,campo,huerto), method: :patch, remote: true, :html => { :id => "formEditandoHuerto_"+String(huerto.id), :class => "formEditandorHuerto" }  do |form| %>
+          
+          <strong>Nombre</strong>
+          <%=form.text_field :nombre, class: "form-control textField inputFormEditarHuerto"%>
+
+          <strong>Tipo de cultivo</strong>
+          <%=form.text_field :cultivo, class: "form-control textField inputFormEditarHuerto"%>
+
+          <strong>Variedades de cultivo</strong>
+          <%=form.text_field :variedades, class: "form-control textField inputFormEditarHuerto"%>
+
+          <strong>Descripción</strong>
+          <%=form.text_area :descripcion, class: "form-control textField inputFormEditarHuerto", patern: "[abc]"%>
+
+          <strong>Color</strong>
+          <%=form.select(:clase, options_for_select([['Verde', 'green'], ['Rojo', "red"],['Amarillo', "yellow"],['Azul', "blue"]]))%>
+
+          <!-- Aca ponemos las coordenadas del huerto, estas no seran visibles para el usuario ya que este las selecciono antes, se oculta con css -->
+          <div class="contenedorCoordenadasEditarHuertoModal">
+            <%=form.label :coordenadas%>
+            <%=form.text_area :coordenadas, id: "coordenadasFormularioEditandoHuertoFigura_"+String(huerto.id)%>
+          </div>
+
+          <%=form.submit("Confirmar", class: "btn botonVerde ", id: "botonConfirmarEditarHuertoInformacionForm")%>
+          <%end%> 
+
+        </div>
+
+
+      </div><!-- fin contenedorVistasHuertoModal -->
+    </div><!-- fin body modal huerto -->
   </div>
+</div>
 </div><!-- fin modal principal huerto -->
 
 
 <!--para editar un huerto-->
-<div>
-  <%=form_for huerto, url: user_campo_huerto_path(current_user,campo,huerto), method: :patch, remote: true, :html => { :id => "formEditandoHuerto_"+String(huerto.id), :class => "formEditarHuertoFigura" }  do |form| %>
-        <%=form.label :nombre%>
-        <%=form.text_field :nombre, class: "form-control textField"%>
-
-        <%=form.label :cultivo%>
-        <%=form.text_field :cultivo, class: "form-control textField"%>
-
-        <%=form.label :variedades%>
-        <%=form.text_field :variedades, class: "form-control textField"%>
-
-        <%=form.label :descripcion%>
-        <%=form.text_area :descripcion, class: "form-control textField"%>
-
-        <%=form.label :clase%>
-        <%=form.select(:clase, options_for_select([['Verde', 'green'], ['Rojo', "red"],['Amarillo', "yellow"],['Naranjo', "orange"],['Azul', "blue"]]))%>
-
-        <!-- Aca ponemos las coordenadas del huerto, estas no seran visibles para el usuario ya que este las selecciono antes, se oculta con css -->
-        <%=form.label :coordenadas%>
-        <%=form.text_area :coordenadas, id: "coordenadasFormularioEditandoHuertoFigura_"+String(huerto.id)%>
-  <%end%> 
-</div><!-- fin modal editar coordenadas huerto -->
 
 
 

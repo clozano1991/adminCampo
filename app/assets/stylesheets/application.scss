@@ -49,6 +49,7 @@ ul{
 /* -------------------------------------------------------------------------------------------*/
 /* para hacer que los modal no muevan el background*/
 .modal {
+	position: absolute;
 	padding-top: 70px;
     overflow-y: auto;
 }
@@ -60,6 +61,10 @@ ul{
 }
 .close{
 	cursor: pointer;
+}
+.modal-body{
+	position: relative;
+	word-break: break-all;
 }
 
 /* -------------------------------------------------------------------------------------------*/

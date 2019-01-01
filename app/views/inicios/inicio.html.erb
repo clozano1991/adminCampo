@@ -1,42 +1,67 @@
 
-<div class="contenedorPrincipalInicio">
-    <div class="auspicios contenedorSecundarioInicio">
-         publicidad
-    	
-    </div>
-	<div class="fotosIzquierda contenedorSecundarioInicio">
-		
-	</div>
-	<div class="espacioCartaIngresoRegistro contenedorSecundarioInicio">
-	      <div class="card cartaPresentacion">
-             <div class="card-header">
-                  <h3><strong>Bienvenido</strong></h2>
-             </div>
-             <div class="card-body">
-                  <h5 class="card-title"><strong>Gratis:</strong></h4>
-                  <p class="card-text">Esta herramienta es gratuia y se financia con publicidad.</p>
-                  <h5 class="card-title"><strong>Mejora tu rendimiento:</strong></h4>
-                  <p class="card-text">Especialmente diseñado para ayudar en la gestion de campos agricolas.</p>
-                  <h5 class="card-title"><strong>Mayor acceso:</strong></h4>
-                  <p class="card-text">Accede desde la oficina, tu casa o el mismo campo.</p>
-                  <ul class="botonesInicio">
-                       <li class="botonRegistrarse">
-                             <%=button_to "Registrarme",new_user_registration_path, :method => "get", class: "btn btn-primary"%>
-                       </li>
-                       <li class="botonIngresar">
-                             <%if user_signed_in?%>
-                       	            <%=button_to "Ingresar",user_campos_path(current_user), :method => "get", class: "btn btn-primary"%>
-                             <%else%>
-                                    <%=button_to "Ingresar",new_user_session_path, :method => "get", class: "btn btn-primary"%>
+<div class="contenedorFondoInicio">
+  <div class="contenedorCarouselYFichaPresentacion">
 
-                             <%end%>
-                       </li>
-                  </ul>
-            </div>
+    <div class="contenedorCarousel">
+      <div id="carouselExampleControlsInicio" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner inicio">
+          <div class="carousel-item active">
+            <%= image_tag("configuracion.png",class: "d-block w-100 fotoCarouselInicio")%>
           </div>
-		
-	</div>
-</div>
+          <div class="carousel-item">
+            <%= image_tag("verDetalleLupa.png",class: "d-block w-100 fotoCarouselInicio")%>
+          </div>
+          <div class="carousel-item">
+            <%= image_tag("agregar.png",class: "d-block w-100 fotoCarouselInicio")%>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControlsInicio" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControlsInicio" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+
+
+    <div class="contenedorFichaPresentacion">
+     <div class="card cartaPresentacion">
+      <div class="card-header">
+        <h3><strong>Bienvenido</strong></h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><strong>Mejora tu rendimiento:</strong></h5>
+        <p class="card-text">Especialmente diseñado para ayudar en la gestion de campos agricolas.</p>
+        <h5 class="card-title"><strong>Registro contable:</strong></h5>
+        <p class="card-text">Facil registro contable de tus costos e ingresos.</p>
+        <h5 class="card-title"><strong>Mayor acceso:</strong></h5>
+        <p class="card-text">Accede desde la oficina, tu casa o el mismo campo.</p>
+        <ul class="botonesInicioUsuario">
+         <li class="botonRegistrarse">
+           <%=button_to "Registrarme",new_user_registration_path, :method => "get", class: "btn botonAzul botonIngresarRegistrarse"%>
+         </li>
+         <li class="botonIngresarUsuario">
+           <%if user_signed_in?%>
+           <%=button_to "Ingresar",user_campos_path(current_user), :method => "get", class: "btn botonAzul botonIngresarRegistrarmeInicio"%>
+           <%else%>
+           <%=button_to "Ingresar",new_user_session_path, :method => "get", class: "btn botonAzul botonIngresarRegistrarse"%>
+
+           <%end%>
+         </li>
+       </ul>
+      </div>
+    </div> 
+
+  </div>
+
+ </div>
+ <!-- fin contenedor carousel y carta precentacion-->
+</div> <!-- fin contenedor fondo Inicio-->
+
 
 
 

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
     
 	root to: "inicios#inicio"
-	devise_for :users 
+	get "user_root" => "campos#index", as: :user_root
+
+	devise_for :users  
 		
 	resources :users do
 		resources :campos do
