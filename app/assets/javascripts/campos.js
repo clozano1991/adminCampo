@@ -23,7 +23,7 @@ $(document).ready(function(){
     $(".imagenEditarGestionCesantiaSeguro").each(function(){ 
        mostrarModalEditarGestionCesantiaSeguro($(this));
     });
-});
+}); 
 
 
 
@@ -65,15 +65,15 @@ function seleccionarMapa(){
     html2canvas(document.querySelector("#gridDerechaMapaHuertosSeleccionarMapa"),{
         useCORS: true,
         onrendered: function(canvas){
-            console.log("hola");
             //pasamos el canvas a base64
-            var imagenBaseSesentaYCuatro= canvas.toDataURL("image/png");
+            var image= canvas.toDataURL("image/png");
             // incluimos la imagen en el form_for
-            $("#imagenMapaAUsar").append(imagenBaseSesentaYCuatro); 
-            console.log(imagenBaseSesentaYCuatro);
+            
+            console.log("pasa");
+            $("#imagenMapaAUsar").val(image); 
+            console.log("funca");
             // hacemos submit para el form
-            //$("#guardandoUrlBaseDiesParaCampo").submit();
-            $("body").append(url(imagenBaseSesentaYCuatro));
+            $("#guardandoUrlBaseDiesParaCampo").submit();
         } 
     });   
 }

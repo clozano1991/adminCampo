@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  huerto: one
+  fechaaplicacion: 2019-01-02
+  productocomercial: MyString
+  ingredienteactivo: MyString
+  dosis: MyString
+  personalacargo: MyString
+  recomendadopor: MyString
+  efectoesperado: MyText
+  observacion: MyText
+
+two:
+  huerto: two
+  fechaaplicacion: 2019-01-02
+  productocomercial: MyString
+  ingredienteactivo: MyString
+  dosis: MyString
+  personalacargo: MyString
+  recomendadopor: MyString
+  efectoesperado: MyText
+  observacion: MyText

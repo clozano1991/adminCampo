@@ -52,7 +52,7 @@ $(document).ready(function(){
     });
     //seleccionamos editar figura del huerto
     $("#cancelarEditandoHuertoFiguraElegida").click(function(){
-        cancelarEditandoHuertoFiguraElegida();
+        cancelarEditandoHuertoFigura();
     });
     //----------editando la informacion del huerto------------
     $(".botonSeleccionarEditarInformacion").each(function(){
@@ -69,7 +69,7 @@ $(document).ready(function(){
 
 
     //mostramos la imagen de fondo del huerto 
-    //mostrarMapaFondoBloques();
+    mostrarMapaFondoBloques();
 
 
     
@@ -111,6 +111,10 @@ function cambiarBloqueHuertos(boton){
                 $("#bloqueHuertosDos").hide();
                 $("#bloqueHuertosTres").hide();
                 $("#bloqueHuertosUno").show();
+                //dejamos de mostrar los otros botones y mostramos el boton seleccionado
+                $("#botonAgregarMapaBloqueTres").hide();
+                $("#botonAgregarMapaBloqueDos").hide();
+                $("#botonAgregarMapaBloqueUno").show();
             }
 
         }
@@ -138,6 +142,11 @@ function cambiarBloqueHuertos(boton){
                 $("#bloqueHuertosUno").hide();
                 $("#bloqueHuertosTres").hide();
                 $("#bloqueHuertosDos").show();
+                //dejamos de mostrar los otros botones y mostramos el boton seleccionado
+                $("#botonAgregarMapaBloqueUno").hide();
+                $("#botonAgregarMapaBloqueTres").hide();
+                $("#botonAgregarMapaBloqueDos").show();
+
             }
 
         }
@@ -165,6 +174,11 @@ function cambiarBloqueHuertos(boton){
                 $("#bloqueHuertosUno").hide();
                 $("#bloqueHuertosDos").hide();
                 $("#bloqueHuertosTres").show();
+                //dejamos de mostrar los otros botones y mostramos el boton seleccionado
+                $("#botonAgregarMapaBloqueUno").hide();
+                $("#botonAgregarMapaBloqueDos").hide();
+                $("#botonAgregarMapaBloqueTres").show();
+
             }    
         }
     }
@@ -321,7 +335,7 @@ function mostrarVistaNormalHuertoModal(imagenRegresarClickeada){
     });
 }
 //funciones para mostrar mapa fondos huertos
-function mostrarMapaFondoBloques(){
+function mostrarMapaFondoBloques(){ 
     var imagenEnTextoBloqueUno = $("#bloqueHuertosUno").attr("data-urlImagen");    
     $("#svgMapaBloqueUno").css("background-image","url("+imagenEnTextoBloqueUno+")");
     var imagenEnTextoBloqueDos = $("#bloqueHuertosDos").attr("data-urlImagen");    
@@ -485,12 +499,17 @@ function cancelarEditandoHuertoFigura(){
     $(".huertoEnEdicion").attr("class","huertoDesechar");
     $(".circulitos").attr("class","huertoDesechar");
     $(".huertoDesechar").hide();
-    //cambiamos el id 
+    //guardamos y modificamos el id 
+    
     $("#huertoEnEdcion").attr("id","");
-    //quitamos el permiso que esta en el cardBody
+    //quitamos el permiso que esta en el grid
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
-    //regresamos al estado pendiente para que el primer click no se tome en cuenta al editar
-    $("#gridDerechaMapaHuertos").attr("data-primerClick","pendienteFigura");    
+    // volvemos a la vista normal del modal del huerto y el grid izquierdo 
+    $(".vistaNormalIndexHuertos").show();
+    $(".vistaEditandoHuertoFiguraIndexHuertos").hide(); 
+    //mostramos el huerto principal que se habia escondido al hacer ue todos los huertos con clase "huertos" en el grid sean visibles
+
+    $(".huertos").show();
 }
 
 

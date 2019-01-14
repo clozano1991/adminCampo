@@ -1,0 +1,2 @@
+module HuertoAplicacionesHelper
+end

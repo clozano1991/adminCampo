@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181220185654) do
+ActiveRecord::Schema.define(version: 20190103202744) do
 
   create_table "campos", force: :cascade do |t|
     t.string "nombre"
@@ -138,6 +138,21 @@ ActiveRecord::Schema.define(version: 20181220185654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campo_id"], name: "index_gestion_cesantia_seguros_on_campo_id"
+  end
+
+  create_table "huerto_aplicaciones", force: :cascade do |t|
+    t.integer "huerto_id"
+    t.date "fechaaplicacion"
+    t.string "productocomercial"
+    t.string "ingredienteactivo"
+    t.string "dosis"
+    t.string "personalacargo"
+    t.string "recomendadopor"
+    t.text "observacion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "efecto"
+    t.index ["huerto_id"], name: "index_huerto_aplicaciones_on_huerto_id"
   end
 
   create_table "huertos", force: :cascade do |t|

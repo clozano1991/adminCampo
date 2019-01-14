@@ -1,0 +1,60 @@
+<div class="contenedorFondoFichaGenerica">
+  <div class="opcionesArribaFichaGenerica">
+    <h5><strong> Ficha del huerto: <%=@huerto.nombre%></strong></h5>
+  </div>
+
+  <div class="contenedorLinkSuperioresMasContenidoFichaGenerica">
+    <!--LinksSuperioresEmpleado-->
+    <div class="linksSuperioresFichaGenerica">
+      <ul class=" listaLinksFichaGenerica">
+        <li class="elementoListaLinksFichaGenerica">
+          <%=link_to("Principal",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica")%>
+        </li>
+        <li class="elementoListaLinksFichaGenerica">
+          <%=link_to("Planificación",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica")%>
+        </li>
+        <li class="elementoListaLinksFichaGenerica">
+          <%=link_to("Trabajos",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica ")%>
+        </li>
+        <li class="elementoListaLinksFichaGenerica">
+          <%=link_to("Aplicaciones",user_campo_huerto_huerto_aplicaciones_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica linkSeleccionadoFichaGenerica ")%>
+        </li>
+        <li class="elementoListaLinksFichaGenerica">
+          <%=link_to("Producción",user_campo_huerto_path(current_user,@campo, @huerto), :method => "get", class: "linkFichaGenerica")%>
+        </li>
+        
+      </ul>
+    </div><!--fin LinksSuperioresHuerto-->
+    <div class="FichaGenerica">
+      <div class="contenedorMiniListaContenida"></div>
+      <table class="table table-striped table-bordered tablaPagos ">
+        <thead>
+          <tr class="filaSuperiorMiniListaContenida">
+            <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Fecha</th>
+            <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Motivo de uso</th>
+            <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Producto Comercial</th>
+            <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Dosis</th>
+            <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida" > <%=link_to(button_tag("+ Aplicación", class: "btn botonNaranjo botonAgregarPago " ),new_user_campo_huerto_huerto_aplicacione_path(current_user,@campo,@huerto), method: :get  )%></th>
+          </tr>
+        </thead>   
+        <tbody>
+          <% @adentroTablaHuertoAplicaciones = true %>
+          <%=render partial: "huerto_aplicacione", collection: @huerto_aplicaciones, locals: {campo: @campo, huerto: @huerto }%>
+          <% @adentroTablaHuertoAplicaciones = false %>
+        </tbody>
+      </table>
+    </div><!--fin contenedorMiniListaContenida-->
+
+  </div><!--fin FichaGenerica-->
+</div>
+
+</div><!--fin LinksSuperioresEmpleadoMasContenido-->
+</div><!--fin contenedorFondoShowFichaHuerto--> 
+
+<!--+++++++++++++++++modals para confirmar borrar un equipo+++++++++++++++++++++++++++++++++-->
+<div class="contenedorModalsBorrarEquipo"> 
+  <% @adentroContenedorModalsBorrarHuerto_aplicacione = true %>
+  <%=render partial: "huerto_aplicacione", collection: @huerto_aplicaciones, locals: {campo: @campo, huerto: @huerto }%>
+</div>
+<% @adentroContenedorModalsBorrarHuerto_aplicacione  = false %>
+<!--+++++++++++++++++fin modals para confirmar borrar un empleado++++++++++++++++++++++++++++-->

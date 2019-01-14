@@ -37,7 +37,7 @@
 
       <div class=" vistasIndexHuertos vistaEditandoHuertoFiguraIndexHuertos" >
           <p class="textoAyudaGridIzquierdaIndexHuertos"> 1) Cree la nueva figura del huerto haciendo clicks en el espacio de la derecha.</p> 
-          <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la nueva figura este establecida precione el boton "confirmar" para finalizar.</p>
+          <p class="textoAyudaGridIzquierdaIndexHuertos"> 2) Una vez que la nueva figura este establecida precione el boton "Editar" para finalizar.</p>
           <div class="contenedorBotonEditandoHuertoGridIzquierdaIndexHuertos">
             <button type="button" class="btn botonVerde botonGridIzquierdaIndexHuertosEditar" id="confirmarEditandoHuertoFiguraElegida">Editar</button>
             <button type="button" class="btn botonRojo botonGridIzquierdaIndexHuertosEditar " id="cancelarEditandoHuertoFiguraElegida">Cancelar</button>  
@@ -64,14 +64,14 @@
         <!--el boton tiene que estar dentro de este div para que sea clickeable-->
         <div class="btn-group" role="group" aria-label="Third group">
             <button  id="botonParaCambiarABloqueTres" class="btn btn-secondary botonParaCambiarBloque" ><strong>3</strong></button>
-        </div>
+        </div> 
       </div>
 
 <!-- aca etan todos los bloques con los huertos en su interior -->
-        <div id="bloqueHuertosUno" class="bloqueHuertos bloqueHuertosInicialmenteVisibles">
+        <div id="bloqueHuertosUno" class="bloqueHuertos bloqueHuertosInicialmenteVisibles" data-urlImagen="<%= @campo.imagenUno%>">
                <!--Boton para agregar mapa de fondo-->
-               <div id="botongregarMapaBloqueUno" class="botonesAgregarImagenMapa bloqueHuertosUno">
-                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueUno_path(current_user,@campo), method: :get  )%>
+               <div  class="botonesAgregarImagenMapa bloqueHuertosUno">
+                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueUno_path(current_user,@campo), method: :get , id: "botonAgregarMapaBloqueUno" )%>
                </div>
                <svg style="width:100%;height:100%;" id="svgMapaBloqueUno" class="svgMapasBloques">
                    <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
@@ -81,10 +81,10 @@
                </svg>
         </div>
 
-        <div id="bloqueHuertosDos" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos">
+        <div id="bloqueHuertosDos" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos" data-urlImagen="<%= @campo.imagenDos%>">
                <!--Boton para agregar mapa de fondo-->
-               <div id="botongregarMapaBloqueDos" class="botonesAgregarImagenMapa">
-                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueDos_path(current_user,@campo), method: :get  )%>
+               <div  class="botonesAgregarImagenMapa">
+                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueDos_path(current_user,@campo), method: :get, id: "botonAgregarMapaBloqueDos"  )%>
                </div>
                <svg style="width:100%;height:100%;" id="svgMapaBloqueDos" class="svgMapasBloques">
                    <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
@@ -94,10 +94,10 @@
                </svg>
         </div>
 
-        <div id="bloqueHuertosTres" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos">
+        <div id="bloqueHuertosTres" class="bloqueHuertos bloqueHuertosInicialmenteEscondidos" data-urlImagen="<%= @campo.imagenTres%>">
                <!--Boton para agregar mapa de fondo-->
-               <div id="botongregarMapaBloqueTres" class="botonesAgregarImagenMapa bloqueHuertosTres">
-                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueTres_path(current_user,@campo), method: :get  )%>
+               <div  class="botonesAgregarImagenMapa bloqueHuertosTres">
+                  <%=link_to(button_tag("Mapa fondo", class: "btn btn-secondary" ),user_campo_elegirMapaBloqueTres_path(current_user,@campo), method: :get, id: "botongAregarMapaBloqueTres"  )%>
                </div>
                <svg style="width:100%;height:100%;" id="svgMapaBloqueTres" class="svgMapasBloques">
                    <!--aca para cada huerto se ejecuta el codigo cosa de mostrarlos en el div -->
@@ -114,6 +114,9 @@
             </div>
             <div id="avisoSuperficieHuertoNoValida" class="alert alert-primary" role="alert">
                   <strong> Primero se tiene que asignar una superficie valida en el mapa</strong>
+            </div>
+            <div id="avisoHuertoEditadoDeFormaExitosa" class="alert alert-primary" role="alert">
+                  <strong> Huerto editado de forma exitosa</strong>
             </div>
             <div id="avisoCargandoMapaHuerto" class="alert alert-primary" role="alert">
                   <strong>Cargando el mapa</strong>

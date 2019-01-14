@@ -20,8 +20,14 @@ $(document).ready(function(){
     $(".vistaEditandoHuertoFiguraIndexHuertos").hide();
     $("#gridDerechaMapaHuertos").attr("data-permiso","normal");
 
-    // volvemos a mostrar el verdadero huerto
+    // volvemos a mostrar el verdadero huerto y damos el aviso de exito
     $("#huerto_<%=@huerto.id%>").show();
+    $("#avisoHuertoEditadoDeFormaExitosa").show();
+    $("#avisoHuertoEditadoDeFormaExitosa").fadeOut(3000);
+
+    // ajustamos el nombre del huerto que se muestra en el polyline al hacer el paso del mouse
+    $("#huerto_<%=@huerto.id%>").attr("data-title","<%=@huerto.nombre%>");
+    //(no se esta avtualizando esta ultima parte)
 
 
 

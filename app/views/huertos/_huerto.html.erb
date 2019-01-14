@@ -1,19 +1,19 @@
 <!-- al llamarce desde adentro del svg solo se crean los polyline asociados a los huertos -->
 <%if @adentroSVGBloqueUno == true%>
 <%if huerto.bloqueMapa == "bloqueHuertosUno"%>
-<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>" data-toggle="tooltip" data-placement="top" data-title="<%=huerto.nombre%>">
 </polyline>
 <%end%>
 
 <%elsif @adentroSVGBloqueDos == true%>
 <%if huerto.bloqueMapa == "bloqueHuertosDos" %>
-<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>" data-toggle="tooltip" data-placement="top" data-title="<%=huerto.nombre%>" >
 </polyline>
 <%end%>
 
 <%elsif @adentroSVGBloqueTres == true%>
 <%if huerto.bloqueMapa == "bloqueHuertosTres" %>
-<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>">
+<polyline  id="huerto_<%=huerto.id%>" class="huertos" data-porcentajes="<%=huerto.coordenadas%>" data-clase="<%=huerto.clase%>" data-id="<%=huerto.id%>" data-bloqueHuerto="<%=huerto.bloqueMapa%>" data-toggle="tooltip" data-placement="top" data-title="<%=huerto.nombre%>">
 </polyline>
 <%end%>
 
@@ -73,7 +73,7 @@
 
             <%=link_to(button_tag("+ Trabajo", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
 
-            <%=link_to(button_tag("+ Aplicación", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
+            <%=link_to(button_tag("+ Aplicación", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),new_user_campo_huerto_huerto_aplicacione_path(current_user,@campo,huerto), method: :get)%>
 
             <%=link_to(button_tag("+ Producción", class: "btn botonNaranjo botonHuertoOpcionRapidaModal " ),user_campo_huerto_path(current_user,@campo,huerto), method: :get  )%>
 

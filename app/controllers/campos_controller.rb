@@ -53,4 +53,4 @@ class CamposController < ApplicationController
 		params.require(:campo).permit(:nombre, :propietario, :direccion, :descripcion, :recordatorio, :imagenUno, :imagenDos, :imagenTres, gestion_cesantia_seguros_attributes: [:id, :tipoContrato, :porcentajeAportadoEmpresa, :porcentageAportadoEmpleado])
 	end
 
-end
+end 

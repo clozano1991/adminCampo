@@ -17,10 +17,12 @@ Rails.application.routes.draw do
 				resources :empleado_observaciones 
 			end
 			#para la parte del mapa de fondo que tienen los bloques donde estan los huertos
-			get "/mapa" => "campos#elegirMapaBloqueUno", as: :elegirMapaBloqueUno
-			get "/mapa" => "campos#elegirMapaBloqueDos", as: :elegirMapaBloqueDos
-			get "/mapa" => "campos#elegirMapaBloqueTres", as: :elegirMapaBloqueTres
-			resources :huertos
+			get "/mapaBloqueUno" => "campos#elegirMapaBloqueUno", as: :elegirMapaBloqueUno
+			get "/mapaBloqueDos" => "campos#elegirMapaBloqueDos", as: :elegirMapaBloqueDos
+			get "/mapaBloqueTres" => "campos#elegirMapaBloqueTres", as: :elegirMapaBloqueTres
+			resources :huertos do
+				resources :huerto_aplicaciones
+			end
 			resources :equipos do
 				resources :depreciaciones
 			end

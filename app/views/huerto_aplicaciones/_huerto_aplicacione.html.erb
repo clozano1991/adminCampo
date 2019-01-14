@@ -1,0 +1,73 @@
+ <!-- esta parte se ejecutara solo cuando queremos poner algo en la tabla -->
+<% if @adentroTablaHuertoAplicaciones == true %>
+  <tr class="filaMiniListaContenida" id="filaHuerto_aplicacione_<%=huerto_aplicacione.id%>">
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	  <div class="pocaInformacionMiniListaContenida huerto_aplicacioneTablaPocaInformacion_<%=huerto_aplicacione.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=huerto_aplicacione.fechaaplicacion%>
+            </div> 
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	  <div class="pocaInformacionMiniListaContenida huerto_aplicacioneTablaPocaInformacion_<%=huerto_aplicacione.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=huerto_aplicacione.productocomercial%>
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+      	   <div class="pocaInformacionMiniListaContenida huerto_aplicacioneTablaPocaInformacion_<%=huerto_aplicacione.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=huerto_aplicacione.ingredienteactivo%>
+            </div>
+      	   </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaCincoPorFila" >
+      	  <div class="pocaInformacionMiniListaContenida huerto_aplicacioneTablaPocaInformacion_<%=huerto_aplicacione.id%>">
+            <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+              <%=huerto_aplicacione.dosis%>
+            </div>
+      	  </div>
+      </td>
+      <td class="columnaImagenesDerechaMiniListaContenida">
+      	   <div class="pocaInformacionMiniListaContenida huerto_aplicacioneTablaPocaInformacion_<%=huerto_aplicacione.id%>" >
+              <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+      	   	   <div class="imagenesDerechaMiniListaContenida">
+                <%=link_to(image_tag("verDetalleLupa.png",class: "fotoOpcion", :data=>{ :toggle => "tooltip", :placement => "top", :title => "Ver detalle"}),user_campo_huerto_huerto_aplicacione_path(current_user,@campo,@huerto,huerto_aplicacione.id), method: :get)%>
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{ :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_huerto_huerto_aplicacione_path(current_user,@campo, @huerto, huerto_aplicacione.id), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarHuerto_aplicacione" , :data=>{:id => (huerto_aplicacione.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%>
+               </div>
+              </div>
+      	   </div>
+      </td>
+  </tr>
+<%end%>
+<!-- fin del contenido de la tabla -->
+
+
+<!-- esta parte se ejecutara solo cuando queremos poner los modals para confirmar el borrado -->
+<%if @adentroContenedorModalsBorrarHuerto_aplicacione == true%>
+  <div class="modal fade " id="modal_borrar_huerto_aplicacione_<%=huerto_aplicacione.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content o"> 
+        <div class="modal-header">
+          <div>
+             <h5>
+                <strong>Borrando aplicación</strong>
+             </h5>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip" data-placement="top" data-title="cerrar ventana">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                  <h5>
+                    ¿Seguro que desea borrar esta aplicación?
+                  </h5>
+                    <%=link_to(button_tag("Borrar Aplicación", class: "btn botonRojo botonConfirmarBorrarEmpleado"), user_campo_huerto_huerto_aplicacione_path(current_user,campo,huerto,huerto_aplicacione), method: :delete, remote: true )%>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%><!-- fin modal para borrar empleado -->
+

@@ -10,10 +10,10 @@
 	padding-left:0.8%;
 	padding-right: 0.8%;
 	background-color: #f0e6c8;
-}
+} 
 .opcionesArribaFichaGenerica{
 	position: relative;
-	display: flex;
+	display: flex; 
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
@@ -84,8 +84,7 @@
 	margin-bottom: 25px;
 }
 .tituloFilaFichaGenerica{  
-	font-size: 22px;
-	margin-bottom: 5px;
+	/*usar h5*/
 }
 .filaFichaGenerica{
 	position: relative;
@@ -128,7 +127,7 @@
 }
 .elementoFichaGenericaConBordeAbajo{
 	border-bottom: solid;
-	border-width: 0.3px;
+	border-width: 0.3px; 
 	border-color:#505050;
 }
 .elementoFichaGenericaConBordeArriba{
@@ -136,3 +135,11 @@
 	border-width: 0.3px;
 	border-color:#505050;
 }
+
+.elementoNegritaConMargenALaDerecha{
+	margin-right: 15px;
+}
+
+
+/*--------------------------*/
+

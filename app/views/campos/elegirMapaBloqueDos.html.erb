@@ -9,7 +9,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%; 
+        height: 100%;
         width: 100%; 
         position: absolute;
       }
@@ -26,7 +26,7 @@
        
        <div class="mensajesAyudaElegirMapa">
        	<strong>
-       	    <p class="textoNormal">1) Posicionar el mapa de la derecha segun la superficie del campo que quiere agregar al bloque uno.</p>
+       	    <p class="textoNormal">1) Posicionar el mapa de la derecha segun la superficie del campo que quiere agregar al bloque dos.</p>
        	    <p class="textoNormal">2) Una vez posicionado apretar seleccionar para proceder.</p>
        	</strong>
        </div>
@@ -47,7 +47,7 @@
     <div class="card seleccionarMapaCampo"  >
                      <div class="card-body">
                              <%=form_for @campo, url: user_campo_path(current_user, @campo), method: :patch, :html => {:id => "guardandoUrlBaseDiesParaCampo"} do |form| %>
-                                  <%=form.text_area :imagenUno, id: "imagenMapaAUsar"%>
+                                  <%=form.text_area :imagenDos, id: "imagenMapaAUsar"%>
                                     
                              <%end%>      
                      </div>                
