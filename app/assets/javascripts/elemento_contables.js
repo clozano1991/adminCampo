@@ -2,7 +2,7 @@
 // ------------------------------------ main -------------------------------
 $(document).ready(function(){ 
   //verificamos si estamos en el domumento principal de contabilidad, 
-  //para que de otra manera no se ejecuten los json y todo eso
+  //para que de otra manera no se ejecuten los codigos de la parte especifica y todo eso
   if ($("#contenedorCuerpoPlanillaContabilidad").attr("data-planillaContabilidad")=="planillaPrincipalNoLasEspecificas") {
     // mostramos la info que se tiene con el año selecionado
     recopilandoInformacionPlanillaContabilidadEERRDeAnoSeleccionado()
@@ -41,7 +41,7 @@ $(document).ready(function(){
   });
 
 
-//----------------funciones index elemento_contables --------------------
+//----------------funciones index especificos elemento_contables --------------------
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ function mostrarModalEditarElementoContable(imagenEditarElementoContable){
 
 
 
-//----------------funciones index elemento_contables --------------------
+//----------------funciones index elemento_contables principal (EERR) --------------------
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 //------------------------------ flechas para mostrar mas o menos

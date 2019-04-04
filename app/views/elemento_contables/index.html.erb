@@ -5,15 +5,21 @@
       </div> 
 
       <div class="botonesBarraArribaPlanillaContabilidadMasSeleccionFecha">
-            <div><%= "Año: "%></div>
+            <div id="vinetaSeleccionarAnoIndexElementosContables"><%= "Año: "%></div>
             <div>
                   <select class="custom-select" id="selectAnoContabilidadEERR" data-userid="<%=current_user.id%>" data-campoid="<%=@campo.id%>">
-                        
-                        <option>2018</option>
-                        
-                        
-                        <option> 2017 </option>
-                        
+                        <% @ano = Time.now.year + 1%>
+                        <%until @ano == 2014 do%>
+                        <!-- verificamos si es el año actual para seleccioanrlo -->
+                        <% if @ano == Time.now.year%>
+                        <option selected="selected"><%=@ano%></option>
+                        <%end %>
+                        <!-- verificamos si es el año actual para no seleccioanrlo -->
+                        <%if @ano != Time.now.year%>
+                        <option><%=@ano%></option>
+                        <%end%>
+                        <% @ano = @ano -1%>
+                        <%end%>
                   </select>     
             </div>
             <!--<div class="contenedorBotonesBarraArribaContabilidad">

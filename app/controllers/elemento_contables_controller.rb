@@ -9,33 +9,7 @@ class ElementoContablesController < ApplicationController
 		@elemento_contables=current_user.campos.find(params[:campo_id]).elemento_contables.uniq.pluck(:fecha)
 		@campo=current_user.campos.find(params[:campo_id])
 
-		@fechaActual = Time.now
-
-		#---------------------------obtenemos el listado de las fechas---------------------
-		@anos=[]
-		#se extraen las fechas y se pone el año en un arreglo
-		@elemento_contables.each do |elemento_contable|
-		  @anos.push(elemento_contable.to_s.split("-")[0])
-		end
-		#se pasa el arreglo a int
-		@anosInt=[]
-		@anos.each do |anoStr|
-			@anosInt.push(anoStr.to_i)
-		end
-		#ordenamos de mayor a menor
-		@anosInt.sort!
-		#quitamos los dulicados
-		@anosInt.uniq!
-		#pasamos nuevamente a string
-		@anos=[]
-        @anosInt.each do |anoInt|
-			@anos.push(anoInt.to_s)
-		end
-		@anos.delete("0")
-		@anos.reverse!
-		# usamos el arrego anos en el view del index
-
-        # para crear un elemento contable desde un modal con js
+        # para crear un elemento contable desde el modal para crear desde el index con js
         @elemento_contable=current_user.campos.find(params[:campo_id]).elemento_contables.build
 	end
 
