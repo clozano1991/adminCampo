@@ -2,6 +2,10 @@
 .form-control.formEscondido{
 	display: none;
 }
+.form-control.formSinBorde{
+	border-style: none;
+
+}
 
 
 /*---------------------------Parte donde se llenan los datos------------------------*/
@@ -14,8 +18,8 @@
 .contenedorTituloHaberesImponibles{
 	display: inline-block;
 	color: white;
-	background-color: #0079c1;
-	border-radius: 30px; 
+	background-color: #47525d;
+	border-radius: 10px;  
 	font-weight: bold;
 	font-size: 20px;
 	margin-bottom: 10px;
@@ -23,7 +27,7 @@
 	padding-bottom: 4px;
 	padding-left: 8px;
 	padding-right: 8px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	
 }
 .contenedorHaberesImponibles{
 	margin-top: 20px;
@@ -31,9 +35,9 @@
 }
 .table.table-bordered.tablaHaberesImponibles{
 	border-style: solid !important; 
-	border-color: #0079c1 !important;
-	border-width: 3px !important;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+	border-color: #47525d!important;
+	border-width: 2.5px !important;
+	
 }
 /*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
 	border-bottom: solid;
@@ -48,7 +52,7 @@
 .contenedorTituloHaberesNoImponibles{
 	display: inline-block;
 	color: white;
-	background-color: #8343e7;
+	background-color: #333333;
 	border-radius: 30px; 
 	font-weight: bold;
 	font-size: 20px;
@@ -57,7 +61,7 @@
 	padding-bottom: 4px;
 	padding-left: 8px;
 	padding-right: 8px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	
 }
 .contenedorHaberesNoImponibles{
 	margin-top: 20px;
@@ -65,9 +69,9 @@
 }
 .table.table-bordered.tablaHaberesNoImponibles{
 	border-style: solid !important; 
-	border-color: #8343e7 !important;
-	border-width: 3px !important;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+	border-color: #333333 !important;
+	border-width: 2.5px !important;
+	
 }
 /*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
 	border-bottom: solid;
@@ -88,7 +92,6 @@
 	padding-bottom: 4px;
 	padding-left: 8px;
 	padding-right: 8px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 .contenedorDescuentos{
 	margin-top: 20px;
@@ -97,8 +100,7 @@
 .table.table-bordered.tablaDescuentos{
 	border-style: solid !important;
 	border-color: #eb5a46 !important;
-	border-width: 3px !important;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19) !important;
+	border-width: 2.5px !important;
 }
 /*.filaSuperiorMiniListaContenidaPagoItemsDescuentos{
 	border-bottom: solid;

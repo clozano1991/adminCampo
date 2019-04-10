@@ -7,7 +7,7 @@
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
                 Aporte fondo previcional (AFP)
-                <%=ff.text_field :item, class: "form-control formEscondido", value: "Aporte fondo previcional (AFP)"%>
+                <%=ff.text_field :item, class: "form-control formSinBorde formEscondido", value: "Aporte fondo previcional (AFP)"%>
             </div>
         </div>
     </td>
@@ -15,15 +15,15 @@
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
                 <%=@empleado.porcentajeCotizacionAFP.to_s + " %"%>
-                <%=ff.number_field :cantidad, class: "form-control formEscondido", value: @empleado.porcentajeCotizacionAFP/100%>
+                <%=ff.number_field :cantidad, class: "form-control formSinBorde formEscondido", value: @empleado.porcentajeCotizacionAFP/100%>
             </div>
         </div>
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida e">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
-                <%=@empleado.sueldoBaseMensual%>
-                <%=ff.number_field :valor, class: "form-control formEscondido", value: @empleado.sueldoBaseMensual, step: :any%>
+                calcular haberes imponbles
+                <%=ff.number_field :valor, class: "form-control formSinBorde formEscondido", value: @empleado.sueldoBaseMensual, step: :any%>
             </div>
         </div>
     </td>
@@ -55,7 +55,7 @@
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
                 Aporte salud obligato
-                <%=ff.text_field :item, class: "form-control formEscondido ", value: "Aporte salud obligato"%>
+                <%=ff.text_field :item, class: "form-control formSinBorde formEscondido ", value: "Aporte salud obligato"%>
             </div>
         </div>
     </td>
@@ -63,15 +63,15 @@
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
                 <%=@empleado.porcentajeCotizacionIsapre.to_s + " %"%>
-                <%=ff.number_field :cantidad, class: "form-control formEscondido", value: @empleado.porcentajeCotizacionIsapre/100%>
+                <%=ff.number_field :cantidad, class: "form-control formSinBorde formEscondido", value: @empleado.porcentajeCotizacionIsapre/100%>
             </div>
         </div>
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida e">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
-                <%=@empleado.sueldoBaseMensual%>
-                <%=ff.number_field :valor, class: "form-control formEscondido", value: @empleado.sueldoBaseMensual, step: :any%>
+                calcular haberes imponbles
+                <%=ff.number_field :valor, class: "form-control formSinBorde formEscondido", value: @empleado.sueldoBaseMensual, step: :any%>
             </div>
         </div>
     </td>
@@ -102,21 +102,21 @@
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
-                <%=ff.text_field :item, class: "form-control ", value: "Seguro sesantia"%>
+                <%=ff.text_field :item, class: "form-control formSinBorde ", value: "Seguro sesantia"%>
             </div>
         </div>
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
-                <%=ff.number_field :cantidad, class: "form-control inputCantidadItemPago", value: 1%>
+                <%=ff.number_field :cantidad, class: "form-control formSinBorde inputCantidadItemPago", value: 1%>
             </div>
         </div>
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
         <div class="pocaInformacionMiniListaContenida e">
             <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
-                   <%=ff.number_field :valor, class: "form-control inputValorItemPago", value: 0000%>
+                   <%=ff.number_field :valor, class: "form-control formSinBorde inputValorItemPago", value: 0000%>
             </div>
         </div>
     </td>

@@ -1,6 +1,6 @@
 $(document).ready(function(){       
 //main de la parte principal de los huertos
-    //mostramos los huertos existentes al cargar el doc
+    //mostramos los huertos existentes al cargar el doc 
     $(".huertos").each(function(){
         mostrarHuerto($(this));
     });

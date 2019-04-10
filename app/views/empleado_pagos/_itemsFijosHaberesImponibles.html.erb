@@ -1,14 +1,15 @@
+ <!-- ----------------------sueldo base-------------------------------------------  -->
  <%= form.fields_for :pago_items, @empleado_pago.pago_items.build do |ff| %>
  <tr class="filaMiniListaContenida filaPagoItemHaberImponible nested-fields" id="pagoItemHaberImponibleSueldoBase">
     <%=ff.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "haberImponible"%>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila  ">       
-        <%=ff.text_field :item, class: "form-control ", value: "Sueldo base"%>       
+        <%=ff.text_field :item, class: "form-control formSinBorde ", value: "Sueldo base"%>       
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
-        <%=ff.number_field :cantidad, class: "form-control inputCantidadItemPago", value: 1%>
+        <%=ff.number_field :cantidad, class: "form-control formSinBorde inputCantidadItemPago", value: 1%>
     </td> 
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
-        <%=ff.number_field :valor, class: "form-control inputValorItemPago", value: @empleado.sueldoBaseMensual, step: :any%>
+        <%=ff.number_field :valor, class: "form-control formSinBorde inputValorItemPago", value: @empleado.sueldoBaseMensual, step: :any%>
     </td>
     <td class="columnaInformacionMiniListaContenidaCuatroPorFila contenedorMonto">
         <%= 1*@empleado.sueldoBaseMensual %>    
@@ -24,3 +25,84 @@
 <%end%>
 
 
+ <!-- ----------------------Bonos-------------------------------------------  -->
+ <%= form.fields_for :pago_items, @empleado_pago.pago_items.build do |ff| %>
+ <tr class="filaMiniListaContenida filaPagoItemHaberImponible nested-fields" id="pagoItemHaberImponibleSueldoBase">
+    <%=ff.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "haberImponible"%>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila  ">       
+        <%=ff.text_field :item, class: "form-control formSinBorde ", value: "Bonos"%>       
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :cantidad, class: "form-control formSinBorde inputCantidadItemPago", value: 1%>
+    </td> 
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :valor, class: "form-control formSinBorde inputValorItemPago", value: 0, step: :any%>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila contenedorMonto">
+        <%= 0%>    
+    </td>
+    <td class="columnaImagenesDerechaMiniListaContenida">
+            <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+                <div class="imagenesDerechaMiniListaContenida">
+                    <%=link_to_remove_association(image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago"), ff)%> 
+                </div> 
+            </div>
+    </td>
+</tr>
+<%end%>
+
+
+<!-- ----------------------Gratificación-------------------------------------------  -->
+ <%= form.fields_for :pago_items, @empleado_pago.pago_items.build do |ff| %>
+ <tr class="filaMiniListaContenida filaPagoItemHaberImponible nested-fields" id="pagoItemHaberImponibleSueldoBase">
+    <%=ff.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "haberImponible"%>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila  ">       
+        <%=ff.text_field :item, class: "form-control formSinBorde formSinBorde ", value: "Gratificación"%>       
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :cantidad, class: "form-control formSinBorde inputCantidadItemPago", value: 1%>
+    </td> 
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :valor, class: "form-control formSinBorde inputValorItemPago", value: 0, step: :any%>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila contenedorMonto">
+        <%= 0%>    
+    </td>
+    <td class="columnaImagenesDerechaMiniListaContenida">
+            <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+                <div class="imagenesDerechaMiniListaContenida">
+                    <%=link_to_remove_association(image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago"), ff)%> 
+                </div> 
+            </div>
+    </td>
+</tr>
+<%end%>
+
+<!-- ----------------------Horas extra-------------------------------------------  -->
+ <%= form.fields_for :pago_items, @empleado_pago.pago_items.build do |ff| %>
+ <tr class="filaMiniListaContenida filaPagoItemHaberImponible nested-fields" id="pagoItemHaberImponibleSueldoBase">
+    <%=ff.text_field :haberDescuentoExtra,class: "form-control formEscondido", value: "haberImponible"%>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila  ">       
+        <%=ff.text_field :item, class: "form-control formSinBorde ", value: "Horas extra"%>       
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :cantidad, class: "form-control formSinBorde inputCantidadItemPago", value: 1%>
+    </td> 
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila">
+        <%=ff.number_field :valor, class: "form-control formSinBorde inputValorItemPago", value: 0, step: :any%>
+    </td>
+    <td class="columnaInformacionMiniListaContenidaCuatroPorFila contenedorMonto">
+        <%= 0%>    
+    </td>
+    <td class="columnaImagenesDerechaMiniListaContenida">
+            <div class="contenedorImagenesYBotonesDerechaMiniListaContenida">
+                <div class="imagenesDerechaMiniListaContenida">
+                    <%=link_to_remove_association(image_tag("deleteRed.png",class: "fotoOpcion imagenDerechaBorrarItemPago"), ff)%> 
+                </div> 
+            </div>
+    </td>
+</tr>
+<%end%>
+
+
+ 

@@ -75,15 +75,17 @@
       	   <div class="pocaInformacionListaGrande empleadoTablaPocaInformacion_<%=empleado.id%>" >
               <div class="contenedorImagenesYBotonesDerechaListaGrande">
       	   	   <div class="imagenesDerechaListaGrande">
-                    <%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>
+                 <!--en caso de que se quiera poner la flecha que abre la otra parte-->
+                    <!--<%=image_tag("flechaAbajoCollapse.png", class: "fotoOpcion flechaAbajoMostrarMasInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ampliar"})%>-->
+                    <%=link_to(image_tag("verDetalleLupa.png",class: "fotoOpcion", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Ficha"}),user_campo_empleado_path(current_user,@campo, empleado), method: :get)%>
+                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_empleado_path(current_user,@campo,empleado), method: :get)%>
+                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEmpleado" , :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
                </div>
               </div>
       	   </div>
       	   <div class="muchaInformacionListaGrande empleadoTablaMuchaInformacion_<%=empleado.id%>">
               <div class="contenedorImagenesYBotonesDerechaListaGrande">
       	   	   <div class="imagenesDerechaListaGrande">
-                    <%=link_to(image_tag("editarAmarillo.png",class: "fotoOpcion", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Editar"}),edit_user_campo_empleado_path(current_user,@campo,empleado.id), method: :get)%>
-                    <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarEmpleado" , :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Borrar"})%> 
                     <%=image_tag("flechaArribaCollapse.png", class: "fotoOpcion flechaArribaMostrarMenosInformacionEmpleado", :data=>{:idEmpleado => (empleado.id).to_s, :toggle => "tooltip", :placement => "top", :title => "Cerrar"} )%>
                 </div>
 
