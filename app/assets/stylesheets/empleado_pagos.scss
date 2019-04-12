@@ -4,71 +4,29 @@
 }
 .form-control.formSinBorde{
 	border-style: none;
-
 }
 
+/*--------------------------contenedor pagos------------*/
 
-/*---------------------------Parte donde se llenan los datos------------------------*/
+.bloqueContenedorInformacionPlanillaPagos{
+	background-color: white;
+}
+/*---------------------------Parte donde se llenan los datos basicos del pago------------------------*/
+.table.table-bordered.tablaInformacionBasicaDePago{
+	border-color: #333333 !important;
+	border-width: 2.5px !important;
 
+}
 
 
 
 /*-----------------------------tabla haberes imponibles-----------------------------------------------*/
 
-.contenedorTituloHaberesImponibles{
-	display: inline-block;
-	color: white;
-	background-color: #47525d;
-	border-radius: 10px;  
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-	
-}
 .contenedorHaberesImponibles{
-	margin-top: 20px;
+	margin-top: 30px;
 	margin-bottom: 20px;
 }
-.table.table-bordered.tablaHaberesImponibles{
-	border-style: solid !important; 
-	border-color: #47525d!important;
-	border-width: 2.5px !important;
-	
-}
-/*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
-	border-bottom: solid;
-	border-color: #0079c1;
-	border-width: 3px;
-}*/
-
-
-
-/*-----------------------------tabla haberes no imponibles-----------------------------------------------*/
-
-.contenedorTituloHaberesNoImponibles{
-	display: inline-block;
-	color: white;
-	background-color: #333333;
-	border-radius: 30px; 
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-	
-}
-.contenedorHaberesNoImponibles{
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-.table.table-bordered.tablaHaberesNoImponibles{
-	border-style: solid !important; 
+.table.table-bordered.tablaHaberesImponibles{ 
 	border-color: #333333 !important;
 	border-width: 2.5px !important;
 	
@@ -79,27 +37,32 @@
 	border-width: 3px;
 }*/
 
-/*-----------------------------tabla descuentos-----------------------------------------------*/
-.contenedorTituloDescuentos{
-	display: inline-block;
-	color: white;
-	background-color: #eb5a46;
-	border-radius: 30px;
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 10px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 8px;
-	padding-right: 8px;
-}
-.contenedorDescuentos{
+/*-----------------------------tabla haberes no imponibles-----------------------------------------------*/
+
+.contenedorHaberesNoImponibles{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-.table.table-bordered.tablaDescuentos{
-	border-style: solid !important;
-	border-color: #eb5a46 !important;
+.table.table-bordered.tablaHaberesNoImponibles{
+	border-color: #333333 !important;
+	border-width: 2.5px !important;
+	
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsHaberes{
+	border-bottom: solid;
+	border-color: #0079c1;
+	border-width: 3px;
+}*/
+
+/*-----------------------------tabla descuentos legales-----------------------------------------------*/
+
+.contenedorDescuentosLegales{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.table.table-bordered.tablaDescuentosLegales{
+	
+	border-color: #333333 !important;
 	border-width: 2.5px !important;
 }
 /*.filaSuperiorMiniListaContenidaPagoItemsDescuentos{
@@ -107,17 +70,38 @@
 	border-color: #eb5a46;
 	border-width: 3px;
 }*/
+/*-----------------------------tabla descuentos personales-----------------------------------------------*/
+
+
+.contenedorDescuentosPersonales{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.table.table-bordered.tablaDescuentosPersonales{ 
+	border-color: #333333 !important;
+	border-width: 2.5px !important;
+	
+}
+/*.filaSuperiorMiniListaContenidaPagoItemsDescuentosPersonales{{
+	border-bottom: solid;
+	border-color: #0079c1;
+	border-width: 3px;
+}*/
+
+
+
+
+
 
 /*--------------------------para la parte de agregar un item al pago----------------------------*/
 .tituloColumnaBotonMiniListaContenida.columnaImagenesDerechaMiniListaContenida.espaciodeBotonAgregarItemDePago{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     width: 100%;
 }
 
 .botonAgregarItemAPago{
 	cursor: pointer;
+	margin-right: 10px;
+	float: right;
 	padding-right: 15px;
 	padding-left: 0px;
 	padding-top: 4px;

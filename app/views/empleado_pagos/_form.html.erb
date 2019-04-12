@@ -3,63 +3,81 @@
  <h5><strong> Pago a: <%=@empleado.nombre%> <%=@empleado.apellidos%></strong></h5>
  <%=form.submit("Agregar", class: "btn botonVerde ")%> 
 </div>
- 
+
+
+<!-- ---------------contenedor todo lo del pago-----------------  --> 
 <div class="bloqueContenedorInformacionPlanillaNewYEdit"> 
- <div class="contenedorDatosDelPago">
-    
-  <div class="filaInformacionPlanillaNewYEdit">
-    <div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
-     <div class="contenedorInformacionColumnaPlanillaNewYEdit">
-      <label><strong>Motivo</strong></label>
-      <%=form.text_field :motivo, class: "form-control agregarInformacionPlanillaNewYEdit", value: "Pago Mensual"%> 
-    </div>
-  </div>
-  <div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
-   <div class="contenedorInformacionColumnaPlanillaNewYEdit">
-    <label><strong>Fecha</strong></label>
-    <%=form.date_field( :fecha, class: "form-control agregarInformacionPlanillaNewYEdit", value: Time.now.strftime("%Y-%m-%d"))%>
-  </div>
-</div>
-<div class="columnaInformacionTresPorFilaPlanillaNewYEdit">
- <div class="contenedorInformacionColumnaPlanillaNewYEdit">
-  <label><strong>Forma de pago</strong></label>
-  <%=form.text_field :formaDePago, class: "form-control agregarInformacionPlanillaNewYEdit", value: "Transferencia Bancaria"%>
-</div>
-</div>
-</div>
-</div>
+
+  <!-- ---------------info basica del pago-----------------  -->
+
+  <table class="table table-bordered tablaInformacionBasicaDePago  ">
+   <thead class="thead-dark">
+    <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesImponibles">
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Motivo del Pago</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Fecha</th>
+      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Forma de Pago</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="filaMiniListaContenida nested-fields" >
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+        <div class="pocaInformacionMiniListaContenida">
+          <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+            <%=form.text_field :motivo, class: "form-control formSinBorde ", value: "Pago Mensual"%>
+          </div>
+        </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+        <div class="pocaInformacionMiniListaContenida">
+          <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+            <%=form.date_field( :fecha, class: "form-control formSinBorde", value: Time.now.strftime("%Y-%m-%d"))%>
+          </div>
+        </div>
+      </td>
+      <td class="columnaInformacionMiniListaContenidaTresPorFila">
+        <div class="pocaInformacionMiniListaContenida">
+          <div class="contenedorUnaInformacionPocaInformacionMiniListaContenida">
+            <%=form.text_field :formaDePago, class: "form-control formSinBorde", value: "Transferencia Bancaria"%>
+          </div>
+        </div>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
 
 
 
 <!-- ---------------inicia contenedor de haberes imponibles-----------------  --> 
 <div class="contenedorHaberesImponibles">
- <div class="contenedorTituloHaberesImponibles">
-  Haberes imponibles
-</div>
-<div class="contenedorTablaItemsPagos">
-  <table class="table table-bordered table-sm tablaHaberesImponibles ">
-   <thead>
-    <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesImponibles">
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Item</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
-      <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
-        <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_imponibles" , association_insertion_method: :append }%>
-      </th>
-    </tr>
-  </thead>
-  <tbody id="contenedor_pago_items_haberes_imponibles">
-    <!-- aca van los items pre definidos de haberes -->   
-    <%=render partial: "itemsFijosHaberesImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
-    <!-- fin de los items pre definidos de haberes  --> 
-    <!-- items agregados dinamicamente --> 
-    <%= form.fields_for :pago_items do |builder| %>
+
+  <div class="contenedorTablaItemsPagos">
+    <table class="table table-bordered tablaHaberesImponibles ">
+     <thead class="thead-dark">
+      <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesImponibles">
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Haberes Imponibles</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
+        <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
+          <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_imponibles" , association_insertion_method: :append }%>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="contenedor_pago_items_haberes_imponibles">
+      <!-- aca van los items pre definidos de haberes -->   
+      <%=render partial: "itemsFijosHaberesImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+      <!-- fin de los items pre definidos de haberes  --> 
+      <!-- items agregados dinamicamente --> 
+      <%= form.fields_for :pago_items do |builder| %>
       
-    <%end%>
-    <!-- fin items agregados dinamicamente -->                   	
-  </tbody>
-</table>
+      <%end%>
+      <!-- fin items agregados dinamicamente -->                   	
+    </tbody>
+  </table>
 </div>
 </div> <!-- termina contenedor de haberes imponibles  --> 
 
@@ -68,63 +86,57 @@
 
 <!------------------------ inicia contenedor de haberes no imponibles-------  --> 
 <div class="contenedorHaberesNoImponibles">
- <div class="contenedorTituloHaberesNoImponibles">
-  Haberes no imponibles
-</div>
-<div class="contenedorTablaItemsPagos">
-  <table class="table table-bordered table-sm tablaHaberesNoImponibles ">
-   <thead>
-    <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesNoImponibles">
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Item</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
-      <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
-        <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesNoImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_no_imponibles" , association_insertion_method: :append }%>
-      </th>
-    </tr>
-  </thead>
-  <tbody id="contenedor_pago_items_haberes_no_imponibles">
-    <!-- aca van los items pre definidos de haberes -->   
-    <%=render partial: "itemsFijosHaberesNoImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
-    <!-- fin de los items pre definidos de haberes  --> 
-    <!-- items agregados dinamicamente --> 
-    <%= form.fields_for :pago_items do |builder| %>
+  <div class="contenedorTablaItemsPagos">
+    <table class="table table-bordered tablaHaberesNoImponibles ">
+     <thead class="thead-dark">
+      <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesNoImponibles">
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Haberes no imponibles</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
+        <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
+          <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesNoImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_no_imponibles" , association_insertion_method: :append }%>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="contenedor_pago_items_haberes_no_imponibles">
+      <!-- aca van los items pre definidos de haberes -->   
+      <%=render partial: "itemsFijosHaberesNoImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+      <!-- fin de los items pre definidos de haberes  --> 
+      <!-- items agregados dinamicamente --> 
+      <%= form.fields_for :pago_items do |builder| %>
       
-    <%end%>
-    <!-- fin items agregados dinamicamente -->                    
-  </tbody>
-</table>
+      <%end%>
+      <!-- fin items agregados dinamicamente -->                    
+    </tbody>
+  </table>
 </div>
 </div> <!-- termina contenedor de haberes no imponibles  --> 
 
 
 
 <!-- ------------------------ inicia contenedor de Descuentos Legales------------------- -->
-<div class="contenedorDescuentos">
-  <div class="contenedorTituloDescuentos">
-    Descuentos Legales 
-  </div>
+<div class="contenedorDescuentosLegales">
   <div class="contenedorTablaItemsPagos">
-    <table class="table table-bordered table-sm tablaDescuentos ">
-      <thead>
-        <tr class="filaSuperiorMiniListaContenidaPagoItemsDescuentos">
-          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Item</th>
+    <table class="table table-bordered tablaDescuentosLegales ">
+      <thead class= "thead-dark">
+        <tr class="filaSuperiorMiniListaContenidaPagoItemsDescuentosLegales">
+          <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Descuentos Legales</th>
           <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
           <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
           <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
           <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
-            <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosDescuentos", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_descuentos" , association_insertion_method: :append }%>
+            <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosDescuentosLegales", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_descuentosLegales" , association_insertion_method: :append }%>
           </th>
         </tr>
       </thead>
-      <tbody id="contenedor_pago_items_descuentos">
+      <tbody id="contenedor_pago_items_descuentosLegales">
         <!-- aca van los items pre definidos de descuentos -->   
-        <%=render partial: "itemsFijosDescuentos", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+        <%=render partial: "itemsFijosDescuentosLegales", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
         <!-- fin de los items pre definidos de descuentos  --> 
         <!-- aca van los items dinamicos de descuentos -->   
         <%= form.fields_for :pago_items do |builder| %>
-      
+
         <%end%>
         <!-- fin de los items dinamicos de descuentos  -->
       </tbody>
@@ -134,33 +146,30 @@
 
 <!-- ---------------inicia contenedor de Descuentos Personales-----------------  --> 
 <div class="contenedorHaberesImponibles">
- <div class="contenedorTituloHaberesImponibles">
-  Descuentos Personales
-</div>
-<div class="contenedorTablaItemsPagos">
-  <table class="table table-bordered table-sm tablaHaberesImponibles ">
-   <thead>
-    <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesImponibles">
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Item</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
-      <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
-      <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
-        <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_imponibles" , association_insertion_method: :append }%>
-      </th>
-    </tr>
-  </thead>
-  <tbody id="contenedor_pago_items_haberes_imponibles">
-    <!-- aca van los items pre definidos de haberes -->   
-    <%=render partial: "itemsFijosHaberesImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
-    <!-- fin de los items pre definidos de haberes  --> 
-    <!-- items agregados dinamicamente --> 
-    <%= form.fields_for :pago_items do |builder| %>
+  <div class="contenedorTablaItemsPagos">
+    <table class="table table-bordered tablaHaberesImponibles ">
+     <thead class= "thead-dark">
+      <tr class="filaSuperiorMiniListaContenidaPagoItemsHaberesImponibles">
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Descuentos Personales</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Cantidad</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila" >Valor Unitario</th>
+        <th class="tituloColumnaMiniListaContenida columnaInformacionMiniListaContenidaCuatroPorFila">Monto</th>
+        <th class="tituloColumnaBotonMiniListaContenida columnaImagenesDerechaMiniListaContenida espaciodeBotonAgregarItemDePago" >
+          <%= link_to_add_association (image_tag("agregar.png",class: "fotoOpcion imagenDerechaAgregarItemPago")+"Item"), form, :pago_items, partial:  "itemsDinamicosHaberesImponibles", id: "probando", class: "botonAgregarItemAPago", data: {association_insertion_node: "#contenedor_pago_items_haberes_imponibles" , association_insertion_method: :append }%>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="contenedor_pago_items_haberes_imponibles">
+      <!-- aca van los items pre definidos de haberes -->   
+      <%=render partial: "itemsFijosHaberesImponibles", locals: {form: form, campo: @campo, empleado: @empleado, empleado_pago: @empleado_pago }%>
+      <!-- fin de los items pre definidos de haberes  --> 
+      <!-- items agregados dinamicamente --> 
+      <%= form.fields_for :pago_items do |builder| %>
       
-    <%end%>
-    <!-- fin items agregados dinamicamente -->                    
-  </tbody>
-</table>
+      <%end%>
+      <!-- fin items agregados dinamicamente -->                    
+    </tbody>
+  </table>
 </div>
 </div> <!-- termina contenedor de haberes imponibles  --> 
 
