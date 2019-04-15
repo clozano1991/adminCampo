@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap";
+@import "font-awesome-sprockets.css";
+@import "font-awesome.css";
 /* -------------------------------------------------------------------------------------------*/
 /*propiedad de las tablas de bootstrap*/
 .table{
