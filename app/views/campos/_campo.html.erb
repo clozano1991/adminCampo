@@ -1,65 +1,121 @@
 
-<div class="filaFichaGenerica usadoEnIndexCampos campo_<%=campo.id%>">
-  <!--  ficha izquierda--> 
-  <div class="fichaCampo">
-    <!--  header ficha izquierda-->
-    <div class="headerFichaCampo">
-      <div class="tituloHeaderFichaCampo">
-        <h5 id="nombreCampo_<%=campo.id%>"><strong><%=campo.nombre%></strong></h5>
-      </div>
-      <div class="opcionesCampoDerecha"> 
-        <%=link_to(image_tag("configuracion.png",class: "fotoOpcion", :data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "configuracion parametros"}),user_campo_configuracionParametros_path(current_user,campo), method: :get)%> 
-        <%= image_tag("editarAmarillo.png",class: "fotoOpcion imagenEditarCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "editar campo"})%>
-        <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar campo"})%> 
-      </div>
-    </div><!--  fin header ficha izquierda-->
-    <!--  body ficha izquierda-->
-    <div class="bodyFichaCampo">
-      <div class="contenidoSuperiorBodyFichaCampo">
-        <div class="contenidoBodyFicha">
-          <h5 class="textoElementoCampoInline"><strong>Propietario:</strong></h5>
-          <h5 class="textoElementoCampoInline" id="propietarioCampo_<%=campo.id%>"> <%=campo.propietario%></h5>
-        </div>
-        <div class="contenidoBodyFichaCampo">
-          <h5 class="textoElementoCampoInline"><strong>Dirección:</strong></h5>
-          <h5 class="textoElementoCampoInline" id="direccionCampo_<%=campo.id%>"> <%=campo.direccion%></h5>
-        </div>
-        <div class="contenidoBodyFichaCampo">
-          <h5 class="textoElementoCampoInline"><strong>Descripción: </strong></h5>
-          <h5 class="textoElementoCampoInline" id="descripcionCampo_<%=campo.id%>"> <%=campo.descripcion%></h5>
-        </div>
-      </div>
-      <div class="botonesBodyFichaCampo">
-        <%=link_to(button_tag("Huertos", class: "btn botonAzul botonFichaCampo"),user_campo_huertos_path(current_user,campo), method: :get  )%>
-        <%=link_to(button_tag("Contabilidad", class: "btn botonAzul botonFichaCampo" ),user_campo_elemento_contables_path(current_user,campo), method: :get  )%>
-        <!--<%=link_to(button_tag("Equipos", class: "btn botonAzul botonFichaCampo" ),user_campo_equipos_path(current_user,campo), method: :get  )%>-->
-        <%=link_to(button_tag("Personal", class: "btn botonAzul botonFichaCampo" ),user_campo_empleados_path(current_user,campo), method: :get  )%>
-      </div>    
-    </div><!--  fin body ficha izquierda-->
-  </div><!-- fin ficha izquierda-->
 
-  <!--  ficha derecha-->
-  <div class="fichaCampoRecordatorio">
-    <!--  header ficha derecha-->
-    <div class="headerFichaCampoRecordatorio">
-      <h6><strong>Notas:</strong></h6>  
-      <%=image_tag("ticketVerde.png",class: "fotoOpcion ticketGuardarCambiosNotasCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "guardar cambios"})%>
-    </div><!-- fin header ficha derecha -->
-    <!--body ficha derecha-->
-    <div class="bodyFichaCampoRecordatorio">
-      <div class="contenedorAlertaCambiosNotasGuardadas">
-        <div class="alert alert-success alertaCambiosNotasGuardadas" id="alertaCambiosNotasGuardadas_<%=campo.id%>" role="alert">
-          Cambios guardados
+<div class="row campo_<%=campo.id%>" >
+
+  <!--    -------------------------------------Para la fiha del campo------------------------------------------------     -->
+  <div class="col-12 col-lg-8 d-flex">
+    <div class="card flex-fill w-100">
+      <div class="card-header">
+        <span class=" float-right">
+          <%=link_to(image_tag("configuracion.png",class: "fotoOpcion", :data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "configuracion parametros"}),user_campo_configuracionParametros_path(current_user,campo), method: :get)%> 
+          <%= image_tag("editarAmarillo.png",class: "fotoOpcion imagenEditarCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "editar campo"})%>
+          <%=image_tag("deleteRed.png",class: "fotoOpcion imagenBorrarCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "borrar campo"})%>
+        </span>
+        <h5 class="card-title mb-0"><strong><%=campo.nombre%></strong></h5>
+      </div>
+      <div class="card-body">
+        <div class="fichaCampos">
+          <div class="contenidoBodyFichaCampo">
+            <p class="card-text" ><strong>Propietario:</strong></p>
+            <p class="card-text" id="propietarioCampo_<%=campo.id%>"> <%=campo.propietario%></p>
+          </div>
+          <div class="contenidoBodyFichaCampo">
+            <p class="card-text" ><strong>Dirección:</strong></p>
+            <p class="card-text"  id="direccionCampo_<%=campo.id%>"> <%=campo.direccion%></p>
+          </div>
+          <div class="contenidoBodyFichaCampo">
+            <p class="card-text" ><strong>Descripción: </strong></p>
+            <p class="card-text"  id="descripcionCampo_<%=campo.id%>"> <%=campo.descripcion%></p>
+          </div>
+          <div class="botonesBodyFichaCampo">
+            <%=link_to(button_tag("Huertos", class: "btn botonAzul botonFichaCampo"),user_campo_huertos_path(current_user,campo), method: :get  )%>
+            <%=link_to(button_tag("Contabilidad", class: "btn botonAzul botonFichaCampo" ),user_campo_elemento_contables_path(current_user,campo), method: :get  )%>
+            <!--<%=link_to(button_tag("Equipos", class: "btn botonAzul botonFichaCampo" ),user_campo_equipos_path(current_user,campo), method: :get  )%>-->
+            <%=link_to(button_tag("Personal", class: "btn botonAzul botonFichaCampo" ),user_campo_empleados_path(current_user,campo), method: :get  )%>
+          </div>    
+
         </div>
       </div>
-      <%=form_for campo, url: user_campo_path(current_user, campo), method: :patch, remote: true,  :html => { :id => "formEditarNotasCampo_#{campo.id}"} do |form| %>
-          <div class="form-group">
-              <%=form.text_area :recordatorio, value: campo.recordatorio, class: "form-control  dondeSeEscribeLaNota"%>
+    </div>
+  </div>
+
+
+
+  <!--    ---------------------------------- para la ficha de la nota----------------------------------------     -->
+  <div class="col-12 col-lg-4 d-flex">
+    <div class="card flex-fill w-100">
+      <div class="card-header">
+        <span class=" float-right"><%=image_tag("ticketVerde.png",class: "fotoOpcion ticketGuardarCambiosNotasCampo",:data=>{:idCampo => (campo.id).to_s, :toggle => "tooltip", :placement => "top", :title => "guardar cambios"})%></span>
+        <h5 class="card-title mb-0"><strong>Notas</strong></h5>
+      </div>
+      <div class="card-body">
+        <div class="media">
+          <div class="contenedorAlertaCambiosNotasGuardadas">
+            <div class="alert alert-success alertaCambiosNotasGuardadas" id="alertaCambiosNotasGuardadas_<%=campo.id%>" role="alert">
+              Cambios guardados
+            </div>
           </div>
-      <%end%>   
-    </div><!-- fin body ficha derecha-->
-  </div><!--  fin ficha recordatorio-->
+
+
+          
+
+
+
+
+
+          <%=form_for campo, url: user_campo_path(current_user, campo), method: :patch, remote: true,  :html => { :id => "formEditarNotasCampo_#{campo.id}"} do |form| %>
+          <div class="form-group">
+            <%=form.text_area :recordatorio, value: campo.recordatorio, class: "form-control  dondeSeEscribeLaNota"%>
+          </div>
+          <%end%> 
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,22 +133,22 @@
       </div>
       <div class="modal-body" >
         <%=form_for campo, url: user_campo_path(current_user,campo), method: :patch, remote: true do |form| %>
-            <%=form.label :nombre%>
-            <%=form.text_field :nombre, :maxlength => 55, class: "form-control textField"%>
+        <%=form.label :nombre%>
+        <%=form.text_field :nombre, :maxlength => 55, class: "form-control textField"%>
 
-            <%=form.label :propietario%>
-            <%=form.text_field :propietario, class: "form-control textField"%>
+        <%=form.label :propietario%>
+        <%=form.text_field :propietario, class: "form-control textField"%>
 
-            <%=form.label :direccion%>
-            <%=form.text_field :direccion, class: "form-control textField"%>
+        <%=form.label :direccion%>
+        <%=form.text_field :direccion, class: "form-control textField"%>
 
-            <%=form.label :descripcion%>
-            <%=form.text_area :descripcion, class: "form-control textField"%>
-                                  
-            <%=form.submit("Confirmar", class: "btn botonVerde ", id: "botonConfirmarCrearCampo")%>
+        <%=form.label :descripcion%>
+        <%=form.text_area :descripcion, class: "form-control textField"%>
+
+        <%=form.submit("Confirmar", class: "btn botonVerde ", id: "botonConfirmarCrearCampo")%>
         <%end%>
       </div>
-    
+
     </div>
   </div>
 </div>
@@ -113,8 +169,8 @@
         <h5>
           ¿Seguro que desea borrar todos los datos asociados a este campo?
         </h5>
-          <%=link_to(button_tag("Borrar Campo", class: "btn botonRojo botonConfirmarBorrarCampo"), user_campo_path(current_user,campo), method: :delete, remote: true )%>
-  
+        <%=link_to(button_tag("Borrar Campo", class: "btn botonRojo botonConfirmarBorrarCampo"), user_campo_path(current_user,campo), method: :delete, remote: true )%>
+
       </div> 
     </div>
   </div>

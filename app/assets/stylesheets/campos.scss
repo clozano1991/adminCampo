@@ -23,7 +23,7 @@
 	width: 55%;
 	background-color: white;
 	border-radius: 0px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+	
 }
 .headerFichaCampo{
 	position: relative;
@@ -67,6 +67,8 @@
 }
 .contenidoBodyFichaCampo{
 	position: relative;
+	display: flex;
+	flex-direction: row;
 }
 .textoElementoCampoInline{
 	display: inline-block;
@@ -111,7 +113,8 @@
 .form-control.dondeSeEscribeLaNota{
 	position: relative;
     min-height: 286px;
-    margin-bottom: 0px;
+    min-width: 100%;
+    
 }
 /*-----------------------------------------------------------------------------------------------*/
 /* aca va todo lo asociado a la parte de crear un campo*/
